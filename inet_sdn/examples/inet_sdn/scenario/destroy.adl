@@ -1,0 +1,2 @@
+#destroy node 6 at t=20
+destroy(6,20)
