@@ -22,6 +22,7 @@
 
 #include "ExMachina.h"
 
+#include "FlatNetworkConfigurator.h"
 
 Define_Module(LocalFilter);
 
@@ -69,6 +70,10 @@ void LocalFilter::initializeGates()
 	// local filter interposed between layers 2 and 1
 	matchingGatesNames.insert( pair<string,string> ("ppp_phy_inf$i","ppp_phy_sup$o") );	
 	matchingGatesNames.insert( pair<string,string> ("ppp_phy_sup$i","ppp_phy_inf$o") );	
+	
+	// local filter interposed between layers 2 and 1 [eth]
+	matchingGatesNames.insert( pair<string,string> ("eth_phy_inf$i","eth_phy_sup$o") );	
+	matchingGatesNames.insert( pair<string,string> ("eth_phy_sup$i","eth_phy_inf$o") );	
 	
 	// local filter and global filter
 	matchingGatesNames.insert( pair<string,string> ("global_filter$i","global_filter$o") );	
@@ -193,6 +198,8 @@ void LocalFilter::initializeAttacks()
 			selfMessage->addPar("attack");
 			selfMessage->par("attack").setPointerValue(conditionalAttacks[i]->getAttack());
 			scheduleAt(conditionalAttacks[i]->getOccurrenceTime(), selfMessage);
+			
+			
 		}
 	}
 
@@ -373,9 +380,23 @@ void LocalFilter::initialize(int stage)
 	if (stage == 4) {
 		forgeInterfaceTable();
 		initializeGates();
+		// <A.S>
+		getNetworkParameters();
+		
 		initializeAttacks();
+
 	}
 }
+
+// <A.S>
+// get the network address and netmask from the 'configurator' module
+//TODO change or extend for IPv4NetworkConfigurator module
+void LocalFilter::getNetworkParameters() {
+    FlatNetworkConfigurator *fc = check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator"));
+    networkAddr = fc->getNetworkAddress();
+    netmask = fc->getNetmask();
+}
+
 
 
 void LocalFilter::handleMessage(cMessage* msg)
@@ -408,6 +429,8 @@ void LocalFilter::handleMessage(cMessage* msg)
 				// enable conditional attacks (to execute them must also be satisfied the filter) 
 				case attack_t::CONDITIONAL: {
 					ConditionalAttack* conditionalAttack = (ConditionalAttack*) (msg->par("attack").pointerValue());
+					// <A.S>
+					conditionalAttack->setNetworkParameters(networkAddr, netmask);
 					enabledConditionalAttacks.push_back(conditionalAttack);
 					break;
 				}
@@ -432,6 +455,7 @@ void LocalFilter::handleMessage(cMessage* msg)
 				
 				// check if the carried msg is a packet
 				carriedPacket = putReq->getMsg();
+				
 				if (!carriedPacket->isPacket()) {
 					//EV << "LocalFilter::handleMessage the received PutMsg doesn't carry a packet" << endl;
 					delete msg;
@@ -440,7 +464,7 @@ void LocalFilter::handleMessage(cMessage* msg)
 
 				// make a hard copy of the carried packet (putReq will be destroyed)
 				carriedPacket = hardCopy((cPacket*)(carriedPacket));
-				
+
 				/* //forge the sending data
 				forgeSendingData(carriedPacket);
 				direction = putReq->getDirection();
@@ -481,12 +505,10 @@ void LocalFilter::handleMessage(cMessage* msg)
 				outputGateIndex = atoi(tokens[1].c_str());
 				outputGate = gate(outputGateName.c_str(), outputGateIndex);
 				send(carriedPacket, outputGate);
-				
-
 			}
+            delete msg;
+            return;	
 			
-			delete msg;
-			return;
 		}
 		
 		
@@ -494,7 +516,7 @@ void LocalFilter::handleMessage(cMessage* msg)
 			cGate* arrivalGate;
 			vector<cMessage*> generatedPackets;
 			vector<double> delays;
-					
+
 			// perform all enabled conditional attacks
 			for (size_t i = 0; i < enabledConditionalAttacks.size(); i++) {
 						
@@ -502,8 +524,8 @@ void LocalFilter::handleMessage(cMessage* msg)
 				delays.clear();
 			
 				// packet filter match
-				if (enabledConditionalAttacks[i]->matchPacketFilter(msg)) {
-					
+				if (enabledConditionalAttacks[i]->matchPacketFilter(msg)) {		
+				    					
 					enabledConditionalAttacks[i]->execute(&msg, generatedPackets, delays, delay);								
 					
 					// send the original packet if not dropped 
@@ -562,7 +584,7 @@ void LocalFilter::handleMessage(cMessage* msg)
 				// packet filter does not match
 				else{
 					arrivalGate = msg->getArrivalGate();
-					send(msg, coupledGates[arrivalGate]);
+					send(msg, coupledGates[arrivalGate]);			
 				}
 				
 			}

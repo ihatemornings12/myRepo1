@@ -87,6 +87,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			(*packet)->addPar("isToSend");
 			(*packet)->par("isToSend").setBoolValue(false);
 
+            // <A.S>
 			(*packet)->addPar("fromGlobalFilter");
 			(*packet)->par("fromGlobalFilter").setBoolValue(false);
 
@@ -239,7 +240,8 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			
 			(*packet)->addPar("isToSend");
 			(*packet)->par("isToSend").setBoolValue(false);
-
+            
+            // <A.S>
 			(*packet)->addPar("fromGlobalFilter");
 			(*packet)->par("fromGlobalFilter").setBoolValue(false);
 			
@@ -286,7 +288,8 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			
 			(*packet)->addPar("isToSend");
 			(*packet)->par("isToSend").setBoolValue(false);
-
+            
+            // <A.S>
 			(*packet)->addPar("fromGlobalFilter");
 			(*packet)->par("fromGlobalFilter").setBoolValue(false);
 			
@@ -350,6 +353,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			(*packet)->addPar("isToSend");
 			(*packet)->par("isToSend").setBoolValue(false);
 
+            // <A.S>
 			(*packet)->addPar("fromGlobalFilter");
 			(*packet)->par("fromGlobalFilter").setBoolValue(false);
 			
@@ -423,6 +427,7 @@ type_t Create::getType (int layer, string typeCode)
 			if (typeCode == "0301") {
 				return type_t::CNCMD_UDP_DATA;
 			}
+			// <A.S>
 			if (typeCode == "1000" ) {
 				return type_t::APPLICATION_PACKET;
 			}
@@ -558,6 +563,7 @@ void Create::execute(cPacket **packet)
 	
 	setParameterRecursively(*packet, "isFiltered", true);
 	
+	// <A.S>
 	if (strcmp((*packet)->getOwner()->getName(), "globalFilter") == 0)
 		setParameterRecursively(*packet, "fromGlobalFilter", true);
 }

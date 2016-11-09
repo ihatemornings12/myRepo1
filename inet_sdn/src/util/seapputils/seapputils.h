@@ -51,8 +51,6 @@ int getPacketLayer(cPacket* packet);
  */
 int layertoi(const string layer);
 
-bool isControlInfo(const string layer);
-
 /**
  * @brief Set recursively a packet's parameter (and its encapsulated ones)
  */
@@ -65,15 +63,6 @@ void setParameterRecursively(cMessage* msg, const string parameterName, const bo
  * @return	the pointer to the (new) copied packet, or nullptr if problems occur
  */
 cPacket* hardCopy(cPacket* packetToCopy);
-
-//AS
-bool hasPayload(cMessage* msg);
-
-//AS
-bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName);
-
-//AS
-IPv4Address generateRandomIPv4Address();
 
 /**
  * @brief Compare two elements by means of a specified operator.
@@ -152,5 +141,19 @@ float evaluateArithmetic(T f1, T f2, const string comp_operator) {
     
 }
 
+// <A.S>
+bool hasPayload(cMessage* msg);
+// <A.S>
+bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName);
+// <A.S>
+string generateRandomValue(const char * fieldType);
+// <A.S>
+string generateRandomValue(string networkAddress, string netmask);
+// <A.S>
+bool isRandomValue(string value);
+// <A.S>
+string getValueType(string value);
+// <A.S>
+bool isControlInfo(const string layer);
 
 #endif

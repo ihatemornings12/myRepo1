@@ -1,29 +1,90 @@
-list dstList = {7}
+list dstList = {10} #7 client 3, 10 server 2
+list dstList2 = {12} #switch
 
-from 90 every 0.01 do {
+# example of TX/RX application packet
+#from 20 every 0.4 do {
 
     # declare a packet
-	packet fakePacket
+#	packet fakePacket
     
 	# create a new packet
-	create(fakePacket, "APP.type", "1001")
+#	create(fakePacket, "APP.type", "1001") #"1001 app type" 0004 rx
 
 	# fill the new packet properly
 	
-	change(fakePacket, "APP.info", 1)
-	change(fakePacket, "APP.name", "myPacket")
-	change(fakePacket, "controlInfo.destAddr", "192.168.2.6")
-	change(fakePacket, "controlInfo.sockId", 4)
-	change(fakePacket, "controlInfo.interfaceId", 101)
-	change(fakePacket, "controlInfo.destPort", 123)
+#	change(fakePacket, "APP.info", RANDOM_INT)
+#	change(fakePacket, "APP.name", "myPacket")
 	
-	change(fakePacket, "sending.outputGate", "app_udp_inf$o[0]")
+#	change(fakePacket, "controlInfo.destAddr", "192.168.2.6")
+#	change(fakePacket, "controlInfo.sockId", RANDOM_INT)
+#	change(fakePacket, "controlInfo.interfaceId", 101)
+#	change(fakePacket, "controlInfo.destPort", 123)
 	
-	put(fakePacket, dstList, TX, FALSE, 0)
-}
+#	change(fakePacket, "sending.outputGate", "app_udp_inf$o[0]") #app_udp_sup$o[0] RX
+	
+#	put(fakePacket, dstList, TX, FALSE, 0)
+#}
 
-from 91 nodes in dstList do {
-	filter ("TRA.destinationPort" == "123" and "attackInfo.fromGlobalFilter" == 1)
-		change(original, "controlInfo.srcAddr", "random")
-}
+#################################################################################
+
+#random IP src addresses:host3
+
+#from 21 nodes in dstList do {
+#	filter ("TRA.destinationPort" == "123" and "attackInfo.fromGlobalFilter" == 1)
+#		change(original, "controlInfo.srcAddr", RANDOM_IP)
+#}
+##################################################################################
+
+#random IP and MAC src addresses: host3
+
+#from 21 nodes in dstList do {
+#    filter ("NET.destAddress" == "192.168.2.6" and "attackInfo.fromGlobalFilter" == 1)
+#		change(original, "NET.srcAddress", RANDOM_IP)
+ #      change(original, "controlInfo.src", RANDOM_MAC)
+#}
+##################################################################################
+
+#drop based on control info: switch
+
+#from 21 nodes in dstList2 do {
+#	filter ("attackInfo.fromGlobalFilter" == 1)
+#		drop(original, 1)
+#}
+##################################################################################
+
+#drop based on the mac dst address: switch	
 	
+#from 21 nodes in dstList2 do {
+#	filter ("MAC.dest" == "0A-AA-00-00-00-06" )
+#		drop(original, 1)
+#}
+##################################################################################
+
+# inject packet into the switch's buffer having payload
+
+from 20 every 0.4 do {
+
+    # declare a packet
+	packet macPacket
+    packet ipPacket
+    
+    # create a new NET-layer packet
+    create(ipPacket, "NET.type", "0001") #"0000" no payload
+    change(ipPacket, "NET.destAddress", "192.168.2.6")
+    change(ipPacket, "NET.srcAddress", "10.0.0.1")    
+    
+	# create a new MAC-layer packet
+	create(macPacket, "MAC.type", "0010")
+	change(macPacket, "MAC.src", "0A-AA-00-00-00-FF" )
+    change(macPacket, "MAC.dest", "0A-AA-00-00-00-06" )
+	change(macPacket, "MAC.etherType","ETHERTYPE_IPv4")
+	
+	
+	############ SET THE PAYLOAD ###########
+	change (macPacket, "MAC.payload", ipPacket)
+	########################################
+	
+	change(macPacket, "sending.outputGate", "net_eth_inf$o[5]")
+	
+	put(macPacket, dstList2, RX, FALSE, 0)
+}

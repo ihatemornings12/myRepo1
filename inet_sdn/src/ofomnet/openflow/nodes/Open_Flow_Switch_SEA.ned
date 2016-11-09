@@ -136,12 +136,14 @@ module Open_Flow_Switch_SEA
         for i=0..sizeof(ethg)-1 {
             etherMAC[i].phys <--> ethg[i];
             //local filter between the of process and EthMAC
-            open_Flow_Processing.ifOut[i] --> etherMAC[i].upperLayerIn;
-            etherMAC[i].upperLayerOut --> open_Flow_Processing.ifIn[i];
-            //open_Flow_Processing.ifOut[i] --> localFilter.net_eth_sup$i++;
-            //open_Flow_Processing.ifIn[i] <-- localFilter.net_eth_sup$o++;
-            //etherMAC[i].upperLayerOut --> localFilter.net_eth_inf$i++;
-            //etherMAC[i].upperLayerIn <-- localFilter.net_eth_inf$o++;
+            //open_Flow_Processing.ifOut[i] --> etherMAC[i].upperLayerIn;
+            //etherMAC[i].upperLayerOut --> open_Flow_Processing.ifIn[i];
+            
+            open_Flow_Processing.ifOut++ --> localFilter.net_eth_sup$i++;
+            open_Flow_Processing.ifIn++ <-- localFilter.net_eth_sup$o++;
+            
+            etherMAC[i].upperLayerOut --> localFilter.net_eth_inf$i++;
+            etherMAC[i].upperLayerIn <-- localFilter.net_eth_inf$o++;
         }
         
     	    	

@@ -921,15 +921,16 @@ MACAddress IPv4::resolveNextHopMacAddress(cPacket *packet, IPv4Address nextHopAd
 }
 
 void IPv4::sendPacketToIeee802NIC(cPacket *packet, const InterfaceEntry *ie, const MACAddress& macAddress, int etherType)
-{
-    // remove old control info
+{	
+	// remove old control info
     delete packet->removeControlInfo();
-
+    
     // add control info with MAC address
     Ieee802Ctrl *controlInfo = new Ieee802Ctrl();
     controlInfo->setDest(macAddress);
     controlInfo->setEtherType(etherType);
     packet->setControlInfo(controlInfo);
+
 
     sendPacketToNIC(packet, ie);
 }

@@ -156,9 +156,10 @@ class INET_API IInterfaceTable
     virtual InterfaceEntry *getFirstMulticastInterface() = 0;
 	
 	//AS
-	virtual int getNumSecondaryInterfaces() = 0;
-	virtual InterfaceEntry *getSecondaryInterface(int pos) =0;
-    virtual void deleteSecondaryInterface(int pos) = 0;
+	//virtual int getNumSecondaryInterfaces() = 0;
+	//virtual InterfaceEntry *getSecondaryInterface(int pos) =0;
+   // virtual void deleteSecondaryInterface(int pos) = 0;
+    virtual bool findSecondaryInterface(int interfaceId, const IPv4Address &addr) = 0;
 };
 
 #endif

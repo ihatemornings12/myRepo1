@@ -58,7 +58,7 @@ network Topo
             @display("p=1500,850;i=device/server");
         }
         
-        s1: Open_Flow_Switch_SEA {
+        s1: Open_Flow_Switch_SEA  {
             @display("p=1000,650");
         }
         controller: Open_Flow_Controller {
@@ -85,4 +85,7 @@ network Topo
 		globalFilter.nodes++ <--> server1.global_filter;
 		globalFilter.nodes++ <--> server2.global_filter;
 		globalFilter.nodes++ <--> server3.global_filter;
+		
+		globalFilter.nodes++ <--> s1.global_filter;
+		globalFilter.nodes++ <--> controller.global_filter;
 }

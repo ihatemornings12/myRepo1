@@ -125,8 +125,8 @@ void OFA_switch::handleFlowStatsRequest(Open_Flow_Message *of_msg) {
 	flowStatsReply->getHeader().type = OFPT_STATS_REPLY;
 	flowStatsReply->setByteLength(1);
 	flowStatsReply->setKind(TCP_C_SEND);
-	//int connID = socket.getConnectionId();
-	flowStatsReply->setDatapath_Id(socket.getConnectionId());
+	int connID = socket.getConnectionId();
+	flowStatsReply->setDatapath_Id(connID);
 	ofp_flow_stats *stats = new ofp_flow_stats;		
 	stats = flow_table->returnStats();
 	int size = stats[0].size;	
@@ -144,11 +144,11 @@ void OFA_switch::sendFlowRemovedMesagge(oxm_basic_match *match) {
 	//flowRemoved->getHeader().version = OFP_VERSION;
 	flowRemoved->getHeader().type = OFPT_FLOW_REMOVED;
 	flowRemoved->setByteLength(1);
-	//int connID = socket.getConnectionId();
-	flowRemoved->setDatapath_id(socket.getConnectionId());
+	int connID = socket.getConnectionId();
+	flowRemoved->setDatapath_id(connID);
 	flowRemoved->setReason(OFPR_HARD_TIMEOUT);
-	//uint32_t cnt = flow_table->getPacketCount(match);
-	flowRemoved->setPacket_count(flow_table->getPacketCount(match));
+	uint32_t cnt = flow_table->getPacketCount(match);
+	flowRemoved->setPacket_count(cnt);
 	flowRemoved->setMatch(*match);
 	socket.send(flowRemoved);
 }
@@ -216,6 +216,7 @@ void OFA_switch::connect()
         // multiple controllers; full path is needed for connect address
         connectAddress = getParentModule()->getParentModule()->getSubmodule("controller")->getFullPath().c_str();
     }
+    
     socket.connect(IPvXAddressResolver().resolve(connectAddress), connectPort);
 }
 

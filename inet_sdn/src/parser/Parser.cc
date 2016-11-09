@@ -444,7 +444,7 @@ bool Parser::initializeAttack (const xmlpp::Node* nodeLevel2, AttackBase* attack
 								packetName.assign(tokens[i+1]);
 							}
 						}
-
+						                        
 						Change *change = new Change(fieldName, value);
 						change->setPacketName(packetName);
 						attack->addAction(change);
@@ -524,7 +524,6 @@ bool Parser::initializeAttack (const xmlpp::Node* nodeLevel2, AttackBase* attack
 						
 						Put* put = new Put(direction, forwardingDelay, isStatUpdated);
 						put->setPacketName(packetName);
-						
 						// populate the list of recipient nodes
 						for (size_t i = 0; i < tokenizedRecipientNodes.size(); i++) {
 							put->addRecipientNode(atoi(tokenizedRecipientNodes[i].c_str()));

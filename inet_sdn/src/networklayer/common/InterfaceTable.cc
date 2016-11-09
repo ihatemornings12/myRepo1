@@ -23,6 +23,7 @@
 #include <algorithm>
 #include <sstream>
 
+
 #include "InterfaceTable.h"
 #include "ModuleAccess.h"
 #include "NotifierConsts.h"
@@ -213,8 +214,9 @@ int InterfaceTable::getNumInterfaces()
     return tmpNumInterfaces;
 }
 
-//AS
-int InterfaceTable::getNumSecondaryInterfaces ()
+// <A.S>
+
+/*int InterfaceTable::getNumSecondaryInterfaces ()
 {
   return secondaryInterfaceVector.size();
 }
@@ -231,6 +233,7 @@ void InterfaceTable::deleteSecondaryInterface(int pos) {
         cRuntimeError("deleteSecondaryInterface(int pos): no elemeents to be deleted");
     secondaryInterfaceVector.erase(secondaryInterfaceVector.begin()+pos);
 }
+*/
 
 InterfaceEntry *InterfaceTable::getInterface(int pos)
 {
@@ -265,14 +268,14 @@ int InterfaceTable::getBiggestInterfaceId()
 
 void InterfaceTable::addInterface(InterfaceEntry *entry)
 {
-	//AS
+	// <A.S>
 	if (!initializationCompleted) {
         if (!nb)
             throw cRuntimeError("InterfaceTable must precede all network interface modules in the node's NED definition");
     	// check name is unique
     	if (getInterfaceByName(entry->getName())!=NULL)
     	   throw cRuntimeError("addInterface(): interface '%s' already registered", entry->getName());
-
+    	   
 	    // insert
     	entry->setInterfaceId(INTERFACEIDS_START + idToInterface.size());
         entry->setInterfaceTable(this);
@@ -285,10 +288,28 @@ void InterfaceTable::addInterface(InterfaceEntry *entry)
         nb->fireChangeNotification(NF_INTERFACE_CREATED, entry);
 	}
 	else {
-        secondaryInterfaceVector.push_back(entry);
+		// <A.S> add the new entry in the secondary table
+        //secondaryInterfaceVector.push_back(entry);
+        int id = entry->getInterfaceId();
+        IPv4Address addr = entry->ipv4Data()->getIPAddress();
+        secondaryInterfaceTable.insert(std::pair<int, IPv4Address> (id,addr) );
 	}
 
 }
+
+// <A.S>
+bool InterfaceTable::findSecondaryInterface(int interfaceId, const IPv4Address& addr) {
+   std::pair <std::multimap<int, IPv4Address>::iterator, std::multimap<int, IPv4Address>::iterator> range = secondaryInterfaceTable.equal_range(interfaceId);
+    for (std::multimap<int, IPv4Address>::iterator i = range.first; i!=range.second; i++) {
+        if (i->second == addr) {
+            secondaryInterfaceTable.erase(i);
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 void InterfaceTable::discoverConnectingGates(InterfaceEntry *entry)
 {

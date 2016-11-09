@@ -8,7 +8,7 @@
 #include <sstream>
 #include <map>
 #include <random>
-
+#include <cstring>
 
 void tokenize(vector<string>& tokens, const string str, const char delim)
 {
@@ -47,17 +47,16 @@ cPacket* getDeepestEncapsulatedPacket(cPacket* packet)
 int getPacketLayer(cPacket* packet)
 {
 	string packetClassName = packet->getClassName();
-
+	//std::cout<<"seaputils: packet class name = " << packetClassName <<endl;
 	// add other classnames here
 
 	if (packetClassName == "cPacket") {
 		return 5;	
-	}
-	
+    }
+    	
 	if (packetClassName == "TrafficLightPacket") {
 		return 5;
-	}
-	
+	}	
 	if (packetClassName == "TrafficLightStatus") {
 		return 5;
 	}
@@ -66,21 +65,46 @@ int getPacketLayer(cPacket* packet)
 		return 5;
 	}
 	
-	// A.S
+	// <A.S>
 	if (packetClassName == "ApplicationPacket") {
 		return 5;
 	}
-	// A.S
+	// <A.S>
 	if (packetClassName == "SendApplicationPacket") {
 		return 5;
 	}
-
+	
+	// <A.S> sdn
+	if (packetClassName == "OFP_Flow_Stats_Request") {
+		return 5;
+	}
+	if (packetClassName == "OFP_Flow_Stats_Reply") {
+		return 5;
+	}
+	if (packetClassName == "OFP_Flow_Removed") {
+		return 5;
+	}
+	if (packetClassName == "OFP_Packet_In") {
+		return 5;
+	}
+    if (packetClassName == "OFP_Packet_Out") {
+		return 5;
+	}
+	if (packetClassName == "OFP_Flow_Mod") {
+		return 5;
+	}
+	
 	if (packetClassName == "UDPPacket") {
 		return 4;
 	}
     
     if (packetClassName == "TCPPacket") {
 		return 4;
+	}
+	
+	// <A.S> sdn
+	if (packetClassName == "TCPSegment") {
+	    return 4;
 	}
 	
 	if (packetClassName == "IPv4Datagram") {
@@ -92,7 +116,7 @@ int getPacketLayer(cPacket* packet)
 	if (packetClassName == "PPPFrame") {
 		return 2;
 	}
-	if (packetClassName == "ETHERNETIIFRAME") {
+	if (packetClassName == "EthernetIIFrame") {
 		return 2;
 	}
 	
@@ -120,10 +144,11 @@ int layertoi(const string layer)
                 if (layer == "MAC") {
                     return 2;
                 } 
+                // <A.S>
                 else {
-				  if (isControlInfo(layer)) {
+				  if (isControlInfo(layer)) 
 					return 0; // special number representing control info
-				  }
+				  
 				  else {
 					string errorMsg = ("[int layertoi(const string)] Error, layer ");
 					errorMsg.append(layer);
@@ -136,13 +161,7 @@ int layertoi(const string layer)
     }
 }
 
-//AS
-bool isControlInfo(const string layer) {
-	if ((layer == "attackInfo") || (layer == "controlInfo")) 
-		return true;
-	else 
-		return false;
-}
+
 
 void setParameterRecursively(cMessage* msg, const string parameterName, const bool parameterValue) 
 {
@@ -167,55 +186,11 @@ void setParameterRecursively(cMessage* msg, const string parameterName, const bo
 }
 
 
-//AS
-bool hasPayload(cMessage* msg) {
-	bool isPacket = msg->isPacket();
-	if (isPacket) { 
-		cPacket *packet = dynamic_cast<cPacket*>(msg);
-		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
-		if (encapsulatedPacket != nullptr) 
-			return true;
-		else
-			return false;
-	}
-}
 
-//AS
-bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) {
-	bool isPacket = msg->isPacket();
-	if (isPacket) { 
-		cPacket *packet = dynamic_cast<cPacket*>(msg);
-		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
-		if (encapsulatedPacket != nullptr) {
-			if (encapsulatedPacket->hasPar(parameterName.c_str())) {
-				return encapsulatedPacket->par(parameterName.c_str()).boolValue();
-			}		
-		}
-		else {
-			string errorMsg;
-			errorMsg.append("[bool getParamFromEncapsulatedPacket(cMessage* msg, sting parameterName)] Error, there is no '");
-			errorMsg.append("' encapsulated packet");
-            opp_error(errorMsg.c_str());	
-		}
-	}	
-}
-
-IPv4Address generateRandomIPv4Address() {
-	IPv4Address randomIPAddress;
-	const int range_from = 0;
-	const int range_to = 255;
-	std::random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
-	std::mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
-															//It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]. 
-	std::uniform_int_distribution<int>  distr(range_from, range_to); //Produces random integer values i, uniformly distributed on the closed interval [a, b]
-	string buildIPAddress = "";
-	for (int i = 0; i < 4; ++i) {
-		//uint a = distr(generator);
-		buildIPAddress.append(to_string(distr(generator))+'.');
-	}
-	buildIPAddress.erase(buildIPAddress.size()-1);
-	randomIPAddress.set(buildIPAddress.c_str());
-	return randomIPAddress;
+string getValueType(string value) {
+    vector<string> tokens;
+	tokenize(tokens, value, '_');
+	return tokens[1];
 }
 
 cPacket* hardCopy (cPacket* packetToCopy)
@@ -230,14 +205,18 @@ cPacket* hardCopy (cPacket* packetToCopy)
 	}
 
 	// controlInfo is present only in the outer packet
-	cObject* controlInfo = (packetToCopy->getControlInfo())->dup();
+	cObject* controlInfo = NULL;
+	if (packetToCopy->getControlInfo()!=NULL)
+	    controlInfo = (packetToCopy->getControlInfo())->dup();
+	    
 	int packetLayer = getPacketLayer(packetToCopy);
 
 	switch (packetLayer) {
 	
 		case 2: {
 			layer2Packet = packetToCopy->dup();	
-			layer2Packet->setControlInfo(controlInfo);
+			if (controlInfo != NULL)
+			    layer2Packet->setControlInfo(controlInfo);
 			layer3Packet = layer2Packet->decapsulate();
 			if (layer3Packet == nullptr){
 				return layer2Packet;
@@ -248,7 +227,8 @@ cPacket* hardCopy (cPacket* packetToCopy)
 			if (layer3Packet == nullptr) {
 				// is outer packet, append control info
 				layer3Packet = packetToCopy->dup();
-				layer3Packet->setControlInfo(controlInfo);
+				if (controlInfo != NULL)
+				    layer3Packet->setControlInfo(controlInfo);
 			}
 			layer4Packet = layer3Packet->decapsulate();	
 			
@@ -267,7 +247,8 @@ cPacket* hardCopy (cPacket* packetToCopy)
 			if (layer4Packet == nullptr) {
 				// is outer packet, append control info			
 				layer4Packet = packetToCopy->dup();
-				layer4Packet->setControlInfo(controlInfo);
+				if (controlInfo != NULL)
+				    layer4Packet->setControlInfo(controlInfo);
 			}
 			layer5Packet = layer4Packet->decapsulate();
 			if (layer5Packet == nullptr) {	
@@ -291,7 +272,8 @@ cPacket* hardCopy (cPacket* packetToCopy)
 			if (layer5Packet == nullptr) {
 				// is outer packet, append control info
 				layer5Packet = packetToCopy->dup();
-				layer5Packet->setControlInfo(controlInfo);
+				if (controlInfo != NULL)
+				    layer5Packet->setControlInfo(controlInfo);
 			}
 			if (layer4Packet != nullptr) {
 				layer4Packet->encapsulate(layer5Packet);
@@ -315,5 +297,107 @@ cPacket* hardCopy (cPacket* packetToCopy)
 
 		}	
 		
+	}
+}
+
+// <A.S>
+bool isControlInfo(const string layer) {
+	if ((layer == "attackInfo") || (layer == "controlInfo")) 
+		return true;
+	return false;
+} 
+
+// <A.S>
+bool hasPayload(cMessage* msg) {
+	bool isPacket = msg->isPacket();
+	if (isPacket) { 
+		cPacket *packet = dynamic_cast<cPacket*>(msg);
+		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
+		if (encapsulatedPacket != nullptr) 
+			return true;
+		return false;
+	}
+	return false;
+}
+
+// <A.S>
+bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) {
+	bool isPacket = msg->isPacket();
+	if (isPacket) { 
+		cPacket *packet = dynamic_cast<cPacket*>(msg);
+		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
+		if (encapsulatedPacket != nullptr) {
+			if (encapsulatedPacket->hasPar(parameterName.c_str())) 
+				return encapsulatedPacket->par(parameterName.c_str()).boolValue();
+		}
+		else {
+			string errorMsg;
+			errorMsg.append("[bool getParamFromEncapsulatedPacket(cMessage* msg, sting parameterName)] Error, there is no '");
+			errorMsg.append("' encapsulated packet");
+            opp_error(errorMsg.c_str());	
+		}
+	}	
+}
+
+// <A.S>
+bool isRandomValue(string value) {
+    if (value.find("RANDOM") != string::npos)
+        return true;
+    return false;
+}
+
+// <A.S>
+string generateRandomValue(string networkAddress, string netmask) {
+    std::vector<string> netAddrTokens = tokenize(networkAddress, '.');
+    std::vector<string> netmaskTokens = tokenize(netmask, '.');
+    
+    uint32 netAddr = (stoi(netAddrTokens[0]) << 24) + (stoi(netAddrTokens[1]) << 16) + (stoi(netAddrTokens[2]) << 8) + stoi(netAddrTokens[3]);
+    uint32 mask = (stoi(netmaskTokens[0]) << 24) + (stoi(netmaskTokens[1]) << 16) + (stoi(netmaskTokens[2]) << 8) + stoi(netmaskTokens[3]);
+
+    uint32 range = ~mask;
+    
+    random_device rand_dev; 
+	mt19937 generator(rand_dev()); 
+    uniform_int_distribution<uint> distr(1, range-1);
+    
+    uint32 hostid = distr(generator);
+    uint32 addr = netAddr + hostid;
+
+    return to_string(addr);
+}
+
+// <A.S>
+string generateRandomValue(const char *fieldType) {
+	string field (fieldType);
+	
+	random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
+	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
+								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]. 
+								   
+	if (field.find("IP") != string::npos) {		
+		uniform_int_distribution<uint> distr(0, 255); //Produces random integer values i, uniformly distributed on the closed interval [a, b]
+		uint32 addr = (distr(generator) << 24) + (distr(generator) << 16) + (distr(generator) << 8) + distr(generator);
+		return to_string(addr);
+	}
+	else if (field.find("MAC") != string::npos) {
+	    uniform_int_distribution<uint> distr(0, 255); //Produces random integer values i, uniformly distributed on the closed interval [a, b]		
+        uint64 addr = 0x0AAA00000000;
+        addr += ((distr(generator)) << 24) + ((distr(generator) ) << 16) + ((distr(generator)) << 8) + distr(generator);
+		return to_string(addr);
+	}
+	else if (strcasecmp(fieldType, "int") == 0) {
+		uniform_int_distribution<int> distr(0, INT_MAX-1);
+		string randomNumber = to_string(distr(generator));
+		return randomNumber;
+	}
+	else if (strcasecmp(fieldType, "short") == 0) {
+		uniform_int_distribution<short> distr(0, INT_MAX-1);
+		string randomNumber = to_string(distr(generator));
+		return randomNumber;
+	}
+	else {
+		string errorMsg;
+		errorMsg.append("[string generateRandomValue(const char *fieldType) ] Unsupported type of field.");
+		opp_error(errorMsg.c_str());
 	}
 }

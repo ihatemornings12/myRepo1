@@ -95,21 +95,21 @@ void Flow_Table::addEntry(oxm_basic_match *match, entry_data* data) {
 /* Print Flow Entry */
 void Flow_Table::printFlowEntry (oxm_basic_match *match) {
 	multimap<oxm_basic_match, entry_data>::iterator iter = entry_map.begin();
-	std::cout << "Flow Entry:" << endl;
+	EV << "Flow Entry:" << endl;
     while (iter != entry_map.end()) {
         oxm_basic_match *m = const_cast<oxm_basic_match*> (&iter->first);
         if (flow_fields_match(match, m, iter->first.wildcards)) {
-		    std::cout << "IN_PORT:" << iter->first.OFB_IN_PORT << endl;
-		    std::cout << "ETH_SRC:" << iter->first.OFB_ETH_SRC << endl;
-		    std::cout << "ETH_DST:" << iter->first.OFB_ETH_DST << endl;
-		    std::cout << "ETH_TYPE:" << iter->first.OFB_ETH_TYPE <<endl;
-		    std::cout << "SRC_IP:" << iter->first.OFB_IPV4_SRC <<endl;
-		    std::cout << "DST_IP:" << iter->first.OFB_IPV4_DST <<endl;
-		    std::cout << "IP_PROTO:" << iter->first.OFB_IP_PROTO <<endl;
-		    std::cout << "DST PORT: " << iter->first.NW_DST <<endl;
-		    std::cout << "SRC PORT: " << iter->first.NW_SRC <<endl;
-		    std::cout << "COUNTERS:" << iter->second.counters->packet_count << endl;
-		    std::cout << "PRIORITY:" << iter->second.prior->priority << endl;
+		    EV << "IN_PORT:" << iter->first.OFB_IN_PORT << endl;
+		    EV << "ETH_SRC:" << iter->first.OFB_ETH_SRC << endl;
+		    EV << "ETH_DST:" << iter->first.OFB_ETH_DST << endl;
+		    EV << "ETH_TYPE:" << iter->first.OFB_ETH_TYPE <<endl;
+		    EV << "SRC_IP:" << iter->first.OFB_IPV4_SRC <<endl;
+		    EV << "DST_IP:" << iter->first.OFB_IPV4_DST <<endl;
+		    EV << "IP_PROTO:" << iter->first.OFB_IP_PROTO <<endl;
+		    EV << "DST PORT: " << iter->first.NW_DST <<endl;
+		    EV << "SRC PORT: " << iter->first.NW_SRC <<endl;
+		    EV << "COUNTERS:" << iter->second.counters->packet_count << endl;
+		    EV << "PRIORITY:" << iter->second.prior->priority << endl;
         }
         iter++;
     }
@@ -118,21 +118,21 @@ void Flow_Table::printFlowEntry (oxm_basic_match *match) {
 /* Print Flow Table */
 void Flow_Table::printFlowTable() {
 	std::multimap<oxm_basic_match, entry_data>::iterator j = entry_map.begin();
-	std::cout<<"[ " <<simTime() << " ]: Flow Table: \n";
+	EV << "Flow Table:" << endl;
     while (j!=entry_map.end()) {
-    	std::cout << "------------------------" << endl;
-        std::cout << "IN_PORT:" << j->first.OFB_IN_PORT << endl;
-        std::cout << "ETH_SRC:" << j->first.OFB_ETH_SRC << endl;
-        std::cout << "ETH_DST:" << j->first.OFB_ETH_DST << endl;
-        std::cout << "ETH_TYPE:" << j->first.OFB_ETH_TYPE <<endl;
-        std::cout << "SRC_IP:" << j->first.OFB_IPV4_SRC <<endl;
-        std::cout << "DST_IP:" << j->first.OFB_IPV4_DST <<endl;
-        std::cout << "IP_PROTO:" << j->first.OFB_IP_PROTO <<endl;
-        std::cout << "DST PORT: " << j->first.NW_DST <<endl;
-        std::cout << "SRC PORT: " << j->first.NW_SRC <<endl;
-        std::cout << "COUNTERS:" << j->second.counters->packet_count << endl;
-        std::cout << "PRIORITY:" << j->second.prior->priority << endl;
-        std::cout << "OUTPORT:" << j->second.instruc->actions[0].port << endl;
+    	EV << "------------------------" << endl;
+        EV << "IN_PORT:" << j->first.OFB_IN_PORT << endl;
+        EV << "ETH_SRC:" << j->first.OFB_ETH_SRC << endl;
+        EV << "ETH_DST:" << j->first.OFB_ETH_DST << endl;
+        EV << "ETH_TYPE:" << j->first.OFB_ETH_TYPE <<endl;
+        EV << "SRC_IP:" << j->first.OFB_IPV4_SRC <<endl;
+        EV << "DST_IP:" << j->first.OFB_IPV4_DST <<endl;
+        EV << "IP_PROTO:" << j->first.OFB_IP_PROTO <<endl;
+        EV << "DST PORT: " << j->first.NW_DST <<endl;
+        EV << "SRC PORT: " << j->first.NW_SRC <<endl;
+        EV << "COUNTERS:" << j->second.counters->packet_count << endl;
+        EV << "PRIORITY:" << j->second.prior->priority << endl;
+        EV << "OUTPORT:" << j->second.instruc->actions[0].port << endl;
         j++;
     }
 }
