@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<Unconditional>
+
+		<Attack>
+			<start_time>20</start_time>
+			<frequency>0.4</frequency>
+			<var><name>1</name><value>1</value><type>NUMBER</type></var>
+			<var><name>123</name><value>123</value><type>NUMBER</type></var>
+			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>
+			<var><name>"192.168.2.6"</name><value>192.168.2.6</value><type>STRING</type></var>
+			<var><name>101</name><value>101</value><type>NUMBER</type></var>
+			<var><name>"app_udp_inf$o[0]"</name><value>app_udp_inf$o[0]</value><type>STRING</type></var>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:fakePacket:APP.type:1001</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.info:value:1</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.name:value:"myPacket"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.destAddr:value:"192.168.2.6"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.sockId:value:1</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.interfaceId:value:101</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.destPort:value:123</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:sending.outputGate:value:"app_udp_inf$o[0]"</parameters>
+			</action>
+
+			<action>
+				<name>Put</name>
+				<parameters>packetName:fakePacket:nodes:7:direction:TX:throughWC:false:delay:0</parameters>
+			</action>
+		</Attack>
+
+	</Unconditional>
+
+</configuration>

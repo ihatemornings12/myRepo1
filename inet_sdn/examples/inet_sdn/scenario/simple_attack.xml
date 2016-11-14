@@ -8,15 +8,48 @@
 			<start_time>20</start_time>
 			<frequency>0.4</frequency>
 			<var><name>"ETHERTYPE_IPv4"</name><value>ETHERTYPE_IPv4</value><type>STRING</type></var>
-			<var><name>"0A-AA-00-00-00-06"</name><value>0A-AA-00-00-00-06</value><type>STRING</type></var>
-			<var><name>"net_eth_sup$o[5]"</name><value>net_eth_sup$o[5]</value><type>STRING</type></var>
+			<var><name>17</name><value>17</value><type>NUMBER</type></var>
 			<var><name>"192.168.2.6"</name><value>192.168.2.6</value><type>STRING</type></var>
 			<var><name>"0A-AA-00-00-00-FF"</name><value>0A-AA-00-00-00-FF</value><type>STRING</type></var>
-			<var><name>"10.0.0.1"</name><value>10.0.0.1</value><type>STRING</type></var>
+			<var><name>1</name><value>1</value><type>NUMBER</type></var>
+			<var><name>123</name><value>123</value><type>NUMBER</type></var>
+			<var><name>"0A-AA-00-00-00-06"</name><value>0A-AA-00-00-00-06</value><type>STRING</type></var>
+			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>
+			<var><name>"net_eth_sup$o[5]"</name><value>net_eth_sup$o[5]</value><type>STRING</type></var>
 
 			<action>
 				<name>Create</name>
-				<parameters>packetName:ipPacket:NET.type:0001</parameters>
+				<parameters>packetName:appPacket:APP.type:1001</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:appPacket:field_name:APP.info:value:1</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:appPacket:field_name:APP.name:value:"myPacket"</parameters>
+			</action>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:traPacket:TRA.type:0000</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:traPacket:field_name:TRA.destinationPort:value:123</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:traPacket:field_name:TRA.payload:value:appPacket</parameters>
+			</action>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:ipPacket:NET.type:0000</parameters>
 			</action>
 
 			<action>
@@ -26,7 +59,12 @@
 
 			<action>
 				<name>Change</name>
-				<parameters>packetName:ipPacket:field_name:NET.srcAddress:value:"10.0.0.1"</parameters>
+				<parameters>packetName:ipPacket:field_name:NET.transportProtocol:value:17</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:NET.payload:value:traPacket</parameters>
 			</action>
 
 			<action>

@@ -6561,3 +6561,383 @@ Tcl error: moduleinspector.cc#631: ptr0x2e3e070 not found
 "ModuleInspector:drawNextEventMarker .network.c ptr0x2e3e070 1"
 
 
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3d2f8c0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3d2f8c0 2"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3d2f8c0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3d2f8c0 2"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3f3a6f0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3f3a6f0 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3f4a440 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3f4a440 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3f4a440 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3f4a440 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x4aad5b0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x4aad5b0 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3031630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3031630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3031630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3031630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3031630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3031630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3031630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3031630 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2dd4d10 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2dd4d10 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2dd4d10 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2dd4d10 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2dd4d10 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2dd4d10 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x337f660 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x337f660 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x337f660 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x337f660 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x4326740 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x4326740 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x4326740 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x4326740 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x37864f0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x37864f0 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x44c16e0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x44c16e0 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x44c16e0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x44c16e0 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x44c16e0 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x44c16e0 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f0a630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f0a630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f0a630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f0a630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f0a630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f0a630 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f0a630 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f0a630 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3723760 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3723760 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3723760 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3723760 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3723760 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3723760 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x3723760 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x3723760 1"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f80d30 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f80d30 1"
+
+
+Tcl error: moduleinspector.cc#631: ptr0x2f80d30 not found
+    while executing
+"error "$tag not found""
+    (procedure "ModuleInspector:getSubmodCoords" line 4)
+    invoked from within
+"ModuleInspector:getSubmodCoords $c $modptr"
+    (procedure "ModuleInspector:drawNextEventMarker" line 2)
+    invoked from within
+"ModuleInspector:drawNextEventMarker .network.c ptr0x2f80d30 1"
+
+

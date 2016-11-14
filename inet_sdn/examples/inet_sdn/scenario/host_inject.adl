@@ -1,0 +1,25 @@
+list dstList = {7} #7 client 3, 10 server 2
+
+# example of TX/RX application packet
+from 20 every 0.4 do {
+
+    # declare a packet
+	packet fakePacket
+    
+	# create a new packet
+	create(fakePacket, "APP.type", "1001") #"1001 app type" 0004 rx
+
+	# fill the new packet properly
+	
+	change(fakePacket, "APP.info", 1)
+	change(fakePacket, "APP.name", "myPacket")
+	
+	change(fakePacket, "controlInfo.destAddr", "192.168.2.6")
+	change(fakePacket, "controlInfo.sockId", 1)
+	change(fakePacket, "controlInfo.interfaceId", 101)
+	change(fakePacket, "controlInfo.destPort", 123)
+	
+	change(fakePacket, "sending.outputGate", "app_udp_inf$o[0]") #app_udp_sup$o[0] RX
+	
+	put(fakePacket, dstList, TX, FALSE, 0)
+}

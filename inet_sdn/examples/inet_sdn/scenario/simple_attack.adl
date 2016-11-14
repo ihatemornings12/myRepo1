@@ -60,18 +60,39 @@ list dstList2 = {12} #switch
 #}
 ##################################################################################
 
-# inject packet into the switch's buffer having payload
+# inject packet into the switch's buffer having payload targeting a victim-host
 
 from 20 every 0.4 do {
 
     # declare a packet
 	packet macPacket
     packet ipPacket
+    packet traPacket
+    packet appPacket
     
+    #create a new APP-layer packet
+    create(appPacket, "APP.type", "1001")
+    change(appPacket, "APP.info", 1)
+    change(appPacket, "APP.name", "myPacket")
+
+    # create a new TRA-layer packet
+    create(traPacket, "TRA.type", "0000") 
+    change(traPacket, "TRA.destinationPort", 123)
+    
+    ############ SET THE PAYLOAD ###########
+    change(traPacket, "TRA.payload", appPacket)
+	########################################        
+
     # create a new NET-layer packet
-    create(ipPacket, "NET.type", "0001") #"0000" no payload
+    create(ipPacket, "NET.type", "0000") #"0000" no controlInfo
     change(ipPacket, "NET.destAddress", "192.168.2.6")
-    change(ipPacket, "NET.srcAddress", "10.0.0.1")    
+    change(ipPacket, "NET.transportProtocol", 17)
+    #change(ipPacket, "NET.timeToLive", 5)
+    #change(ipPacket, "NET.typeOfService", "a")
+    
+    ############ SET THE PAYLOAD ############
+    change(ipPacket, "NET.payload", traPacket)
+    #########################################
     
 	# create a new MAC-layer packet
 	create(macPacket, "MAC.type", "0010")
@@ -80,11 +101,21 @@ from 20 every 0.4 do {
 	change(macPacket, "MAC.etherType","ETHERTYPE_IPv4")
 	
 	
-	############ SET THE PAYLOAD ###########
+	############ SET THE PAYLOAD ############
 	change (macPacket, "MAC.payload", ipPacket)
-	########################################
+	#########################################
 	
-	change(macPacket, "sending.outputGate", "net_eth_inf$o[5]")
+	change(macPacket, "sending.outputGate", "net_eth_sup$o[5]") 
 	
 	put(macPacket, dstList2, RX, FALSE, 0)
 }
+
+
+
+
+
+
+
+
+
+

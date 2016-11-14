@@ -201,12 +201,13 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					break;
 				}
 				
-				//A.S
+				// <A.S>
 				case type_t::APPLICATION_PACKET: {
 					controlInfo = new UDPDataIndication();
 					(*packet)->setControlInfo(controlInfo);
 					break;
 				}
+				// <A.S>
 				case type_t::SEND_APPLICATION_PACKET: {
 					controlInfo = new UDPSendCommand();
 					(*packet)->setControlInfo(controlInfo);					

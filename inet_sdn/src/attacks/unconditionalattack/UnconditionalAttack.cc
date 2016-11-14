@@ -143,7 +143,8 @@ void UnconditionalAttack::execute(vector<cMessage*> &putMessages)
 				// process an already existing packet
 				targetMessage = &generatedMessages[packetPosition];
 				
-			    // <A.S> check if its a name of a packet
+			    // <A.S> 
+			    // check if its a name of a packet
 			    map<string, int>::iterator it = packetTable.find(valueName);
 			    
 				if (it != packetTable.end()) {

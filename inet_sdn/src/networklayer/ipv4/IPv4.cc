@@ -630,7 +630,7 @@ void IPv4::reassembleAndDeliver(IPv4Datagram *datagram)
     }
 
     if (datagramLocalInHook(datagram, getSourceInterfaceFrom(datagram)) != INetfilter::IHook::ACCEPT)
-{
+    {
         return;
     }
 
@@ -641,7 +641,7 @@ void IPv4::reassembleAndDeliverFinish(IPv4Datagram *datagram)
 {
     // decapsulate and send on appropriate output gate
     int protocol = datagram->getTransportProtocol();
-
+  
     if (protocol==IP_PROT_ICMP)
     {
         // incoming ICMP packets are handled specially
@@ -855,7 +855,7 @@ void IPv4::sendDatagramToOutput(IPv4Datagram *datagram, const InterfaceEntry *ie
             }
 
             MACAddress nextHopMacAddr;  // unspecified
-                nextHopMacAddr = resolveNextHopMacAddress(datagram, nextHopAddr, ie);
+            nextHopMacAddr = resolveNextHopMacAddress(datagram, nextHopAddr, ie);
 
             if (nextHopMacAddr.isUnspecified())
             {

@@ -145,23 +145,18 @@ void Change::executeOnField(cMessage** packetToChange, string value)
     // <A.S>
     if (isRandomValue(value)) 
         value = generateRandomValue(descriptor->getFieldTypeString(encapsulatedPacket, fieldIndex));
-		
+  
 	//explicit handling of Ipv4Datagram src & dst fields as well as EtherFrame src & dst fields
 	packetClassName = encapsulatedPacket->getClassName();
-	//std::cout<< "execute on filed change: packetclass name = " << packetClassName <<endl;
-	
-	if (packetClassName == "IPv4Datagram") {
-		if (fieldName == "srcAddress") 
-			(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(value.c_str()));
-		else if (fieldName == "destAddress")
-			(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setDestAddress(IPv4Address(value.c_str()));
-	}
-	else if (packetClassName == "EthernetIIFrame") { //FIXME it does not work for the moment because the localfilter is not connected between mac and phy layer!
-		if (fieldName == "src")
-			(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(value.c_str()));
-		else if (fieldName == "dest")
-			(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
-	}
+
+    if (fieldName == "srcAddress" && packetClassName == "IPv4Datagram") 
+		(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(value.c_str()));
+	else if (fieldName == "destAddress" && packetClassName == "IPv4Datagram")
+		(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setDestAddress(IPv4Address(value.c_str()));
+	else if (fieldName == "src" && packetClassName == "EthernetIIFrame") //FIXME it does not work for the moment because the localfilter is not connected between mac and phy layer!
+		(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(value.c_str()));
+	else if (fieldName == "dest" && packetClassName == "EthernetIIFrame")
+		(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
 	else
 		// edit the value of the specified field
 		descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!
@@ -584,7 +579,8 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
                         srcAddr =IPv4Address(stoul(value));
                     else
                         srcAddr.set(value.c_str());
-                                           
+                    
+                                         
 					IInterfaceTable *ift = InterfaceTableAccess().get();  
 					InterfaceEntry* ie;
 					IPv4Address registeredIPAddress;
@@ -607,7 +603,7 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
 						p->setIPAddress(srcAddr); //change the ip addr
 						ieCopy->setIPv4Data(p);
 						ift->addInterface(ieCopy);
-					}
+					} 
 
 					(check_and_cast<IPv4ControlInfo*> (controlInfo))->setSrcAddr(srcAddr);
 					return;
