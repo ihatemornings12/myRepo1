@@ -11,8 +11,9 @@
 #include "seapputils.h"
 #include "omnetpp.h"
 #include <string>
-#include "FlatNetworkConfigurator.h"
 
+#include "FlatNetworkConfigurator.h"
+#include "IPv4NetworkConfigurator.h"
 
 Define_Module(GlobalFilter);
 
@@ -168,9 +169,18 @@ GlobalFilter::~GlobalFilter() { }
 
 // <A.S>
 void GlobalFilter::getNetworkParameters() {
-    FlatNetworkConfigurator *fc = check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getSubmodule("configurator"));
-    networkAddr = fc->getNetworkAddress();
-    netmask = fc->getNetmask();
+    if (getParentModule()->getParentModule()->getSubmodule("configurator")!= NULL) {
+        if (check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator")) != NULL) {
+            FlatNetworkConfigurator *fc = check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator"));
+            networkAddr = fc->getNetworkAddress();
+            netmask = fc->getNetmask();
+        }
+        if (check_and_cast<IPv4NetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator")) != NULL) {
+            //random IPs within all ranges will be generated
+            networkAddr = "";
+            netmask = "";
+        }
+    }
 }
 
 

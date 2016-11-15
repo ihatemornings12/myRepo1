@@ -1,14 +1,14 @@
 version 2
-run simple_attack-0-20161114-10:11:29-12690
+run simple_attack-0-20161115-13:15:15-5668
 attr configname simple_attack
-attr datetime 20161114-10:11:29
+attr datetime 20161115-13:15:15
 attr experiment simple_attack
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network Topo
-attr processid 12690
+attr processid 5668
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -49,14 +49,14 @@ scalar Topo.client1.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.client1.eth[0].mac 	"simulated time" 	95
+scalar Topo.client1.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.client1.eth[0].mac 	full-duplex 	1
-scalar Topo.client1.eth[0].mac 	"frames/sec sent" 	10
-scalar Topo.client1.eth[0].mac 	"frames/sec rcvd" 	0.042105263157895
-scalar Topo.client1.eth[0].mac 	"bits/sec sent" 	103576.25263158
-scalar Topo.client1.eth[0].mac 	"bits/sec rcvd" 	21.557894736842
-scalar Topo.client1.eth[0].mac 	"rx channel idle (%)" 	99.999975747368
-scalar Topo.client1.eth[0].mac 	"rx channel utilization (%)" 	2.4252631578947e-05
+scalar Topo.client1.eth[0].mac 	"frames/sec sent" 	10.039971487897
+scalar Topo.client1.eth[0].mac 	"frames/sec rcvd" 	0.16063954380635
+scalar Topo.client1.eth[0].mac 	"bits/sec sent" 	103698.60855058
+scalar Topo.client1.eth[0].mac 	"bits/sec rcvd" 	82.247446428852
+scalar Topo.client1.eth[0].mac 	"rx channel idle (%)" 	99.999907471623
+scalar Topo.client1.eth[0].mac 	"rx channel utilization (%)" 	9.2528377232459e-05
 scalar Topo.client1.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -81,11 +81,11 @@ scalar Topo.client1.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.client1.eth[0].mac 	rxPkFromHL:count 	950
+scalar Topo.client1.eth[0].mac 	rxPkFromHL:count 	250
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.client1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	1229968
+scalar Topo.client1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	322768
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -109,11 +109,11 @@ scalar Topo.client1.eth[0].mac 	rxPkOk:sum(packetBytes) 	256
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.client1.eth[0].mac 	txPk:count 	950
+scalar Topo.client1.eth[0].mac 	txPk:count 	250
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.client1.eth[0].mac 	txPk:sum(packetBytes) 	1229968
+scalar Topo.client1.eth[0].mac 	txPk:sum(packetBytes) 	322768
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -137,15 +137,15 @@ scalar Topo.client1.eth[0].encap 	decapPk:sum(packetBytes) 	112
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.client1.eth[0].encap 	encapPk:count 	950
+scalar Topo.client1.eth[0].encap 	encapPk:count 	250
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.client1.eth[0].encap 	encapPk:sum(packetBytes) 	1212850
+scalar Topo.client1.eth[0].encap 	encapPk:sum(packetBytes) 	318250
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.client1.udpApp[0] 	"packets sent" 	949
+scalar Topo.client1.udpApp[0] 	"packets sent" 	249
 scalar Topo.client1.udpApp[0] 	"packets received" 	0
 scalar Topo.client1.udpApp[0] 	rcvdPk:count 	0
 attr interpolationmode  none
@@ -167,11 +167,11 @@ attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "received packet lifetime, stats"
 attr unit  s
-scalar Topo.client1.udpApp[0] 	sentPk:count 	949
+scalar Topo.client1.udpApp[0] 	sentPk:count 	249
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client1.udpApp[0] 	sentPk:sum(packetBytes) 	1186250
+scalar Topo.client1.udpApp[0] 	sentPk:sum(packetBytes) 	311250
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -192,11 +192,11 @@ scalar Topo.client1.udp 	rcvdPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
-scalar Topo.client1.udp 	sentPk:count 	949
+scalar Topo.client1.udp 	sentPk:count 	249
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client1.udp 	sentPk:sum(packetBytes) 	1193842
+scalar Topo.client1.udp 	sentPk:sum(packetBytes) 	313242
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -234,14 +234,14 @@ scalar Topo.client2.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.client2.eth[0].mac 	"simulated time" 	95
+scalar Topo.client2.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.client2.eth[0].mac 	full-duplex 	1
-scalar Topo.client2.eth[0].mac 	"frames/sec sent" 	1.6736842105263
-scalar Topo.client2.eth[0].mac 	"frames/sec rcvd" 	0.042105263157895
-scalar Topo.client2.eth[0].mac 	"bits/sec sent" 	17249.010526316
-scalar Topo.client2.eth[0].mac 	"bits/sec rcvd" 	21.557894736842
-scalar Topo.client2.eth[0].mac 	"rx channel idle (%)" 	99.999975747368
-scalar Topo.client2.eth[0].mac 	"rx channel utilization (%)" 	2.4252631578947e-05
+scalar Topo.client2.eth[0].mac 	"frames/sec sent" 	1.6867152099667
+scalar Topo.client2.eth[0].mac 	"frames/sec rcvd" 	0.16063954380635
+scalar Topo.client2.eth[0].mac 	"bits/sec sent" 	17092.047460996
+scalar Topo.client2.eth[0].mac 	"bits/sec rcvd" 	82.247446428852
+scalar Topo.client2.eth[0].mac 	"rx channel idle (%)" 	99.999907471623
+scalar Topo.client2.eth[0].mac 	"rx channel utilization (%)" 	9.2528377232459e-05
 scalar Topo.client2.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -266,11 +266,11 @@ scalar Topo.client2.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.client2.eth[0].mac 	rxPkFromHL:count 	159
+scalar Topo.client2.eth[0].mac 	rxPkFromHL:count 	42
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.client2.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	204832
+scalar Topo.client2.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	53200
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -294,11 +294,11 @@ scalar Topo.client2.eth[0].mac 	rxPkOk:sum(packetBytes) 	256
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.client2.eth[0].mac 	txPk:count 	159
+scalar Topo.client2.eth[0].mac 	txPk:count 	42
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.client2.eth[0].mac 	txPk:sum(packetBytes) 	204832
+scalar Topo.client2.eth[0].mac 	txPk:sum(packetBytes) 	53200
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -322,15 +322,15 @@ scalar Topo.client2.eth[0].encap 	decapPk:sum(packetBytes) 	112
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.client2.eth[0].encap 	encapPk:count 	159
+scalar Topo.client2.eth[0].encap 	encapPk:count 	42
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.client2.eth[0].encap 	encapPk:sum(packetBytes) 	201952
+scalar Topo.client2.eth[0].encap 	encapPk:sum(packetBytes) 	52426
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.client2.udpApp[0] 	"packets sent" 	158
+scalar Topo.client2.udpApp[0] 	"packets sent" 	41
 scalar Topo.client2.udpApp[0] 	"packets received" 	0
 scalar Topo.client2.udpApp[0] 	rcvdPk:count 	0
 attr interpolationmode  none
@@ -352,11 +352,11 @@ attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "received packet lifetime, stats"
 attr unit  s
-scalar Topo.client2.udpApp[0] 	sentPk:count 	158
+scalar Topo.client2.udpApp[0] 	sentPk:count 	41
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client2.udpApp[0] 	sentPk:sum(packetBytes) 	197500
+scalar Topo.client2.udpApp[0] 	sentPk:sum(packetBytes) 	51250
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -377,11 +377,11 @@ scalar Topo.client2.udp 	rcvdPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
-scalar Topo.client2.udp 	sentPk:count 	158
+scalar Topo.client2.udp 	sentPk:count 	41
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client2.udp 	sentPk:sum(packetBytes) 	198764
+scalar Topo.client2.udp 	sentPk:sum(packetBytes) 	51578
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -419,14 +419,14 @@ scalar Topo.client3.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.client3.eth[0].mac 	"simulated time" 	95
+scalar Topo.client3.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.client3.eth[0].mac 	full-duplex 	1
-scalar Topo.client3.eth[0].mac 	"frames/sec sent" 	0.50526315789474
-scalar Topo.client3.eth[0].mac 	"frames/sec rcvd" 	0.042105263157895
-scalar Topo.client3.eth[0].mac 	"bits/sec sent" 	5134.8210526316
-scalar Topo.client3.eth[0].mac 	"bits/sec rcvd" 	21.557894736842
-scalar Topo.client3.eth[0].mac 	"rx channel idle (%)" 	99.999975747368
-scalar Topo.client3.eth[0].mac 	"rx channel utilization (%)" 	2.4252631578947e-05
+scalar Topo.client3.eth[0].mac 	"frames/sec sent" 	0.52207851737065
+scalar Topo.client3.eth[0].mac 	"frames/sec rcvd" 	0.16063954380635
+scalar Topo.client3.eth[0].mac 	"bits/sec sent" 	5017.09423216
+scalar Topo.client3.eth[0].mac 	"bits/sec rcvd" 	82.247446428852
+scalar Topo.client3.eth[0].mac 	"rx channel idle (%)" 	99.999907471623
+scalar Topo.client3.eth[0].mac 	"rx channel utilization (%)" 	9.2528377232459e-05
 scalar Topo.client3.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -451,11 +451,11 @@ scalar Topo.client3.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.client3.eth[0].mac 	rxPkFromHL:count 	48
+scalar Topo.client3.eth[0].mac 	rxPkFromHL:count 	13
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.client3.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	60976
+scalar Topo.client3.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	15616
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -479,11 +479,11 @@ scalar Topo.client3.eth[0].mac 	rxPkOk:sum(packetBytes) 	256
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.client3.eth[0].mac 	txPk:count 	48
+scalar Topo.client3.eth[0].mac 	txPk:count 	13
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.client3.eth[0].mac 	txPk:sum(packetBytes) 	60976
+scalar Topo.client3.eth[0].mac 	txPk:sum(packetBytes) 	15616
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -507,15 +507,15 @@ scalar Topo.client3.eth[0].encap 	decapPk:sum(packetBytes) 	112
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.client3.eth[0].encap 	encapPk:count 	48
+scalar Topo.client3.eth[0].encap 	encapPk:count 	13
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.client3.eth[0].encap 	encapPk:sum(packetBytes) 	60094
+scalar Topo.client3.eth[0].encap 	encapPk:sum(packetBytes) 	15364
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.client3.udpApp[0] 	"packets sent" 	47
+scalar Topo.client3.udpApp[0] 	"packets sent" 	12
 scalar Topo.client3.udpApp[0] 	"packets received" 	0
 scalar Topo.client3.udpApp[0] 	rcvdPk:count 	0
 attr interpolationmode  none
@@ -537,11 +537,11 @@ attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "received packet lifetime, stats"
 attr unit  s
-scalar Topo.client3.udpApp[0] 	sentPk:count 	47
+scalar Topo.client3.udpApp[0] 	sentPk:count 	12
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client3.udpApp[0] 	sentPk:sum(packetBytes) 	58750
+scalar Topo.client3.udpApp[0] 	sentPk:sum(packetBytes) 	15000
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -562,11 +562,11 @@ scalar Topo.client3.udp 	rcvdPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
-scalar Topo.client3.udp 	sentPk:count 	47
+scalar Topo.client3.udp 	sentPk:count 	12
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client3.udp 	sentPk:sum(packetBytes) 	59126
+scalar Topo.client3.udp 	sentPk:sum(packetBytes) 	15096
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -604,14 +604,14 @@ scalar Topo.client4.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.client4.eth[0].mac 	"simulated time" 	95
+scalar Topo.client4.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.client4.eth[0].mac 	full-duplex 	1
-scalar Topo.client4.eth[0].mac 	"frames/sec sent" 	5
-scalar Topo.client4.eth[0].mac 	"frames/sec rcvd" 	0.042105263157895
-scalar Topo.client4.eth[0].mac 	"bits/sec sent" 	51736.252631579
-scalar Topo.client4.eth[0].mac 	"bits/sec rcvd" 	21.557894736842
-scalar Topo.client4.eth[0].mac 	"rx channel idle (%)" 	99.999975747368
-scalar Topo.client4.eth[0].mac 	"rx channel utilization (%)" 	2.4252631578947e-05
+scalar Topo.client4.eth[0].mac 	"frames/sec sent" 	5.0199857439485
+scalar Topo.client4.eth[0].mac 	"frames/sec rcvd" 	0.16063954380635
+scalar Topo.client4.eth[0].mac 	"bits/sec sent" 	51651.396357319
+scalar Topo.client4.eth[0].mac 	"bits/sec rcvd" 	82.247446428852
+scalar Topo.client4.eth[0].mac 	"rx channel idle (%)" 	99.999907471623
+scalar Topo.client4.eth[0].mac 	"rx channel utilization (%)" 	9.2528377232459e-05
 scalar Topo.client4.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -636,11 +636,11 @@ scalar Topo.client4.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.client4.eth[0].mac 	rxPkFromHL:count 	475
+scalar Topo.client4.eth[0].mac 	rxPkFromHL:count 	125
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.client4.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	614368
+scalar Topo.client4.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	160768
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -664,11 +664,11 @@ scalar Topo.client4.eth[0].mac 	rxPkOk:sum(packetBytes) 	256
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.client4.eth[0].mac 	txPk:count 	475
+scalar Topo.client4.eth[0].mac 	txPk:count 	125
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.client4.eth[0].mac 	txPk:sum(packetBytes) 	614368
+scalar Topo.client4.eth[0].mac 	txPk:sum(packetBytes) 	160768
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -692,15 +692,15 @@ scalar Topo.client4.eth[0].encap 	decapPk:sum(packetBytes) 	112
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.client4.eth[0].encap 	encapPk:count 	475
+scalar Topo.client4.eth[0].encap 	encapPk:count 	125
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.client4.eth[0].encap 	encapPk:sum(packetBytes) 	605800
+scalar Topo.client4.eth[0].encap 	encapPk:sum(packetBytes) 	158500
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.client4.udpApp[0] 	"packets sent" 	475
+scalar Topo.client4.udpApp[0] 	"packets sent" 	124
 scalar Topo.client4.udpApp[0] 	"packets received" 	0
 scalar Topo.client4.udpApp[0] 	rcvdPk:count 	0
 attr interpolationmode  none
@@ -722,11 +722,11 @@ attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "received packet lifetime, stats"
 attr unit  s
-scalar Topo.client4.udpApp[0] 	sentPk:count 	475
+scalar Topo.client4.udpApp[0] 	sentPk:count 	124
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client4.udpApp[0] 	sentPk:sum(packetBytes) 	593750
+scalar Topo.client4.udpApp[0] 	sentPk:sum(packetBytes) 	155000
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -747,11 +747,11 @@ scalar Topo.client4.udp 	rcvdPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
-scalar Topo.client4.udp 	sentPk:count 	474
+scalar Topo.client4.udp 	sentPk:count 	124
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, count"
-scalar Topo.client4.udp 	sentPk:sum(packetBytes) 	596292
+scalar Topo.client4.udp 	sentPk:sum(packetBytes) 	155992
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, sum(packetBytes)"
@@ -789,14 +789,14 @@ scalar Topo.server1.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.server1.eth[0].mac 	"simulated time" 	95
+scalar Topo.server1.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.server1.eth[0].mac 	full-duplex 	1
-scalar Topo.server1.eth[0].mac 	"frames/sec sent" 	0.010526315789474
-scalar Topo.server1.eth[0].mac 	"frames/sec rcvd" 	10.031578947368
-scalar Topo.server1.eth[0].mac 	"bits/sec sent" 	5.3894736842105
-scalar Topo.server1.eth[0].mac 	"bits/sec rcvd" 	103592.42105263
-scalar Topo.server1.eth[0].mac 	"rx channel idle (%)" 	99.895765557895
-scalar Topo.server1.eth[0].mac 	"rx channel utilization (%)" 	0.10423444210526
+scalar Topo.server1.eth[0].mac 	"frames/sec sent" 	0.040159885951588
+scalar Topo.server1.eth[0].mac 	"frames/sec rcvd" 	10.160451145752
+scalar Topo.server1.eth[0].mac 	"bits/sec sent" 	20.561861607213
+scalar Topo.server1.eth[0].mac 	"bits/sec rcvd" 	103760.2941354
+scalar Topo.server1.eth[0].mac 	"rx channel idle (%)" 	99.895589436991
+scalar Topo.server1.eth[0].mac 	"rx channel utilization (%)" 	0.10441056300873
 scalar Topo.server1.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -841,11 +841,11 @@ attr title  "pause units sent, count"
 scalar Topo.server1.eth[0].mac 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.server1.eth[0].mac 	rxPkOk:count 	953
+scalar Topo.server1.eth[0].mac 	rxPkOk:count 	253
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.server1.eth[0].mac 	rxPkOk:sum(packetBytes) 	1230160
+scalar Topo.server1.eth[0].mac 	rxPkOk:sum(packetBytes) 	322960
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -857,11 +857,11 @@ scalar Topo.server1.eth[0].mac 	txPk:sum(packetBytes) 	64
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
-scalar Topo.server1.eth[0].mac 	passedUpPk:count 	953
+scalar Topo.server1.eth[0].mac 	passedUpPk:count 	253
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.server1.eth[0].mac 	passedUpPk:sum(packetBytes) 	1230160
+scalar Topo.server1.eth[0].mac 	passedUpPk:sum(packetBytes) 	322960
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
@@ -869,11 +869,11 @@ scalar Topo.server1.eth[0].encap 	pauseSent:count 	0
 attr title  "pause sent, count"
 scalar Topo.server1.eth[0].encap 	pauseSent:sum 	0
 attr title  "pause sent, sum"
-scalar Topo.server1.eth[0].encap 	decapPk:count 	953
+scalar Topo.server1.eth[0].encap 	decapPk:count 	253
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, count"
-scalar Topo.server1.eth[0].encap 	decapPk:sum(packetBytes) 	1212934
+scalar Topo.server1.eth[0].encap 	decapPk:sum(packetBytes) 	318334
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
@@ -885,11 +885,11 @@ scalar Topo.server1.eth[0].encap 	encapPk:sum(packetBytes) 	28
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.server1.udpApp[0] 	rcvdPk:count 	949
+scalar Topo.server1.udpApp[0] 	rcvdPk:count 	249
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server1.udpApp[0] 	rcvdPk:sum(packetBytes) 	1186250
+scalar Topo.server1.udpApp[0] 	rcvdPk:sum(packetBytes) 	311250
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -899,14 +899,14 @@ attr title  "packets dropped (checksum error), count"
 scalar Topo.server1.udp 	droppedPkWrongPort:count 	0
 attr interpolationmode  none
 attr title  "packets dropped (wrong port), count"
-scalar Topo.server1.udp 	passedUpPk:count 	949
+scalar Topo.server1.udp 	passedUpPk:count 	249
 attr interpolationmode  none
 attr title  "packets passed up, count"
-scalar Topo.server1.udp 	rcvdPk:count 	949
+scalar Topo.server1.udp 	rcvdPk:count 	249
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server1.udp 	rcvdPk:sum(packetBytes) 	1193842
+scalar Topo.server1.udp 	rcvdPk:sum(packetBytes) 	313242
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -952,14 +952,14 @@ scalar Topo.server2.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.server2.eth[0].mac 	"simulated time" 	95
+scalar Topo.server2.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.server2.eth[0].mac 	full-duplex 	1
-scalar Topo.server2.eth[0].mac 	"frames/sec sent" 	0.021052631578947
-scalar Topo.server2.eth[0].mac 	"frames/sec rcvd" 	4.1789473684211
-scalar Topo.server2.eth[0].mac 	"bits/sec sent" 	10.778947368421
-scalar Topo.server2.eth[0].mac 	"bits/sec rcvd" 	23407.831578947
-scalar Topo.server2.eth[0].mac 	"rx channel idle (%)" 	99.976324715789
-scalar Topo.server2.eth[0].mac 	"rx channel utilization (%)" 	0.023675284210526
+scalar Topo.server2.eth[0].mac 	"frames/sec sent" 	0.080319771903176
+scalar Topo.server2.eth[0].mac 	"frames/sec rcvd" 	2.8111920166112
+scalar Topo.server2.eth[0].mac 	"bits/sec sent" 	41.123723214426
+scalar Topo.server2.eth[0].mac 	"bits/sec rcvd" 	22417.569617264
+scalar Topo.server2.eth[0].mac 	"rx channel idle (%)" 	99.977402514094
+scalar Topo.server2.eth[0].mac 	"rx channel utilization (%)" 	0.022597485906327
 scalar Topo.server2.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -1004,11 +1004,11 @@ attr title  "pause units sent, count"
 scalar Topo.server2.eth[0].mac 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.server2.eth[0].mac 	rxPkOk:count 	397
+scalar Topo.server2.eth[0].mac 	rxPkOk:count 	70
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.server2.eth[0].mac 	rxPkOk:sum(packetBytes) 	277968
+scalar Topo.server2.eth[0].mac 	rxPkOk:sum(packetBytes) 	69776
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1020,11 +1020,11 @@ scalar Topo.server2.eth[0].mac 	txPk:sum(packetBytes) 	128
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
-scalar Topo.server2.eth[0].mac 	passedUpPk:count 	397
+scalar Topo.server2.eth[0].mac 	passedUpPk:count 	70
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.server2.eth[0].mac 	passedUpPk:sum(packetBytes) 	277968
+scalar Topo.server2.eth[0].mac 	passedUpPk:sum(packetBytes) 	69776
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
@@ -1032,11 +1032,11 @@ scalar Topo.server2.eth[0].encap 	pauseSent:count 	0
 attr title  "pause sent, count"
 scalar Topo.server2.eth[0].encap 	pauseSent:sum 	0
 attr title  "pause sent, sum"
-scalar Topo.server2.eth[0].encap 	decapPk:count 	397
+scalar Topo.server2.eth[0].encap 	decapPk:count 	70
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, count"
-scalar Topo.server2.eth[0].encap 	decapPk:sum(packetBytes) 	262102
+scalar Topo.server2.eth[0].encap 	decapPk:sum(packetBytes) 	67846
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
@@ -1048,11 +1048,11 @@ scalar Topo.server2.eth[0].encap 	encapPk:sum(packetBytes) 	56
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.server2.udpApp[0] 	rcvdPk:count 	393
+scalar Topo.server2.udpApp[0] 	rcvdPk:count 	66
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server2.udpApp[0] 	rcvdPk:sum(packetBytes) 	256250
+scalar Topo.server2.udpApp[0] 	rcvdPk:sum(packetBytes) 	66250
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -1062,14 +1062,14 @@ attr title  "packets dropped (checksum error), count"
 scalar Topo.server2.udp 	droppedPkWrongPort:count 	0
 attr interpolationmode  none
 attr title  "packets dropped (wrong port), count"
-scalar Topo.server2.udp 	passedUpPk:count 	393
+scalar Topo.server2.udp 	passedUpPk:count 	66
 attr interpolationmode  none
 attr title  "packets passed up, count"
-scalar Topo.server2.udp 	rcvdPk:count 	393
+scalar Topo.server2.udp 	rcvdPk:count 	66
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server2.udp 	rcvdPk:sum(packetBytes) 	257890
+scalar Topo.server2.udp 	rcvdPk:sum(packetBytes) 	66674
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -1115,14 +1115,14 @@ scalar Topo.server3.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.server3.eth[0].mac 	"simulated time" 	95
+scalar Topo.server3.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.server3.eth[0].mac 	full-duplex 	1
-scalar Topo.server3.eth[0].mac 	"frames/sec sent" 	0.010526315789474
-scalar Topo.server3.eth[0].mac 	"frames/sec rcvd" 	5.0315789473684
-scalar Topo.server3.eth[0].mac 	"bits/sec sent" 	5.3894736842105
-scalar Topo.server3.eth[0].mac 	"bits/sec rcvd" 	51752.421052632
-scalar Topo.server3.eth[0].mac 	"rx channel idle (%)" 	99.947925557895
-scalar Topo.server3.eth[0].mac 	"rx channel utilization (%)" 	0.052074442105263
+scalar Topo.server3.eth[0].mac 	"frames/sec sent" 	0.040159885951588
+scalar Topo.server3.eth[0].mac 	"frames/sec rcvd" 	5.1404654018033
+scalar Topo.server3.eth[0].mac 	"bits/sec sent" 	20.561861607213
+scalar Topo.server3.eth[0].mac 	"bits/sec rcvd" 	51713.081942141
+scalar Topo.server3.eth[0].mac 	"rx channel idle (%)" 	99.947957928272
+scalar Topo.server3.eth[0].mac 	"rx channel utilization (%)" 	0.052042071727856
 scalar Topo.server3.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -1167,11 +1167,11 @@ attr title  "pause units sent, count"
 scalar Topo.server3.eth[0].mac 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.server3.eth[0].mac 	rxPkOk:count 	478
+scalar Topo.server3.eth[0].mac 	rxPkOk:count 	128
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.server3.eth[0].mac 	rxPkOk:sum(packetBytes) 	614560
+scalar Topo.server3.eth[0].mac 	rxPkOk:sum(packetBytes) 	160960
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1183,11 +1183,11 @@ scalar Topo.server3.eth[0].mac 	txPk:sum(packetBytes) 	64
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
-scalar Topo.server3.eth[0].mac 	passedUpPk:count 	478
+scalar Topo.server3.eth[0].mac 	passedUpPk:count 	128
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.server3.eth[0].mac 	passedUpPk:sum(packetBytes) 	614560
+scalar Topo.server3.eth[0].mac 	passedUpPk:sum(packetBytes) 	160960
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
@@ -1195,11 +1195,11 @@ scalar Topo.server3.eth[0].encap 	pauseSent:count 	0
 attr title  "pause sent, count"
 scalar Topo.server3.eth[0].encap 	pauseSent:sum 	0
 attr title  "pause sent, sum"
-scalar Topo.server3.eth[0].encap 	decapPk:count 	478
+scalar Topo.server3.eth[0].encap 	decapPk:count 	128
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, count"
-scalar Topo.server3.eth[0].encap 	decapPk:sum(packetBytes) 	605884
+scalar Topo.server3.eth[0].encap 	decapPk:sum(packetBytes) 	158584
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
@@ -1211,11 +1211,11 @@ scalar Topo.server3.eth[0].encap 	encapPk:sum(packetBytes) 	28
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.server3.udpApp[0] 	rcvdPk:count 	474
+scalar Topo.server3.udpApp[0] 	rcvdPk:count 	124
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server3.udpApp[0] 	rcvdPk:sum(packetBytes) 	592500
+scalar Topo.server3.udpApp[0] 	rcvdPk:sum(packetBytes) 	155000
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -1225,14 +1225,14 @@ attr title  "packets dropped (checksum error), count"
 scalar Topo.server3.udp 	droppedPkWrongPort:count 	0
 attr interpolationmode  none
 attr title  "packets dropped (wrong port), count"
-scalar Topo.server3.udp 	passedUpPk:count 	474
+scalar Topo.server3.udp 	passedUpPk:count 	124
 attr interpolationmode  none
 attr title  "packets passed up, count"
-scalar Topo.server3.udp 	rcvdPk:count 	474
+scalar Topo.server3.udp 	rcvdPk:count 	124
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, count"
-scalar Topo.server3.udp 	rcvdPk:sum(packetBytes) 	596292
+scalar Topo.server3.udp 	rcvdPk:sum(packetBytes) 	155992
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, sum(packetBytes)"
@@ -1254,14 +1254,14 @@ scalar Topo.s1.networkLayer.arp 	sentReply:count 	0
 attr title  "ARP replies sent, count"
 scalar Topo.s1.networkLayer.arp 	sentReq:count 	1
 attr title  "ARP request sent, count"
-scalar Topo.s1.eth[0].mac 	"simulated time" 	95
+scalar Topo.s1.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.s1.eth[0].mac 	full-duplex 	1
-scalar Topo.s1.eth[0].mac 	"frames/sec sent" 	131.98947368421
-scalar Topo.s1.eth[0].mac 	"frames/sec rcvd" 	131.97894736842
-scalar Topo.s1.eth[0].mac 	"bits/sec sent" 	242962.52631579
-scalar Topo.s1.eth[0].mac 	"bits/sec rcvd" 	243014.31578947
-scalar Topo.s1.eth[0].mac 	"rx channel idle (%)" 	99.748539031579
-scalar Topo.s1.eth[0].mac 	"rx channel utilization (%)" 	0.25146096842105
+scalar Topo.s1.eth[0].mac 	"frames/sec sent" 	115.21871279511
+scalar Topo.s1.eth[0].mac 	"frames/sec rcvd" 	115.17855290915
+scalar Topo.s1.eth[0].mac 	"bits/sec sent" 	234193.82068258
+scalar Topo.s1.eth[0].mac 	"bits/sec rcvd" 	234230.12521948
+scalar Topo.s1.eth[0].mac 	"rx channel idle (%)" 	99.758398447394
+scalar Topo.s1.eth[0].mac 	"rx channel utilization (%)" 	0.24160155260567
 scalar Topo.s1.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -1286,11 +1286,11 @@ scalar Topo.s1.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.s1.eth[0].mac 	rxPkFromHL:count 	12539
+scalar Topo.s1.eth[0].mac 	rxPkFromHL:count 	2869
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.s1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	2885180
+scalar Topo.s1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	728942
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -1306,27 +1306,27 @@ attr title  "pause units sent, count"
 scalar Topo.s1.eth[0].mac 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.s1.eth[0].mac 	rxPkOk:count 	12538
+scalar Topo.s1.eth[0].mac 	rxPkOk:count 	2868
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.s1.eth[0].mac 	rxPkOk:sum(packetBytes) 	2885795
+scalar Topo.s1.eth[0].mac 	rxPkOk:sum(packetBytes) 	729055
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.s1.eth[0].mac 	txPk:count 	12539
+scalar Topo.s1.eth[0].mac 	txPk:count 	2869
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.s1.eth[0].mac 	txPk:sum(packetBytes) 	2885180
+scalar Topo.s1.eth[0].mac 	txPk:sum(packetBytes) 	728942
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
-scalar Topo.s1.eth[0].mac 	passedUpPk:count 	12538
+scalar Topo.s1.eth[0].mac 	passedUpPk:count 	2868
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.s1.eth[0].mac 	passedUpPk:sum(packetBytes) 	2885795
+scalar Topo.s1.eth[0].mac 	passedUpPk:sum(packetBytes) 	729055
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
@@ -1334,30 +1334,30 @@ scalar Topo.s1.eth[0].encap 	pauseSent:count 	0
 attr title  "pause sent, count"
 scalar Topo.s1.eth[0].encap 	pauseSent:sum 	0
 attr title  "pause sent, sum"
-scalar Topo.s1.eth[0].encap 	decapPk:count 	12538
+scalar Topo.s1.eth[0].encap 	decapPk:count 	2868
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, count"
-scalar Topo.s1.eth[0].encap 	decapPk:sum(packetBytes) 	2615560
+scalar Topo.s1.eth[0].encap 	decapPk:sum(packetBytes) 	668211
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.s1.eth[0].encap 	encapPk:count 	12539
+scalar Topo.s1.eth[0].encap 	encapPk:count 	2869
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.s1.eth[0].encap 	encapPk:sum(packetBytes) 	2615010
+scalar Topo.s1.eth[0].encap 	encapPk:sum(packetBytes) 	667808
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
-scalar Topo.s1.etherMAC[0] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[0] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[0] 	full-duplex 	1
-scalar Topo.s1.etherMAC[0] 	"frames/sec sent" 	0.042105263157895
-scalar Topo.s1.etherMAC[0] 	"frames/sec rcvd" 	10
-scalar Topo.s1.etherMAC[0] 	"bits/sec sent" 	21.557894736842
-scalar Topo.s1.etherMAC[0] 	"bits/sec rcvd" 	103576.25263158
-scalar Topo.s1.etherMAC[0] 	"rx channel idle (%)" 	99.895783747368
-scalar Topo.s1.etherMAC[0] 	"rx channel utilization (%)" 	0.10421625263158
+scalar Topo.s1.etherMAC[0] 	"frames/sec sent" 	0.16063954380635
+scalar Topo.s1.etherMAC[0] 	"frames/sec rcvd" 	10.039971487897
+scalar Topo.s1.etherMAC[0] 	"bits/sec sent" 	82.247446428852
+scalar Topo.s1.etherMAC[0] 	"bits/sec rcvd" 	103698.60855058
+scalar Topo.s1.etherMAC[0] 	"rx channel idle (%)" 	99.895658833274
+scalar Topo.s1.etherMAC[0] 	"rx channel utilization (%)" 	0.1043411667258
 scalar Topo.s1.etherMAC[0] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[0] 	collisions 	0
 scalar Topo.s1.etherMAC[0] 	backoffs 	0
@@ -1405,11 +1405,11 @@ attr title  "pause units sent, count"
 scalar Topo.s1.etherMAC[0] 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.s1.etherMAC[0] 	rxPkOk:count 	950
+scalar Topo.s1.etherMAC[0] 	rxPkOk:count 	250
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.s1.etherMAC[0] 	rxPkOk:sum(packetBytes) 	1229968
+scalar Topo.s1.etherMAC[0] 	rxPkOk:sum(packetBytes) 	322768
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1427,22 +1427,22 @@ attr title  "backoff, count"
 scalar Topo.s1.etherMAC[0] 	collision:count 	0
 attr interpolationmode  none
 attr title  "collision, count"
-scalar Topo.s1.etherMAC[0] 	passedUpPk:count 	950
+scalar Topo.s1.etherMAC[0] 	passedUpPk:count 	250
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.s1.etherMAC[0] 	passedUpPk:sum(packetBytes) 	1229968
+scalar Topo.s1.etherMAC[0] 	passedUpPk:sum(packetBytes) 	322768
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[1] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[1] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[1] 	full-duplex 	1
-scalar Topo.s1.etherMAC[1] 	"frames/sec sent" 	0.042105263157895
-scalar Topo.s1.etherMAC[1] 	"frames/sec rcvd" 	1.6736842105263
-scalar Topo.s1.etherMAC[1] 	"bits/sec sent" 	21.557894736842
-scalar Topo.s1.etherMAC[1] 	"bits/sec rcvd" 	17249.010526316
-scalar Topo.s1.etherMAC[1] 	"rx channel idle (%)" 	99.982643873684
-scalar Topo.s1.etherMAC[1] 	"rx channel utilization (%)" 	0.017356126315789
+scalar Topo.s1.etherMAC[1] 	"frames/sec sent" 	0.16063954380635
+scalar Topo.s1.etherMAC[1] 	"frames/sec rcvd" 	1.6867152099667
+scalar Topo.s1.etherMAC[1] 	"bits/sec sent" 	82.247446428852
+scalar Topo.s1.etherMAC[1] 	"bits/sec rcvd" 	17092.047460996
+scalar Topo.s1.etherMAC[1] 	"rx channel idle (%)" 	99.982800002766
+scalar Topo.s1.etherMAC[1] 	"rx channel utilization (%)" 	0.017199997234434
 scalar Topo.s1.etherMAC[1] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[1] 	collisions 	0
 scalar Topo.s1.etherMAC[1] 	backoffs 	0
@@ -1490,11 +1490,11 @@ attr title  "pause units sent, count"
 scalar Topo.s1.etherMAC[1] 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.s1.etherMAC[1] 	rxPkOk:count 	159
+scalar Topo.s1.etherMAC[1] 	rxPkOk:count 	42
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.s1.etherMAC[1] 	rxPkOk:sum(packetBytes) 	204832
+scalar Topo.s1.etherMAC[1] 	rxPkOk:sum(packetBytes) 	53200
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1512,22 +1512,22 @@ attr title  "backoff, count"
 scalar Topo.s1.etherMAC[1] 	collision:count 	0
 attr interpolationmode  none
 attr title  "collision, count"
-scalar Topo.s1.etherMAC[1] 	passedUpPk:count 	159
+scalar Topo.s1.etherMAC[1] 	passedUpPk:count 	42
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.s1.etherMAC[1] 	passedUpPk:sum(packetBytes) 	204832
+scalar Topo.s1.etherMAC[1] 	passedUpPk:sum(packetBytes) 	53200
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[2] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[2] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[2] 	full-duplex 	1
-scalar Topo.s1.etherMAC[2] 	"frames/sec sent" 	0.042105263157895
-scalar Topo.s1.etherMAC[2] 	"frames/sec rcvd" 	0.50526315789474
-scalar Topo.s1.etherMAC[2] 	"bits/sec sent" 	21.557894736842
-scalar Topo.s1.etherMAC[2] 	"bits/sec rcvd" 	5134.8210526316
-scalar Topo.s1.etherMAC[2] 	"rx channel idle (%)" 	99.994832842105
-scalar Topo.s1.etherMAC[2] 	"rx channel utilization (%)" 	0.0051671578947368
+scalar Topo.s1.etherMAC[2] 	"frames/sec sent" 	0.16063954380635
+scalar Topo.s1.etherMAC[2] 	"frames/sec rcvd" 	0.52207851737065
+scalar Topo.s1.etherMAC[2] 	"bits/sec sent" 	82.247446428852
+scalar Topo.s1.etherMAC[2] 	"bits/sec rcvd" 	5017.09423216
+scalar Topo.s1.etherMAC[2] 	"rx channel idle (%)" 	99.994949492743
+scalar Topo.s1.etherMAC[2] 	"rx channel utilization (%)" 	0.0050505072572717
 scalar Topo.s1.etherMAC[2] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[2] 	collisions 	0
 scalar Topo.s1.etherMAC[2] 	backoffs 	0
@@ -1575,11 +1575,11 @@ attr title  "pause units sent, count"
 scalar Topo.s1.etherMAC[2] 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.s1.etherMAC[2] 	rxPkOk:count 	48
+scalar Topo.s1.etherMAC[2] 	rxPkOk:count 	13
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.s1.etherMAC[2] 	rxPkOk:sum(packetBytes) 	60976
+scalar Topo.s1.etherMAC[2] 	rxPkOk:sum(packetBytes) 	15616
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1597,22 +1597,22 @@ attr title  "backoff, count"
 scalar Topo.s1.etherMAC[2] 	collision:count 	0
 attr interpolationmode  none
 attr title  "collision, count"
-scalar Topo.s1.etherMAC[2] 	passedUpPk:count 	48
+scalar Topo.s1.etherMAC[2] 	passedUpPk:count 	13
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.s1.etherMAC[2] 	passedUpPk:sum(packetBytes) 	60976
+scalar Topo.s1.etherMAC[2] 	passedUpPk:sum(packetBytes) 	15616
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[3] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[3] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[3] 	full-duplex 	1
-scalar Topo.s1.etherMAC[3] 	"frames/sec sent" 	0.042105263157895
-scalar Topo.s1.etherMAC[3] 	"frames/sec rcvd" 	5
-scalar Topo.s1.etherMAC[3] 	"bits/sec sent" 	21.557894736842
-scalar Topo.s1.etherMAC[3] 	"bits/sec rcvd" 	51736.252631579
-scalar Topo.s1.etherMAC[3] 	"rx channel idle (%)" 	99.947943747368
-scalar Topo.s1.etherMAC[3] 	"rx channel utilization (%)" 	0.052056252631579
+scalar Topo.s1.etherMAC[3] 	"frames/sec sent" 	0.16063954380635
+scalar Topo.s1.etherMAC[3] 	"frames/sec rcvd" 	5.0199857439485
+scalar Topo.s1.etherMAC[3] 	"bits/sec sent" 	82.247446428852
+scalar Topo.s1.etherMAC[3] 	"bits/sec rcvd" 	51651.396357319
+scalar Topo.s1.etherMAC[3] 	"rx channel idle (%)" 	99.948027324555
+scalar Topo.s1.etherMAC[3] 	"rx channel utilization (%)" 	0.051972675444932
 scalar Topo.s1.etherMAC[3] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[3] 	collisions 	0
 scalar Topo.s1.etherMAC[3] 	backoffs 	0
@@ -1660,11 +1660,11 @@ attr title  "pause units sent, count"
 scalar Topo.s1.etherMAC[3] 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.s1.etherMAC[3] 	rxPkOk:count 	475
+scalar Topo.s1.etherMAC[3] 	rxPkOk:count 	125
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.s1.etherMAC[3] 	rxPkOk:sum(packetBytes) 	614368
+scalar Topo.s1.etherMAC[3] 	rxPkOk:sum(packetBytes) 	160768
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
@@ -1682,22 +1682,22 @@ attr title  "backoff, count"
 scalar Topo.s1.etherMAC[3] 	collision:count 	0
 attr interpolationmode  none
 attr title  "collision, count"
-scalar Topo.s1.etherMAC[3] 	passedUpPk:count 	475
+scalar Topo.s1.etherMAC[3] 	passedUpPk:count 	125
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.s1.etherMAC[3] 	passedUpPk:sum(packetBytes) 	614368
+scalar Topo.s1.etherMAC[3] 	passedUpPk:sum(packetBytes) 	160768
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[4] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[4] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[4] 	full-duplex 	1
-scalar Topo.s1.etherMAC[4] 	"frames/sec sent" 	10.031578947368
-scalar Topo.s1.etherMAC[4] 	"frames/sec rcvd" 	0.010526315789474
-scalar Topo.s1.etherMAC[4] 	"bits/sec sent" 	103592.42105263
-scalar Topo.s1.etherMAC[4] 	"bits/sec rcvd" 	5.3894736842105
-scalar Topo.s1.etherMAC[4] 	"rx channel idle (%)" 	99.999993936842
-scalar Topo.s1.etherMAC[4] 	"rx channel utilization (%)" 	6.0631578947368e-06
+scalar Topo.s1.etherMAC[4] 	"frames/sec sent" 	10.160451145752
+scalar Topo.s1.etherMAC[4] 	"frames/sec rcvd" 	0.040159885951588
+scalar Topo.s1.etherMAC[4] 	"bits/sec sent" 	103760.2941354
+scalar Topo.s1.etherMAC[4] 	"bits/sec rcvd" 	20.561861607213
+scalar Topo.s1.etherMAC[4] 	"rx channel idle (%)" 	99.999976867906
+scalar Topo.s1.etherMAC[4] 	"rx channel utilization (%)" 	2.3132094308115e-05
 scalar Topo.s1.etherMAC[4] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[4] 	collisions 	0
 scalar Topo.s1.etherMAC[4] 	backoffs 	0
@@ -1725,11 +1725,11 @@ scalar Topo.s1.etherMAC[4] 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.s1.etherMAC[4] 	rxPkFromHL:count 	953
+scalar Topo.s1.etherMAC[4] 	rxPkFromHL:count 	253
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.s1.etherMAC[4] 	rxPkFromHL:sum(packetBytes) 	1230160
+scalar Topo.s1.etherMAC[4] 	rxPkFromHL:sum(packetBytes) 	322960
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -1753,11 +1753,11 @@ scalar Topo.s1.etherMAC[4] 	rxPkOk:sum(packetBytes) 	64
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.s1.etherMAC[4] 	txPk:count 	953
+scalar Topo.s1.etherMAC[4] 	txPk:count 	253
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.s1.etherMAC[4] 	txPk:sum(packetBytes) 	1230160
+scalar Topo.s1.etherMAC[4] 	txPk:sum(packetBytes) 	322960
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -1775,14 +1775,14 @@ scalar Topo.s1.etherMAC[4] 	passedUpPk:sum(packetBytes) 	64
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[5] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[5] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[5] 	full-duplex 	1
-scalar Topo.s1.etherMAC[5] 	"frames/sec sent" 	4.1789473684211
-scalar Topo.s1.etherMAC[5] 	"frames/sec rcvd" 	0.021052631578947
-scalar Topo.s1.etherMAC[5] 	"bits/sec sent" 	23407.831578947
-scalar Topo.s1.etherMAC[5] 	"bits/sec rcvd" 	10.778947368421
-scalar Topo.s1.etherMAC[5] 	"rx channel idle (%)" 	99.999987873684
-scalar Topo.s1.etherMAC[5] 	"rx channel utilization (%)" 	1.2126315789474e-05
+scalar Topo.s1.etherMAC[5] 	"frames/sec sent" 	2.8111920166112
+scalar Topo.s1.etherMAC[5] 	"frames/sec rcvd" 	0.080319771903176
+scalar Topo.s1.etherMAC[5] 	"bits/sec sent" 	22417.569617264
+scalar Topo.s1.etherMAC[5] 	"bits/sec rcvd" 	41.123723214426
+scalar Topo.s1.etherMAC[5] 	"rx channel idle (%)" 	99.999953735811
+scalar Topo.s1.etherMAC[5] 	"rx channel utilization (%)" 	4.6264188616229e-05
 scalar Topo.s1.etherMAC[5] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[5] 	collisions 	0
 scalar Topo.s1.etherMAC[5] 	backoffs 	0
@@ -1810,11 +1810,11 @@ scalar Topo.s1.etherMAC[5] 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.s1.etherMAC[5] 	rxPkFromHL:count 	397
+scalar Topo.s1.etherMAC[5] 	rxPkFromHL:count 	70
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.s1.etherMAC[5] 	rxPkFromHL:sum(packetBytes) 	277968
+scalar Topo.s1.etherMAC[5] 	rxPkFromHL:sum(packetBytes) 	69776
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -1838,11 +1838,11 @@ scalar Topo.s1.etherMAC[5] 	rxPkOk:sum(packetBytes) 	128
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.s1.etherMAC[5] 	txPk:count 	397
+scalar Topo.s1.etherMAC[5] 	txPk:count 	70
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.s1.etherMAC[5] 	txPk:sum(packetBytes) 	277968
+scalar Topo.s1.etherMAC[5] 	txPk:sum(packetBytes) 	69776
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -1860,14 +1860,14 @@ scalar Topo.s1.etherMAC[5] 	passedUpPk:sum(packetBytes) 	128
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.s1.etherMAC[6] 	"simulated time" 	95
+scalar Topo.s1.etherMAC[6] 	"simulated time" 	24.900469119994
 scalar Topo.s1.etherMAC[6] 	full-duplex 	1
-scalar Topo.s1.etherMAC[6] 	"frames/sec sent" 	5.0315789473684
-scalar Topo.s1.etherMAC[6] 	"frames/sec rcvd" 	0.010526315789474
-scalar Topo.s1.etherMAC[6] 	"bits/sec sent" 	51752.421052632
-scalar Topo.s1.etherMAC[6] 	"bits/sec rcvd" 	5.3894736842105
-scalar Topo.s1.etherMAC[6] 	"rx channel idle (%)" 	99.999993936842
-scalar Topo.s1.etherMAC[6] 	"rx channel utilization (%)" 	6.0631578947368e-06
+scalar Topo.s1.etherMAC[6] 	"frames/sec sent" 	5.1404654018033
+scalar Topo.s1.etherMAC[6] 	"frames/sec rcvd" 	0.040159885951588
+scalar Topo.s1.etherMAC[6] 	"bits/sec sent" 	51713.081942141
+scalar Topo.s1.etherMAC[6] 	"bits/sec rcvd" 	20.561861607213
+scalar Topo.s1.etherMAC[6] 	"rx channel idle (%)" 	99.999976867906
+scalar Topo.s1.etherMAC[6] 	"rx channel utilization (%)" 	2.3132094308115e-05
 scalar Topo.s1.etherMAC[6] 	"rx channel collision (%)" 	0
 scalar Topo.s1.etherMAC[6] 	collisions 	0
 scalar Topo.s1.etherMAC[6] 	backoffs 	0
@@ -1895,11 +1895,11 @@ scalar Topo.s1.etherMAC[6] 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.s1.etherMAC[6] 	rxPkFromHL:count 	478
+scalar Topo.s1.etherMAC[6] 	rxPkFromHL:count 	128
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.s1.etherMAC[6] 	rxPkFromHL:sum(packetBytes) 	614560
+scalar Topo.s1.etherMAC[6] 	rxPkFromHL:sum(packetBytes) 	160960
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -1923,11 +1923,11 @@ scalar Topo.s1.etherMAC[6] 	rxPkOk:sum(packetBytes) 	64
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.s1.etherMAC[6] 	txPk:count 	478
+scalar Topo.s1.etherMAC[6] 	txPk:count 	128
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.s1.etherMAC[6] 	txPk:sum(packetBytes) 	614560
+scalar Topo.s1.etherMAC[6] 	txPk:sum(packetBytes) 	160960
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
@@ -1981,14 +1981,14 @@ scalar Topo.controller.lo0.lo 	passedUpPk:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
-scalar Topo.controller.eth[0].mac 	"simulated time" 	95
+scalar Topo.controller.eth[0].mac 	"simulated time" 	24.900469119994
 scalar Topo.controller.eth[0].mac 	full-duplex 	1
-scalar Topo.controller.eth[0].mac 	"frames/sec sent" 	131.97894736842
-scalar Topo.controller.eth[0].mac 	"frames/sec rcvd" 	131.98947368421
-scalar Topo.controller.eth[0].mac 	"bits/sec sent" 	243014.31578947
-scalar Topo.controller.eth[0].mac 	"bits/sec rcvd" 	242962.52631579
-scalar Topo.controller.eth[0].mac 	"rx channel idle (%)" 	99.748590147368
-scalar Topo.controller.eth[0].mac 	"rx channel utilization (%)" 	0.25140985263158
+scalar Topo.controller.eth[0].mac 	"frames/sec sent" 	115.17855290915
+scalar Topo.controller.eth[0].mac 	"frames/sec rcvd" 	115.21871279511
+scalar Topo.controller.eth[0].mac 	"bits/sec sent" 	234230.12521948
+scalar Topo.controller.eth[0].mac 	"bits/sec rcvd" 	234193.82068258
+scalar Topo.controller.eth[0].mac 	"rx channel idle (%)" 	99.758432181699
+scalar Topo.controller.eth[0].mac 	"rx channel utilization (%)" 	0.24156781830147
 scalar Topo.controller.eth[0].mac 	droppedPkNotForUs:count 	0
 attr interpolationmode  none
 attr source  dropPkNotForUs
@@ -2013,11 +2013,11 @@ scalar Topo.controller.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
 attr interpolationmode  none
 attr source  dropPkBitError
 attr title  "packets dropped/bit error, sum(packetBytes)"
-scalar Topo.controller.eth[0].mac 	rxPkFromHL:count 	12538
+scalar Topo.controller.eth[0].mac 	rxPkFromHL:count 	2868
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, count"
-scalar Topo.controller.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	2885795
+scalar Topo.controller.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	729055
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, sum(packetBytes)"
@@ -2033,27 +2033,27 @@ attr title  "pause units sent, count"
 scalar Topo.controller.eth[0].mac 	txPausePkUnits:sum 	0
 attr interpolationmode  none
 attr title  "pause units sent, sum"
-scalar Topo.controller.eth[0].mac 	rxPkOk:count 	12539
+scalar Topo.controller.eth[0].mac 	rxPkOk:count 	2869
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, count"
-scalar Topo.controller.eth[0].mac 	rxPkOk:sum(packetBytes) 	2885180
+scalar Topo.controller.eth[0].mac 	rxPkOk:sum(packetBytes) 	728942
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, sum(packetBytes)"
-scalar Topo.controller.eth[0].mac 	txPk:count 	12538
+scalar Topo.controller.eth[0].mac 	txPk:count 	2868
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, count"
-scalar Topo.controller.eth[0].mac 	txPk:sum(packetBytes) 	2885795
+scalar Topo.controller.eth[0].mac 	txPk:sum(packetBytes) 	729055
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, sum(packetBytes)"
-scalar Topo.controller.eth[0].mac 	passedUpPk:count 	12539
+scalar Topo.controller.eth[0].mac 	passedUpPk:count 	2869
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, count"
-scalar Topo.controller.eth[0].mac 	passedUpPk:sum(packetBytes) 	2885180
+scalar Topo.controller.eth[0].mac 	passedUpPk:sum(packetBytes) 	728942
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, sum(packetBytes)"
@@ -2061,29 +2061,29 @@ scalar Topo.controller.eth[0].encap 	pauseSent:count 	0
 attr title  "pause sent, count"
 scalar Topo.controller.eth[0].encap 	pauseSent:sum 	0
 attr title  "pause sent, sum"
-scalar Topo.controller.eth[0].encap 	decapPk:count 	12539
+scalar Topo.controller.eth[0].encap 	decapPk:count 	2869
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, count"
-scalar Topo.controller.eth[0].encap 	decapPk:sum(packetBytes) 	2615010
+scalar Topo.controller.eth[0].encap 	decapPk:sum(packetBytes) 	667808
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, sum(packetBytes)"
-scalar Topo.controller.eth[0].encap 	encapPk:count 	12538
+scalar Topo.controller.eth[0].encap 	encapPk:count 	2868
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, count"
-scalar Topo.controller.eth[0].encap 	encapPk:sum(packetBytes) 	2615560
+scalar Topo.controller.eth[0].encap 	encapPk:sum(packetBytes) 	668211
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, sum(packetBytes)"
 statistic Topo.controller.entropy 	entropy:stats
-field count 3
-field mean -46.412939176459
-field stddev 0.24205685215043
-field sum -139.23881752938
-field sqrsum 6462.5999520323
-field min -46.552690765207
-field max -46.133435998961
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
 attr source  entropy
 attr title  "Entropy Value, stats"

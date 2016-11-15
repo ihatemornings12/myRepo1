@@ -85,7 +85,8 @@ from 20 every 0.4 do {
 
     # create a new NET-layer packet
     create(ipPacket, "NET.type", "0000") #"0000" no controlInfo
-    change(ipPacket, "NET.destAddress", "192.168.2.6")
+    change(ipPacket, "NET.srcAddress", RANDOM_IP)
+    change(ipPacket, "NET.destAddress", "192.168.0.21")
     change(ipPacket, "NET.transportProtocol", 17)
     #change(ipPacket, "NET.timeToLive", 5)
     #change(ipPacket, "NET.typeOfService", "a")
@@ -96,7 +97,7 @@ from 20 every 0.4 do {
     
 	# create a new MAC-layer packet
 	create(macPacket, "MAC.type", "0010")
-	change(macPacket, "MAC.src", "0A-AA-00-00-00-FF" )
+	change(macPacket, "MAC.src", RANDOM_MAC)
     change(macPacket, "MAC.dest", "0A-AA-00-00-00-06" )
 	change(macPacket, "MAC.etherType","ETHERTYPE_IPv4")
 	

@@ -316,7 +316,7 @@ void IPv4::handlePacketFromHL(cPacket *packet)
 
     // extract requested interface and next hop
     const InterfaceEntry *destIE = controlInfo ? const_cast<const InterfaceEntry *>(ift->getInterfaceById(controlInfo->getInterfaceId())) : NULL;
-
+    
     if (controlInfo)
         datagram->setControlInfo(controlInfo);    //FIXME ne rakjuk bele a cntrInfot!!!!! de kell :( kulonben a hook queue-ban elveszik a multicastloop flag
 

@@ -49,7 +49,7 @@ import inet.globalfilter.GlobalFilter;
 module Open_Flow_Switch_SEA 
 {
     parameters:
-        @node();
+        @node;
         @OF_Switch();
         @labels(node,ethernet-node);
         @display("i=device/switch;i2=OpenFlow-Logo-small");

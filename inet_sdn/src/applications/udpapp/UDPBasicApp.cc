@@ -116,15 +116,15 @@ IPvXAddress UDPBasicApp::chooseDestAddr()
 void UDPBasicApp::sendPacket()
 {
     char msgName[32] = "original";
-    sprintf(msgName, "FRANCESCO-%d", numSent);
+    //sprintf(msgName, "FRANCESCO-%d", numSent);
 	
 	 
-    //cPacket *payload2 = new cPacket(msgName);
-    // payload->setByteLength(par("messageLength").longValue());
+    cPacket *payload = new cPacket(msgName);
+    payload->setByteLength(par("messageLength").longValue());
     
     // <A.S>
-	SendApplicationPacket *payload = new SendApplicationPacket ("original", 1);
-	payload->setByteLength(par("messageLength").longValue());
+	//SendApplicationPacket *payload = new SendApplicationPacket ("original", 1);
+	//payload->setByteLength(par("messageLength").longValue());
 	
 	//<F.R.>
 	//ApplicationPacket* payload = new ApplicationPacket();
@@ -134,6 +134,7 @@ void UDPBasicApp::sendPacket()
     IPvXAddress destAddr = chooseDestAddr();
 
     emit(sentPkSignal, payload);
+
     socket.sendTo(payload, destAddr, destPort);
     numSent++;
 }

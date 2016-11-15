@@ -23,6 +23,7 @@
 #include "ExMachina.h"
 
 #include "FlatNetworkConfigurator.h"
+#include "IPv4NetworkConfigurator.h"
 
 Define_Module(LocalFilter);
 
@@ -381,7 +382,7 @@ void LocalFilter::initialize(int stage)
 		forgeInterfaceTable();
 		initializeGates();
 		// <A.S>
-		getNetworkParameters();
+		//getNetworkParameters();
 		
 		initializeAttacks();
 
@@ -392,9 +393,19 @@ void LocalFilter::initialize(int stage)
 // get the network address and netmask from the 'configurator' module
 //TODO change or extend for IPv4NetworkConfigurator module
 void LocalFilter::getNetworkParameters() {
-    FlatNetworkConfigurator *fc = check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator"));
-    networkAddr = fc->getNetworkAddress();
-    netmask = fc->getNetmask();
+    if (getParentModule()->getParentModule()->getSubmodule("configurator")!= NULL) {
+        if (check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator")) != NULL) {
+            FlatNetworkConfigurator *fc = check_and_cast<FlatNetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator"));
+            networkAddr = fc->getNetworkAddress();
+            netmask = fc->getNetmask();
+        }
+        if (check_and_cast<IPv4NetworkConfigurator *> (getParentModule()->getParentModule()->getSubmodule("configurator")) != NULL) {
+            //random IPs within all ranges will be generated
+            networkAddr = "";
+            netmask = "";
+        }
+    }
+    
 }
 
 

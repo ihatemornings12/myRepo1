@@ -119,6 +119,7 @@ void Change::executeOnField(cMessage** packetToChange, string value)
 	string packetClassName = "";
 	int packetLayer = getPacketLayer((cPacket*)(*packetToChange));
 	int fieldIndex;
+	bool isRandom = false;
 
 	// work on the clone of the original packet
 	substitutePacket = (cMessage*) hardCopy((cPacket*)(*packetToChange));
@@ -143,20 +144,33 @@ void Change::executeOnField(cMessage** packetToChange, string value)
 	}
 
     // <A.S>
-    if (isRandomValue(value)) 
+    if (isRandomValue(value)) {
         value = generateRandomValue(descriptor->getFieldTypeString(encapsulatedPacket, fieldIndex));
+        isRandom = true;
+    }
   
 	//explicit handling of Ipv4Datagram src & dst fields as well as EtherFrame src & dst fields
 	packetClassName = encapsulatedPacket->getClassName();
 
-    if (fieldName == "srcAddress" && packetClassName == "IPv4Datagram") 
-		(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(value.c_str()));
+    if (fieldName == "srcAddress" && packetClassName == "IPv4Datagram") {
+        if (isRandom)
+	        (check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(stoull(value)));
+		else
+		    (check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(value.c_str()));
+    }
 	else if (fieldName == "destAddress" && packetClassName == "IPv4Datagram")
 		(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setDestAddress(IPv4Address(value.c_str()));
-	else if (fieldName == "src" && packetClassName == "EthernetIIFrame") //FIXME it does not work for the moment because the localfilter is not connected between mac and phy layer!
-		(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(value.c_str()));
+	else if (fieldName == "src" && packetClassName == "EthernetIIFrame") {
+	    if (isRandom)
+	        (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(stoull(value)));
+		else
+		    (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(value.c_str()));
+	}
 	else if (fieldName == "dest" && packetClassName == "EthernetIIFrame")
-		(check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
+	    if (isRandom)
+	        (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(stoull(value)));
+		else
+		    (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
 	else
 		// edit the value of the specified field
 		descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!
@@ -184,7 +198,7 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
 		// <A.S>
 		bool isRandom = false;
         if (isRandomValue(value)) {
-            value = generateRandomValue(getValueType(value).c_str());
+            value = generateRandomValue(getValueType(value).c_str()); // ip, mac, int, long.. 
             isRandom = true;
         }
             
@@ -584,13 +598,13 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
 					IInterfaceTable *ift = InterfaceTableAccess().get();  
 					InterfaceEntry* ie;
 					IPv4Address registeredIPAddress;
-					if (ift!=NULL) {
+					if (ift != NULL) {
 						ie = ift->getInterfaceById(ipv4ControlInfo->getInterfaceId());
 						if (ie != NULL) 
 							registeredIPAddress = ie->ipv4Data()->getIPAddress();
 						else {
 							string errorMsg;
-							errorMsg.assign("[void Change:: There is no interface with this id");
+							errorMsg.assign("[void Change:: There is no interface to get the assigned IP address. Please define the correct interface id.");
 							opp_error(errorMsg.c_str());
 						}
 					}					
@@ -658,17 +672,29 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
 				}
 				
 				// hex format, may contain spaces, hypens and colons
-				if (fieldName == "macSrc") {			
-					if (value == "random")
-						value = generateRandomValue("MACAddress");
-					MACAddress macSrc(value.c_str());
-					(check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacSrc(macSrc);
+				if (fieldName == "macSrc") {
+				    // <A.S>			
+                    if (isRandom) {
+				        (check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacSrc(MACAddress(stoull(value)));
+				    }
+				    else {	
+					    MACAddress macSrc(value.c_str());
+					    (check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacSrc(macSrc);
+					}
+
 					return;
 				}
 				
-				if (fieldName == "macDest") { 				
-					MACAddress macDest(value.c_str());
-					(check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacDest(macDest);
+				if (fieldName == "macDest") { 
+				    // <A.S>			
+                    if (isRandom) {
+				        (check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacDest(MACAddress(stoull(value)));
+				    }
+				    else {	
+					    MACAddress macDest(value.c_str());
+					    (check_and_cast<IPv4ControlInfo*> (controlInfo))->setMacDest(macDest);
+					}				
+					
 					return;
 				}
 				

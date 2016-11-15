@@ -31,10 +31,10 @@ import inet.ofomnet.openflow.mitigation.*;
 //
 // TODO documentation
 //
-module Open_Flow_Controller extends inet.nodes.inet.StandardHost
+module Open_Flow_Controller_SEA extends inet.nodes.inet.StandardHost
 {
     parameters:
-        @node();
+       // @node();
         @labels(node,ethernet-node);
         @display("i=device/server;bgb=843,453;i2=OpenFlow-Logo-small");
         //int numTcpApps = default(0);

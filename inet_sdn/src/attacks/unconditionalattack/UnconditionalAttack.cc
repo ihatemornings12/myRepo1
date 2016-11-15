@@ -157,8 +157,13 @@ void UnconditionalAttack::execute(vector<cMessage*> &putMessages)
 				}
 				else {
 				    if (isRandomValue(valueName)) {
-				        if (valueName == "RANDOM_IP") 
-				            value = (IPv4Address(stoul(generateRandomValue(networkParameters.getNetworkAddress(), networkParameters.getNetmask())))).str();
+				        if (valueName == "RANDOM_IP") {
+				            //check if there is specific network/netmask
+				            if (networkParameters.getNetworkAddress().empty()) 
+				                value = valueName;
+				            else 
+				                value = (IPv4Address(stoul(generateRandomValue(networkParameters.getNetworkAddress(), networkParameters.getNetmask())))).str();				            
+				        }
 				        else
 				            value = valueName;
 				    }			

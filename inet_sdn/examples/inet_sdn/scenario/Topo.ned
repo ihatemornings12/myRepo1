@@ -32,7 +32,7 @@ network Topo
            parameters:
                 @display("p=1800, 700");
         }
-		configurator: FlatNetworkConfigurator {
+		configurator: IPv4NetworkConfigurator {
             parameters:
                 @display("p=1800, 500");
         }
@@ -61,7 +61,7 @@ network Topo
         s1: Open_Flow_Switch_SEA  {
             @display("p=1000,650");
         }
-        controller: Open_Flow_Controller {
+        controller: Open_Flow_Controller_SEA {
             @display("p=1000,100");
         }
 
