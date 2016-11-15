@@ -81,6 +81,7 @@ module Open_Flow_Switch_SEA
         }
         interfaceTable: InterfaceTable {
             parameters:
+                displayAddresses=false;        
                 @display("p=57,134");
         }
          routingTable: RoutingTable {

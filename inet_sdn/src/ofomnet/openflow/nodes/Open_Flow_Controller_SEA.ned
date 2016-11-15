@@ -52,6 +52,7 @@ module Open_Flow_Controller_SEA extends inet.nodes.inet.StandardHost
         double serviceTime @unit("s") = default(0s);
         double statsInterval @unit("s") = default(5s);
         int domainID = default(-1);
+        interfaceTable.displayAddresses=false;        
 
     gates:
         //inout ethg[] @labels(EtherFrame-conn);
