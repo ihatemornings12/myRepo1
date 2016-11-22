@@ -79,14 +79,14 @@ bool selectFunctionForwarding(cModule *mod, void *v_ptr){
     int id = *(int *)v_ptr;
     int domainID = -1;
 
-    if(mod->hasPar("doaminID")){
+    if(mod->hasPar("domainID")){
         domainID = mod->par("domainID").longValue();
-    }else if(mod->getParentModule()->hasPar("doaminID")){
+    }else if(mod->getParentModule()->hasPar("domainID")){
         domainID = mod->getParentModule()->par("domainID").longValue();
     }
 
     return (strcmp(mod->getNedTypeName(),"inet.nodes.inet.StandardHost")==0 ||
-            strcmp(mod->getNedTypeName(),"openflow.nodes.Open_Flow_Switch")==0) &&
+            strcmp(mod->getNedTypeName(),"inet.ofomnet.openflow.nodes.Open_Flow_Switch_SEA")==0) &&
             domainID==id;
 }
 
@@ -167,12 +167,10 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             IPv4Address dst_ip;
             if (buffer_id == OFP_NO_BUFFER)
             {
-
                 src_mac = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getSrc();
                 dst_mac = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getDest();
             } else
             {
-
                 src_mac = packet_in->getMatch().OFB_ETH_SRC;
                 dst_mac = packet_in->getMatch().OFB_ETH_DST;
             }
@@ -183,19 +181,20 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             int connID = ind->getConnId();
             EV <<  "connID: " << connID << endl;
 
-
             int outputGateId;
-
             bool routeFound = 0;
-
-
 
             for (int i=0; i<topo_forw.getNumNodes(); i++)
             {
+                
                 cTopology::Node *destNode = topo_forw.getNode(i);
-
-
+                
+                if (destNode->getModule() == NULL)
+                    continue;    
+                    
                 EtherMAC *eth =  (EtherMAC *) destNode->getModule()->getSubmodule("eth", 0)->getSubmodule("mac");
+
+                    
                 MACAddress mac = eth->getMACAddress();
 
                 // Skip forwarding for Ethernet frames with braodcast destination address
@@ -216,12 +215,16 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 
                         for (int j=0; j<topo_forw.getNumNodes(); j++)
                         {
+                           
                             if (i==j)continue;
                             // Only choose OpenFlow switches, otherwise proceed to next node in for loop
                             if (!nodeInfo[j].isOpenFlow)
                                 continue;
 
                             cTopology::Node *atNode = topo_forw.getNode(j);
+                            
+                            if (atNode->getModule() == NULL)
+                                continue;
                             // Only choose nodes which have shortest path to destination node
                             if (atNode->getNumPaths()==0)
                                 continue;
@@ -261,7 +264,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                         if (buffer_id == OFP_NO_BUFFER)
                         {
 
-                            //                            match->OFB_IN_PORT = packet_in->getEncapsulatedPacket()->getArrivalGate()->getIndex();
+                            //match->OFB_IN_PORT = packet_in->getEncapsulatedPacket()->getArrivalGate()->getIndex();
                             match->OFB_ETH_SRC = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getSrc();
                             match->OFB_ETH_DST = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getDest();
                             match->OFB_ETH_TYPE = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getEtherType();
@@ -269,7 +272,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                         } else
                         {
 
-                            //                            match->OFB_IN_PORT = packet_in->getMatch().OFB_IN_PORT;
+                            //match->OFB_IN_PORT = packet_in->getMatch().OFB_IN_PORT;
                             match->OFB_ETH_SRC = packet_in->getMatch().OFB_ETH_SRC;
                             match->OFB_ETH_DST = packet_in->getMatch().OFB_ETH_DST;
                             match->OFB_ETH_TYPE = packet_in->getMatch().OFB_ETH_TYPE;
@@ -285,10 +288,9 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                             controller->sendPacket(buffer_id, packet_in, rev_iterator->second, connID);
                         rev_iterator++;
                     }
-                    connID_outport.clear();
+                    connID_outport.clear(); 
                 }
             }
-
             if(!routeFound && isArpOracle){
                 routeFound = processARPPacket(packet_in, connID);
 
@@ -361,14 +363,14 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
     }
 
 
-    EV << "Processing ARP packet:\n";
+    std::cout << "Processing ARP packet:\n";
 
     // "?Is the opcode ares_op$REQUEST?  (NOW look at the opcode!!)"
     switch (match->OFB_ARP_OP)
     {
         case ARP_REQUEST:
         {
-            EV << "Packet was ARP REQUEST, sending REPLY\n";
+            std::cout << "Packet was ARP REQUEST, sending REPLY\n";
 
             arpPacket->setName("arpREPLY");
 
@@ -385,7 +387,7 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
             }
 
             if(tha.isUnspecified()){
-                EV << "No MAC address found for ARP REQUEST, triggering broadcast\n";
+                std::cout << "No MAC address found for ARP REQUEST, triggering broadcast\n";
                 return false;
             }
 
@@ -406,6 +408,7 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
                 controller->sendPacket(packet_in->getBuffer_id(), packet_in, OFPP_ANY, connID);
             }
 
+            std::cout<<" controller will send the OF msg" << endl;
             // Trigger sending of ARP REPLY
             controller->sendPacket(OFP_NO_BUFFER, packet_in, match->OFB_IN_PORT, connID);
 
@@ -415,7 +418,7 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
         }
         case ARP_REPLY:
         {
-            EV << "Packet was ARP REPLY and will be ignored\n";
+            std::cout << "Packet was ARP REPLY and will be ignored\n";
 
             break;
         }

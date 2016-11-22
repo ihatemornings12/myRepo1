@@ -35,7 +35,7 @@ network Scenario
         open_flow_switch: Open_Flow_Switch_SEA {
             @display("p=300,300");
         }
-        controller: Open_Flow_Controller {
+        controller: Open_Flow_Controller_SEA {
             @display("p=300,41");
         }
 

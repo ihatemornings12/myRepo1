@@ -1,2 +1,2 @@
 #disable node id=6 at occurence time 20s
-disable (10, 20)
+disable (12, 20)

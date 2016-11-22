@@ -6,7 +6,7 @@
 
 		<Attack>
 			<start_time>20</start_time>
-			<node>10</node>
+			<node>12</node>
 
 			<action>
 				<name>Disable</name>

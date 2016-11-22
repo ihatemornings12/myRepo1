@@ -1,0 +1,2701 @@
+version 2
+run disable-0-20161121-12:06:19-5534
+attr configname disable
+attr datetime 20161121-12:06:19
+attr experiment disable
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Topo
+attr processid 5534
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 722  Topo.s1.tcp  tcpRcvQueueBytes  ETV
+vector 709  Topo.s1.tcp  "advertised window"  ETV
+vector 708  Topo.s1.tcp  "receive window"  ETV
+vector 711  Topo.s1.tcp  "sent ack"  ETV
+vector 746  Topo.s2.tcp  tcpRcvQueueBytes  ETV
+vector 733  Topo.s2.tcp  "advertised window"  ETV
+vector 732  Topo.s2.tcp  "receive window"  ETV
+vector 735  Topo.s2.tcp  "sent ack"  ETV
+vector 770  Topo.s3.tcp  tcpRcvQueueBytes  ETV
+vector 757  Topo.s3.tcp  "advertised window"  ETV
+vector 756  Topo.s3.tcp  "receive window"  ETV
+vector 759  Topo.s3.tcp  "sent ack"  ETV
+vector 794  Topo.s4.tcp  tcpRcvQueueBytes  ETV
+vector 781  Topo.s4.tcp  "advertised window"  ETV
+vector 780  Topo.s4.tcp  "receive window"  ETV
+vector 783  Topo.s4.tcp  "sent ack"  ETV
+vector 818  Topo.s5.tcp  tcpRcvQueueBytes  ETV
+vector 805  Topo.s5.tcp  "advertised window"  ETV
+vector 804  Topo.s5.tcp  "receive window"  ETV
+vector 807  Topo.s5.tcp  "sent ack"  ETV
+vector 842  Topo.s6.tcp  tcpRcvQueueBytes  ETV
+vector 829  Topo.s6.tcp  "advertised window"  ETV
+vector 828  Topo.s6.tcp  "receive window"  ETV
+vector 831  Topo.s6.tcp  "sent ack"  ETV
+vector 866  Topo.s7.tcp  tcpRcvQueueBytes  ETV
+vector 853  Topo.s7.tcp  "advertised window"  ETV
+vector 852  Topo.s7.tcp  "receive window"  ETV
+vector 855  Topo.s7.tcp  "sent ack"  ETV
+vector 890  Topo.s8.tcp  tcpRcvQueueBytes  ETV
+vector 877  Topo.s8.tcp  "advertised window"  ETV
+vector 876  Topo.s8.tcp  "receive window"  ETV
+vector 879  Topo.s8.tcp  "sent ack"  ETV
+vector 33  Topo.s1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 91  Topo.s2.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 149  Topo.s3.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 196  Topo.s4.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 243  Topo.s5.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 301  Topo.s6.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 359  Topo.s7.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 395  Topo.s8.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 44  Topo.s1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 102  Topo.s2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 160  Topo.s3.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 207  Topo.s4.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 254  Topo.s5.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 312  Topo.s6.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 370  Topo.s7.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 406  Topo.s8.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 40  Topo.s1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 98  Topo.s2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 156  Topo.s3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 203  Topo.s4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 250  Topo.s5.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 308  Topo.s6.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 366  Topo.s7.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 402  Topo.s8.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 35  Topo.s1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 93  Topo.s2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 151  Topo.s3.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 198  Topo.s4.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 245  Topo.s5.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 303  Topo.s6.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 361  Topo.s7.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 397  Topo.s8.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 415  Topo.controller.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 416  Topo.controller.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 427  Topo.controller.eth[1].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 428  Topo.controller.eth[1].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 439  Topo.controller.eth[2].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 440  Topo.controller.eth[2].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 451  Topo.controller.eth[3].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 452  Topo.controller.eth[3].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 463  Topo.controller.eth[4].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 464  Topo.controller.eth[4].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 475  Topo.controller.eth[5].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 476  Topo.controller.eth[5].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 487  Topo.controller.eth[6].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 488  Topo.controller.eth[6].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 499  Topo.controller.eth[7].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 500  Topo.controller.eth[7].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 424  Topo.controller.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 436  Topo.controller.eth[1].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 448  Topo.controller.eth[2].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 460  Topo.controller.eth[3].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 472  Topo.controller.eth[4].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 484  Topo.controller.eth[5].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 496  Topo.controller.eth[6].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 508  Topo.controller.eth[7].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 410  Topo.controller.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 423  Topo.controller.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 435  Topo.controller.eth[1].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 447  Topo.controller.eth[2].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 459  Topo.controller.eth[3].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 471  Topo.controller.eth[4].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 483  Topo.controller.eth[5].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 495  Topo.controller.eth[6].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 507  Topo.controller.eth[7].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 419  Topo.controller.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 431  Topo.controller.eth[1].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 443  Topo.controller.eth[2].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 455  Topo.controller.eth[3].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 467  Topo.controller.eth[4].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 479  Topo.controller.eth[5].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 491  Topo.controller.eth[6].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 503  Topo.controller.eth[7].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 414  Topo.controller.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 426  Topo.controller.eth[1].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 438  Topo.controller.eth[2].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 450  Topo.controller.eth[3].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 462  Topo.controller.eth[4].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 474  Topo.controller.eth[5].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 486  Topo.controller.eth[6].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 498  Topo.controller.eth[7].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 36  Topo.s1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 37  Topo.s1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 94  Topo.s2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 95  Topo.s2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 152  Topo.s3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 153  Topo.s3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 199  Topo.s4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 200  Topo.s4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 246  Topo.s5.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 247  Topo.s5.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 304  Topo.s6.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 305  Topo.s6.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 362  Topo.s7.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 363  Topo.s7.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 398  Topo.s8.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 399  Topo.s8.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 45  Topo.s1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 103  Topo.s2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 161  Topo.s3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 208  Topo.s4.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 255  Topo.s5.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 313  Topo.s6.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 371  Topo.s7.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 407  Topo.s8.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 688  Topo.controller.tcp  "rcvd seq"  ETV
+vector 689  Topo.controller.tcp  "rcvd ack"  ETV
+vector 685  Topo.controller.tcp  "advertised window"  ETV
+vector 683  Topo.controller.tcp  "send window"  ETV
+vector 698  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 684  Topo.controller.tcp  "receive window"  ETV
+vector 687  Topo.controller.tcp  "sent ack"  ETV
+vector 904  Topo.controller.tcp  "rcvd seq"  ETV
+vector 905  Topo.controller.tcp  "rcvd ack"  ETV
+vector 901  Topo.controller.tcp  "advertised window"  ETV
+vector 899  Topo.controller.tcp  "send window"  ETV
+vector 914  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 900  Topo.controller.tcp  "receive window"  ETV
+vector 903  Topo.controller.tcp  "sent ack"  ETV
+vector 928  Topo.controller.tcp  "rcvd seq"  ETV
+vector 929  Topo.controller.tcp  "rcvd ack"  ETV
+vector 925  Topo.controller.tcp  "advertised window"  ETV
+vector 923  Topo.controller.tcp  "send window"  ETV
+vector 938  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 924  Topo.controller.tcp  "receive window"  ETV
+vector 927  Topo.controller.tcp  "sent ack"  ETV
+vector 952  Topo.controller.tcp  "rcvd seq"  ETV
+vector 953  Topo.controller.tcp  "rcvd ack"  ETV
+vector 949  Topo.controller.tcp  "advertised window"  ETV
+vector 947  Topo.controller.tcp  "send window"  ETV
+vector 962  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 948  Topo.controller.tcp  "receive window"  ETV
+vector 951  Topo.controller.tcp  "sent ack"  ETV
+vector 976  Topo.controller.tcp  "rcvd seq"  ETV
+vector 977  Topo.controller.tcp  "rcvd ack"  ETV
+vector 973  Topo.controller.tcp  "advertised window"  ETV
+vector 971  Topo.controller.tcp  "send window"  ETV
+vector 986  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 972  Topo.controller.tcp  "receive window"  ETV
+vector 975  Topo.controller.tcp  "sent ack"  ETV
+vector 1000  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1001  Topo.controller.tcp  "rcvd ack"  ETV
+vector 997  Topo.controller.tcp  "advertised window"  ETV
+vector 995  Topo.controller.tcp  "send window"  ETV
+vector 1010  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 996  Topo.controller.tcp  "receive window"  ETV
+vector 999  Topo.controller.tcp  "sent ack"  ETV
+vector 1024  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1025  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1021  Topo.controller.tcp  "advertised window"  ETV
+vector 1019  Topo.controller.tcp  "send window"  ETV
+vector 1034  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1020  Topo.controller.tcp  "receive window"  ETV
+vector 1023  Topo.controller.tcp  "sent ack"  ETV
+vector 1048  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1049  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1045  Topo.controller.tcp  "advertised window"  ETV
+vector 1043  Topo.controller.tcp  "send window"  ETV
+vector 1058  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1044  Topo.controller.tcp  "receive window"  ETV
+vector 1047  Topo.controller.tcp  "sent ack"  ETV
+vector 712  Topo.s1.tcp  "rcvd seq"  ETV
+vector 713  Topo.s1.tcp  "rcvd ack"  ETV
+vector 707  Topo.s1.tcp  "send window"  ETV
+vector 736  Topo.s2.tcp  "rcvd seq"  ETV
+vector 737  Topo.s2.tcp  "rcvd ack"  ETV
+vector 731  Topo.s2.tcp  "send window"  ETV
+vector 760  Topo.s3.tcp  "rcvd seq"  ETV
+vector 761  Topo.s3.tcp  "rcvd ack"  ETV
+vector 755  Topo.s3.tcp  "send window"  ETV
+vector 784  Topo.s4.tcp  "rcvd seq"  ETV
+vector 785  Topo.s4.tcp  "rcvd ack"  ETV
+vector 779  Topo.s4.tcp  "send window"  ETV
+vector 808  Topo.s5.tcp  "rcvd seq"  ETV
+vector 809  Topo.s5.tcp  "rcvd ack"  ETV
+vector 803  Topo.s5.tcp  "send window"  ETV
+vector 832  Topo.s6.tcp  "rcvd seq"  ETV
+vector 833  Topo.s6.tcp  "rcvd ack"  ETV
+vector 827  Topo.s6.tcp  "send window"  ETV
+vector 856  Topo.s7.tcp  "rcvd seq"  ETV
+vector 857  Topo.s7.tcp  "rcvd ack"  ETV
+vector 851  Topo.s7.tcp  "send window"  ETV
+vector 880  Topo.s8.tcp  "rcvd seq"  ETV
+vector 881  Topo.s8.tcp  "rcvd ack"  ETV
+vector 875  Topo.s8.tcp  "send window"  ETV
+vector 690  Topo.controller.tcp  "unacked bytes"  ETV
+vector 906  Topo.controller.tcp  "unacked bytes"  ETV
+vector 930  Topo.controller.tcp  "unacked bytes"  ETV
+vector 954  Topo.controller.tcp  "unacked bytes"  ETV
+vector 978  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1002  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1026  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1050  Topo.controller.tcp  "unacked bytes"  ETV
+vector 686  Topo.controller.tcp  "sent seq"  ETV
+vector 902  Topo.controller.tcp  "sent seq"  ETV
+vector 926  Topo.controller.tcp  "sent seq"  ETV
+vector 950  Topo.controller.tcp  "sent seq"  ETV
+vector 974  Topo.controller.tcp  "sent seq"  ETV
+vector 998  Topo.controller.tcp  "sent seq"  ETV
+vector 1022  Topo.controller.tcp  "sent seq"  ETV
+vector 1046  Topo.controller.tcp  "sent seq"  ETV
+vector 715  Topo.s1.tcp  "rcvd dupAcks"  ETV
+vector 739  Topo.s2.tcp  "rcvd dupAcks"  ETV
+vector 763  Topo.s3.tcp  "rcvd dupAcks"  ETV
+vector 787  Topo.s4.tcp  "rcvd dupAcks"  ETV
+vector 811  Topo.s5.tcp  "rcvd dupAcks"  ETV
+vector 835  Topo.s6.tcp  "rcvd dupAcks"  ETV
+vector 859  Topo.s7.tcp  "rcvd dupAcks"  ETV
+vector 883  Topo.s8.tcp  "rcvd dupAcks"  ETV
+vector 710  Topo.s1.tcp  "sent seq"  ETV
+vector 714  Topo.s1.tcp  "unacked bytes"  ETV
+vector 734  Topo.s2.tcp  "sent seq"  ETV
+vector 738  Topo.s2.tcp  "unacked bytes"  ETV
+vector 758  Topo.s3.tcp  "sent seq"  ETV
+vector 762  Topo.s3.tcp  "unacked bytes"  ETV
+vector 782  Topo.s4.tcp  "sent seq"  ETV
+vector 786  Topo.s4.tcp  "unacked bytes"  ETV
+vector 806  Topo.s5.tcp  "sent seq"  ETV
+vector 810  Topo.s5.tcp  "unacked bytes"  ETV
+vector 830  Topo.s6.tcp  "sent seq"  ETV
+vector 834  Topo.s6.tcp  "unacked bytes"  ETV
+vector 854  Topo.s7.tcp  "sent seq"  ETV
+vector 858  Topo.s7.tcp  "unacked bytes"  ETV
+vector 878  Topo.s8.tcp  "sent seq"  ETV
+vector 882  Topo.s8.tcp  "unacked bytes"  ETV
+vector 702  Topo.controller.tcp  "measured RTT"  ETV
+vector 703  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 704  Topo.controller.tcp  RTTVAR  ETV
+vector 705  Topo.controller.tcp  RTO  ETV
+vector 700  Topo.controller.tcp  cwnd  ETV
+vector 691  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 918  Topo.controller.tcp  "measured RTT"  ETV
+vector 919  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 920  Topo.controller.tcp  RTTVAR  ETV
+vector 921  Topo.controller.tcp  RTO  ETV
+vector 916  Topo.controller.tcp  cwnd  ETV
+vector 907  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 942  Topo.controller.tcp  "measured RTT"  ETV
+vector 943  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 944  Topo.controller.tcp  RTTVAR  ETV
+vector 945  Topo.controller.tcp  RTO  ETV
+vector 940  Topo.controller.tcp  cwnd  ETV
+vector 931  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 966  Topo.controller.tcp  "measured RTT"  ETV
+vector 967  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 968  Topo.controller.tcp  RTTVAR  ETV
+vector 969  Topo.controller.tcp  RTO  ETV
+vector 964  Topo.controller.tcp  cwnd  ETV
+vector 955  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 990  Topo.controller.tcp  "measured RTT"  ETV
+vector 991  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 992  Topo.controller.tcp  RTTVAR  ETV
+vector 993  Topo.controller.tcp  RTO  ETV
+vector 988  Topo.controller.tcp  cwnd  ETV
+vector 979  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1014  Topo.controller.tcp  "measured RTT"  ETV
+vector 1015  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1016  Topo.controller.tcp  RTTVAR  ETV
+vector 1017  Topo.controller.tcp  RTO  ETV
+vector 1012  Topo.controller.tcp  cwnd  ETV
+vector 1003  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1038  Topo.controller.tcp  "measured RTT"  ETV
+vector 1039  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1040  Topo.controller.tcp  RTTVAR  ETV
+vector 1041  Topo.controller.tcp  RTO  ETV
+vector 1036  Topo.controller.tcp  cwnd  ETV
+vector 1027  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1062  Topo.controller.tcp  "measured RTT"  ETV
+vector 1063  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1064  Topo.controller.tcp  RTTVAR  ETV
+vector 1065  Topo.controller.tcp  RTO  ETV
+vector 1060  Topo.controller.tcp  cwnd  ETV
+vector 1051  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 726  Topo.s1.tcp  "measured RTT"  ETV
+vector 727  Topo.s1.tcp  "smoothed RTT"  ETV
+vector 728  Topo.s1.tcp  RTTVAR  ETV
+vector 729  Topo.s1.tcp  RTO  ETV
+vector 724  Topo.s1.tcp  cwnd  ETV
+vector 750  Topo.s2.tcp  "measured RTT"  ETV
+vector 751  Topo.s2.tcp  "smoothed RTT"  ETV
+vector 752  Topo.s2.tcp  RTTVAR  ETV
+vector 753  Topo.s2.tcp  RTO  ETV
+vector 748  Topo.s2.tcp  cwnd  ETV
+vector 774  Topo.s3.tcp  "measured RTT"  ETV
+vector 775  Topo.s3.tcp  "smoothed RTT"  ETV
+vector 776  Topo.s3.tcp  RTTVAR  ETV
+vector 777  Topo.s3.tcp  RTO  ETV
+vector 772  Topo.s3.tcp  cwnd  ETV
+vector 798  Topo.s4.tcp  "measured RTT"  ETV
+vector 799  Topo.s4.tcp  "smoothed RTT"  ETV
+vector 800  Topo.s4.tcp  RTTVAR  ETV
+vector 801  Topo.s4.tcp  RTO  ETV
+vector 796  Topo.s4.tcp  cwnd  ETV
+vector 822  Topo.s5.tcp  "measured RTT"  ETV
+vector 823  Topo.s5.tcp  "smoothed RTT"  ETV
+vector 824  Topo.s5.tcp  RTTVAR  ETV
+vector 825  Topo.s5.tcp  RTO  ETV
+vector 820  Topo.s5.tcp  cwnd  ETV
+vector 846  Topo.s6.tcp  "measured RTT"  ETV
+vector 847  Topo.s6.tcp  "smoothed RTT"  ETV
+vector 848  Topo.s6.tcp  RTTVAR  ETV
+vector 849  Topo.s6.tcp  RTO  ETV
+vector 844  Topo.s6.tcp  cwnd  ETV
+vector 870  Topo.s7.tcp  "measured RTT"  ETV
+vector 871  Topo.s7.tcp  "smoothed RTT"  ETV
+vector 872  Topo.s7.tcp  RTTVAR  ETV
+vector 873  Topo.s7.tcp  RTO  ETV
+vector 868  Topo.s7.tcp  cwnd  ETV
+vector 894  Topo.s8.tcp  "measured RTT"  ETV
+vector 895  Topo.s8.tcp  "smoothed RTT"  ETV
+vector 896  Topo.s8.tcp  RTTVAR  ETV
+vector 897  Topo.s8.tcp  RTO  ETV
+vector 892  Topo.s8.tcp  cwnd  ETV
+vector 580  Topo.DC1.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 606  Topo.DC2.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 632  Topo.DC3.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 658  Topo.DC4.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 582  Topo.DC1.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 583  Topo.DC1.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 608  Topo.DC2.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 609  Topo.DC2.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 634  Topo.DC3.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 635  Topo.DC3.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 660  Topo.DC4.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 661  Topo.DC4.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 588  Topo.DC1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 614  Topo.DC2.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 640  Topo.DC3.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 666  Topo.DC4.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 602  Topo.DC1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 628  Topo.DC2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 654  Topo.DC3.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 680  Topo.DC4.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 598  Topo.DC1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 624  Topo.DC2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 650  Topo.DC3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 676  Topo.DC4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 593  Topo.DC1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 619  Topo.DC2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 645  Topo.DC3.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 671  Topo.DC4.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 258  Topo.s6.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 259  Topo.s6.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 269  Topo.s6.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 270  Topo.s6.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 316  Topo.s7.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 317  Topo.s7.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 327  Topo.s7.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 328  Topo.s7.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 262  Topo.s6.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 320  Topo.s7.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 257  Topo.s6.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 315  Topo.s7.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 594  Topo.DC1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 595  Topo.DC1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 646  Topo.DC3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 647  Topo.DC3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 603  Topo.DC1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 655  Topo.DC3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 273  Topo.s6.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 331  Topo.s7.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 268  Topo.s6.etherMAC[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 326  Topo.s7.etherMAC[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 620  Topo.DC2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 621  Topo.DC2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 672  Topo.DC4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 673  Topo.DC4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 629  Topo.DC2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 681  Topo.DC4.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 284  Topo.s6.etherMAC[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 342  Topo.s7.etherMAC[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 279  Topo.s6.etherMAC[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 337  Topo.s7.etherMAC[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 175  Topo.s4.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 176  Topo.s4.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 222  Topo.s5.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 223  Topo.s5.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 168  Topo.s4.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 215  Topo.s5.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 163  Topo.s4.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 210  Topo.s5.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 81  Topo.s2.etherMAC[3]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 82  Topo.s2.etherMAC[3]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 139  Topo.s3.etherMAC[3]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 140  Topo.s3.etherMAC[3]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 52  Topo.s2.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 110  Topo.s3.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 47  Topo.s2.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 105  Topo.s3.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 542  Topo.RTU1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 543  Topo.RTU1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 568  Topo.RTU2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 569  Topo.RTU2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 551  Topo.RTU1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 577  Topo.RTU2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 532  Topo.RTU1.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 533  Topo.RTU1.udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 558  Topo.RTU2.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 559  Topo.RTU2.udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 527  Topo.RTU1.udpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 528  Topo.RTU1.udpApp[0]  rcvdPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(count)"
+vector 553  Topo.RTU2.udpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 554  Topo.RTU2.udpApp[0]  rcvdPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(count)"
+vector 529  Topo.RTU1.udpApp[0]  rcvdAppPkt:vector  ETV
+attr interpolationmode  none
+attr source  rcvdAppPkt
+attr title  "packets received during sec, vector"
+vector 555  Topo.RTU2.udpApp[0]  rcvdAppPkt:vector  ETV
+attr interpolationmode  none
+attr source  rcvdAppPkt
+attr title  "packets received during sec, vector"
+196	108	0	1
+203	140	0	64
+203	308	0.000003152	64
+203	532	0.000006304	64
+203	816	0.000009456	64
+203	852	0.000009456	64
+203	1850	0.10003408	64
+203	2210	0.100046328	64
+199	252	0.000003152	64
+199	436	0.000006304	64
+199	700	0.000009456	64
+199	1068	0.00001328	64
+199	1792	0.10003408	64
+199	2162	0.100046328	64
+198	148	0.000000576	64
+198	316	0.000003728	64
+198	540	0.00000688	64
+198	860	0.000010032	64
+198	876	0.000010704	64
+198	1854	0.100034656	64
+198	2230	0.100046904	64
+200	252	0.000003152	64
+200	436	0.000006304	64
+200	700	0.000009456	64
+200	1068	0.00001328	64
+200	1792	0.10003408	64
+200	2162	0.100046328	64
+208	260	0.000003152	28
+208	444	0.000006304	44
+208	708	0.000009456	41
+208	1076	0.00001328	40
+208	1798	0.10003408	41
+208	2166	0.100046328	41
+207	132	0	28
+207	300	0.000003152	44
+207	524	0.000006304	40
+207	800	0.000009456	40
+207	844	0.000009456	41
+207	1846	0.10003408	40
+207	2206	0.100046328	40
+168	2417	0.100058432	1296
+168	2545	0.100072704	1296
+168	2697	0.200022864	1296
+168	2723	0.200033392	1296
+168	2889	0.300022864	1296
+168	2915	0.300033392	1296
+168	3081	0.400022864	1296
+168	3107	0.400033392	1296
+168	3273	0.500022864	1296
+168	3299	0.500033392	1296
+168	3465	0.600022864	1296
+168	3491	0.600033392	1296
+168	3657	0.700022864	1296
+168	3683	0.700033392	1296
+168	3849	0.800022864	1296
+168	3875	0.800033392	1296
+168	4041	0.900022864	1296
+168	4067	0.900033392	1296
+168	4233	1.000022864	1296
+168	4259	1.000033392	1296
+168	4425	1.100022864	1296
+168	4451	1.100033392	1296
+168	4617	1.200022864	1296
+168	4643	1.200033392	1296
+168	4809	1.300022864	1296
+168	4835	1.300033392	1296
+168	5001	1.400022864	1296
+168	5027	1.400033392	1296
+168	5193	1.500022864	1296
+168	5219	1.500033392	1296
+168	5385	1.600022864	1296
+168	5411	1.600033392	1296
+168	5577	1.700022864	1296
+168	5603	1.700033392	1296
+168	5769	1.800022864	1296
+168	5795	1.800033392	1296
+168	5961	1.900022864	1296
+168	5987	1.900033392	1296
+168	6153	2.000022864	1296
+168	6179	2.000033392	1296
+168	6345	2.100022864	1296
+168	6371	2.100033392	1296
+168	6537	2.200022864	1296
+168	6563	2.200033392	1296
+168	6729	2.300022864	1296
+168	6755	2.300033392	1296
+168	6921	2.400022864	1296
+168	6947	2.400033392	1296
+168	7113	2.500022864	1296
+168	7139	2.500033392	1296
+168	7305	2.600022864	1296
+168	7331	2.600033392	1296
+168	7497	2.700022864	1296
+168	7523	2.700033392	1296
+168	7689	2.800022864	1296
+168	7715	2.800033392	1296
+168	7881	2.900022864	1296
+168	7907	2.900033392	1296
+168	8073	3.000022864	1296
+168	8099	3.000033392	1296
+168	8265	3.100022864	1296
+168	8291	3.100033392	1296
+168	8457	3.200022864	1296
+168	8483	3.200033392	1296
+168	8649	3.300022864	1296
+168	8675	3.300033392	1296
+168	8841	3.400022864	1296
+168	8867	3.400033392	1296
+168	9033	3.500022864	1296
+168	9059	3.500033392	1296
+168	9225	3.600022864	1296
+168	9251	3.600033392	1296
+168	9417	3.700022864	1296
+168	9443	3.700033392	1296
+168	9609	3.800022864	1296
+168	9635	3.800033392	1296
+168	9801	3.900022864	1296
+168	9827	3.900033392	1296
+168	9993	4.000022864	1296
+168	10019	4.000033392	1296
+168	10185	4.100022864	1296
+168	10211	4.100033392	1296
+168	10377	4.200022864	1296
+168	10403	4.200033392	1296
+168	10569	4.300022864	1296
+168	10595	4.300033392	1296
+168	10761	4.400022864	1296
+168	10787	4.400033392	1296
+168	10953	4.500022864	1296
+168	10979	4.500033392	1296
+168	11145	4.600022864	1296
+168	11171	4.600033392	1296
+168	11337	4.700022864	1296
+168	11363	4.700033392	1296
+168	11529	4.800022864	1296
+168	11555	4.800033392	1296
+168	11721	4.900022864	1296
+168	11747	4.900033392	1296
+168	11913	5.000022864	1296
+168	11939	5.000033392	1296
+168	12105	5.100022864	1296
+168	12131	5.100033392	1296
+168	12297	5.200022864	1296
+168	12323	5.200033392	1296
+168	12489	5.300022864	1296
+168	12515	5.300033392	1296
+168	12681	5.400022864	1296
+168	12707	5.400033392	1296
+168	12873	5.500022864	1296
+168	12899	5.500033392	1296
+168	13065	5.600022864	1296
+168	13091	5.600033392	1296
+168	13257	5.700022864	1296
+168	13283	5.700033392	1296
+168	13449	5.800022864	1296
+168	13475	5.800033392	1296
+168	13641	5.900022864	1296
+168	13667	5.900033392	1296
+168	13833	6.000022864	1296
+168	13859	6.000033392	1296
+168	14025	6.100022864	1296
+168	14051	6.100033392	1296
+168	14217	6.200022864	1296
+168	14243	6.200033392	1296
+168	14409	6.300022864	1296
+168	14435	6.300033392	1296
+168	14601	6.400022864	1296
+168	14627	6.400033392	1296
+168	14793	6.500022864	1296
+168	14819	6.500033392	1296
+168	14985	6.600022864	1296
+168	15011	6.600033392	1296
+168	15177	6.700022864	1296
+168	15203	6.700033392	1296
+168	15369	6.800022864	1296
+168	15395	6.800033392	1296
+168	15561	6.900022864	1296
+168	15587	6.900033392	1296
+168	15753	7.000022864	1296
+168	15779	7.000033392	1296
+168	15945	7.100022864	1296
+168	15971	7.100033392	1296
+168	16137	7.200022864	1296
+168	16163	7.200033392	1296
+168	16329	7.300022864	1296
+168	16355	7.300033392	1296
+168	16521	7.400022864	1296
+168	16547	7.400033392	1296
+168	16713	7.500022864	1296
+168	16739	7.500033392	1296
+168	16905	7.600022864	1296
+168	16931	7.600033392	1296
+168	17097	7.700022864	1296
+168	17123	7.700033392	1296
+168	17289	7.800022864	1296
+168	17315	7.800033392	1296
+168	17481	7.900022864	1296
+168	17507	7.900033392	1296
+168	17673	8.000022864	1296
+168	17699	8.000033392	1296
+168	17865	8.100022864	1296
+168	17891	8.100033392	1296
+168	18057	8.200022864	1296
+168	18083	8.200033392	1296
+168	18249	8.300022864	1296
+168	18275	8.300033392	1296
+168	18441	8.400022864	1296
+168	18467	8.400033392	1296
+168	18633	8.500022864	1296
+168	18659	8.500033392	1296
+168	18825	8.600022864	1296
+168	18851	8.600033392	1296
+168	19017	8.700022864	1296
+168	19043	8.700033392	1296
+168	19209	8.800022864	1296
+168	19235	8.800033392	1296
+168	19401	8.900022864	1296
+168	19427	8.900033392	1296
+168	19593	9.000022864	1296
+168	19619	9.000033392	1296
+168	19785	9.100022864	1296
+168	19811	9.100033392	1296
+168	19977	9.200022864	1296
+168	20003	9.200033392	1296
+168	20169	9.300022864	1296
+168	20195	9.300033392	1296
+168	20361	9.400022864	1296
+168	20387	9.400033392	1296
+168	20553	9.500022864	1296
+168	20579	9.500033392	1296
+168	20745	9.600022864	1296
+168	20771	9.600033392	1296
+168	20937	9.700022864	1296
+168	20963	9.700033392	1296
+168	21129	9.800022864	1296
+168	21155	9.800033392	1296
+168	21321	9.900022864	1296
+168	21347	9.900033392	1296
+168	21513	10.000022864	1296
+168	21539	10.000033392	1296
+168	21705	10.100022864	1296
+168	21731	10.100033392	1296
+168	21897	10.200022864	1296
+168	21923	10.200033392	1296
+168	22089	10.300022864	1296
+168	22115	10.300033392	1296
+168	22281	10.400022864	1296
+168	22307	10.400033392	1296
+168	22473	10.500022864	1296
+168	22499	10.500033392	1296
+168	22665	10.600022864	1296
+168	22691	10.600033392	1296
+168	22857	10.700022864	1296
+168	22883	10.700033392	1296
+168	23049	10.800022864	1296
+168	23075	10.800033392	1296
+168	23241	10.900022864	1296
+168	23267	10.900033392	1296
+168	23433	11.000022864	1296
+168	23459	11.000033392	1296
+168	23625	11.100022864	1296
+168	23651	11.100033392	1296
+168	23817	11.200022864	1296
+168	23843	11.200033392	1296
+168	24009	11.300022864	1296
+168	24035	11.300033392	1296
+168	24201	11.400022864	1296
+168	24227	11.400033392	1296
+168	24393	11.500022864	1296
+168	24419	11.500033392	1296
+168	24585	11.600022864	1296
+168	24611	11.600033392	1296
+168	24777	11.700022864	1296
+168	24803	11.700033392	1296
+168	24969	11.800022864	1296
+168	24995	11.800033392	1296
+168	25161	11.900022864	1296
+168	25187	11.900033392	1296
+168	25353	12.000022864	1296
+168	25379	12.000033392	1296
+168	25545	12.100022864	1296
+168	25571	12.100033392	1296
+168	25737	12.200022864	1296
+168	25763	12.200033392	1296
+168	25929	12.300022864	1296
+168	25955	12.300033392	1296
+168	26121	12.400022864	1296
+168	26147	12.400033392	1296
+168	26313	12.500022864	1296
+168	26339	12.500033392	1296
+168	26505	12.600022864	1296
+168	26531	12.600033392	1296
+168	26697	12.700022864	1296
+168	26723	12.700033392	1296
+168	26889	12.800022864	1296
+168	26915	12.800033392	1296
+168	27081	12.900022864	1296
+168	27107	12.900033392	1296
+168	27273	13.000022864	1296
+168	27299	13.000033392	1296
+168	27465	13.100022864	1296
+168	27491	13.100033392	1296
+168	27657	13.200022864	1296
+168	27683	13.200033392	1296
+168	27849	13.300022864	1296
+168	27875	13.300033392	1296
+168	28041	13.400022864	1296
+168	28067	13.400033392	1296
+168	28233	13.500022864	1296
+168	28259	13.500033392	1296
+168	28425	13.600022864	1296
+168	28451	13.600033392	1296
+168	28617	13.700022864	1296
+168	28643	13.700033392	1296
+168	28809	13.800022864	1296
+168	28835	13.800033392	1296
+168	29001	13.900022864	1296
+168	29027	13.900033392	1296
+168	29193	14.000022864	1296
+168	29219	14.000033392	1296
+168	29385	14.100022864	1296
+168	29411	14.100033392	1296
+168	29577	14.200022864	1296
+168	29603	14.200033392	1296
+168	29769	14.300022864	1296
+168	29795	14.300033392	1296
+168	29961	14.400022864	1296
+168	29987	14.400033392	1296
+168	30153	14.500022864	1296
+168	30179	14.500033392	1296
+168	30345	14.600022864	1296
+168	30371	14.600033392	1296
+168	30537	14.700022864	1296
+168	30563	14.700033392	1296
+168	30729	14.800022864	1296
+168	30755	14.800033392	1296
+168	30921	14.900022864	1296
+168	30947	14.900033392	1296
+168	31113	15.000022864	1296
+168	31139	15.000033392	1296
+168	31305	15.100022864	1296
+168	31331	15.100033392	1296
+168	31497	15.200022864	1296
+168	31523	15.200033392	1296
+168	31689	15.300022864	1296
+168	31715	15.300033392	1296
+168	31881	15.400022864	1296
+168	31907	15.400033392	1296
+168	32073	15.500022864	1296
+168	32099	15.500033392	1296
+168	32265	15.600022864	1296
+168	32291	15.600033392	1296
+168	32457	15.700022864	1296
+168	32483	15.700033392	1296
+168	32649	15.800022864	1296
+168	32675	15.800033392	1296
+168	32841	15.900022864	1296
+168	32867	15.900033392	1296
+168	33033	16.000022864	1296
+168	33059	16.000033392	1296
+168	33225	16.100022864	1296
+168	33251	16.100033392	1296
+168	33417	16.200022864	1296
+168	33443	16.200033392	1296
+168	33609	16.300022864	1296
+168	33635	16.300033392	1296
+168	33801	16.400022864	1296
+168	33827	16.400033392	1296
+168	33993	16.500022864	1296
+168	34019	16.500033392	1296
+168	34185	16.600022864	1296
+168	34211	16.600033392	1296
+168	34377	16.700022864	1296
+168	34403	16.700033392	1296
+168	34569	16.800022864	1296
+168	34595	16.800033392	1296
+168	34761	16.900022864	1296
+168	34787	16.900033392	1296
+168	34953	17.000022864	1296
+168	34979	17.000033392	1296
+168	35145	17.100022864	1296
+168	35171	17.100033392	1296
+168	35337	17.200022864	1296
+168	35363	17.200033392	1296
+168	35529	17.300022864	1296
+168	35555	17.300033392	1296
+168	35721	17.400022864	1296
+168	35747	17.400033392	1296
+168	35913	17.500022864	1296
+168	35939	17.500033392	1296
+168	36105	17.600022864	1296
+168	36131	17.600033392	1296
+168	36297	17.700022864	1296
+168	36323	17.700033392	1296
+168	36489	17.800022864	1296
+168	36515	17.800033392	1296
+168	36681	17.900022864	1296
+168	36707	17.900033392	1296
+168	36873	18.000022864	1296
+168	36899	18.000033392	1296
+168	37065	18.100022864	1296
+168	37091	18.100033392	1296
+168	37257	18.200022864	1296
+168	37283	18.200033392	1296
+168	37449	18.300022864	1296
+168	37475	18.300033392	1296
+168	37641	18.400022864	1296
+168	37667	18.400033392	1296
+168	37833	18.500022864	1296
+168	37859	18.500033392	1296
+168	38025	18.600022864	1296
+168	38051	18.600033392	1296
+168	38217	18.700022864	1296
+168	38243	18.700033392	1296
+168	38409	18.800022864	1296
+168	38435	18.800033392	1296
+168	38601	18.900022864	1296
+168	38627	18.900033392	1296
+168	38793	19.000022864	1296
+168	38819	19.000033392	1296
+168	38985	19.100022864	1296
+168	39011	19.100033392	1296
+168	39177	19.200022864	1296
+168	39203	19.200033392	1296
+168	39369	19.300022864	1296
+168	39395	19.300033392	1296
+168	39561	19.400022864	1296
+168	39587	19.400033392	1296
+168	39753	19.500022864	1296
+168	39779	19.500033392	1296
+168	39945	19.600022864	1296
+168	39971	19.600033392	1296
+168	40137	19.700022864	1296
+168	40163	19.700033392	1296
+168	40329	19.800022864	1296
+168	40355	19.800033392	1296
+168	40521	19.900022864	1296
+168	40547	19.900033392	1296
+163	2513	0.100068864	1296
+163	2571	0.100083136	1296
+163	2709	0.200033296	1296
+163	2743	0.200043824	1296
+163	2901	0.300033296	1296
+163	2935	0.300043824	1296
+163	3093	0.400033296	1296
+163	3127	0.400043824	1296
+163	3285	0.500033296	1296
+163	3319	0.500043824	1296
+163	3477	0.600033296	1296
+163	3511	0.600043824	1296
+163	3669	0.700033296	1296
+163	3703	0.700043824	1296
+163	3861	0.800033296	1296
+163	3895	0.800043824	1296
+163	4053	0.900033296	1296
+163	4087	0.900043824	1296
+163	4245	1.000033296	1296
+163	4279	1.000043824	1296
+163	4437	1.100033296	1296
+163	4471	1.100043824	1296
+163	4629	1.200033296	1296
+163	4663	1.200043824	1296
+163	4821	1.300033296	1296
+163	4855	1.300043824	1296
+163	5013	1.400033296	1296
+163	5047	1.400043824	1296
+163	5205	1.500033296	1296
+163	5239	1.500043824	1296
+163	5397	1.600033296	1296
+163	5431	1.600043824	1296
+163	5589	1.700033296	1296
+163	5623	1.700043824	1296
+163	5781	1.800033296	1296
+163	5815	1.800043824	1296
+163	5973	1.900033296	1296
+163	6007	1.900043824	1296
+163	6165	2.000033296	1296
+163	6199	2.000043824	1296
+163	6357	2.100033296	1296
+163	6391	2.100043824	1296
+163	6549	2.200033296	1296
+163	6583	2.200043824	1296
+163	6741	2.300033296	1296
+163	6775	2.300043824	1296
+163	6933	2.400033296	1296
+163	6967	2.400043824	1296
+163	7125	2.500033296	1296
+163	7159	2.500043824	1296
+163	7317	2.600033296	1296
+163	7351	2.600043824	1296
+163	7509	2.700033296	1296
+163	7543	2.700043824	1296
+163	7701	2.800033296	1296
+163	7735	2.800043824	1296
+163	7893	2.900033296	1296
+163	7927	2.900043824	1296
+163	8085	3.000033296	1296
+163	8119	3.000043824	1296
+163	8277	3.100033296	1296
+163	8311	3.100043824	1296
+163	8469	3.200033296	1296
+163	8503	3.200043824	1296
+163	8661	3.300033296	1296
+163	8695	3.300043824	1296
+163	8853	3.400033296	1296
+163	8887	3.400043824	1296
+163	9045	3.500033296	1296
+163	9079	3.500043824	1296
+163	9237	3.600033296	1296
+163	9271	3.600043824	1296
+163	9429	3.700033296	1296
+163	9463	3.700043824	1296
+163	9621	3.800033296	1296
+163	9655	3.800043824	1296
+163	9813	3.900033296	1296
+163	9847	3.900043824	1296
+163	10005	4.000033296	1296
+163	10039	4.000043824	1296
+163	10197	4.100033296	1296
+163	10231	4.100043824	1296
+163	10389	4.200033296	1296
+163	10423	4.200043824	1296
+163	10581	4.300033296	1296
+163	10615	4.300043824	1296
+163	10773	4.400033296	1296
+163	10807	4.400043824	1296
+163	10965	4.500033296	1296
+163	10999	4.500043824	1296
+163	11157	4.600033296	1296
+163	11191	4.600043824	1296
+163	11349	4.700033296	1296
+163	11383	4.700043824	1296
+163	11541	4.800033296	1296
+163	11575	4.800043824	1296
+163	11733	4.900033296	1296
+163	11767	4.900043824	1296
+163	11925	5.000033296	1296
+163	11959	5.000043824	1296
+163	12117	5.100033296	1296
+163	12151	5.100043824	1296
+163	12309	5.200033296	1296
+163	12343	5.200043824	1296
+163	12501	5.300033296	1296
+163	12535	5.300043824	1296
+163	12693	5.400033296	1296
+163	12727	5.400043824	1296
+163	12885	5.500033296	1296
+163	12919	5.500043824	1296
+163	13077	5.600033296	1296
+163	13111	5.600043824	1296
+163	13269	5.700033296	1296
+163	13303	5.700043824	1296
+163	13461	5.800033296	1296
+163	13495	5.800043824	1296
+163	13653	5.900033296	1296
+163	13687	5.900043824	1296
+163	13845	6.000033296	1296
+163	13879	6.000043824	1296
+163	14037	6.100033296	1296
+163	14071	6.100043824	1296
+163	14229	6.200033296	1296
+163	14263	6.200043824	1296
+163	14421	6.300033296	1296
+163	14455	6.300043824	1296
+163	14613	6.400033296	1296
+163	14647	6.400043824	1296
+163	14805	6.500033296	1296
+163	14839	6.500043824	1296
+163	14997	6.600033296	1296
+163	15031	6.600043824	1296
+163	15189	6.700033296	1296
+163	15223	6.700043824	1296
+163	15381	6.800033296	1296
+163	15415	6.800043824	1296
+163	15573	6.900033296	1296
+163	15607	6.900043824	1296
+163	15765	7.000033296	1296
+163	15799	7.000043824	1296
+163	15957	7.100033296	1296
+163	15991	7.100043824	1296
+163	16149	7.200033296	1296
+163	16183	7.200043824	1296
+163	16341	7.300033296	1296
+163	16375	7.300043824	1296
+163	16533	7.400033296	1296
+163	16567	7.400043824	1296
+163	16725	7.500033296	1296
+163	16759	7.500043824	1296
+163	16917	7.600033296	1296
+163	16951	7.600043824	1296
+163	17109	7.700033296	1296
+163	17143	7.700043824	1296
+163	17301	7.800033296	1296
+163	17335	7.800043824	1296
+163	17493	7.900033296	1296
+163	17527	7.900043824	1296
+163	17685	8.000033296	1296
+163	17719	8.000043824	1296
+163	17877	8.100033296	1296
+163	17911	8.100043824	1296
+163	18069	8.200033296	1296
+163	18103	8.200043824	1296
+163	18261	8.300033296	1296
+163	18295	8.300043824	1296
+163	18453	8.400033296	1296
+163	18487	8.400043824	1296
+163	18645	8.500033296	1296
+163	18679	8.500043824	1296
+163	18837	8.600033296	1296
+163	18871	8.600043824	1296
+163	19029	8.700033296	1296
+163	19063	8.700043824	1296
+163	19221	8.800033296	1296
+163	19255	8.800043824	1296
+163	19413	8.900033296	1296
+163	19447	8.900043824	1296
+163	19605	9.000033296	1296
+163	19639	9.000043824	1296
+163	19797	9.100033296	1296
+163	19831	9.100043824	1296
+163	19989	9.200033296	1296
+163	20023	9.200043824	1296
+163	20181	9.300033296	1296
+163	20215	9.300043824	1296
+163	20373	9.400033296	1296
+163	20407	9.400043824	1296
+163	20565	9.500033296	1296
+163	20599	9.500043824	1296
+163	20757	9.600033296	1296
+163	20791	9.600043824	1296
+163	20949	9.700033296	1296
+163	20983	9.700043824	1296
+163	21141	9.800033296	1296
+163	21175	9.800043824	1296
+163	21333	9.900033296	1296
+163	21367	9.900043824	1296
+163	21525	10.000033296	1296
+163	21559	10.000043824	1296
+163	21717	10.100033296	1296
+163	21751	10.100043824	1296
+163	21909	10.200033296	1296
+163	21943	10.200043824	1296
+163	22101	10.300033296	1296
+163	22135	10.300043824	1296
+163	22293	10.400033296	1296
+163	22327	10.400043824	1296
+163	22485	10.500033296	1296
+163	22519	10.500043824	1296
+163	22677	10.600033296	1296
+163	22711	10.600043824	1296
+163	22869	10.700033296	1296
+163	22903	10.700043824	1296
+163	23061	10.800033296	1296
+163	23095	10.800043824	1296
+163	23253	10.900033296	1296
+163	23287	10.900043824	1296
+163	23445	11.000033296	1296
+163	23479	11.000043824	1296
+163	23637	11.100033296	1296
+163	23671	11.100043824	1296
+163	23829	11.200033296	1296
+163	23863	11.200043824	1296
+163	24021	11.300033296	1296
+163	24055	11.300043824	1296
+163	24213	11.400033296	1296
+163	24247	11.400043824	1296
+163	24405	11.500033296	1296
+163	24439	11.500043824	1296
+163	24597	11.600033296	1296
+163	24631	11.600043824	1296
+163	24789	11.700033296	1296
+163	24823	11.700043824	1296
+163	24981	11.800033296	1296
+163	25015	11.800043824	1296
+163	25173	11.900033296	1296
+163	25207	11.900043824	1296
+163	25365	12.000033296	1296
+163	25399	12.000043824	1296
+163	25557	12.100033296	1296
+163	25591	12.100043824	1296
+163	25749	12.200033296	1296
+163	25783	12.200043824	1296
+163	25941	12.300033296	1296
+163	25975	12.300043824	1296
+163	26133	12.400033296	1296
+163	26167	12.400043824	1296
+163	26325	12.500033296	1296
+163	26359	12.500043824	1296
+163	26517	12.600033296	1296
+163	26551	12.600043824	1296
+163	26709	12.700033296	1296
+163	26743	12.700043824	1296
+163	26901	12.800033296	1296
+163	26935	12.800043824	1296
+163	27093	12.900033296	1296
+163	27127	12.900043824	1296
+163	27285	13.000033296	1296
+163	27319	13.000043824	1296
+163	27477	13.100033296	1296
+163	27511	13.100043824	1296
+163	27669	13.200033296	1296
+163	27703	13.200043824	1296
+163	27861	13.300033296	1296
+163	27895	13.300043824	1296
+163	28053	13.400033296	1296
+163	28087	13.400043824	1296
+163	28245	13.500033296	1296
+163	28279	13.500043824	1296
+163	28437	13.600033296	1296
+163	28471	13.600043824	1296
+163	28629	13.700033296	1296
+163	28663	13.700043824	1296
+163	28821	13.800033296	1296
+163	28855	13.800043824	1296
+163	29013	13.900033296	1296
+163	29047	13.900043824	1296
+163	29205	14.000033296	1296
+163	29239	14.000043824	1296
+163	29397	14.100033296	1296
+163	29431	14.100043824	1296
+163	29589	14.200033296	1296
+163	29623	14.200043824	1296
+163	29781	14.300033296	1296
+163	29815	14.300043824	1296
+163	29973	14.400033296	1296
+163	30007	14.400043824	1296
+163	30165	14.500033296	1296
+163	30199	14.500043824	1296
+163	30357	14.600033296	1296
+163	30391	14.600043824	1296
+163	30549	14.700033296	1296
+163	30583	14.700043824	1296
+163	30741	14.800033296	1296
+163	30775	14.800043824	1296
+163	30933	14.900033296	1296
+163	30967	14.900043824	1296
+163	31125	15.000033296	1296
+163	31159	15.000043824	1296
+163	31317	15.100033296	1296
+163	31351	15.100043824	1296
+163	31509	15.200033296	1296
+163	31543	15.200043824	1296
+163	31701	15.300033296	1296
+163	31735	15.300043824	1296
+163	31893	15.400033296	1296
+163	31927	15.400043824	1296
+163	32085	15.500033296	1296
+163	32119	15.500043824	1296
+163	32277	15.600033296	1296
+163	32311	15.600043824	1296
+163	32469	15.700033296	1296
+163	32503	15.700043824	1296
+163	32661	15.800033296	1296
+163	32695	15.800043824	1296
+163	32853	15.900033296	1296
+163	32887	15.900043824	1296
+163	33045	16.000033296	1296
+163	33079	16.000043824	1296
+163	33237	16.100033296	1296
+163	33271	16.100043824	1296
+163	33429	16.200033296	1296
+163	33463	16.200043824	1296
+163	33621	16.300033296	1296
+163	33655	16.300043824	1296
+163	33813	16.400033296	1296
+163	33847	16.400043824	1296
+163	34005	16.500033296	1296
+163	34039	16.500043824	1296
+163	34197	16.600033296	1296
+163	34231	16.600043824	1296
+163	34389	16.700033296	1296
+163	34423	16.700043824	1296
+163	34581	16.800033296	1296
+163	34615	16.800043824	1296
+163	34773	16.900033296	1296
+163	34807	16.900043824	1296
+163	34965	17.000033296	1296
+163	34999	17.000043824	1296
+163	35157	17.100033296	1296
+163	35191	17.100043824	1296
+163	35349	17.200033296	1296
+163	35383	17.200043824	1296
+163	35541	17.300033296	1296
+163	35575	17.300043824	1296
+163	35733	17.400033296	1296
+163	35767	17.400043824	1296
+163	35925	17.500033296	1296
+163	35959	17.500043824	1296
+163	36117	17.600033296	1296
+163	36151	17.600043824	1296
+163	36309	17.700033296	1296
+163	36343	17.700043824	1296
+163	36501	17.800033296	1296
+163	36535	17.800043824	1296
+163	36693	17.900033296	1296
+163	36727	17.900043824	1296
+163	36885	18.000033296	1296
+163	36919	18.000043824	1296
+163	37077	18.100033296	1296
+163	37111	18.100043824	1296
+163	37269	18.200033296	1296
+163	37303	18.200043824	1296
+163	37461	18.300033296	1296
+163	37495	18.300043824	1296
+163	37653	18.400033296	1296
+163	37687	18.400043824	1296
+163	37845	18.500033296	1296
+163	37879	18.500043824	1296
+163	38037	18.600033296	1296
+163	38071	18.600043824	1296
+163	38229	18.700033296	1296
+163	38263	18.700043824	1296
+163	38421	18.800033296	1296
+163	38455	18.800043824	1296
+163	38613	18.900033296	1296
+163	38647	18.900043824	1296
+163	38805	19.000033296	1296
+163	38839	19.000043824	1296
+163	38997	19.100033296	1296
+163	39031	19.100043824	1296
+163	39189	19.200033296	1296
+163	39223	19.200043824	1296
+163	39381	19.300033296	1296
+163	39415	19.300043824	1296
+163	39573	19.400033296	1296
+163	39607	19.400043824	1296
+163	39765	19.500033296	1296
+163	39799	19.500043824	1296
+163	39957	19.600033296	1296
+163	39991	19.600043824	1296
+163	40149	19.700033296	1296
+163	40183	19.700043824	1296
+163	40341	19.800033296	1296
+163	40375	19.800043824	1296
+163	40533	19.900033296	1296
+163	40567	19.900043824	1296
+175	2407	0.100058432	1296
+175	2535	0.100072704	1296
+175	2687	0.200022864	1296
+175	2711	0.200033392	1296
+175	2879	0.300022864	1296
+175	2903	0.300033392	1296
+175	3071	0.400022864	1296
+175	3095	0.400033392	1296
+175	3263	0.500022864	1296
+175	3287	0.500033392	1296
+175	3455	0.600022864	1296
+175	3479	0.600033392	1296
+175	3647	0.700022864	1296
+175	3671	0.700033392	1296
+175	3839	0.800022864	1296
+175	3863	0.800033392	1296
+175	4031	0.900022864	1296
+175	4055	0.900033392	1296
+175	4223	1.000022864	1296
+175	4247	1.000033392	1296
+175	4415	1.100022864	1296
+175	4439	1.100033392	1296
+175	4607	1.200022864	1296
+175	4631	1.200033392	1296
+175	4799	1.300022864	1296
+175	4823	1.300033392	1296
+175	4991	1.400022864	1296
+175	5015	1.400033392	1296
+175	5183	1.500022864	1296
+175	5207	1.500033392	1296
+175	5375	1.600022864	1296
+175	5399	1.600033392	1296
+175	5567	1.700022864	1296
+175	5591	1.700033392	1296
+175	5759	1.800022864	1296
+175	5783	1.800033392	1296
+175	5951	1.900022864	1296
+175	5975	1.900033392	1296
+175	6143	2.000022864	1296
+175	6167	2.000033392	1296
+175	6335	2.100022864	1296
+175	6359	2.100033392	1296
+175	6527	2.200022864	1296
+175	6551	2.200033392	1296
+175	6719	2.300022864	1296
+175	6743	2.300033392	1296
+175	6911	2.400022864	1296
+175	6935	2.400033392	1296
+175	7103	2.500022864	1296
+175	7127	2.500033392	1296
+175	7295	2.600022864	1296
+175	7319	2.600033392	1296
+175	7487	2.700022864	1296
+175	7511	2.700033392	1296
+175	7679	2.800022864	1296
+175	7703	2.800033392	1296
+175	7871	2.900022864	1296
+175	7895	2.900033392	1296
+175	8063	3.000022864	1296
+175	8087	3.000033392	1296
+175	8255	3.100022864	1296
+175	8279	3.100033392	1296
+175	8447	3.200022864	1296
+175	8471	3.200033392	1296
+175	8639	3.300022864	1296
+175	8663	3.300033392	1296
+175	8831	3.400022864	1296
+175	8855	3.400033392	1296
+175	9023	3.500022864	1296
+175	9047	3.500033392	1296
+175	9215	3.600022864	1296
+175	9239	3.600033392	1296
+175	9407	3.700022864	1296
+175	9431	3.700033392	1296
+175	9599	3.800022864	1296
+175	9623	3.800033392	1296
+175	9791	3.900022864	1296
+175	9815	3.900033392	1296
+175	9983	4.000022864	1296
+175	10007	4.000033392	1296
+175	10175	4.100022864	1296
+175	10199	4.100033392	1296
+175	10367	4.200022864	1296
+175	10391	4.200033392	1296
+175	10559	4.300022864	1296
+175	10583	4.300033392	1296
+175	10751	4.400022864	1296
+175	10775	4.400033392	1296
+175	10943	4.500022864	1296
+175	10967	4.500033392	1296
+175	11135	4.600022864	1296
+175	11159	4.600033392	1296
+175	11327	4.700022864	1296
+175	11351	4.700033392	1296
+175	11519	4.800022864	1296
+175	11543	4.800033392	1296
+175	11711	4.900022864	1296
+175	11735	4.900033392	1296
+175	11903	5.000022864	1296
+175	11927	5.000033392	1296
+175	12095	5.100022864	1296
+175	12119	5.100033392	1296
+175	12287	5.200022864	1296
+175	12311	5.200033392	1296
+175	12479	5.300022864	1296
+175	12503	5.300033392	1296
+175	12671	5.400022864	1296
+175	12695	5.400033392	1296
+175	12863	5.500022864	1296
+175	12887	5.500033392	1296
+175	13055	5.600022864	1296
+175	13079	5.600033392	1296
+175	13247	5.700022864	1296
+175	13271	5.700033392	1296
+175	13439	5.800022864	1296
+175	13463	5.800033392	1296
+175	13631	5.900022864	1296
+175	13655	5.900033392	1296
+175	13823	6.000022864	1296
+175	13847	6.000033392	1296
+175	14015	6.100022864	1296
+175	14039	6.100033392	1296
+175	14207	6.200022864	1296
+175	14231	6.200033392	1296
+175	14399	6.300022864	1296
+175	14423	6.300033392	1296
+175	14591	6.400022864	1296
+175	14615	6.400033392	1296
+175	14783	6.500022864	1296
+175	14807	6.500033392	1296
+175	14975	6.600022864	1296
+175	14999	6.600033392	1296
+175	15167	6.700022864	1296
+175	15191	6.700033392	1296
+175	15359	6.800022864	1296
+175	15383	6.800033392	1296
+175	15551	6.900022864	1296
+175	15575	6.900033392	1296
+175	15743	7.000022864	1296
+175	15767	7.000033392	1296
+175	15935	7.100022864	1296
+175	15959	7.100033392	1296
+175	16127	7.200022864	1296
+175	16151	7.200033392	1296
+175	16319	7.300022864	1296
+175	16343	7.300033392	1296
+175	16511	7.400022864	1296
+175	16535	7.400033392	1296
+175	16703	7.500022864	1296
+175	16727	7.500033392	1296
+175	16895	7.600022864	1296
+175	16919	7.600033392	1296
+175	17087	7.700022864	1296
+175	17111	7.700033392	1296
+175	17279	7.800022864	1296
+175	17303	7.800033392	1296
+175	17471	7.900022864	1296
+175	17495	7.900033392	1296
+175	17663	8.000022864	1296
+175	17687	8.000033392	1296
+175	17855	8.100022864	1296
+175	17879	8.100033392	1296
+175	18047	8.200022864	1296
+175	18071	8.200033392	1296
+175	18239	8.300022864	1296
+175	18263	8.300033392	1296
+175	18431	8.400022864	1296
+175	18455	8.400033392	1296
+175	18623	8.500022864	1296
+175	18647	8.500033392	1296
+175	18815	8.600022864	1296
+175	18839	8.600033392	1296
+175	19007	8.700022864	1296
+175	19031	8.700033392	1296
+175	19199	8.800022864	1296
+175	19223	8.800033392	1296
+175	19391	8.900022864	1296
+175	19415	8.900033392	1296
+175	19583	9.000022864	1296
+175	19607	9.000033392	1296
+175	19775	9.100022864	1296
+175	19799	9.100033392	1296
+175	19967	9.200022864	1296
+175	19991	9.200033392	1296
+175	20159	9.300022864	1296
+175	20183	9.300033392	1296
+175	20351	9.400022864	1296
+175	20375	9.400033392	1296
+175	20543	9.500022864	1296
+175	20567	9.500033392	1296
+175	20735	9.600022864	1296
+175	20759	9.600033392	1296
+175	20927	9.700022864	1296
+175	20951	9.700033392	1296
+175	21119	9.800022864	1296
+175	21143	9.800033392	1296
+175	21311	9.900022864	1296
+175	21335	9.900033392	1296
+175	21503	10.000022864	1296
+175	21527	10.000033392	1296
+175	21695	10.100022864	1296
+175	21719	10.100033392	1296
+175	21887	10.200022864	1296
+175	21911	10.200033392	1296
+175	22079	10.300022864	1296
+175	22103	10.300033392	1296
+175	22271	10.400022864	1296
+175	22295	10.400033392	1296
+175	22463	10.500022864	1296
+175	22487	10.500033392	1296
+175	22655	10.600022864	1296
+175	22679	10.600033392	1296
+175	22847	10.700022864	1296
+175	22871	10.700033392	1296
+175	23039	10.800022864	1296
+175	23063	10.800033392	1296
+175	23231	10.900022864	1296
+175	23255	10.900033392	1296
+175	23423	11.000022864	1296
+175	23447	11.000033392	1296
+175	23615	11.100022864	1296
+175	23639	11.100033392	1296
+175	23807	11.200022864	1296
+175	23831	11.200033392	1296
+175	23999	11.300022864	1296
+175	24023	11.300033392	1296
+175	24191	11.400022864	1296
+175	24215	11.400033392	1296
+175	24383	11.500022864	1296
+175	24407	11.500033392	1296
+175	24575	11.600022864	1296
+175	24599	11.600033392	1296
+175	24767	11.700022864	1296
+175	24791	11.700033392	1296
+175	24959	11.800022864	1296
+175	24983	11.800033392	1296
+175	25151	11.900022864	1296
+175	25175	11.900033392	1296
+175	25343	12.000022864	1296
+175	25367	12.000033392	1296
+175	25535	12.100022864	1296
+175	25559	12.100033392	1296
+175	25727	12.200022864	1296
+175	25751	12.200033392	1296
+175	25919	12.300022864	1296
+175	25943	12.300033392	1296
+175	26111	12.400022864	1296
+175	26135	12.400033392	1296
+175	26303	12.500022864	1296
+175	26327	12.500033392	1296
+175	26495	12.600022864	1296
+175	26519	12.600033392	1296
+175	26687	12.700022864	1296
+175	26711	12.700033392	1296
+175	26879	12.800022864	1296
+175	26903	12.800033392	1296
+175	27071	12.900022864	1296
+175	27095	12.900033392	1296
+175	27263	13.000022864	1296
+175	27287	13.000033392	1296
+175	27455	13.100022864	1296
+175	27479	13.100033392	1296
+175	27647	13.200022864	1296
+175	27671	13.200033392	1296
+175	27839	13.300022864	1296
+175	27863	13.300033392	1296
+175	28031	13.400022864	1296
+175	28055	13.400033392	1296
+175	28223	13.500022864	1296
+175	28247	13.500033392	1296
+175	28415	13.600022864	1296
+175	28439	13.600033392	1296
+175	28607	13.700022864	1296
+175	28631	13.700033392	1296
+175	28799	13.800022864	1296
+175	28823	13.800033392	1296
+175	28991	13.900022864	1296
+175	29015	13.900033392	1296
+175	29183	14.000022864	1296
+175	29207	14.000033392	1296
+175	29375	14.100022864	1296
+175	29399	14.100033392	1296
+175	29567	14.200022864	1296
+175	29591	14.200033392	1296
+175	29759	14.300022864	1296
+175	29783	14.300033392	1296
+175	29951	14.400022864	1296
+175	29975	14.400033392	1296
+175	30143	14.500022864	1296
+175	30167	14.500033392	1296
+175	30335	14.600022864	1296
+175	30359	14.600033392	1296
+175	30527	14.700022864	1296
+175	30551	14.700033392	1296
+175	30719	14.800022864	1296
+175	30743	14.800033392	1296
+175	30911	14.900022864	1296
+175	30935	14.900033392	1296
+175	31103	15.000022864	1296
+175	31127	15.000033392	1296
+175	31295	15.100022864	1296
+175	31319	15.100033392	1296
+175	31487	15.200022864	1296
+175	31511	15.200033392	1296
+175	31679	15.300022864	1296
+175	31703	15.300033392	1296
+175	31871	15.400022864	1296
+175	31895	15.400033392	1296
+175	32063	15.500022864	1296
+175	32087	15.500033392	1296
+175	32255	15.600022864	1296
+175	32279	15.600033392	1296
+175	32447	15.700022864	1296
+175	32471	15.700033392	1296
+175	32639	15.800022864	1296
+175	32663	15.800033392	1296
+175	32831	15.900022864	1296
+175	32855	15.900033392	1296
+175	33023	16.000022864	1296
+175	33047	16.000033392	1296
+175	33215	16.100022864	1296
+175	33239	16.100033392	1296
+175	33407	16.200022864	1296
+175	33431	16.200033392	1296
+175	33599	16.300022864	1296
+175	33623	16.300033392	1296
+175	33791	16.400022864	1296
+175	33815	16.400033392	1296
+175	33983	16.500022864	1296
+175	34007	16.500033392	1296
+175	34175	16.600022864	1296
+175	34199	16.600033392	1296
+175	34367	16.700022864	1296
+175	34391	16.700033392	1296
+175	34559	16.800022864	1296
+175	34583	16.800033392	1296
+175	34751	16.900022864	1296
+175	34775	16.900033392	1296
+175	34943	17.000022864	1296
+175	34967	17.000033392	1296
+175	35135	17.100022864	1296
+175	35159	17.100033392	1296
+175	35327	17.200022864	1296
+175	35351	17.200033392	1296
+175	35519	17.300022864	1296
+175	35543	17.300033392	1296
+175	35711	17.400022864	1296
+175	35735	17.400033392	1296
+175	35903	17.500022864	1296
+175	35927	17.500033392	1296
+175	36095	17.600022864	1296
+175	36119	17.600033392	1296
+175	36287	17.700022864	1296
+175	36311	17.700033392	1296
+175	36479	17.800022864	1296
+175	36503	17.800033392	1296
+175	36671	17.900022864	1296
+175	36695	17.900033392	1296
+175	36863	18.000022864	1296
+175	36887	18.000033392	1296
+175	37055	18.100022864	1296
+175	37079	18.100033392	1296
+175	37247	18.200022864	1296
+175	37271	18.200033392	1296
+175	37439	18.300022864	1296
+175	37463	18.300033392	1296
+175	37631	18.400022864	1296
+175	37655	18.400033392	1296
+175	37823	18.500022864	1296
+175	37847	18.500033392	1296
+175	38015	18.600022864	1296
+175	38039	18.600033392	1296
+175	38207	18.700022864	1296
+175	38231	18.700033392	1296
+175	38399	18.800022864	1296
+175	38423	18.800033392	1296
+175	38591	18.900022864	1296
+175	38615	18.900033392	1296
+175	38783	19.000022864	1296
+175	38807	19.000033392	1296
+175	38975	19.100022864	1296
+175	38999	19.100033392	1296
+175	39167	19.200022864	1296
+175	39191	19.200033392	1296
+175	39359	19.300022864	1296
+175	39383	19.300033392	1296
+175	39551	19.400022864	1296
+175	39575	19.400033392	1296
+175	39743	19.500022864	1296
+175	39767	19.500033392	1296
+175	39935	19.600022864	1296
+175	39959	19.600033392	1296
+175	40127	19.700022864	1296
+175	40151	19.700033392	1296
+175	40319	19.800022864	1296
+175	40343	19.800033392	1296
+175	40511	19.900022864	1296
+175	40535	19.900033392	1296
+176	2407	0.100058432	1296
+176	2535	0.100072704	1296
+176	2687	0.200022864	1296
+176	2711	0.200033392	1296
+176	2879	0.300022864	1296
+176	2903	0.300033392	1296
+176	3071	0.400022864	1296
+176	3095	0.400033392	1296
+176	3263	0.500022864	1296
+176	3287	0.500033392	1296
+176	3455	0.600022864	1296
+176	3479	0.600033392	1296
+176	3647	0.700022864	1296
+176	3671	0.700033392	1296
+176	3839	0.800022864	1296
+176	3863	0.800033392	1296
+176	4031	0.900022864	1296
+176	4055	0.900033392	1296
+176	4223	1.000022864	1296
+176	4247	1.000033392	1296
+176	4415	1.100022864	1296
+176	4439	1.100033392	1296
+176	4607	1.200022864	1296
+176	4631	1.200033392	1296
+176	4799	1.300022864	1296
+176	4823	1.300033392	1296
+176	4991	1.400022864	1296
+176	5015	1.400033392	1296
+176	5183	1.500022864	1296
+176	5207	1.500033392	1296
+176	5375	1.600022864	1296
+176	5399	1.600033392	1296
+176	5567	1.700022864	1296
+176	5591	1.700033392	1296
+176	5759	1.800022864	1296
+176	5783	1.800033392	1296
+176	5951	1.900022864	1296
+176	5975	1.900033392	1296
+176	6143	2.000022864	1296
+176	6167	2.000033392	1296
+176	6335	2.100022864	1296
+176	6359	2.100033392	1296
+176	6527	2.200022864	1296
+176	6551	2.200033392	1296
+176	6719	2.300022864	1296
+176	6743	2.300033392	1296
+176	6911	2.400022864	1296
+176	6935	2.400033392	1296
+176	7103	2.500022864	1296
+176	7127	2.500033392	1296
+176	7295	2.600022864	1296
+176	7319	2.600033392	1296
+176	7487	2.700022864	1296
+176	7511	2.700033392	1296
+176	7679	2.800022864	1296
+176	7703	2.800033392	1296
+176	7871	2.900022864	1296
+176	7895	2.900033392	1296
+176	8063	3.000022864	1296
+176	8087	3.000033392	1296
+176	8255	3.100022864	1296
+176	8279	3.100033392	1296
+176	8447	3.200022864	1296
+176	8471	3.200033392	1296
+176	8639	3.300022864	1296
+176	8663	3.300033392	1296
+176	8831	3.400022864	1296
+176	8855	3.400033392	1296
+176	9023	3.500022864	1296
+176	9047	3.500033392	1296
+176	9215	3.600022864	1296
+176	9239	3.600033392	1296
+176	9407	3.700022864	1296
+176	9431	3.700033392	1296
+176	9599	3.800022864	1296
+176	9623	3.800033392	1296
+176	9791	3.900022864	1296
+176	9815	3.900033392	1296
+176	9983	4.000022864	1296
+176	10007	4.000033392	1296
+176	10175	4.100022864	1296
+176	10199	4.100033392	1296
+176	10367	4.200022864	1296
+176	10391	4.200033392	1296
+176	10559	4.300022864	1296
+176	10583	4.300033392	1296
+176	10751	4.400022864	1296
+176	10775	4.400033392	1296
+176	10943	4.500022864	1296
+176	10967	4.500033392	1296
+176	11135	4.600022864	1296
+176	11159	4.600033392	1296
+176	11327	4.700022864	1296
+176	11351	4.700033392	1296
+176	11519	4.800022864	1296
+176	11543	4.800033392	1296
+176	11711	4.900022864	1296
+176	11735	4.900033392	1296
+176	11903	5.000022864	1296
+176	11927	5.000033392	1296
+176	12095	5.100022864	1296
+176	12119	5.100033392	1296
+176	12287	5.200022864	1296
+176	12311	5.200033392	1296
+176	12479	5.300022864	1296
+176	12503	5.300033392	1296
+176	12671	5.400022864	1296
+176	12695	5.400033392	1296
+176	12863	5.500022864	1296
+176	12887	5.500033392	1296
+176	13055	5.600022864	1296
+176	13079	5.600033392	1296
+176	13247	5.700022864	1296
+176	13271	5.700033392	1296
+176	13439	5.800022864	1296
+176	13463	5.800033392	1296
+176	13631	5.900022864	1296
+176	13655	5.900033392	1296
+176	13823	6.000022864	1296
+176	13847	6.000033392	1296
+176	14015	6.100022864	1296
+176	14039	6.100033392	1296
+176	14207	6.200022864	1296
+176	14231	6.200033392	1296
+176	14399	6.300022864	1296
+176	14423	6.300033392	1296
+176	14591	6.400022864	1296
+176	14615	6.400033392	1296
+176	14783	6.500022864	1296
+176	14807	6.500033392	1296
+176	14975	6.600022864	1296
+176	14999	6.600033392	1296
+176	15167	6.700022864	1296
+176	15191	6.700033392	1296
+176	15359	6.800022864	1296
+176	15383	6.800033392	1296
+176	15551	6.900022864	1296
+176	15575	6.900033392	1296
+176	15743	7.000022864	1296
+176	15767	7.000033392	1296
+176	15935	7.100022864	1296
+176	15959	7.100033392	1296
+176	16127	7.200022864	1296
+176	16151	7.200033392	1296
+176	16319	7.300022864	1296
+176	16343	7.300033392	1296
+176	16511	7.400022864	1296
+176	16535	7.400033392	1296
+176	16703	7.500022864	1296
+176	16727	7.500033392	1296
+176	16895	7.600022864	1296
+176	16919	7.600033392	1296
+176	17087	7.700022864	1296
+176	17111	7.700033392	1296
+176	17279	7.800022864	1296
+176	17303	7.800033392	1296
+176	17471	7.900022864	1296
+176	17495	7.900033392	1296
+176	17663	8.000022864	1296
+176	17687	8.000033392	1296
+176	17855	8.100022864	1296
+176	17879	8.100033392	1296
+176	18047	8.200022864	1296
+176	18071	8.200033392	1296
+176	18239	8.300022864	1296
+176	18263	8.300033392	1296
+176	18431	8.400022864	1296
+176	18455	8.400033392	1296
+176	18623	8.500022864	1296
+176	18647	8.500033392	1296
+176	18815	8.600022864	1296
+176	18839	8.600033392	1296
+176	19007	8.700022864	1296
+176	19031	8.700033392	1296
+176	19199	8.800022864	1296
+176	19223	8.800033392	1296
+176	19391	8.900022864	1296
+176	19415	8.900033392	1296
+176	19583	9.000022864	1296
+176	19607	9.000033392	1296
+176	19775	9.100022864	1296
+176	19799	9.100033392	1296
+176	19967	9.200022864	1296
+176	19991	9.200033392	1296
+176	20159	9.300022864	1296
+176	20183	9.300033392	1296
+176	20351	9.400022864	1296
+176	20375	9.400033392	1296
+176	20543	9.500022864	1296
+176	20567	9.500033392	1296
+176	20735	9.600022864	1296
+176	20759	9.600033392	1296
+176	20927	9.700022864	1296
+176	20951	9.700033392	1296
+176	21119	9.800022864	1296
+176	21143	9.800033392	1296
+176	21311	9.900022864	1296
+176	21335	9.900033392	1296
+176	21503	10.000022864	1296
+176	21527	10.000033392	1296
+176	21695	10.100022864	1296
+176	21719	10.100033392	1296
+176	21887	10.200022864	1296
+176	21911	10.200033392	1296
+176	22079	10.300022864	1296
+176	22103	10.300033392	1296
+176	22271	10.400022864	1296
+176	22295	10.400033392	1296
+176	22463	10.500022864	1296
+176	22487	10.500033392	1296
+176	22655	10.600022864	1296
+176	22679	10.600033392	1296
+176	22847	10.700022864	1296
+176	22871	10.700033392	1296
+176	23039	10.800022864	1296
+176	23063	10.800033392	1296
+176	23231	10.900022864	1296
+176	23255	10.900033392	1296
+176	23423	11.000022864	1296
+176	23447	11.000033392	1296
+176	23615	11.100022864	1296
+176	23639	11.100033392	1296
+176	23807	11.200022864	1296
+176	23831	11.200033392	1296
+176	23999	11.300022864	1296
+176	24023	11.300033392	1296
+176	24191	11.400022864	1296
+176	24215	11.400033392	1296
+176	24383	11.500022864	1296
+176	24407	11.500033392	1296
+176	24575	11.600022864	1296
+176	24599	11.600033392	1296
+176	24767	11.700022864	1296
+176	24791	11.700033392	1296
+176	24959	11.800022864	1296
+176	24983	11.800033392	1296
+176	25151	11.900022864	1296
+176	25175	11.900033392	1296
+176	25343	12.000022864	1296
+176	25367	12.000033392	1296
+176	25535	12.100022864	1296
+176	25559	12.100033392	1296
+176	25727	12.200022864	1296
+176	25751	12.200033392	1296
+176	25919	12.300022864	1296
+176	25943	12.300033392	1296
+176	26111	12.400022864	1296
+176	26135	12.400033392	1296
+176	26303	12.500022864	1296
+176	26327	12.500033392	1296
+176	26495	12.600022864	1296
+176	26519	12.600033392	1296
+176	26687	12.700022864	1296
+176	26711	12.700033392	1296
+176	26879	12.800022864	1296
+176	26903	12.800033392	1296
+176	27071	12.900022864	1296
+176	27095	12.900033392	1296
+176	27263	13.000022864	1296
+176	27287	13.000033392	1296
+176	27455	13.100022864	1296
+176	27479	13.100033392	1296
+176	27647	13.200022864	1296
+176	27671	13.200033392	1296
+176	27839	13.300022864	1296
+176	27863	13.300033392	1296
+176	28031	13.400022864	1296
+176	28055	13.400033392	1296
+176	28223	13.500022864	1296
+176	28247	13.500033392	1296
+176	28415	13.600022864	1296
+176	28439	13.600033392	1296
+176	28607	13.700022864	1296
+176	28631	13.700033392	1296
+176	28799	13.800022864	1296
+176	28823	13.800033392	1296
+176	28991	13.900022864	1296
+176	29015	13.900033392	1296
+176	29183	14.000022864	1296
+176	29207	14.000033392	1296
+176	29375	14.100022864	1296
+176	29399	14.100033392	1296
+176	29567	14.200022864	1296
+176	29591	14.200033392	1296
+176	29759	14.300022864	1296
+176	29783	14.300033392	1296
+176	29951	14.400022864	1296
+176	29975	14.400033392	1296
+176	30143	14.500022864	1296
+176	30167	14.500033392	1296
+176	30335	14.600022864	1296
+176	30359	14.600033392	1296
+176	30527	14.700022864	1296
+176	30551	14.700033392	1296
+176	30719	14.800022864	1296
+176	30743	14.800033392	1296
+176	30911	14.900022864	1296
+176	30935	14.900033392	1296
+176	31103	15.000022864	1296
+176	31127	15.000033392	1296
+176	31295	15.100022864	1296
+176	31319	15.100033392	1296
+176	31487	15.200022864	1296
+176	31511	15.200033392	1296
+176	31679	15.300022864	1296
+176	31703	15.300033392	1296
+176	31871	15.400022864	1296
+176	31895	15.400033392	1296
+176	32063	15.500022864	1296
+176	32087	15.500033392	1296
+176	32255	15.600022864	1296
+176	32279	15.600033392	1296
+176	32447	15.700022864	1296
+176	32471	15.700033392	1296
+176	32639	15.800022864	1296
+176	32663	15.800033392	1296
+176	32831	15.900022864	1296
+176	32855	15.900033392	1296
+176	33023	16.000022864	1296
+176	33047	16.000033392	1296
+176	33215	16.100022864	1296
+176	33239	16.100033392	1296
+176	33407	16.200022864	1296
+176	33431	16.200033392	1296
+176	33599	16.300022864	1296
+176	33623	16.300033392	1296
+176	33791	16.400022864	1296
+176	33815	16.400033392	1296
+176	33983	16.500022864	1296
+176	34007	16.500033392	1296
+176	34175	16.600022864	1296
+176	34199	16.600033392	1296
+176	34367	16.700022864	1296
+176	34391	16.700033392	1296
+176	34559	16.800022864	1296
+176	34583	16.800033392	1296
+176	34751	16.900022864	1296
+176	34775	16.900033392	1296
+176	34943	17.000022864	1296
+176	34967	17.000033392	1296
+176	35135	17.100022864	1296
+176	35159	17.100033392	1296
+176	35327	17.200022864	1296
+176	35351	17.200033392	1296
+176	35519	17.300022864	1296
+176	35543	17.300033392	1296
+176	35711	17.400022864	1296
+176	35735	17.400033392	1296
+176	35903	17.500022864	1296
+176	35927	17.500033392	1296
+176	36095	17.600022864	1296
+176	36119	17.600033392	1296
+176	36287	17.700022864	1296
+176	36311	17.700033392	1296
+176	36479	17.800022864	1296
+176	36503	17.800033392	1296
+176	36671	17.900022864	1296
+176	36695	17.900033392	1296
+176	36863	18.000022864	1296
+176	36887	18.000033392	1296
+176	37055	18.100022864	1296
+176	37079	18.100033392	1296
+176	37247	18.200022864	1296
+176	37271	18.200033392	1296
+176	37439	18.300022864	1296
+176	37463	18.300033392	1296
+176	37631	18.400022864	1296
+176	37655	18.400033392	1296
+176	37823	18.500022864	1296
+176	37847	18.500033392	1296
+176	38015	18.600022864	1296
+176	38039	18.600033392	1296
+176	38207	18.700022864	1296
+176	38231	18.700033392	1296
+176	38399	18.800022864	1296
+176	38423	18.800033392	1296
+176	38591	18.900022864	1296
+176	38615	18.900033392	1296
+176	38783	19.000022864	1296
+176	38807	19.000033392	1296
+176	38975	19.100022864	1296
+176	38999	19.100033392	1296
+176	39167	19.200022864	1296
+176	39191	19.200033392	1296
+176	39359	19.300022864	1296
+176	39383	19.300033392	1296
+176	39551	19.400022864	1296
+176	39575	19.400033392	1296
+176	39743	19.500022864	1296
+176	39767	19.500033392	1296
+176	39935	19.600022864	1296
+176	39959	19.600033392	1296
+176	40127	19.700022864	1296
+176	40151	19.700033392	1296
+176	40319	19.800022864	1296
+176	40343	19.800033392	1296
+176	40511	19.900022864	1296
+176	40535	19.900033392	1296
+796	1108	0.00001328	1072
+798	1108	0.00001328	3.824e-06
+799	1108	0.00001328	4.78e-07
+800	1108	0.00001328	0.656250478
+801	1108	0.00001328	2.62500239
+779	476	0.000006304	7504
+779	1108	0.00001328	7504
+780	92	0	7504
+780	476	0.000006304	7504
+780	740	0.000009456	7504
+780	799	0.000009456	7504
+780	1822	0.10003408	7504
+780	2182	0.100046328	7504
+781	92	0	7504
+781	476	0.000006304	7506
+781	476	0.000006304	7506
+781	740	0.000009456	7507
+781	799	0.000009456	7507
+781	1822	0.10003408	7508
+781	2182	0.100046328	7509
+782	799	0.000009456	1
+783	92	0	0
+783	476	0.000006304	2
+783	740	0.000009456	3
+783	799	0.000009456	3
+783	1822	0.10003408	4
+783	2182	0.100046328	5
+784	476	0.000006304	1
+784	740	0.000009456	2
+784	1108	0.00001328	3
+784	1822	0.10003408	3
+784	2182	0.100046328	4
+785	476	0.000006304	1
+785	740	0.000009456	1
+785	1108	0.00001328	2
+785	1822	0.10003408	2
+785	2182	0.100046328	2
+786	799	0.000009456	1
+786	1108	0.00001328	0
+787	740	0.000009456	0
+787	1108	0.00001328	0
+787	1822	0.10003408	0
+787	2182	0.100046328	0
+794	92	0	0
+794	476	0.000006304	0
+794	740	0.000009456	0
+794	740	0.000009456	0
+794	799	0.000009456	0
+794	1822	0.10003408	0
+794	1822	0.10003408	0
+794	2182	0.100046328	0
+794	2182	0.100046328	0

@@ -212,6 +212,7 @@ void OFA_switch::connect()
     socket.renewSocket();
     const char *connectAddress = par("connectAddress");
     int connectPort = par("connectPort");
+
     if (getParentModule()->getParentModule()->getSubmodule("controller") != NULL) {
         // multiple controllers; full path is needed for connect address
         connectAddress = getParentModule()->getParentModule()->getSubmodule("controller")->getFullPath().c_str();

@@ -1,0 +1,1044 @@
+                                                                
+version 2
+run disable-0-20161121-12:06:19-5534
+attr configname disable
+attr datetime 20161121-12:06:19
+attr experiment disable
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Topo
+attr processid 5534
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 722  Topo.s1.tcp  tcpRcvQueueBytes  ETV
+vector 709  Topo.s1.tcp  "advertised window"  ETV
+vector 708  Topo.s1.tcp  "receive window"  ETV
+vector 711  Topo.s1.tcp  "sent ack"  ETV
+vector 746  Topo.s2.tcp  tcpRcvQueueBytes  ETV
+vector 733  Topo.s2.tcp  "advertised window"  ETV
+vector 732  Topo.s2.tcp  "receive window"  ETV
+vector 735  Topo.s2.tcp  "sent ack"  ETV
+vector 770  Topo.s3.tcp  tcpRcvQueueBytes  ETV
+vector 757  Topo.s3.tcp  "advertised window"  ETV
+vector 756  Topo.s3.tcp  "receive window"  ETV
+vector 759  Topo.s3.tcp  "sent ack"  ETV
+vector 794  Topo.s4.tcp  tcpRcvQueueBytes  ETV
+vector 781  Topo.s4.tcp  "advertised window"  ETV
+vector 780  Topo.s4.tcp  "receive window"  ETV
+vector 783  Topo.s4.tcp  "sent ack"  ETV
+vector 818  Topo.s5.tcp  tcpRcvQueueBytes  ETV
+vector 805  Topo.s5.tcp  "advertised window"  ETV
+vector 804  Topo.s5.tcp  "receive window"  ETV
+vector 807  Topo.s5.tcp  "sent ack"  ETV
+vector 842  Topo.s6.tcp  tcpRcvQueueBytes  ETV
+vector 829  Topo.s6.tcp  "advertised window"  ETV
+vector 828  Topo.s6.tcp  "receive window"  ETV
+vector 831  Topo.s6.tcp  "sent ack"  ETV
+vector 866  Topo.s7.tcp  tcpRcvQueueBytes  ETV
+vector 853  Topo.s7.tcp  "advertised window"  ETV
+vector 852  Topo.s7.tcp  "receive window"  ETV
+vector 855  Topo.s7.tcp  "sent ack"  ETV
+vector 890  Topo.s8.tcp  tcpRcvQueueBytes  ETV
+vector 877  Topo.s8.tcp  "advertised window"  ETV
+vector 876  Topo.s8.tcp  "receive window"  ETV
+vector 879  Topo.s8.tcp  "sent ack"  ETV
+vector 33  Topo.s1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 91  Topo.s2.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 149  Topo.s3.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 196  Topo.s4.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 243  Topo.s5.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 301  Topo.s6.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 359  Topo.s7.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 395  Topo.s8.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 44  Topo.s1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 102  Topo.s2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 160  Topo.s3.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 207  Topo.s4.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 254  Topo.s5.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 312  Topo.s6.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 370  Topo.s7.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 406  Topo.s8.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 40  Topo.s1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 98  Topo.s2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 156  Topo.s3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 203  Topo.s4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 250  Topo.s5.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 308  Topo.s6.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 366  Topo.s7.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 402  Topo.s8.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 35  Topo.s1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 93  Topo.s2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 151  Topo.s3.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 198  Topo.s4.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 245  Topo.s5.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 303  Topo.s6.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 361  Topo.s7.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 397  Topo.s8.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 415  Topo.controller.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 416  Topo.controller.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 427  Topo.controller.eth[1].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 428  Topo.controller.eth[1].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 439  Topo.controller.eth[2].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 440  Topo.controller.eth[2].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 451  Topo.controller.eth[3].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 452  Topo.controller.eth[3].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 463  Topo.controller.eth[4].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 464  Topo.controller.eth[4].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 475  Topo.controller.eth[5].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 476  Topo.controller.eth[5].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 487  Topo.controller.eth[6].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 488  Topo.controller.eth[6].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 499  Topo.controller.eth[7].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 500  Topo.controller.eth[7].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 424  Topo.controller.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 436  Topo.controller.eth[1].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 448  Topo.controller.eth[2].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 460  Topo.controller.eth[3].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 472  Topo.controller.eth[4].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 484  Topo.controller.eth[5].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 496  Topo.controller.eth[6].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 508  Topo.controller.eth[7].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 410  Topo.controller.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 423  Topo.controller.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 435  Topo.controller.eth[1].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 447  Topo.controller.eth[2].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 459  Topo.controller.eth[3].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 471  Topo.controller.eth[4].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 483  Topo.controller.eth[5].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 495  Topo.controller.eth[6].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 507  Topo.controller.eth[7].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 419  Topo.controller.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 431  Topo.controller.eth[1].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 443  Topo.controller.eth[2].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 455  Topo.controller.eth[3].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 467  Topo.controller.eth[4].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 479  Topo.controller.eth[5].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 491  Topo.controller.eth[6].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 503  Topo.controller.eth[7].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 414  Topo.controller.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 426  Topo.controller.eth[1].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 438  Topo.controller.eth[2].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 450  Topo.controller.eth[3].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 462  Topo.controller.eth[4].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 474  Topo.controller.eth[5].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 486  Topo.controller.eth[6].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 498  Topo.controller.eth[7].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 36  Topo.s1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 37  Topo.s1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 94  Topo.s2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 95  Topo.s2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 152  Topo.s3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 153  Topo.s3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 199  Topo.s4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 200  Topo.s4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 246  Topo.s5.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 247  Topo.s5.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 304  Topo.s6.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 305  Topo.s6.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 362  Topo.s7.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 363  Topo.s7.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 398  Topo.s8.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 399  Topo.s8.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 45  Topo.s1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 103  Topo.s2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 161  Topo.s3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 208  Topo.s4.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 255  Topo.s5.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 313  Topo.s6.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 371  Topo.s7.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 407  Topo.s8.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 688  Topo.controller.tcp  "rcvd seq"  ETV
+vector 689  Topo.controller.tcp  "rcvd ack"  ETV
+vector 685  Topo.controller.tcp  "advertised window"  ETV
+vector 683  Topo.controller.tcp  "send window"  ETV
+vector 698  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 684  Topo.controller.tcp  "receive window"  ETV
+vector 687  Topo.controller.tcp  "sent ack"  ETV
+vector 904  Topo.controller.tcp  "rcvd seq"  ETV
+vector 905  Topo.controller.tcp  "rcvd ack"  ETV
+vector 901  Topo.controller.tcp  "advertised window"  ETV
+vector 899  Topo.controller.tcp  "send window"  ETV
+vector 914  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 900  Topo.controller.tcp  "receive window"  ETV
+vector 903  Topo.controller.tcp  "sent ack"  ETV
+vector 928  Topo.controller.tcp  "rcvd seq"  ETV
+vector 929  Topo.controller.tcp  "rcvd ack"  ETV
+vector 925  Topo.controller.tcp  "advertised window"  ETV
+vector 923  Topo.controller.tcp  "send window"  ETV
+vector 938  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 924  Topo.controller.tcp  "receive window"  ETV
+vector 927  Topo.controller.tcp  "sent ack"  ETV
+vector 952  Topo.controller.tcp  "rcvd seq"  ETV
+vector 953  Topo.controller.tcp  "rcvd ack"  ETV
+vector 949  Topo.controller.tcp  "advertised window"  ETV
+vector 947  Topo.controller.tcp  "send window"  ETV
+vector 962  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 948  Topo.controller.tcp  "receive window"  ETV
+vector 951  Topo.controller.tcp  "sent ack"  ETV
+vector 976  Topo.controller.tcp  "rcvd seq"  ETV
+vector 977  Topo.controller.tcp  "rcvd ack"  ETV
+vector 973  Topo.controller.tcp  "advertised window"  ETV
+vector 971  Topo.controller.tcp  "send window"  ETV
+vector 986  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 972  Topo.controller.tcp  "receive window"  ETV
+vector 975  Topo.controller.tcp  "sent ack"  ETV
+vector 1000  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1001  Topo.controller.tcp  "rcvd ack"  ETV
+vector 997  Topo.controller.tcp  "advertised window"  ETV
+vector 995  Topo.controller.tcp  "send window"  ETV
+vector 1010  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 996  Topo.controller.tcp  "receive window"  ETV
+vector 999  Topo.controller.tcp  "sent ack"  ETV
+vector 1024  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1025  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1021  Topo.controller.tcp  "advertised window"  ETV
+vector 1019  Topo.controller.tcp  "send window"  ETV
+vector 1034  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1020  Topo.controller.tcp  "receive window"  ETV
+vector 1023  Topo.controller.tcp  "sent ack"  ETV
+vector 1048  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1049  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1045  Topo.controller.tcp  "advertised window"  ETV
+vector 1043  Topo.controller.tcp  "send window"  ETV
+vector 1058  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1044  Topo.controller.tcp  "receive window"  ETV
+vector 1047  Topo.controller.tcp  "sent ack"  ETV
+vector 712  Topo.s1.tcp  "rcvd seq"  ETV
+vector 713  Topo.s1.tcp  "rcvd ack"  ETV
+vector 707  Topo.s1.tcp  "send window"  ETV
+vector 736  Topo.s2.tcp  "rcvd seq"  ETV
+vector 737  Topo.s2.tcp  "rcvd ack"  ETV
+vector 731  Topo.s2.tcp  "send window"  ETV
+vector 760  Topo.s3.tcp  "rcvd seq"  ETV
+vector 761  Topo.s3.tcp  "rcvd ack"  ETV
+vector 755  Topo.s3.tcp  "send window"  ETV
+vector 784  Topo.s4.tcp  "rcvd seq"  ETV
+vector 785  Topo.s4.tcp  "rcvd ack"  ETV
+vector 779  Topo.s4.tcp  "send window"  ETV
+vector 808  Topo.s5.tcp  "rcvd seq"  ETV
+vector 809  Topo.s5.tcp  "rcvd ack"  ETV
+vector 803  Topo.s5.tcp  "send window"  ETV
+vector 832  Topo.s6.tcp  "rcvd seq"  ETV
+vector 833  Topo.s6.tcp  "rcvd ack"  ETV
+vector 827  Topo.s6.tcp  "send window"  ETV
+vector 856  Topo.s7.tcp  "rcvd seq"  ETV
+vector 857  Topo.s7.tcp  "rcvd ack"  ETV
+vector 851  Topo.s7.tcp  "send window"  ETV
+vector 880  Topo.s8.tcp  "rcvd seq"  ETV
+vector 881  Topo.s8.tcp  "rcvd ack"  ETV
+vector 875  Topo.s8.tcp  "send window"  ETV
+vector 690  Topo.controller.tcp  "unacked bytes"  ETV
+vector 906  Topo.controller.tcp  "unacked bytes"  ETV
+vector 930  Topo.controller.tcp  "unacked bytes"  ETV
+vector 954  Topo.controller.tcp  "unacked bytes"  ETV
+vector 978  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1002  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1026  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1050  Topo.controller.tcp  "unacked bytes"  ETV
+vector 686  Topo.controller.tcp  "sent seq"  ETV
+vector 902  Topo.controller.tcp  "sent seq"  ETV
+vector 926  Topo.controller.tcp  "sent seq"  ETV
+vector 950  Topo.controller.tcp  "sent seq"  ETV
+vector 974  Topo.controller.tcp  "sent seq"  ETV
+vector 998  Topo.controller.tcp  "sent seq"  ETV
+vector 1022  Topo.controller.tcp  "sent seq"  ETV
+vector 1046  Topo.controller.tcp  "sent seq"  ETV
+vector 715  Topo.s1.tcp  "rcvd dupAcks"  ETV
+vector 739  Topo.s2.tcp  "rcvd dupAcks"  ETV
+vector 763  Topo.s3.tcp  "rcvd dupAcks"  ETV
+vector 787  Topo.s4.tcp  "rcvd dupAcks"  ETV
+vector 811  Topo.s5.tcp  "rcvd dupAcks"  ETV
+vector 835  Topo.s6.tcp  "rcvd dupAcks"  ETV
+vector 859  Topo.s7.tcp  "rcvd dupAcks"  ETV
+vector 883  Topo.s8.tcp  "rcvd dupAcks"  ETV
+vector 710  Topo.s1.tcp  "sent seq"  ETV
+vector 714  Topo.s1.tcp  "unacked bytes"  ETV
+vector 734  Topo.s2.tcp  "sent seq"  ETV
+vector 738  Topo.s2.tcp  "unacked bytes"  ETV
+vector 758  Topo.s3.tcp  "sent seq"  ETV
+vector 762  Topo.s3.tcp  "unacked bytes"  ETV
+vector 782  Topo.s4.tcp  "sent seq"  ETV
+vector 786  Topo.s4.tcp  "unacked bytes"  ETV
+vector 806  Topo.s5.tcp  "sent seq"  ETV
+vector 810  Topo.s5.tcp  "unacked bytes"  ETV
+vector 830  Topo.s6.tcp  "sent seq"  ETV
+vector 834  Topo.s6.tcp  "unacked bytes"  ETV
+vector 854  Topo.s7.tcp  "sent seq"  ETV
+vector 858  Topo.s7.tcp  "unacked bytes"  ETV
+vector 878  Topo.s8.tcp  "sent seq"  ETV
+vector 882  Topo.s8.tcp  "unacked bytes"  ETV
+vector 702  Topo.controller.tcp  "measured RTT"  ETV
+vector 703  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 704  Topo.controller.tcp  RTTVAR  ETV
+vector 705  Topo.controller.tcp  RTO  ETV
+vector 700  Topo.controller.tcp  cwnd  ETV
+vector 691  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 918  Topo.controller.tcp  "measured RTT"  ETV
+vector 919  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 920  Topo.controller.tcp  RTTVAR  ETV
+vector 921  Topo.controller.tcp  RTO  ETV
+vector 916  Topo.controller.tcp  cwnd  ETV
+vector 907  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 942  Topo.controller.tcp  "measured RTT"  ETV
+vector 943  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 944  Topo.controller.tcp  RTTVAR  ETV
+vector 945  Topo.controller.tcp  RTO  ETV
+vector 940  Topo.controller.tcp  cwnd  ETV
+vector 931  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 966  Topo.controller.tcp  "measured RTT"  ETV
+vector 967  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 968  Topo.controller.tcp  RTTVAR  ETV
+vector 969  Topo.controller.tcp  RTO  ETV
+vector 964  Topo.controller.tcp  cwnd  ETV
+vector 955  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 990  Topo.controller.tcp  "measured RTT"  ETV
+vector 991  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 992  Topo.controller.tcp  RTTVAR  ETV
+vector 993  Topo.controller.tcp  RTO  ETV
+vector 988  Topo.controller.tcp  cwnd  ETV
+vector 979  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1014  Topo.controller.tcp  "measured RTT"  ETV
+vector 1015  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1016  Topo.controller.tcp  RTTVAR  ETV
+vector 1017  Topo.controller.tcp  RTO  ETV
+vector 1012  Topo.controller.tcp  cwnd  ETV
+vector 1003  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1038  Topo.controller.tcp  "measured RTT"  ETV
+vector 1039  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1040  Topo.controller.tcp  RTTVAR  ETV
+vector 1041  Topo.controller.tcp  RTO  ETV
+vector 1036  Topo.controller.tcp  cwnd  ETV
+vector 1027  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1062  Topo.controller.tcp  "measured RTT"  ETV
+vector 1063  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1064  Topo.controller.tcp  RTTVAR  ETV
+vector 1065  Topo.controller.tcp  RTO  ETV
+vector 1060  Topo.controller.tcp  cwnd  ETV
+vector 1051  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 726  Topo.s1.tcp  "measured RTT"  ETV
+vector 727  Topo.s1.tcp  "smoothed RTT"  ETV
+vector 728  Topo.s1.tcp  RTTVAR  ETV
+vector 729  Topo.s1.tcp  RTO  ETV
+vector 724  Topo.s1.tcp  cwnd  ETV
+vector 750  Topo.s2.tcp  "measured RTT"  ETV
+vector 751  Topo.s2.tcp  "smoothed RTT"  ETV
+vector 752  Topo.s2.tcp  RTTVAR  ETV
+vector 753  Topo.s2.tcp  RTO  ETV
+vector 748  Topo.s2.tcp  cwnd  ETV
+vector 774  Topo.s3.tcp  "measured RTT"  ETV
+vector 775  Topo.s3.tcp  "smoothed RTT"  ETV
+vector 776  Topo.s3.tcp  RTTVAR  ETV
+vector 777  Topo.s3.tcp  RTO  ETV
+vector 772  Topo.s3.tcp  cwnd  ETV
+vector 798  Topo.s4.tcp  "measured RTT"  ETV
+vector 799  Topo.s4.tcp  "smoothed RTT"  ETV
+vector 800  Topo.s4.tcp  RTTVAR  ETV
+vector 801  Topo.s4.tcp  RTO  ETV
+vector 796  Topo.s4.tcp  cwnd  ETV
+vector 822  Topo.s5.tcp  "measured RTT"  ETV
+vector 823  Topo.s5.tcp  "smoothed RTT"  ETV
+vector 824  Topo.s5.tcp  RTTVAR  ETV
+vector 825  Topo.s5.tcp  RTO  ETV
+vector 820  Topo.s5.tcp  cwnd  ETV
+vector 846  Topo.s6.tcp  "measured RTT"  ETV
+vector 847  Topo.s6.tcp  "smoothed RTT"  ETV
+vector 848  Topo.s6.tcp  RTTVAR  ETV
+vector 849  Topo.s6.tcp  RTO  ETV
+vector 844  Topo.s6.tcp  cwnd  ETV
+vector 870  Topo.s7.tcp  "measured RTT"  ETV
+vector 871  Topo.s7.tcp  "smoothed RTT"  ETV
+vector 872  Topo.s7.tcp  RTTVAR  ETV
+vector 873  Topo.s7.tcp  RTO  ETV
+vector 868  Topo.s7.tcp  cwnd  ETV
+vector 894  Topo.s8.tcp  "measured RTT"  ETV
+vector 895  Topo.s8.tcp  "smoothed RTT"  ETV
+vector 896  Topo.s8.tcp  RTTVAR  ETV
+vector 897  Topo.s8.tcp  RTO  ETV
+vector 892  Topo.s8.tcp  cwnd  ETV
+vector 580  Topo.DC1.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 606  Topo.DC2.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 632  Topo.DC3.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 658  Topo.DC4.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 582  Topo.DC1.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 583  Topo.DC1.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 608  Topo.DC2.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 609  Topo.DC2.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 634  Topo.DC3.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 635  Topo.DC3.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 660  Topo.DC4.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 661  Topo.DC4.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 588  Topo.DC1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 614  Topo.DC2.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 640  Topo.DC3.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 666  Topo.DC4.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 602  Topo.DC1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 628  Topo.DC2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 654  Topo.DC3.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 680  Topo.DC4.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 598  Topo.DC1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 624  Topo.DC2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 650  Topo.DC3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 676  Topo.DC4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 593  Topo.DC1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 619  Topo.DC2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 645  Topo.DC3.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 671  Topo.DC4.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 258  Topo.s6.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 259  Topo.s6.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 269  Topo.s6.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 270  Topo.s6.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 316  Topo.s7.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 317  Topo.s7.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 327  Topo.s7.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 328  Topo.s7.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 262  Topo.s6.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 320  Topo.s7.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 257  Topo.s6.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 315  Topo.s7.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 594  Topo.DC1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 595  Topo.DC1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 646  Topo.DC3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 647  Topo.DC3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 603  Topo.DC1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 655  Topo.DC3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 273  Topo.s6.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 331  Topo.s7.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 268  Topo.s6.etherMAC[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 326  Topo.s7.etherMAC[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 620  Topo.DC2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 621  Topo.DC2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 672  Topo.DC4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 673  Topo.DC4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 629  Topo.DC2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 681  Topo.DC4.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 284  Topo.s6.etherMAC[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 342  Topo.s7.etherMAC[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 279  Topo.s6.etherMAC[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 337  Topo.s7.etherMAC[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 175  Topo.s4.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 176  Topo.s4.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 222  Topo.s5.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 223  Topo.s5.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 168  Topo.s4.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 215  Topo.s5.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 163  Topo.s4.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 210  Topo.s5.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 81  Topo.s2.etherMAC[3]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 82  Topo.s2.etherMAC[3]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 139  Topo.s3.etherMAC[3]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 140  Topo.s3.etherMAC[3]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 52  Topo.s2.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 110  Topo.s3.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 47  Topo.s2.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 105  Topo.s3.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 542  Topo.RTU1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 543  Topo.RTU1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 568  Topo.RTU2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 569  Topo.RTU2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 551  Topo.RTU1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 577  Topo.RTU2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 532  Topo.RTU1.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 533  Topo.RTU1.udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 558  Topo.RTU2.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 559  Topo.RTU2.udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 527  Topo.RTU1.udpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 528  Topo.RTU1.udpApp[0]  rcvdPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(count)"
+vector 553  Topo.RTU2.udpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 554  Topo.RTU2.udpApp[0]  rcvdPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(count)"
+vector 529  Topo.RTU1.udpApp[0]  rcvdAppPkt:vector  ETV
+attr interpolationmode  none
+attr source  rcvdAppPkt
+attr title  "packets received during sec, vector"
+vector 555  Topo.RTU2.udpApp[0]  rcvdAppPkt:vector  ETV
+attr interpolationmode  none
+attr source  rcvdAppPkt
+attr title  "packets received during sec, vector"
+196	45335 12 108 108 0 0 1 1 1 1 1
+203	45347 152 140 2210 0 0.100046328 7 64 64 448 28672
+199	45499 139 252 2162 0.000003152 0.100046328 6 64 64 384 24576
+198	45638 162 148 2230 0.000000576 0.100046904 7 64 64 448 28672
+200	45800 139 252 2162 0.000003152 0.100046328 6 64 64 384 24576
+208	45939 139 260 2166 0.000003152 0.100046328 6 28 44 235 9363
+207	46078 152 132 2206 0 0.100046328 7 28 44 273 10801
+168	46230 10867 2417 40547 0.100058432 19.900033392 398 1296 1296 515808 668487168
+163	57097 10868 2513 40567 0.100068864 19.900043824 398 1296 1296 515808 668487168
+175	67965 10867 2407 40535 0.100058432 19.900033392 398 1296 1296 515808 668487168
+176	78832 10867 2407 40535 0.100058432 19.900033392 398 1296 1296 515808 668487168
+796	89699 25 1108 1108 0.00001328 0.00001328 1 1072 1072 1072 1149184
+798	89724 30 1108 1108 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
+799	89754 29 1108 1108 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
+800	89783 32 1108 1108 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
+801	89815 31 1108 1108 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
+779	89846 50 476 1108 0.000006304 0.00001328 2 7504 7504 15008 112620032
+780	89896 140 92 2182 0 0.100046328 6 7504 7504 45024 337860096
+781	90036 165 92 2182 0 0.100046328 7 7504 7509 52547 394455331
+782	90201 22 799 799 0.000009456 0.000009456 1 1 1 1 1
+783	90223 122 92 2182 0 0.100046328 6 0 5 17 63
+784	90345 111 476 2182 0.000006304 0.100046328 5 1 4 13 39
+785	90456 111 476 2182 0.000006304 0.100046328 5 1 2 8 14
+786	90567 44 799 1108 0.000009456 0.00001328 2 0 1 1 1
+787	90611 89 740 2182 0.000009456 0.100046328 4 0 0 0 0
+794	90700 189 92 2182 0 0.100046328 9 0 0 0 0

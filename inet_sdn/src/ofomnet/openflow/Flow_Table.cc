@@ -24,13 +24,13 @@ static int flow_fields_match(oxm_basic_match *m1, oxm_basic_match *m2, uint32_t 
 {	
 	int returnVal;
 
-	if ((w & OFPFW_IN_PORT) || (m1->OFB_IN_PORT == m2->OFB_IN_PORT)) { 
+	if ((w && OFPFW_IN_PORT) || (m1->OFB_IN_PORT == m2->OFB_IN_PORT)) { 
 		//ARP Packet
-		if (m1->OFB_ETH_TYPE == 2054 ) { 
+		//if (m1->OFB_ETH_TYPE == 2054 ) { 
 			return ( ((w & OFPFW_DL_TYPE) || (m1->OFB_ETH_TYPE == m2->OFB_ETH_TYPE ))
             		&& ((w & OFPFW_DL_SRC) || (!m1->OFB_ETH_SRC.compareTo(m2->OFB_ETH_SRC)))
            			&& ((w & OFPFW_DL_DST) || (!m1->OFB_ETH_DST.compareTo(m2->OFB_ETH_DST))) );
-		}
+	/*	}
 		//IP Packet
 		else if (m1->OFB_ETH_TYPE == 2048) {
 			//mitigation rule: mitigation rule is applied for all IP packets regardless the net protocol
@@ -64,7 +64,7 @@ static int flow_fields_match(oxm_basic_match *m1, oxm_basic_match *m2, uint32_t 
 		    	return 0;
 		}
 		else return 0;
-	}
+	*/}
 	else {
 		return 0; 
 	}
@@ -118,21 +118,22 @@ void Flow_Table::printFlowEntry (oxm_basic_match *match) {
 /* Print Flow Table */
 void Flow_Table::printFlowTable() {
 	std::multimap<oxm_basic_match, entry_data>::iterator j = entry_map.begin();
-	EV << "Flow Table:" << endl;
+	std::cout<<"===================================================================" << endl;
+	std::cout << " [" << getParentModule()->getFullPath() <<" ] Flow Table:" << endl;
     while (j!=entry_map.end()) {
-    	EV << "------------------------" << endl;
-        EV << "IN_PORT:" << j->first.OFB_IN_PORT << endl;
-        EV << "ETH_SRC:" << j->first.OFB_ETH_SRC << endl;
-        EV << "ETH_DST:" << j->first.OFB_ETH_DST << endl;
-        EV << "ETH_TYPE:" << j->first.OFB_ETH_TYPE <<endl;
-        EV << "SRC_IP:" << j->first.OFB_IPV4_SRC <<endl;
-        EV << "DST_IP:" << j->first.OFB_IPV4_DST <<endl;
-        EV << "IP_PROTO:" << j->first.OFB_IP_PROTO <<endl;
-        EV << "DST PORT: " << j->first.NW_DST <<endl;
-        EV << "SRC PORT: " << j->first.NW_SRC <<endl;
-        EV << "COUNTERS:" << j->second.counters->packet_count << endl;
-        EV << "PRIORITY:" << j->second.prior->priority << endl;
-        EV << "OUTPORT:" << j->second.instruc->actions[0].port << endl;
+    	std::cout << "------------------------" << endl;
+        std::cout << "IN_PORT:" << j->first.OFB_IN_PORT << endl;
+        std::cout << "ETH_SRC:" << j->first.OFB_ETH_SRC << endl;
+        std::cout << "ETH_DST:" << j->first.OFB_ETH_DST << endl;
+        std::cout << "ETH_TYPE:" << j->first.OFB_ETH_TYPE <<endl;
+        std::cout << "SRC_IP:" << j->first.OFB_IPV4_SRC <<endl;
+        std::cout << "DST_IP:" << j->first.OFB_IPV4_DST <<endl;
+        std::cout << "IP_PROTO:" << j->first.OFB_IP_PROTO <<endl;
+        std::cout << "DST PORT: " << j->first.NW_DST <<endl;
+        std::cout << "SRC PORT: " << j->first.NW_SRC <<endl;
+        std::cout << "COUNTERS:" << j->second.counters->packet_count << endl;
+        std::cout << "PRIORITY:" << j->second.prior->priority << endl;
+        std::cout << "OUTPORT:" << j->second.instruc->actions[0].port << endl;
         j++;
     }
 }

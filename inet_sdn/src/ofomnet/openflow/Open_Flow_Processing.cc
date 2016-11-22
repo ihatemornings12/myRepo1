@@ -179,8 +179,26 @@ void Open_Flow_Processing::processQueuedMsg(cMessage *data_msg) {
 				droppedPkt++;
 				emit(droppedPktSignal, droppedPkt);
 				delete (data_msg);
-			} else
-				send(frameBeingReceived, "ifOut", outport);
+			} else {
+			    // <A.S>
+			
+			    // get Gate -ok
+			    // check if it connected  -ok
+			    // if yes, send the frame -ok
+			    // else send the packet to the controller
+			    // delte the flow entry
+			    cGate *gate =getParentModule()->gate("ethg$o", outport);
+			    if (gate->isConnected()) 
+			        send(frameBeingReceived, "ifOut", outport);
+			    else {
+			        std::cout<<"[OF switch]gate not connected\n";
+                    // lookup fail; notification to Switch Application module
+			        drop(data_msg);
+			        buffer->push(frameBeingReceived);
+			        OF_Wrapper *dummy = new OF_Wrapper();
+			        emit(NF_NO_MATCH_FOUND, dummy);
+			    }
+			}	
 		} else {
 			// lookup fail; notification to Switch Application module
 			EV << "owner: " << frameBeingReceived->getOwner()->getFullName() << endl;

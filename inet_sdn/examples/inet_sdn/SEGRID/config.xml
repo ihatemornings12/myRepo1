@@ -1,40 +1,34 @@
 <config>
 
-    <interface hosts='SM1' address='192.168.0.1' netmask='255.255.255.0'/>
-    <interface hosts='SM2' address='192.168.0.2' netmask='255.255.255.0'/>
-    <interface hosts='DC1' towards="SM1" address='192.168.0.3' netmask='255.255.255.0'/>
-    <interface hosts='DC1' towards="SM2" address='192.168.0.4' netmask='255.255.255.0'/>
-    <interface hosts='DC1' towards="s6" address='192.168.0.5' netmask='255.255.255.0'/>
+    <interface hosts='SM_DC1*' address='10.11.1.x' netmask='255.255.255.128'/> 
+    <interface hosts='SM_DC2*' address='10.11.2.x' netmask='255.255.255.128'/>  
+    <interface hosts='SM_DC3*' address='10.12.1.x' netmask='255.255.255.128'/> 
+    <interface hosts='SM_DC4*' address='10.12.2.x' netmask='255.255.255.128'/> 
     
-    <interface hosts='SM3' address='192.168.0.6' netmask='255.255.255.0'/>
-    <interface hosts='SM4' address='192.168.0.7' netmask='255.255.255.0'/>
-    <interface hosts='DC2' towards="SM1" address='192.168.0.8' netmask='255.255.255.0'/>
-    <interface hosts='DC2' towards="SM2" address='192.168.0.9' netmask='255.255.255.0'/>
-    <interface hosts='DC2' towards="s6" address='192.168.0.10' netmask='255.255.255.0'/>
+   
+    <interface hosts='DC1'  address='10.11.x.x' netmask='255.255.x.x'/> 
+    <interface hosts='DC2'  address='10.11.x.x' netmask='255.255.x.x'/> 
     
-    <!--> FIXME!!!!!!!!<-->
-    <interface hosts='SM5' address='192.168.1.1' netmask='255.255.255.0'/>
-    <interface hosts='SM6' address='192.168.1.2' netmask='255.255.255.0'/>
-    <interface hosts='DC3' towards="SM5" address='192.168.1.3' netmask='255.255.255.0'/>
-    <interface hosts='DC3' towards="SM6" address='192.168.1.4' netmask='255.255.255.0'/>
-    <interface hosts='DC3' towards="s7" address='192.168.1.5' netmask='255.255.255.0'/>    
-    
-    <interface hosts='SM7' address='192.168.1.6' netmask='255.255.255.0'/>
-    <interface hosts='SM8' address='192.168.1.7' netmask='255.255.255.0'/>
-    <interface hosts='DC4' towards="SM7" address='192.168.1.8' netmask='255.255.255.0'/>
-    <interface hosts='DC4' towards="SM8" address='192.168.1.9' netmask='255.255.255.0'/>
-    <interface hosts='DC4' towards="s7" address='192.168.1.10' netmask='255.255.255.0'/>    
-    
-    
-    <interface hosts='RTU*' address='10.0.0.x' netmask='255.255.255.x'/>
+    <interface hosts='DC3'  address='10.11.x.x' netmask='255.255.x.x'/> 
+    <interface hosts='DC4'  address='10.12.x.x' netmask='255.255.x.x'/> 
     
     <interface hosts='s*' address='172.0.0.x' netmask='255.255.255.x'/>
     <interface hosts='SDNController' address='172.0.0.x' netmask='255.255.255.x'/>
     
-    
+    <interface hosts='RTU*' address='10.0.0.x' netmask='255.255.255.x'/>
+    <interface hosts='DSO' address='10.0.0.x' netmask='255.255.255.x'/>
+      
     
     
     <route hosts="SM*" destination="*" netmask="/0" gateway="*" metric="0" interface="eth0"/> 
     <route hosts="RTU*" destination="*" netmask="/0" gateway="*" metric="0" interface="eth0"/> 
+    <route hosts="DSO*" destination="*" netmask="/0" gateway="*" metric="0" interface="eth0"/> 
+    <route hosts="s*" destination="*" netmask="/0" gateway="*" metric="0" interface="eth0"/> 
+    <route hosts="SDNController" destination="*" netmask="/0" gateway="*" metric="0" interface="eth0"/> 
     
+    <route hosts="DC1" destination="10.0.0.0" netmask="/8"  metric="0" interface="eth0"/> 
+    
+    
+     <route hosts="DC1" destination="10.0.0.0" netmask="/24" gateway="s6" metric="0"/>
+
 </config>
