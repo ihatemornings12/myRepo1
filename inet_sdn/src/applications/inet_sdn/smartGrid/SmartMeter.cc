@@ -1,32 +1,25 @@
 #include "SmartMeter.h"
-
+#include "MeasurementData_m.h"
+#include "seapputils.h"
 
 Define_Module(SmartMeter);
 
-
-void SmartMeter::SmartMeter() {
-}
-
-void SmartMeter::~SmartMeter() {
-    reading = NULL;
-}
-
-
 void SmartMeter::initialize() {
-    int randomInterval = generateRandomValue("int");
-    reading = new cMessage("ReadingData");
-	scheduleAt(simTime()+ randomInterval, reading);
-	
 	measurementDataSignal = registerSignal("MeasurementData");
+	nextReading();
 }
 
 void SmartMeter::handleMessage(cMessage *msg) {
-    if (msg->isSelfMessage() && msg == reading) {
-        //notify data concentrator
+    if (msg->isSelfMessage()) {      
+        //notify data concentrator-emit signal
+        MeasurementData *data = new MeasurementData();
+        data->setInfo(1);
+        emit(measurementDataSignal, data);
         
-        //reschedule the new message
-        int randomInterval = generateRandomValue("int");
-        scheduleAt(simTime()+ randomInterval, reading);
+        delete msg;
+        
+        //reschedule / generate new message
+        nextReading();
     }
 
 }
@@ -34,3 +27,8 @@ void SmartMeter::handleMessage(cMessage *msg) {
 void SmartMeter::finish() {
 }
 
+void SmartMeter::nextReading() {
+    cMessage *reading = new cMessage("ReadingData");
+    int randomInterval = generateRandomIntValue(1,3);
+    scheduleAt(simTime() + randomInterval, reading);
+}

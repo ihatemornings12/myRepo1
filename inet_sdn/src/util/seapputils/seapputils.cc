@@ -365,6 +365,14 @@ string generateRandomValue(string networkAddress, string netmask) {
 
     return to_string(addr);
 }
+// <A.S>
+int generateRandomIntValue(int a, int b) {
+    random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
+	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
+								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
+	uniform_int_distribution<int> distr(a, b);
+    return distr(generator);
+}
 
 // <A.S>
 string generateRandomValue(const char *fieldType) {

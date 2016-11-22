@@ -1,7 +1,7 @@
 package inet.applications.inet_sdn.smartGrid;
 
 
-simple SmartMeter extends StandardHost {
+simple SmartMeter {
     parameters:
         @display("i=device/palm2");
 }

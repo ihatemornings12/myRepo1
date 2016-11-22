@@ -75,6 +75,7 @@ TCPSocket *OFA_controller::findSocketFor(cMessage *msg)
     return (i==socketMap.end()) ? NULL : i->second;
 }
 
+// <A.S>
 void OFA_controller::receiveSignal(cComponent *src, simsignal_t id, cObject *obj) {
 	string signalName(getSignalName(id));
 	

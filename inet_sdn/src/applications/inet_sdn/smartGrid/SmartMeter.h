@@ -4,24 +4,20 @@
 
 #include "INETDefs.h"
 #include "omnetpp.h"
-#include <string>
+
 
 using namespace std;
 
 class SmartMeter : public cSimpleModule
 {
-    private:
-        //self messages
-        cMessage *reading;
-        
+    private:       
         //signal
         simsignal_t measurementDataSignal;
 	private:
 		void sendMeasurementData();
+		void nextReading();
 
   	public:
-  	    SmartMeter();
-  	    ~SmartMeter();
     	virtual void initialize();
     	virtual void handleMessage(cMessage *msg);
     	virtual void finish();
