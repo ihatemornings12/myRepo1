@@ -4,25 +4,26 @@
 #include "list"
 #include "IPv4Datagram.h"
 #include "GenericAppMsg_m.h"
-#include "openflow.h"
-#include "Open_Flow_Message_m.h"
+
 #include "Hub.h"
 #include "Switch.h"
+#include "Forwarding.h"
 #include "OF_Wrapper.h"
 #include "OFP_Packet_Out_m.h"
-#include "TCPCommand_m.h"
+#include "TCPConnection.h"
+#include "AttackDetection.h"
+#include "Mitigation.h"
+
+#include "openflow.h"
+#include "Open_Flow_Message_m.h"
 #include "OFP_Flow_Mod_m.h"
 #include "OFP_Features_Request_m.h"
 #include "OFP_Features_Reply_m.h"
 #include "OFP_Flow_Removed_m.h"
 #include "OFP_Flow_Stats_Request_m.h"
 #include "OFP_Flow_Stats_Reply_m.h"
-#include "Forwarding.h"
-#include "TCPConnection.h"
-#include "AttackDetection.h"
-#include "Mitigation.h"
-
-
+#include "OFP_Echo_Request_m.h"
+#include "OFP_Echo_Reply_m.h"
 
 using namespace std;
 
@@ -51,11 +52,23 @@ void OFA_controller::initialize()
 
     PacketInSignalId = registerSignal("PacketIn");
     connIDSignal = registerSignal("connID");
+    
+    // <A.S>
+    errorSignal = registerSignal("ErrorDetected");
 	
     busy = false;
     
-    reqFlowStats = new cMessage("RequestFlowStats");
-	scheduleAt(simTime()+statsInterval, reqFlowStats);
+    // schedule self messages
+    // reqFlowStats = new cMessage("RequestFlowStats");
+    // reqFlowStats->setKind(STATS_REQUEST);
+	// scheduleAt(simTime()+statsInterval, reqFlowStats);
+	
+	// <A.S>
+	echoRequestMsg = new cMessage("EchoRequest");
+    echoRequestMsg->setKind(ECHO_REQUEST);
+	scheduleAt(simTime()+par("echoInterval"), echoRequestMsg);
+	
+	allActive = true;
 	
 	cModule *ITModule = getParentModule()->getSubmodule("attackDetection");
     attackDetection = check_and_cast<AttackDetection *>(ITModule);
@@ -119,34 +132,41 @@ void OFA_controller::handleMessage(cMessage *msg)
 {
     // self messages used to implement service time
     if (msg->isSelfMessage()) {
-    	if (msg == reqFlowStats) { //request flow stats periodically
-    		flowStatsRequest();
-			scheduleAt(simTime()+statsInterval, reqFlowStats);
-   		}
-        else {        		
-		    cMessage *data_msg = (cMessage *) msg->getContextPointer();
-		    delete msg;
-		    processQueuedMsg(data_msg);
+        switch(msg->getKind()) {
+            case STATS_REQUEST:
+                //flowStatsRequest();
+			    break;
+            case ECHO_REQUEST:
+                sendEchoRequest();
+                break;
+            case CHECK:
+                checkEchoReplies();
+                break;
+            default: 
+                cMessage *data_msg = (cMessage *) msg->getContextPointer();
+		        //delete msg;
+		        processQueuedMsg(data_msg);
 		    		    
-		    if (msg_list.empty()) {
-		        busy = false;
-		    }
-		    else {
-		        cMessage *msgfromlist = msg_list.front();
-		        msg_list.pop_front();
-		        char buf[80];
-		        sprintf(buf, " %d pakets in queue", msg_list.size());
-		        getParentModule()->getDisplayString().setTagArg("t", 0, buf);
-		        std::list<cMessage *>::iterator i = msg_list.begin();
-		        while (i!=msg_list.end()) {
-		        	EV << (*i)->getFullPath() << endl;
-		            i++;
+		        if (msg_list.empty()) {
+		            busy = false;
 		        }
-		        cMessage *event = new cMessage("event");
-		        event->setContextPointer(msgfromlist);
-		        scheduleAt(simTime()+serviceTime, event);
-		    }
+		        else {
+		            cMessage *msgfromlist = msg_list.front();
+		            msg_list.pop_front();
+		            char buf[80];
+		            sprintf(buf, " %d pakets in queue", msg_list.size());
+		            getParentModule()->getDisplayString().setTagArg("t", 0, buf);
+		            std::list<cMessage *>::iterator i = msg_list.begin();
+		            while (i!=msg_list.end()) {
+		            	EV << (*i)->getFullPath() << endl;
+		                i++;
+		            }
+		            cMessage *event = new cMessage("event");
+		            event->setContextPointer(msgfromlist);
+		            scheduleAt(simTime()+serviceTime, event);
+		        }
         }
+        delete msg;
     }
     else
     {
@@ -162,6 +182,8 @@ void OFA_controller::handleMessage(cMessage *msg)
         }
     }
 }
+
+
 
 void OFA_controller::processQueuedMsg(cMessage *data_msg)
 {
@@ -181,15 +203,12 @@ void OFA_controller::processQueuedMsg(cMessage *data_msg)
             OF_Wrapper *wrapper = new OF_Wrapper();
             wrapper->connID = socket->getConnectionId();
             wrapper->ip_src = &ip_src;
-            emit(connIDSignal, wrapper);
-            
+            emit(connIDSignal, wrapper);           
         }
 
         handshake(data_msg);
-
     }
-
-    
+   
     if (dynamic_cast<Open_Flow_Message *>(data_msg) != NULL) {
         Open_Flow_Message *of_msg = (Open_Flow_Message *)data_msg;
         ofp_type type = (ofp_type)of_msg->getHeader().type;
@@ -203,6 +222,9 @@ void OFA_controller::processQueuedMsg(cMessage *data_msg)
 		        break;
 		    case OFPT_FEATURES_REPLY:
 		        handleFeaturesReply(of_msg);
+		        break;
+		    case OFPT_ECHO_REPLY:
+		        handleEchoReply(of_msg);
 		        break;
 		    case OFPT_FLOW_REMOVED:
 		    	handleFlowRemovedMessage(of_msg);
@@ -236,6 +258,116 @@ void OFA_controller::handleFeaturesReply(Open_Flow_Message *of_msg)
     //OFP_Features_Reply *featuresReply = (OFP_Features_Reply *) of_msg;
 }
 
+
+void OFA_controller::sendEchoRequest() {
+    allActive = false;
+    cout<<"OFA_controller::handleEchoRequest" << endl;
+    SocketMap::iterator i = socketMap.begin();
+	while (i != socketMap.end() ) {
+		OFP_Echo_Request *echoRequest= new OFP_Echo_Request("EchoRequest");
+		echoRequest->getHeader().type = OFPT_ECHO_REQUEST;
+		echoRequest->setByteLength(1);
+		echoRequest->setKind(TCP_C_SEND);
+		TCPSocket *socket;
+		socket = i->second;
+        socket -> send(echoRequest);
+		socket = NULL;
+		i++;
+	} 
+
+    //check after 1 sec which switches have replier. if not all, then re-calculate topo
+    cMessage *checkMsg = new cMessage("CheckEchoReplies");
+    checkMsg->setKind(CHECK);  
+    scheduleAt(simTime()+1, checkMsg);
+
+}
+
+void OFA_controller::handleEchoReply(Open_Flow_Message *of_msg) {
+	EV << "OFA_controller::handleEchoReply" << endl;
+    OFP_Echo_Reply *echoReply = (OFP_Echo_Reply *) of_msg;
+	int datapathId = echoReply->getDatapath_id();
+	
+	//activeSwitches.push_back(datapathId);
+	activeSwitches.push_back(findSocketFor(of_msg)->getConnectionId());
+	if(activeSwitches.size() == socketMap.size()) {
+	    allActive = true;
+	    activeSwitches.clear();
+	}
+	
+	
+}
+
+void OFA_controller::checkEchoReplies() {
+    
+    if (activeSwitches.size() != socketMap.size() && !allActive) { //be sure that no new echo request has been sent
+        
+        findDisconnectedSwitch(activeSwitches);
+        std::cout <<"------ socket map sixe = " << socketMap.size() << endl;
+        
+        activeSwitches.clear();
+        
+        //reset all flows
+        EV << "OFA_controller::sendFlowModMessage:DELETE" << endl;
+        
+        SocketMap::iterator i = socketMap.begin();
+	    while (i != socketMap.end() ) {
+	        OFP_Flow_Mod *flow_mod_msg = new OFP_Flow_Mod("flow_mod");
+            flow_mod_msg->getHeader().version = OFP_VERSION;
+            flow_mod_msg->getHeader().type = OFPT_FLOW_MOD;
+            flow_mod_msg->setCommand(OFPFC_DELETE);
+            flow_mod_msg->setByteLength(1);
+            flow_mod_msg->setKind(TCP_C_SEND);
+		    
+		    TCPSocket *socket;
+		    socket = i->second;
+            socket -> send(flow_mod_msg);
+		    socket = NULL;
+		    i++;
+	    }
+	    
+        //steile signal sto app na kanei tin topologia  
+        cout<<"Re-calculate Topo " << simTime() << endl;
+        if (hasListeners(errorSignal)) {
+            OF_Wrapper *wrapper = new OF_Wrapper();
+            emit(errorSignal,wrapper);
+        }
+        
+        //if an error has been detected, re-calculate the topo and re schedule the messages in the right order to keep the period alligned
+        cMessage *echoReqMsg = new cMessage("EchoRequest");
+        echoReqMsg->setKind(ECHO_REQUEST);
+        scheduleAt(simTime()+par("echoInterval")+1, echoReqMsg);   
+    
+    }
+    else { 
+        cMessage *echoReqMsg = new cMessage("EchoRequest");
+        echoReqMsg->setKind(ECHO_REQUEST);
+        scheduleAt(simTime()+par("echoInterval")-1, echoReqMsg);   
+    }
+
+}
+
+void OFA_controller::findDisconnectedSwitch(std::vector<int> activeSwitches) {
+    std::cout << "====== Socket map : " << endl;
+    for (SocketMap::iterator i = socketMap.begin(); i!= socketMap.end(); i++) 
+        std::cout << " " << i->first ;
+    std::cout << "\n====== Active switches : " << endl;
+    for (std::vector<int>::iterator it = activeSwitches.begin(); it != activeSwitches.end(); it++) 
+        std::cout <<" " << *it ;
+    
+    SocketMap::iterator i = socketMap.begin();
+    while (i != socketMap.end()) {
+        std::vector<int>::iterator it = find (activeSwitches.begin(), activeSwitches.end(), i->first);
+        if (it == activeSwitches.end()) {
+            std::cout <<"\nden apantise o " << i->first << endl;
+            i->second->close();
+            
+            socketMap.erase(i);
+        }
+        i++;
+    }
+
+}
+
 void OFA_controller::handleFlowRemovedMessage(Open_Flow_Message *of_msg) {
 	EV << "OFA_controller::handleFlowRemoved" << endl;
 	//OFP_Flow_Removed *flowRemoved = (OFP_Flow_Removed *) of_msg;
@@ -259,6 +391,12 @@ void OFA_controller::flowStatsRequest() {
 		socket = NULL;
 		i++;
 	}
+	
+	cMessage *reqStatsMsg = new cMessage("RequestFlowStats");
+    reqStatsMsg->setKind(STATS_REQUEST);
+
+    scheduleAt(simTime()+statsInterval, reqStatsMsg);
+    
 }
 
 void OFA_controller::handleFlowStatsReply (Open_Flow_Message *of_msg) {
@@ -282,8 +420,8 @@ void OFA_controller::handleFlowStatsReply (Open_Flow_Message *of_msg) {
 		collectedStats.insert(make_pair(datapathId, stats));
 	}
 	
-	//call detection module
-	if (collectedStats.size() == socketMap.size()) { //all switches replied
+	//call detection module when all switches have replied
+	if (collectedStats.size() == socketMap.size()) { 
 		attackDetection->dataAnalysis(collectedStats);
 		collectedStats.clear();
 	}

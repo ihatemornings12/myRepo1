@@ -10,6 +10,7 @@
 #include "OFP_Flow_Removed_m.h"
 #include "OFP_Flow_Stats_Request_m.h"
 #include "OFP_Flow_Stats_Reply_m.h"
+#include "OFP_Echo_Reply_m.h"
 #include "IPv4Datagram.h"
 #include "ARPPacket_m.h"
 #include "IPvXAddressResolver.h"
@@ -80,6 +81,8 @@ void OFA_switch::handleMessage(cMessage *msg)
         case OFPT_FEATURES_REQUEST:
             handleFeaturesRequestMessage(of_msg);
             break;
+        case OFPT_ECHO_REQUEST:
+            handleEchoRequestMessage(of_msg);
         case OFPT_STATS_REQUEST:
         	handleFlowStatsRequest(of_msg); //flow stats request
         	break;
@@ -117,6 +120,22 @@ void OFA_switch::handleFeaturesRequestMessage(Open_Flow_Message *of_msg)
     featuresReply->setN_buffers(capacity);
     socket.send(featuresReply);
 }
+
+void OFA_switch::handleEchoRequestMessage(Open_Flow_Message *of_msg) {
+    OFP_Echo_Reply *echoReply = new OFP_Echo_Reply("EchoReply");
+    echoReply->getHeader().version = OFP_VERSION;
+    echoReply->getHeader().type = OFPT_ECHO_REPLY;
+    echoReply->setByteLength(1);
+    echoReply->setKind(TCP_C_SEND);
+    int connID = socket.getConnectionId();
+    echoReply->setDatapath_id(connID);
+
+    std::cout<<"switch reply = " << connID <<endl;
+    socket.send(echoReply);
+
+
+}
+
 
 void OFA_switch::handleFlowStatsRequest(Open_Flow_Message *of_msg) {
 	EV << "OFA_Switch:: FlowStatsReply" << endl;
@@ -298,64 +317,77 @@ void OFA_switch::handleFlowModMessage(Open_Flow_Message *of_msg)
 {
     EV << "OFA_switch::handleFlowModMessage" << endl;
     OFP_Flow_Mod *flow_mod_msg = (OFP_Flow_Mod *) of_msg;
-    oxm_basic_match *match = &flow_mod_msg->getMatch();
-
-    // Construct unique name for flow entry timeout message
-	ofp_action_output actions[1];
-	entry_data *data = new entry_data();
-	flow_table_instructions *instruc = new flow_table_instructions;
-	int actionsSize = flow_mod_msg->getActionsArraySize();
-	if (actionsSize > 0) {
-    	actions[0] = flow_mod_msg->getActions(0);
-    	instruc->actions[0] = actions[0];
-    	data->instruc = instruc;
-    }
-    else {
-    	//DROP ACTION
-    	actions[0].port = -1;
-    	instruc->actions[0] = actions[0];
-    	data->instruc = instruc;
-    }
     
-    flow_table_counters *counters = new flow_table_counters;
-    counters->packet_count = 1;
-    data->counters = counters;
-    
-    int priority = flow_mod_msg->getPriority();
-    flow_table_priority *prior = new flow_table_priority;
-    prior->priority = priority;
-    data->prior = prior;
-    
-    flow_table->addEntry(match, data);
+    switch (flow_mod_msg->getCommand()) {
+        case OFPFC_ADD: {
+            oxm_basic_match *match = &flow_mod_msg->getMatch();
 
-    oxm_basic_match *copy = new oxm_basic_match();
+            // Construct unique name for flow entry timeout message
+	        ofp_action_output actions[1];
+	        entry_data *data = new entry_data();
+	        flow_table_instructions *instruc = new flow_table_instructions;
+	        int actionsSize = flow_mod_msg->getActionsArraySize();
+	        if (actionsSize > 0) {
+            	actions[0] = flow_mod_msg->getActions(0);
+            	instruc->actions[0] = actions[0];
+            	data->instruc = instruc;
+            }
+            else {
+            	//DROP ACTION
+            	actions[0].port = -1;
+            	instruc->actions[0] = actions[0];
+            	data->instruc = instruc;
+            }
+            
+            flow_table_counters *counters = new flow_table_counters;
+            counters->packet_count = 1;
+            data->counters = counters;
+            
+            int priority = flow_mod_msg->getPriority();
+            flow_table_priority *prior = new flow_table_priority;
+            prior->priority = priority;
+            data->prior = prior;
+            
+            flow_table->addEntry(match, data);
 
-    copy->OFB_ETH_DST = match->OFB_ETH_DST;
-    copy->OFB_ETH_SRC = match->OFB_ETH_SRC;
-    copy->OFB_ETH_TYPE = match->OFB_ETH_TYPE;
-    copy->OFB_IN_PORT = match->OFB_IN_PORT;
-    copy->OFB_IPV4_DST = match->OFB_IPV4_DST;
-    copy->OFB_IPV4_SRC = match->OFB_IPV4_SRC;
-    copy->OFB_IP_PROTO = match->OFB_IP_PROTO;
-    copy->NW_DST = match->NW_DST;
-    copy->NW_SRC = match->NW_SRC;
-    copy->wildcards = match->wildcards;
+            oxm_basic_match *copy = new oxm_basic_match();
 
-    std::stringstream timerName;
-    timerName << "sMac:" << copy->OFB_ETH_SRC;
-    timerName << ", dMac:" << copy->OFB_ETH_DST;
-    timerName << ", iPort:" << copy->OFB_IN_PORT;
-    timerName << ", eType:" << copy->OFB_ETH_TYPE;
-    timerName << ", dIp:" << copy->OFB_IPV4_DST;
-    timerName << ", sIp:" << copy->OFB_IPV4_SRC;
-    timerName << ", dstPort:" << copy->NW_DST;
-    timerName << ", srcPort:" << copy->NW_SRC;
+            copy->OFB_ETH_DST = match->OFB_ETH_DST;
+            copy->OFB_ETH_SRC = match->OFB_ETH_SRC;
+            copy->OFB_ETH_TYPE = match->OFB_ETH_TYPE;
+            copy->OFB_IN_PORT = match->OFB_IN_PORT;
+            copy->OFB_IPV4_DST = match->OFB_IPV4_DST;
+            copy->OFB_IPV4_SRC = match->OFB_IPV4_SRC;
+            copy->OFB_IP_PROTO = match->OFB_IP_PROTO;
+            copy->NW_DST = match->NW_DST;
+            copy->NW_SRC = match->NW_SRC;
+            copy->wildcards = match->wildcards;
+
+            std::stringstream timerName;
+            timerName << "sMac:" << copy->OFB_ETH_SRC;
+            timerName << ", dMac:" << copy->OFB_ETH_DST;
+            timerName << ", iPort:" << copy->OFB_IN_PORT;
+            timerName << ", eType:" << copy->OFB_ETH_TYPE;
+            timerName << ", dIp:" << copy->OFB_IPV4_DST;
+            timerName << ", sIp:" << copy->OFB_IPV4_SRC;
+            timerName << ", dstPort:" << copy->NW_DST;
+            timerName << ", srcPort:" << copy->NW_SRC;
 
 	
-	cMessage *timeoutmsg = new cMessage(timerName.str().c_str());
-	timeoutmsg->setKind(MSGKIND_FLOW_ENTRY_TIMER);
-	timeoutmsg->setContextPointer(copy);
-	scheduleAt(simTime()+timeout, timeoutmsg);
+	        cMessage *timeoutmsg = new cMessage(timerName.str().c_str());
+	        timeoutmsg->setKind(MSGKIND_FLOW_ENTRY_TIMER);
+	        timeoutmsg->setContextPointer(copy);
+	        scheduleAt(simTime()+timeout, timeoutmsg);
+            break;   
+        }
+        case OFPFC_DELETE:
+            flow_table->deleteFlowTable();
+            break;
+            
+        default:
+            break;
+    }
+ 
 }
 
 

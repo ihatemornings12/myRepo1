@@ -58,6 +58,7 @@ public:
     Flow_Table();
     void addEntry(oxm_basic_match *match, entry_data* entry);
     bool deleteEntry(oxm_basic_match *match);
+    void deleteFlowTable();
     bool lookup(oxm_basic_match *match);
     ofp_action_output *returnAction(oxm_basic_match *match);
 	int getPacketCount(oxm_basic_match *match);
@@ -65,6 +66,7 @@ public:
 	void printFlowTable();
 	ofp_flow_stats *returnStats(oxm_basic_match *match);
 	ofp_flow_stats *returnStats();
+	
 
 protected:
     virtual void initialize();

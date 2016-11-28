@@ -9,22 +9,19 @@ void SmartMeter::initialize() {
 	nextReading();
 }
 
-void SmartMeter::handleMessage(cMessage *msg) {
-    if (msg->isSelfMessage()) {      
-        //notify data concentrator-emit signal
-        MeasurementData *data = new MeasurementData();
-        data->setInfo(1);
-        emit(measurementDataSignal, data);
-        
-        delete msg;
-        
-        //reschedule / generate new message
-        nextReading();
-    }
-
+void SmartMeter::finish() {
 }
 
-void SmartMeter::finish() {
+void SmartMeter::handleMessage(cMessage *msg) {
+    if (msg->isSelfMessage()) {      
+        MeasurementData *data = new MeasurementData();
+        data->setInfo(1);
+        
+        emit(measurementDataSignal, data);     
+        
+        delete msg;
+        nextReading();
+    }
 }
 
 void SmartMeter::nextReading() {

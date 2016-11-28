@@ -250,6 +250,14 @@ int Flow_Table::getPacketCount(oxm_basic_match *match)
     return -1;
 }
 
+
+void Flow_Table::deleteFlowTable() {
+    multimap<oxm_basic_match, entry_data>::iterator iterBegin = entry_map.begin();
+    multimap<oxm_basic_match, entry_data>::iterator iterEnd = entry_map.end();
+    entry_map.erase(iterBegin, iterEnd);
+}
+
+
 void Flow_Table::handleMessage(cMessage *msg)
 {
     opp_error("This module doesn't process messages");

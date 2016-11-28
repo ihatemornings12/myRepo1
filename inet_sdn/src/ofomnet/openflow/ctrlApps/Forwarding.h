@@ -60,15 +60,19 @@ protected:
     virtual bool processARPPacket(OFP_Packet_In *packet_in, int connID);
 
     virtual int numInitStages() const  {return 5;}
-
+    
     simsignal_t connIDSignal;
     simsignal_t PacketInSignalId;
+    
+    //recalculate topology
+    simsignal_t errorSignal;
 
     cTopology topo_forw;
     NodeInfoVector nodeInfo;
     bool isArpOracle;
-
-
+    
+    // <A.S>
+    void recalculateTopology(cTopology& topo, NodeInfoVector& nodeInfo);
 private:
     OFA_controller *controller;
     typedef std::vector<std::pair<int, uint32_t> > UnsortedMap;

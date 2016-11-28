@@ -44,12 +44,16 @@ void Forwarding::initialize(int stage)
         // This module does not emit any events for these signals
         connIDSignal = registerSignal("connID");
         PacketInSignalId = registerSignal("PacketIn");
+        // <A.S>
+        errorSignal = registerSignal("ErrorDetected");
 
         // Register to these signals as they are used for communication between ctrlApp and ofa_controller
         // Subscribe one level in hierarchy above because signals are only propagated upwards
         getParentModule()->subscribe(connIDSignal,this);
         getParentModule()->subscribe(PacketInSignalId,this);
-
+        // <A.S>
+        getParentModule()->subscribe(errorSignal, this);
+        
         // Does this controller app answer ARP requests?
         isArpOracle = par("isArpOracle").boolValue();
 
@@ -91,8 +95,7 @@ bool selectFunctionForwarding(cModule *mod, void *v_ptr){
 }
 
 void  Forwarding::extractTopology(cTopology &topo, NodeInfoVector &nodeInfo)
-{
-
+{    
     // We either have knowledge about the entire network or only about our own domain
     if(par("domainID").longValue() >= 0){
         int domainID = getParentModule()->par("domainID").longValue();
@@ -118,7 +121,7 @@ void  Forwarding::extractTopology(cTopology &topo, NodeInfoVector &nodeInfo)
         }
         if (nodeInfo[i].isOpenFlow)
         {
-            EV << "extractTopology: OF-Switch found" << endl;
+            std::cout << "extractTopology: OF-Switch found" << nodeInfo[i].name << " id = "<< nodeInfo[i].connID<<endl;
         }
     }
 }
@@ -145,8 +148,22 @@ void Forwarding::assignAddresses(cTopology &topo, NodeInfoVector &nodeInfo)
     }
 }
 
-
-
+//<A.S>
+void Forwarding::recalculateTopology(cTopology& topo, NodeInfoVector& nodeInfo) {
+    NodeInfoVector::iterator it;
+    int i=0;
+    for (it = nodeInfo.begin(); it!=nodeInfo.end(); it++)
+    {
+        cModule *mod = topo.getNode(i)->getModule();
+        if (mod == NULL) {
+            nodeInfo.erase(it);
+        }
+        i++;
+        
+    }
+    topo.extractByNedTypeName(cStringTokenizer(par("nedTypes")).asVector());
+        
+}
 
 
 void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
@@ -222,7 +239,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                                 continue;
 
                             cTopology::Node *atNode = topo_forw.getNode(j);
-                            
+                            //<A.S>
                             if (atNode->getModule() == NULL)
                                 continue;
                             // Only choose nodes which have shortest path to destination node
@@ -244,7 +261,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                             EV << "--------------------------------------";
                             EV << "shortest path for : " << atNode->getModule()->getFullName() << endl;
                             EV << outport << endl;
-                            EV << "remote node: "<< atNode->getPath(0)->getRemoteNode()->getModule()->getFullName() << endl;
+                           // EV << "remote node: "<< atNode->getPath(0)->getRemoteNode()->getModule()->getFullName() << endl;
                             nextNode = atNode->getPath(0)->getRemoteNode();
 
                             connID_outport.push_back(std::pair<int, uint32_t> (nodeInfo[j].connID, outport));
@@ -282,7 +299,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 //                        controller->sendFlowModMessage(OFPFC_ADD, match, outport, nodeInfo[j].connID);
 //                        if (nodeInfo[j].connID == connID)
 //                            controller->sendPacket(buffer_id, packet_in, outport, connID);
-
+                        std::cout<<"send flow mod msg sto connID = " << rev_iterator->first <<endl;
                         controller->sendFlowModMessage(OFPFC_ADD, match, rev_iterator->second, rev_iterator->first);
                         if (rev_iterator->first == connID)
                             controller->sendPacket(buffer_id, packet_in, rev_iterator->second, connID);
@@ -327,6 +344,11 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             }
         }
 
+    }
+    else if (id == errorSignal) {
+        //<A.S>
+        std::cout<<"TOPO changed!!!!!!\n";
+        recalculateTopology(topo_forw, nodeInfo);
     }
 
 }

@@ -52,10 +52,21 @@ protected:
 	
 	void receiveSignal(cComponent *src, simsignal_t id, cObject *obj);
 
-
+    // <A.S>
+    void sendEchoRequest();
+    void handleEchoReply(Open_Flow_Message *of_msg);
+    
 private:
+    void checkEchoReplies();
+    void findDisconnectedSwitch(std::vector<int> activeSwitches);
+private:
+    enum selfMsgsKind {STATS_REQUEST = 1, ECHO_REQUEST, CHECK};
+
     simsignal_t PacketInSignalId;
     simsignal_t connIDSignal;
+    
+    // <A.S>
+    simsignal_t errorSignal;
     cListener *listener;
 
     bool busy;
@@ -66,6 +77,9 @@ private:
     
     //self messages
     cMessage *reqFlowStats;
+    cMessage *echoRequestMsg;
+    std::vector<int> activeSwitches;
+    bool allActive;
     
     //collected statistics
     typedef std::map<int, ofp_flow_stats *> StatsMap;

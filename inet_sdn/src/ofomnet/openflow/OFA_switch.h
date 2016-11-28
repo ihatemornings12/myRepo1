@@ -37,6 +37,7 @@ protected:
     void connect();
     void handleTimer(cMessage *msg);
     void handleFeaturesRequestMessage(Open_Flow_Message *of_msg);
+    void handleEchoRequestMessage(Open_Flow_Message *of_msg);
 
     void execute_packet_out_action(ofp_action_header *action, uint32_t buffer_id, uint32_t inport);
     void execute_packet_out_action(ofp_action_header *action, EthernetIIFrame *frame, uint32_t inport);

@@ -122,9 +122,6 @@ void UDPBasicApp::sendPacket()
     cPacket *payload = new cPacket(msgName);
     payload->setByteLength(par("messageLength").longValue());
     
-    // <A.S>
-	//SendApplicationPacket *payload = new SendApplicationPacket ("original", 1);
-	//payload->setByteLength(par("messageLength").longValue());
 	
 	//<F.R.>
 	//ApplicationPacket* payload = new ApplicationPacket();

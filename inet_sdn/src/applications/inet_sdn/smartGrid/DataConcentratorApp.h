@@ -1,36 +1,48 @@
 #ifndef DATACONCENTRATORAPP_H
 #define DATACONCENTRATORAPP_H
 
-#include "INETDefs.h"
 #include "omnetpp.h"
+#include "INETDefs.h"
 #include "TCPSocket.h"
+#include "Report.h"
 
 using namespace std;
 
 class DataConcentratorApp : public cSimpleModule, public cListener
 {
     private:
-        struct Report {
-            int cnt = 0;
-            int sum = 0;
-            void reset() { cnt = 0; sum = 0;};
-        } report;
-        
+        enum SelfMsgKinds { CONNECT = 1, SEND };
+        Report *report;
         cListener *listener;
         int interval;
+            
+        simtime_t startTime;
+        simtime_t stopTime;
+        cMessage *timeoutMsg;
+        cMessage *reportMsg;
+        
         TCPSocket socket;
+        
+        // statistics
+        int numSent;
+        int numReceived;
+        
+        static simsignal_t rcvdPkSignal;
+        static simsignal_t sentPkSignal;
 	private:
 		void sendMeasurementData();
-		
+		void sendReportToRTU();
 		//TCP related functions
         void connect();
-        void handleTimer(cMessage *msg);
-		
+        void bind();		
+		void displayGUI();
 	protected:
 	    void receiveSignal(cComponent *src, simsignal_t id, cObject *obj);
 
   	public:
-    	virtual void initialize();
+  	    DataConcentratorApp();
+  	    ~DataConcentratorApp();
+    	virtual void initialize(int stage);
     	virtual void handleMessage(cMessage *msg);
     	virtual void finish();
  
