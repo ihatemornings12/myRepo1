@@ -5,7 +5,7 @@
 	<Physical>
 
 		<Attack>
-			<start_time>4</start_time>
+			<start_time>3</start_time>
 			<node>8</node>
 
 			<action>

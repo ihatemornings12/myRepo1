@@ -6,8 +6,6 @@ cplusplus {{
 
 packet Open_Flow_Message;
 
-
-
 packet OFP_Echo_Reply extends Open_Flow_Message
 {
     int datapath_id;

@@ -16,6 +16,7 @@
 #include "Open_Flow_Message_m.h"
 #include "Flow_Table.h"
 #include "Open_Flow_Processing.h"
+#include "OFP_Flow_Mod_m.h"
 
 
 class OFA_switch: public cSimpleModule, public cListener
@@ -56,7 +57,10 @@ private:
     simsignal_t NF_FLOOD_PACKET;
     simsignal_t NF_SEND_PACKET;
     simsignal_t NF_NO_MATCH_FOUND;
-
+    simsignal_t NF_PORT_STATUS;
+    
+    void addNewFlowEntry(OFP_Flow_Mod *flow_mod_msg);
+    void handlePortChange(uint16_t portNo);
 };
 
 

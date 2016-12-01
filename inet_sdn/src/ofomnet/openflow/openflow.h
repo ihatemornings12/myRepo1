@@ -382,4 +382,36 @@ enum ofp_flow_mod_command {
  priority. */
 };
 
+/* Description of a physical port */
+struct ofp_phy_port {
+    uint16_t port_no;
+    //uint8_t hw_addr[OFP_ETH_ALEN];
+    //char name[OFP_MAX_PORT_NAME_LEN]; /* Null-terminated */
+    //uint32_t config;        /* Bitmap of OFPPC_* flags. */
+    //uint32_t state;         /* Bitmap of OFPPS_* flags. */
+    /* Bitmaps of OFPPF_* that describe features.  All bits zeroed if
+    * unsupported or unavailable. */
+    //uint32_t curr;          /* Current features. */
+    //uint32_t advertised;    /* Features being advertised by the port. */
+    //uint32_t supported;     /* Features supported by the port. */
+};
+
+/* A physical port has changed in the datapath */
+struct ofp_port_status {
+    struct ofp_header header;
+    uint8_t reason;          /* One of OFPPR_*. */
+    uint8_t pad[7];          /* Align to 64-bits. */
+    struct ofp_phy_port desc;
+};
+
+/* What changed about the physical port */
+enum ofp_port_reason {
+    OFPPR_ADD,              /* The port was added. */
+    OFPPR_DELETE,           /* The port was removed. */
+    OFPPR_MODIFY            /* Some attribute of the port has changed. */
+};
+
+
+
+
 #endif /* OPENFLOW_H_ */

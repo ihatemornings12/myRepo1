@@ -49,7 +49,8 @@ private:
     simsignal_t NF_NO_MATCH_FOUND;
     simsignal_t NF_SEND_PACKET;
     simsignal_t NF_FLOOD_PACKET;
-    
+    simsignal_t NF_PORT_STATUS;
+    bool sent = false;
     int droppedPkt;
     static simsignal_t droppedPktSignal;
 };

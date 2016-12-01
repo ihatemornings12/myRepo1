@@ -114,31 +114,25 @@ void  Forwarding::extractTopology(cTopology &topo, NodeInfoVector &nodeInfo)
         nodeInfo[i].isIPNode = IPvXAddressResolver().findInterfaceTableOf(mod) != NULL;
         nodeInfo[i].isOpenFlow = (mod->findSubmodule("flow_Table")!=-1);
         nodeInfo[i].name = topo.getNode(i)->getModule()->getFullPath();
-        if (nodeInfo[i].isIPNode)
-        {
+        if (nodeInfo[i].isIPNode) {
             nodeInfo[i].ift = IPvXAddressResolver().interfaceTableOf(mod);
             nodeInfo[i].rt = IPvXAddressResolver().routingTableOf(mod);
         }
-        if (nodeInfo[i].isOpenFlow)
-        {
-            std::cout << "extractTopology: OF-Switch found" << nodeInfo[i].name << " id = "<< nodeInfo[i].connID<<endl;
+        if (nodeInfo[i].isOpenFlow) {
+            EV << "extractTopology: OF-Switch found" << endl;
         }
     }
 }
 
 void Forwarding::assignAddresses(cTopology &topo, NodeInfoVector &nodeInfo)
 {
-    for (int i=0; i<topo.getNumNodes(); i++)
-    {
+    for (int i=0; i<topo.getNumNodes(); i++) {
         if (!nodeInfo[i].isIPNode)
             continue;
-
         IInterfaceTable *ift = nodeInfo[i].ift;
-        for (int k=0; k<ift->getNumInterfaces(); k++)
-        {
+        for (int k=0; k<ift->getNumInterfaces(); k++) {
             InterfaceEntry *ie = ift->getInterface(k);
-            if (!ie->isLoopback())
-            {
+            if (!ie->isLoopback()) {
                 IPv4Address addr = ie->ipv4Data()->getIPAddress();
                 nodeInfo[i].address = addr;
                 nodeInfo[i].macAddress = ie->getMacAddress();
@@ -152,8 +146,7 @@ void Forwarding::assignAddresses(cTopology &topo, NodeInfoVector &nodeInfo)
 void Forwarding::recalculateTopology(cTopology& topo, NodeInfoVector& nodeInfo) {
     NodeInfoVector::iterator it;
     int i=0;
-    for (it = nodeInfo.begin(); it!=nodeInfo.end(); it++)
-    {
+    for (it = nodeInfo.begin(); it!=nodeInfo.end(); it++) {
         cModule *mod = topo.getNode(i)->getModule();
         if (mod == NULL) {
             nodeInfo.erase(it);
@@ -169,11 +162,9 @@ void Forwarding::recalculateTopology(cTopology& topo, NodeInfoVector& nodeInfo) 
 void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 {
     EV << "Received signal " << getSignalName(id) << " at module " << this->getFullName() << "." << endl;
-    if (id == PacketInSignalId)
-    {
+    if (id == PacketInSignalId) {
 
-        if (dynamic_cast<OF_Wrapper *>(obj) != NULL)
-        {
+        if (dynamic_cast<OF_Wrapper *>(obj) != NULL) {
             OF_Wrapper *wrapper = (OF_Wrapper *) obj;
             Open_Flow_Message *of_msg = wrapper->msg;
             OFP_Packet_In *packet_in = (OFP_Packet_In *) of_msg;
@@ -182,12 +173,10 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             MACAddress src_mac;
             MACAddress dst_mac;
             IPv4Address dst_ip;
-            if (buffer_id == OFP_NO_BUFFER)
-            {
+            if (buffer_id == OFP_NO_BUFFER) {
                 src_mac = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getSrc();
                 dst_mac = dynamic_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket())->getDest();
-            } else
-            {
+            } else {
                 src_mac = packet_in->getMatch().OFB_ETH_SRC;
                 dst_mac = packet_in->getMatch().OFB_ETH_DST;
             }
@@ -201,8 +190,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             int outputGateId;
             bool routeFound = 0;
 
-            for (int i=0; i<topo_forw.getNumNodes(); i++)
-            {
+            for (int i=0; i<topo_forw.getNumNodes(); i++) {
                 
                 cTopology::Node *destNode = topo_forw.getNode(i);
                 
@@ -215,12 +203,11 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                 MACAddress mac = eth->getMACAddress();
 
                 // Skip forwarding for Ethernet frames with braodcast destination address
-                if(mac.isBroadcast()){
+                if(mac.isBroadcast()) {
                     break;
                 }
 
-                if (mac == dst_mac)
-                {
+                if (mac == dst_mac) {
                     routeFound = 1;
                     std::string destModName = destNode->getModule()->getFullName();
 
@@ -230,8 +217,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 
                     while (nextNode != destNode) {
 
-                        for (int j=0; j<topo_forw.getNumNodes(); j++)
-                        {
+                        for (int j=0; j<topo_forw.getNumNodes(); j++) {
                            
                             if (i==j)continue;
                             // Only choose OpenFlow switches, otherwise proceed to next node in for loop
@@ -261,7 +247,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                             EV << "--------------------------------------";
                             EV << "shortest path for : " << atNode->getModule()->getFullName() << endl;
                             EV << outport << endl;
-                           // EV << "remote node: "<< atNode->getPath(0)->getRemoteNode()->getModule()->getFullName() << endl;
+                            EV << "remote node: "<< atNode->getPath(0)->getRemoteNode()->getModule()->getFullName() << endl;
                             nextNode = atNode->getPath(0)->getRemoteNode();
 
                             connID_outport.push_back(std::pair<int, uint32_t> (nodeInfo[j].connID, outport));
@@ -299,7 +285,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 //                        controller->sendFlowModMessage(OFPFC_ADD, match, outport, nodeInfo[j].connID);
 //                        if (nodeInfo[j].connID == connID)
 //                            controller->sendPacket(buffer_id, packet_in, outport, connID);
-                        std::cout<<"send flow mod msg sto connID = " << rev_iterator->first <<endl;
+                        
                         controller->sendFlowModMessage(OFPFC_ADD, match, rev_iterator->second, rev_iterator->first);
                         if (rev_iterator->first == connID)
                             controller->sendPacket(buffer_id, packet_in, rev_iterator->second, connID);
@@ -308,24 +294,19 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                     connID_outport.clear(); 
                 }
             }
-            if(!routeFound && isArpOracle){
+            if(!routeFound && isArpOracle) {
                 routeFound = processARPPacket(packet_in, connID);
-
             }
-
-
-            if (routeFound == 0)
-            {
+            
+            if (routeFound == 0) {
                 controller->floodPacket(buffer_id, packet_in, connID);
             }
         }
 
 
     }
-    else if (id == connIDSignal)
-    {
-        if (dynamic_cast<OF_Wrapper *>(obj) != NULL)
-        {
+    else if (id == connIDSignal) {
+        if (dynamic_cast<OF_Wrapper *>(obj) != NULL) {
             OF_Wrapper *wrapper = (OF_Wrapper *) obj;
             int connID = wrapper->connID;
             IPv4Address *ip_src = wrapper->ip_src;
@@ -346,18 +327,16 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 
     }
     else if (id == errorSignal) {
-        //<A.S>
-        std::cout<<"TOPO changed!!!!!!\n";
         recalculateTopology(topo_forw, nodeInfo);
     }
 
 }
 
-bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
+bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID) {
     oxm_basic_match *match = new oxm_basic_match();
     ARPPacket *arpPacket;
     EthernetIIFrame *frame;
-    if(packet_in->getBuffer_id() == OFP_NO_BUFFER){
+    if (packet_in->getBuffer_id() == OFP_NO_BUFFER) {
         frame = check_and_cast<EthernetIIFrame *>(packet_in->getEncapsulatedPacket());
         if(frame!=NULL){
             match->OFB_IN_PORT = frame->getArrivalGate()->getIndex();
@@ -365,7 +344,7 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
             match->OFB_ETH_DST = frame->getDest();
             match->OFB_ETH_TYPE = frame->getEtherType();
             //extract ARP specific match fields if present
-            if(frame->getEtherType()==ETHERTYPE_ARP){
+            if(frame->getEtherType()==ETHERTYPE_ARP) {
                 arpPacket = check_and_cast<ARPPacket *>(frame->getEncapsulatedPacket());
                 match->OFB_ARP_OP = arpPacket->getOpcode();
                 match->OFB_ARP_SHA = arpPacket->getSrcMACAddress();
@@ -374,42 +353,38 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
                 match->OFB_ARP_TPA = arpPacket->getDestIPAddress();
             }
         }
-    }else{
+    } else {
         match = &packet_in->getMatch();
         arpPacket = new ARPPacket();
         frame = new EthernetIIFrame();
     }
 
-    if(match->OFB_ETH_TYPE != ETHERTYPE_ARP){
+    if (match->OFB_ETH_TYPE != ETHERTYPE_ARP) {
         return false;
     }
 
 
-    std::cout << "Processing ARP packet:\n";
+   EV << "Processing ARP packet:\n";
 
     // "?Is the opcode ares_op$REQUEST?  (NOW look at the opcode!!)"
-    switch (match->OFB_ARP_OP)
-    {
-        case ARP_REQUEST:
-        {
-            std::cout << "Packet was ARP REQUEST, sending REPLY\n";
+    switch (match->OFB_ARP_OP) {
+        case ARP_REQUEST: {
+            EV << "Packet was ARP REQUEST, sending REPLY\n";
 
             arpPacket->setName("arpREPLY");
 
             MACAddress tha;
 
-            for (unsigned int i=0; i<nodeInfo.size(); i++)
-            {
+            for (unsigned int i=0; i<nodeInfo.size(); i++) {
                 EV << "Testing " << nodeInfo[i].address << " and " << match->OFB_ARP_TPA << endl;
-                if(nodeInfo[i].address == match->OFB_ARP_TPA){
+                if(nodeInfo[i].address == match->OFB_ARP_TPA) {
                     tha = nodeInfo[i].macAddress;
                     break;
                 }
-
             }
 
-            if(tha.isUnspecified()){
-                std::cout << "No MAC address found for ARP REQUEST, triggering broadcast\n";
+            if(tha.isUnspecified()) {
+                EV << "No MAC address found for ARP REQUEST, triggering broadcast\n";
                 return false;
             }
 
@@ -430,22 +405,17 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID){
                 controller->sendPacket(packet_in->getBuffer_id(), packet_in, OFPP_ANY, connID);
             }
 
-            std::cout<<" controller will send the OF msg" << endl;
+            EV << "controller will send the OF msg" << endl;
             // Trigger sending of ARP REPLY
             controller->sendPacket(OFP_NO_BUFFER, packet_in, match->OFB_IN_PORT, connID);
-
-
-
             return true;
         }
-        case ARP_REPLY:
-        {
+        case ARP_REPLY: {
             std::cout << "Packet was ARP REPLY and will be ignored\n";
 
             break;
         }
-        default:
-        {
+        default: {
             error("Unsupported opcode %d in received ARP packet",match->OFB_ARP_OP);
             break;
         }

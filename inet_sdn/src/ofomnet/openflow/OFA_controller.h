@@ -17,7 +17,7 @@
 
 class AttackDetection;
 
-class OFA_controller: public cSimpleModule, public cListener
+class OFA_controller: public cSimpleModule, public cListener//, public TCPSocket::CallbackInterface
 {
 public:
     OFA_controller();
@@ -40,7 +40,7 @@ protected:
 
     void sendPacket(int numBytes, int expectedReplyBytes, bool serverClose = false);
     TCPSocket socket1;
-    typedef std::map< int,TCPSocket * >   SocketMap;
+    typedef std::map<int,TCPSocket *> SocketMap;
     SocketMap  socketMap;
     void connect();
     void handleFeaturesReply(Open_Flow_Message *of_msg);
@@ -55,12 +55,15 @@ protected:
     // <A.S>
     void sendEchoRequest();
     void handleEchoReply(Open_Flow_Message *of_msg);
-    
+
 private:
     void checkEchoReplies();
+    void checkStatsReplies();
     void findDisconnectedSwitch(std::vector<int> activeSwitches);
+    void updateSocketConnection();
+    void handlePortStatus(Open_Flow_Message *of_msg);
 private:
-    enum selfMsgsKind {STATS_REQUEST = 1, ECHO_REQUEST, CHECK};
+    enum selfMsgsKind {STATS_REQUEST = 1, ECHO_REQUEST, CHECK, CHECK_STATS};
 
     simsignal_t PacketInSignalId;
     simsignal_t connIDSignal;
@@ -80,6 +83,7 @@ private:
     cMessage *echoRequestMsg;
     std::vector<int> activeSwitches;
     bool allActive;
+    bool allCollectStats;
     
     //collected statistics
     typedef std::map<int, ofp_flow_stats *> StatsMap;

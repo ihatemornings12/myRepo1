@@ -32,7 +32,7 @@
 // }}
 
 /**
- * Class generated from <tt>ofomnet/openflow/messages/OFP_Echo_Reply.msg:12</tt> by nedtool.
+ * Class generated from <tt>ofomnet/openflow/messages/OFP_Echo_Reply.msg:10</tt> by nedtool.
  * <pre>
  * packet OFP_Echo_Reply extends Open_Flow_Message
  * {

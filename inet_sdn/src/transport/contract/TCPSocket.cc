@@ -284,7 +284,6 @@ void TCPSocket::processMessage(cMessage *msg)
 
              if (cb)
                  cb->socketEstablished(connId, yourPtr);
-
              break;
 
         case TCP_I_PEER_CLOSED:

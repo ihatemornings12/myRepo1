@@ -12,6 +12,7 @@
 #include "TCPSegment.h"
 #include "UDPPacket.h"
 
+
 using namespace std;
 
 Define_Module (Open_Flow_Processing);
@@ -27,16 +28,19 @@ Open_Flow_Processing::~Open_Flow_Processing() {
 void Open_Flow_Processing::initialize() {
 	cModule *ITModule = getParentModule()->getSubmodule("flow_Table");
 	flow_table = check_and_cast<Flow_Table *>(ITModule);
+	
 	cModule *ITModule2 = getParentModule()->getSubmodule("buffer");
 	buffer = check_and_cast<Buffer *>(ITModule2);
 
 	NF_NO_MATCH_FOUND = registerSignal("NF_NO_MATCH_FOUND");
 	NF_SEND_PACKET = registerSignal("NF_SEND_PACKET");
 	NF_FLOOD_PACKET = registerSignal("NF_FLOOD_PACKET");
+	NF_PORT_STATUS = registerSignal("NF_PORT_STATUS");
 
 	getParentModule()->subscribe("NF_SEND_PACKET", this);
 	getParentModule()->subscribe("NF_FLOOD_PACKET", this);
-
+    getParentModule()->subscribe("NF_PORT_STATUS", this);
+	
 	WATCH_VECTOR (port_vector);
 	// By default, all ports are enabled
 	port_vector.resize(gateSize("ifIn"), 1);
@@ -187,13 +191,22 @@ void Open_Flow_Processing::processQueuedMsg(cMessage *data_msg) {
 			    // if yes, send the frame -ok
 			    // else send the packet to the controller
 			    // delte the flow entry
+			    
 			    cGate *gate =getParentModule()->gate("ethg$o", outport);
 			    if (gate->isConnected()) 
 			        send(frameBeingReceived, "ifOut", outport);
 			    else {
-			        std::cout<<"[OF switch]gate not connected\n";
-			        //drop(data_msg);
+                    //drop the packet
 			        delete (data_msg);
+			        //send signal to OFA_switch to notify the controller
+			        if (!sent) {
+			            std::cout<<"[OF switch]gate not connected\n";
+			            OF_Wrapper *wrapper = new OF_Wrapper ();
+			            wrapper->outport = outport;
+			            emit(NF_PORT_STATUS, wrapper);
+			            sent = true; 
+			        }
+
 			    }
 			}	
 		} else {
@@ -235,8 +248,7 @@ void Open_Flow_Processing::receiveSignal(cComponent *src, simsignal_t id, cObjec
 		}
 		delete frame;
 	}
-
-	if (id == NF_SEND_PACKET) {
+    else if (id == NF_SEND_PACKET) {
 		// send packet on outport port
 		OF_Wrapper *wrapper = (OF_Wrapper *) obj;
 		uint32_t buffer_id = wrapper->buffer_id;
@@ -250,5 +262,10 @@ void Open_Flow_Processing::receiveSignal(cComponent *src, simsignal_t id, cObjec
 		take(frame);
 		send(frame, "ifOut", outport);
 	}
+	else if (id == NF_PORT_STATUS) {
+	    sent = false;
+	    cout<<"ok!\n";
+	}
+	else {}
 }
 
