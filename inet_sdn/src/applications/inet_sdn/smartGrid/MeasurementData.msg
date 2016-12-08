@@ -3,6 +3,6 @@ cplusplus {{
 }}
 
 packet MeasurementData {
-	int info;
+	double energyConsumption; //kwh
 };
 

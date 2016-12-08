@@ -32,7 +32,7 @@ network Topo
            parameters:
                 @display("p=1800, 700");
         }
-		configurator: IPv4NetworkConfigurator {
+		configurator: FlatNetworkConfigurator {
             parameters:
                 @display("p=1800, 500");
         }

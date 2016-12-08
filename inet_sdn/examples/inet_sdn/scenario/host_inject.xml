@@ -6,7 +6,7 @@
 
 		<Attack>
 			<start_time>20</start_time>
-			<frequency>0.4</frequency>
+			<frequency>0.025</frequency>
 			<var><name>1</name><value>1</value><type>NUMBER</type></var>
 			<var><name>123</name><value>123</value><type>NUMBER</type></var>
 			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>

@@ -77,7 +77,9 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					break;
 				}
 			}		
-						
+            // <A.S>
+            (*packet)->setByteLength(1250);	
+            	
 			(*packet)->addPar("isFiltered");
 			(*packet)->par("isFiltered").setBoolValue(true);
 			
@@ -225,11 +227,15 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			
 			// create the right packet
 			if (type == type_t::UDP_OVER_IPV4) {
-				*packet = new UDPPacket("CreatedPacket-UDP", 0);	
+				*packet = new UDPPacket("CreatedPacket-UDP", 0);
+                // <A.S>
+                (*packet)->setByteLength(8);
 			}
 			
 			if (type == type_t::TCP_OVER_IPV4) {
 				*packet = new TCPSegment("CreatedSegment-TCP", 0);	
+                // <A.S>
+				(*packet)->setByteLength(20);
 			}
 			
 			// add & set parameters
@@ -279,6 +285,8 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 		
 			// TODO extend with others protocols
 			*packet = new IPv4Datagram("Created packet-IPv4Datagram", 0);
+			// <A.S>
+			(*packet)->setByteLength(20);
 			
 			// add & set parameters
 			(*packet)->addPar("isFiltered");
@@ -327,10 +335,14 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			
 				case type_t::PPPFRAME: {
 					*packet = new PPPFrame("CreatedPacket-PPP", 0);	
+					// <A.S>
+					(*packet)->setByteLength(7); 
 					break;
 				}
 				case type_t::ETHERNETIIFRAME: {
 					*packet = new EthernetIIFrame("CreatedPacket-EthernetIIFrame", 0);	
+					// <A.S>
+					(*packet)->setByteLength(18);
 					break;
 				}
 				case type_t::IDEALAIRFRAME: {

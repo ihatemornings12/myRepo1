@@ -27,7 +27,7 @@ simple OFA_controller
         @display("i=block/app");
         double serviceTime @unit("s") = default(0s);
         double statsInterval @unit ("s") = default(5s);
-        double echoInterval @unit ("s") = default(2s);
+        double echoInterval @unit ("s") = default(90s);
         
     gates:
         input tcpIn @labels(TCPCommand/up);

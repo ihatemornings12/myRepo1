@@ -53,7 +53,7 @@ void RTUApp::handleMessage(cMessage *msg) {
             MeasurementData *data = (MeasurementData *) msg;
             emit(rcvdPkSignal, msg);
             numReceived++;
-            report->updateRecord(data->getInfo());
+            report->updateRecord(data->getEnergyConsumption());
         }
     }
    
@@ -63,9 +63,10 @@ void RTUApp::handleMessage(cMessage *msg) {
 
 void RTUApp::sendReportToDSO() {
     MeasurementData *data = new MeasurementData();
-    data->setInfo(report->getAvg());
+    data->setEnergyConsumption(report->getAvg());
     report->resetData();
-    data->setByteLength(1);
+    data->setByteLength(88);
+    data->setTimestamp(simTime());
     data->setKind(TCP_C_SEND);
                 
     emit(sentPkSignal, data);

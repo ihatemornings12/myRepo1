@@ -1,14 +1,14 @@
 version 2
-run General-0-20161125-16:27:04-7161
+run General-0-20161207-13:25:16-24947
 attr configname General
-attr datetime 20161125-16:27:04
+attr datetime 20161207-13:25:16
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network Topo
-attr processid 7161
+attr processid 24947
 attr repetition 0
 attr replication #0
 attr resultdir results

@@ -173,7 +173,7 @@ void Change::executeOnField(cMessage** packetToChange, string value)
 		    (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
 	else
 		// edit the value of the specified field
-		descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!
+		descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!    
 
 	// replace the original packet with his modified clone	
 	delete *packetToChange;

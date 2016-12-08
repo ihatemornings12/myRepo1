@@ -83,9 +83,9 @@ bool selectFunctionForwarding(cModule *mod, void *v_ptr){
     int id = *(int *)v_ptr;
     int domainID = -1;
 
-    if(mod->hasPar("domainID")){
+    if(mod->hasPar("domainID")) {
         domainID = mod->par("domainID").longValue();
-    }else if(mod->getParentModule()->hasPar("domainID")){
+    } else if(mod->getParentModule()->hasPar("domainID")){
         domainID = mod->getParentModule()->par("domainID").longValue();
     }
 
@@ -101,10 +101,11 @@ void  Forwarding::extractTopology(cTopology &topo, NodeInfoVector &nodeInfo)
         int domainID = getParentModule()->par("domainID").longValue();
         topo.extractFromNetwork(selectFunctionForwarding, (int *) &domainID);
         EV << "cTopology found " << topo.getNumNodes() << " nodes for domain " << domainID << ".\n";
+        
     }else{
         // Use specified ned type to extract relevant nodes
         topo.extractByNedTypeName(cStringTokenizer(par("nedTypes")).asVector());
-        EV << "cTopology found " << topo.getNumNodes() << " nodes\n";
+        std::cout << "cTopology found " << topo.getNumNodes() << " nodes\n";
     }
 
     nodeInfo.resize(topo.getNumNodes());
@@ -299,6 +300,7 @@ void Forwarding::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             }
             
             if (routeFound == 0) {
+                std::cout<< "edew mapoinw????\n";
                 controller->floodPacket(buffer_id, packet_in, connID);
             }
         }
@@ -353,7 +355,8 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID) {
                 match->OFB_ARP_TPA = arpPacket->getDestIPAddress();
             }
         }
-    } else {
+    }
+    else {
         match = &packet_in->getMatch();
         arpPacket = new ARPPacket();
         frame = new EthernetIIFrame();
@@ -411,8 +414,7 @@ bool Forwarding::processARPPacket(OFP_Packet_In *packet_in, int connID) {
             return true;
         }
         case ARP_REPLY: {
-            std::cout << "Packet was ARP REPLY and will be ignored\n";
-
+            EV << "Packet was ARP REPLY and will be ignored\n";
             break;
         }
         default: {

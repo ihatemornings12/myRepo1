@@ -54,8 +54,12 @@ void DataConcentratorApp::bind() {
 void DataConcentratorApp::handleMessage(cMessage *msg) {
     if (msg->isSelfMessage()) {
         switch(msg->getKind()) {
-            case CONNECT: connect(); break;
-            case SEND: sendReportToRTU(); break;
+            case CONNECT: 
+                connect(); 
+                break;
+            case SEND: 
+                sendReportToRTU(); 
+                break;
             default: throw cRuntimeError("Invalid kind %d in self message", (int)msg->getKind());
         }
     }    
@@ -64,15 +68,16 @@ void DataConcentratorApp::handleMessage(cMessage *msg) {
 
 }
 void DataConcentratorApp::sendReportToRTU() {
-    int avg = 0;
+    double avg = 0;
     if (report->getCounter() != 0)     
         avg = report->getAvg();
                 
         report->resetData();
             
         MeasurementData *data = new MeasurementData();
-        data->setInfo(avg);
-        data->setByteLength(1);
+        data->setEnergyConsumption(avg);
+        data->setByteLength(88);
+        data->setTimestamp(simTime());
         data->setKind(TCP_C_SEND);
             
         numSent++;
@@ -93,7 +98,7 @@ void DataConcentratorApp::receiveSignal(cComponent *src, simsignal_t id, cObject
 	if (signalName == "MeasurementData") { 
         if (dynamic_cast<MeasurementData *>(obj) != NULL) {
 		   MeasurementData *data = (MeasurementData *) obj;
-		   report->updateRecord(data->getInfo());           
+		   report->updateRecord(data->getEnergyConsumption());           
 		   delete data;
 		}
 	}

@@ -35,7 +35,6 @@ OFA_controller::OFA_controller() {
 }
 
 OFA_controller::~OFA_controller() {
-	cancelAndDelete(reqFlowStats);
 }
 
 void OFA_controller::initialize()
@@ -496,6 +495,8 @@ void OFA_controller::sendPacket(uint32_t buffer_id, OFP_Packet_In *packet_in_msg
     packetOut->setKind(TCP_C_SEND);
     
     TCPSocket *socket = findSocketFor(packet_in_msg);
+    
+    
     socket->send(packetOut);
 }
 

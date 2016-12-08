@@ -1,6 +1,6 @@
 package inet.examples.inet_sdn.dokimi;
 
-import inet.nodes.inet.StandardHost;
+import inet.nodes.inet_sdn.smartGrid.*;
 import inet.networklayer.autorouting.ipv4.FlatNetworkConfigurator;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 import inet.util.ThruputMeteringChannel;
@@ -68,33 +68,33 @@ network Topo
         }
 
 
-        DSO: StandardHost {
+        DSO: DSO {
             interfaceTable.displayAddresses=true;
             @display("p=1000,60;i=device/mainframe");
         }
         
-        RTU1: StandardHost {
+        RTU1: RTU {
             interfaceTable.displayAddresses=true;
             @display("p=600,350;i=device/server");
         }
-        RTU2: StandardHost {
+        RTU2: RTU {
             interfaceTable.displayAddresses=true;
             @display("p=1400,350;i=device/server");
         }
         
-        DC1: StandardHost {
+        DC1: DataConcentrator {
            interfaceTable.displayAddresses=true;        
            @display("p=700,750;i=device/laptop");
         }
-        DC2: StandardHost {
+        DC2: DataConcentrator {
             interfaceTable.displayAddresses=true;
             @display("p=900,750;i=device/laptop");
         }
-        DC3: StandardHost {
+        DC3: DataConcentrator {
             interfaceTable.displayAddresses=true;        
             @display("p=1100,750;i=device/laptop");
         }
-        DC4:StandardHost {
+        DC4: DataConcentrator {
             interfaceTable.displayAddresses=true;                
             @display("p=1300,750;i=device/laptop");
         }
@@ -118,7 +118,6 @@ network Topo
 //            interfaceTable.displayAddresses=true;                
 //            @display("i=device/palm2");
 //        }
-
 
 
 

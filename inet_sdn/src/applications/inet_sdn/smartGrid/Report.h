@@ -5,23 +5,23 @@
 
 class Report {
     private:
-        int counter = 0;
-        int sum = 0;
+        int counter;
+        double sum;
     public:
         Report();
         ~Report();
         
         int getCounter();
-        int getSum();
+        double getSum();
         
-        void setCounter(int x);
-        void setSum(int x);
+        void setCounter(double x);
+        void setSum(double x);
         
         void updateCounter(); 
-        void updateSum(int x);
-        void updateRecord(int x);
+        void updateSum(double x);
+        void updateRecord(double x);
         
-        int getAvg();        
+        double getAvg();        
         void resetData();
         
 };

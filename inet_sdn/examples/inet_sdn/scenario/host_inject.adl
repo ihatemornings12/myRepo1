@@ -1,7 +1,7 @@
 list dstList = {7} #7 client 3, 10 server 2
 
 # example of TX/RX application packet
-from 20 every 0.4 do {
+from 20 every 0.025 do {
 
     # declare a packet
 	packet fakePacket

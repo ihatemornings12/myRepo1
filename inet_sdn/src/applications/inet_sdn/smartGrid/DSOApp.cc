@@ -35,7 +35,9 @@ void DSOApp::startListening() {
 void DSOApp::handleMessage(cMessage *msg) {
     if (dynamic_cast<MeasurementData *>(msg) != NULL) {
         MeasurementData *data = (MeasurementData *) msg;
-        report->updateRecord(data->getInfo());
+        report->updateRecord(data->getEnergyConsumption());
+        
+        std::cout<<"pira reports\n";
         numReceived++;
         emit(rcvdPkSignal, data);
     }
