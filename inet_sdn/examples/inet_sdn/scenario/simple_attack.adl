@@ -69,11 +69,13 @@ from 20 every 0.4 do {
     packet ipPacket
     packet traPacket
     packet appPacket
-    
+    var foo
     #create a new APP-layer packet
     create(appPacket, "APP.type", "1001")
     change(appPacket, "APP.info", 1)
     change(appPacket, "APP.name", "myPacket")
+    
+    change(appPacket, "controlInfo.packetSize", 1250)
 
     # create a new TRA-layer packet
     create(traPacket, "TRA.type", "0000") 

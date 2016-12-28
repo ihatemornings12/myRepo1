@@ -25,6 +25,7 @@
 //A.S
 #include "ApplicationPacket_m.h"
 #include "SendApplicationPacket_m.h"
+#include "MeasurementData_m.h"
 
 CreateInfo::CreateInfo()
 { 
@@ -71,6 +72,11 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					break;
 				}
 				
+				case type_t::MEASUREMENT_DATA: {
+				    *packet = (cPacket*) (new MeasurementData());  
+				    break;
+				}
+				
 				// in general, INET has not well structured packets of layer 5
 				default: {
 					*packet = new cPacket("CreatedPacket-Layer5", 0);
@@ -78,7 +84,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 				}
 			}		
             // <A.S>
-            (*packet)->setByteLength(1250);	
+            (*packet)->setByteLength(1);	
             	
 			(*packet)->addPar("isFiltered");
 			(*packet)->par("isFiltered").setBoolValue(true);
@@ -216,6 +222,13 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					break;
 				}
 				
+				// <A.S>
+				case type_t::MEASUREMENT_DATA: {
+				    (*packet)->setKind(TCP_C_SEND);
+				    controlInfo = new TCPSendCommand();
+				    (*packet)->setControlInfo(controlInfo);
+				    break;
+				}
 				// TODO add here the code to set other control infos for layer 5
 			}	
 		
@@ -446,6 +459,9 @@ type_t Create::getType (int layer, string typeCode)
 			}
 			if (typeCode == "1001" ) {
 				return type_t::SEND_APPLICATION_PACKET;
+			}
+			if (typeCode == "1002") {
+			    return type_t::MEASUREMENT_DATA;
 			}
 
 		}

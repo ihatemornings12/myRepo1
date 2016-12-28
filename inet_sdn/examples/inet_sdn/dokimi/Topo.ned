@@ -85,6 +85,7 @@ network Topo
         DC1: DataConcentrator {
            interfaceTable.displayAddresses=true;        
            @display("p=700,750;i=device/laptop");
+
         }
         DC2: DataConcentrator {
             interfaceTable.displayAddresses=true;
@@ -98,31 +99,7 @@ network Topo
             interfaceTable.displayAddresses=true;                
             @display("p=1300,750;i=device/laptop");
         }
-        
-//        SM_DC1[2]: StandardHost {
-//            interfaceTable.displayAddresses=true;                
-//            @display("i=device/palm2");
-//        }
-        
-//        SM_DC2[2]: StandardHost {
-//           interfaceTable.displayAddresses=true;                
-//            @display("i=device/palm2");
-//        }
-        
-//        SM_DC3[2]: StandardHost {
-//            interfaceTable.displayAddresses=true;                
-//            @display("i=device/palm2");
-//        }
-        
-//        SM_DC4[2]: StandardHost {
-//            interfaceTable.displayAddresses=true;                
-//            @display("i=device/palm2");
-//        }
-
-
-
-
-        
+              
 	connections allowunconnected:
 	
 	    DSO.ethg++ <--> ethernetline <--> s1.ethg++;
@@ -136,12 +113,6 @@ network Topo
         DC3.ethg++ <--> ethernetline <--> s7.ethg++;
         DC4.ethg++ <--> ethernetline <--> s7.ethg++;     
         
-//        for i=0..1 {
-//            SM_DC1[i].ethg++ <--> ethernetline <-->DC1.ethg++;
-//            SM_DC2[i].ethg++ <--> ethernetline <-->DC2.ethg++;
-//            SM_DC3[i].ethg++ <--> ethernetline <-->DC3.ethg++;
-//            SM_DC4[i].ethg++ <--> ethernetline <-->DC4.ethg++;
-//        }
 	
 	    s1.ethg++ <--> ethernetline <--> s2.ethg++;
         s1.ethg++ <--> ethernetline <--> s3.ethg++;

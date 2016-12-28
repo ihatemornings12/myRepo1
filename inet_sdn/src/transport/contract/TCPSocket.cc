@@ -174,6 +174,8 @@ void TCPSocket::send(cMessage *msg)
     msg->setKind(TCP_C_SEND);
     TCPSendCommand *cmd = new TCPSendCommand();
     cmd->setConnId(connId);
+
+    std::cout<< msg->getOwner()->getFullPath() << " tcp socket connId = " << connId << endl;
     msg->setControlInfo(cmd);
     sendToTCP(msg);
 }

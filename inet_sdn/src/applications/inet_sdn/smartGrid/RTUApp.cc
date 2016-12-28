@@ -62,10 +62,10 @@ void RTUApp::handleMessage(cMessage *msg) {
 }
 
 void RTUApp::sendReportToDSO() {
-    MeasurementData *data = new MeasurementData();
+    MeasurementData *data = new MeasurementData("MeasurementData");
     data->setEnergyConsumption(report->getAvg());
     report->resetData();
-    data->setByteLength(88);
+    data->setByteLength(1);
     data->setTimestamp(simTime());
     data->setKind(TCP_C_SEND);
                 

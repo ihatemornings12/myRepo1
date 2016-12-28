@@ -194,7 +194,14 @@ void Change::executeOnExternalInfo(cMessage** packetToChange, string value)
 
 		// get class name of the controlinfo object
 		className.assign(controlInfo->getClassName());
-		
+        
+        //change the packet size
+        if (fieldName ==  "packetSize") {
+            if ((*packetToChange)->isPacket())
+                (check_and_cast<cPacket*> (*packetToChange))-> setByteLength(atoi(value.c_str()));
+            return;
+        }
+        
 		// <A.S>
 		bool isRandom = false;
         if (isRandomValue(value)) {

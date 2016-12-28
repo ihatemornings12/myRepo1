@@ -12,8 +12,10 @@
 			<var><name>1</name><value>1</value><type>NUMBER</type></var>
 			<var><name>123</name><value>123</value><type>NUMBER</type></var>
 			<var><name>"0A-AA-00-00-00-06"</name><value>0A-AA-00-00-00-06</value><type>STRING</type></var>
+			<var><name>1250</name><value>1250</value><type>NUMBER</type></var>
 			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>
 			<var><name>"192.168.0.21"</name><value>192.168.0.21</value><type>STRING</type></var>
+			<var><name>foo</name><value></value><type>NONE</type></var>
 			<var><name>"net_eth_sup$o[5]"</name><value>net_eth_sup$o[5]</value><type>STRING</type></var>
 
 			<action>
@@ -29,6 +31,11 @@
 			<action>
 				<name>Change</name>
 				<parameters>packetName:appPacket:field_name:APP.name:value:"myPacket"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:appPacket:field_name:controlInfo.packetSize:value:1250</parameters>
 			</action>
 
 			<action>

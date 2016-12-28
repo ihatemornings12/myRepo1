@@ -15,7 +15,7 @@ void SmartMeter::finish() {
 void SmartMeter::handleMessage(cMessage *msg) {
     if (msg->isSelfMessage()) {      
         MeasurementData *data = new MeasurementData();
-        data->setByteLength(88);
+        data->setByteLength(1);
         data->setEnergyConsumption(0.40);
         data->setTimestamp(simTime());
         emit(measurementDataSignal, data);     

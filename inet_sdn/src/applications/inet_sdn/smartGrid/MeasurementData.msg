@@ -4,5 +4,6 @@ cplusplus {{
 
 packet MeasurementData {
 	double energyConsumption; //kwh
+    string name;
 };
 

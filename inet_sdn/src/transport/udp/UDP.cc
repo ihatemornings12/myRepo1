@@ -755,7 +755,7 @@ void UDP::sendDown(cPacket *appData, const IPvXAddress& srcAddr, ushort srcPort,
         ipControlInfo->setTypeOfService(tos);
         udpPacket->setControlInfo(ipControlInfo);
 
-        //<A.S>
+        // <A.S>
         udpPacket->setTimestamp(simTime());
         
         emit(sentPkSignal, udpPacket);

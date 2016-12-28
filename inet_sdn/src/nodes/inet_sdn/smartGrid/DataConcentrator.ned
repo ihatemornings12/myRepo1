@@ -8,12 +8,15 @@ import inet.transport.ITCP;
 module DataConcentrator extends StandardHost {
     parameters:
         @display("i=device/pc2");
-        int numStartMeters = default (2);
+        int numSmartMeters = default (2);
         
     submodules:
-        smartMeter[numStartMeters]: SmartMeter;
+        smartMeter[numSmartMeters]: SmartMeter {
+            @display("p=400,100,r,80");
+        }
         data_concentrator: DataConcentratorApp;
         tcp: <tcpType> like ITCP {}
+        
     connections allowunconnected:
         tcp.appOut++ --> localFilter.app_tcp_inf$i++;
 		tcp.appIn++ <-- localFilter.app_tcp_inf$o++;

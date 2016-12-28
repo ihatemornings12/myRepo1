@@ -37,7 +37,7 @@ void DSOApp::handleMessage(cMessage *msg) {
         MeasurementData *data = (MeasurementData *) msg;
         report->updateRecord(data->getEnergyConsumption());
         
-        std::cout<<"pira reports\n";
+        std::cout<< simTime() << ": pira reports\n";
         numReceived++;
         emit(rcvdPkSignal, data);
     }

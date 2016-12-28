@@ -1,0 +1,34 @@
+list dstList = {17}
+
+
+#example of TX/RX application packet
+from 20 every 0.4 do {
+
+    # declare a packet
+	packet fakePacket
+    
+	# create a new packet
+	create(fakePacket, "APP.type", "1002") #MeasurementData
+
+	# fill the new packet properly
+	
+	change(fakePacket, "APP.energyConsumption", 1)
+	change(fakePacket, "APP.name", "myPacket")
+	
+	change(fakePacket, "controlInfo.connId", 26)
+	change(fakePacket, "controlInfo.userId", 1)
+
+	
+	change(fakePacket, "sending.outputGate", "app_tcp_inf$o[0]") #app_udp_sup$o[0] RX
+	
+	put(fakePacket, dstList, TX, FALSE, 0)
+}
+
+#random IP and MAC src addresses: host3
+
+from 21 nodes in dstList do {
+   filter ("NET.destAddress" == "192.168.0.11" and "attackInfo.fromGlobalFilter" == 1)
+		#change(original, "NET.srcAddress", RANDOM_IP)
+        #change(original, "controlInfo.src", RANDOM_MAC)
+}
+

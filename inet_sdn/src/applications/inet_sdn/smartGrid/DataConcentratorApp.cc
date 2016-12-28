@@ -74,9 +74,9 @@ void DataConcentratorApp::sendReportToRTU() {
                 
         report->resetData();
             
-        MeasurementData *data = new MeasurementData();
+        MeasurementData *data = new MeasurementData("MeasurementData");
         data->setEnergyConsumption(avg);
-        data->setByteLength(88);
+        data->setByteLength(1);
         data->setTimestamp(simTime());
         data->setKind(TCP_C_SEND);
             

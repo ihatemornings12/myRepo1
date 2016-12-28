@@ -74,6 +74,11 @@ int getPacketLayer(cPacket* packet)
 		return 5;
 	}
 	
+	// <A.S>
+	if (packetClassName == "MeasurementData") {
+	    return 5;
+	}
+	
 	// <A.S> sdn
 	if (packetClassName == "OFP_Flow_Stats_Request") {
 		return 5;
@@ -347,6 +352,15 @@ bool isRandomValue(string value) {
 }
 
 // <A.S>
+int generateRandomIntValue(int a, int b) {
+    random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
+	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
+								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
+	uniform_int_distribution<int> distr(a, b);
+    return distr(generator);
+}
+
+// <A.S>
 string generateRandomValue(string networkAddress, string netmask) {
     std::vector<string> netAddrTokens = tokenize(networkAddress, '.');
     std::vector<string> netmaskTokens = tokenize(netmask, '.');
@@ -365,14 +379,7 @@ string generateRandomValue(string networkAddress, string netmask) {
 
     return to_string(addr);
 }
-// <A.S>
-int generateRandomIntValue(int a, int b) {
-    random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
-	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
-								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
-	uniform_int_distribution<int> distr(a, b);
-    return distr(generator);
-}
+
 
 // <A.S>
 string generateRandomValue(const char *fieldType) {
