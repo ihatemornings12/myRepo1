@@ -4,7 +4,7 @@
 #include "omnetpp.h"
 #include "INETDefs.h"
 #include "TCPSocket.h"
-#include "Report.h"
+
 
 using namespace std;
 
@@ -12,7 +12,7 @@ class DataConcentratorApp : public cSimpleModule, public cListener
 {
     private:
         enum SelfMsgKinds { CONNECT = 1, SEND };
-        Report *report;
+
         cListener *listener;
         int interval;
             

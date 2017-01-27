@@ -306,14 +306,16 @@ cPacket* hardCopy (cPacket* packetToCopy)
 }
 
 // <A.S>
-bool isControlInfo(const string layer) {
+bool isControlInfo(const string layer) 
+{
 	if ((layer == "attackInfo") || (layer == "controlInfo")) 
 		return true;
 	return false;
 } 
 
 // <A.S>
-bool hasPayload(cMessage* msg) {
+bool hasPayload(cMessage* msg) 
+{
 	bool isPacket = msg->isPacket();
 	if (isPacket) { 
 		cPacket *packet = dynamic_cast<cPacket*>(msg);
@@ -326,7 +328,8 @@ bool hasPayload(cMessage* msg) {
 }
 
 // <A.S>
-bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) {
+bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) 
+{
 	bool isPacket = msg->isPacket();
 	if (isPacket) { 
 		cPacket *packet = dynamic_cast<cPacket*>(msg);
@@ -345,14 +348,16 @@ bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) {
 }
 
 // <A.S>
-bool isRandomValue(string value) {
+bool isRandomValue(string value) 
+{
     if (value.find("RANDOM") != string::npos)
         return true;
     return false;
 }
 
 // <A.S>
-int generateRandomIntValue(int a, int b) {
+int generateRandomIntValue(int a, int b) 
+{
     random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
 	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
 								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
@@ -361,7 +366,17 @@ int generateRandomIntValue(int a, int b) {
 }
 
 // <A.S>
-string generateRandomValue(string networkAddress, string netmask) {
+double generateRandomDblValue(double a) 
+{
+    random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
+	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
+								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
+	uniform_real_distribution<double> distr(1, a);
+    return distr(generator);
+}
+// <A.S>
+string generateRandomValue(string networkAddress, string netmask) 
+{
     std::vector<string> netAddrTokens = tokenize(networkAddress, '.');
     std::vector<string> netmaskTokens = tokenize(netmask, '.');
     
@@ -382,7 +397,8 @@ string generateRandomValue(string networkAddress, string netmask) {
 
 
 // <A.S>
-string generateRandomValue(const char *fieldType) {
+string generateRandomValue(const char *fieldType) 
+{
 	string field (fieldType);
 	
 	random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers

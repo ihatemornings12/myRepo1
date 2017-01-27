@@ -8,15 +8,16 @@ Define_Module(DataConcentratorApp);
 simsignal_t DataConcentratorApp::rcvdPkSignal = registerSignal("rcvdPk");
 simsignal_t DataConcentratorApp::sentPkSignal = registerSignal("sentPk");
 
+
 DataConcentratorApp::DataConcentratorApp() {
-    report = new Report();
-    reportMsg = NULL;
+
 }
 
 DataConcentratorApp::~DataConcentratorApp() {
-    delete report;
+
 }
 
+/*
 void DataConcentratorApp::initialize(int stage) {
     cSimpleModule::initialize(stage);
     if (stage == 0) {
@@ -128,4 +129,4 @@ void DataConcentratorApp::displayGUI() {
 
 void DataConcentratorApp::finish() { }
 
-
+*/

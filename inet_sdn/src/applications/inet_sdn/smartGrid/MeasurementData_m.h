@@ -31,7 +31,7 @@
 // }}
 
 /**
- * Class generated from <tt>applications/inet_sdn/smartGrid/MeasurementData.msg:5</tt> by nedtool.
+ * Class generated from <tt>applications/inet_sdn/smartGrid/MeasurementData.msg:20</tt> by nedtool.
  * <pre>
  * packet MeasurementData
  * {

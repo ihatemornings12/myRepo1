@@ -1,0 +1,7 @@
+list comprList = {15} #rtu1
+
+from 20 nodes in comprList do {
+    filter ("APP.energyGeneration" > 5.0)
+		change(original, "APP.energyGeneration", 2.0)
+}
+

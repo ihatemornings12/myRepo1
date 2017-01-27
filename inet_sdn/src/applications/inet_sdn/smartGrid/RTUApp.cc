@@ -1,21 +1,40 @@
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program; if not, see <http://www.gnu.org/licenses/>.
+//
+
 #include "RTUApp.h"
-#include "MeasurementData_m.h"
+#include "MonitoringData_m.h"
+#include "SetPoints_m.h"
 #include "IPvXAddressResolver.h"
 
 Define_Module(RTUApp);
 
 simsignal_t RTUApp::rcvdPkSignal = registerSignal("rcvdPk");
 simsignal_t RTUApp::sentPkSignal = registerSignal("sentPk");
+simsignal_t RTUApp::genEnergySignal = registerSignal("genEnergy");
 
-RTUApp::RTUApp() {
-    report = new Report();
+RTUApp::RTUApp() 
+{
+    record = new Record();
 }
 
-RTUApp::~RTUApp() {
-    delete report;
+RTUApp::~RTUApp() 
+{
 }
 
-void RTUApp::initialize(int stage) {
+void RTUApp::initialize(int stage) 
+{
     cSimpleModule::initialize(stage);
     if (stage == 0) {
         numSent = 0;
@@ -23,21 +42,29 @@ void RTUApp::initialize(int stage) {
         WATCH(numSent);
         WATCH(numReceived);
     }
-    startListening();
-   
+    
+    bind();
+    
+    getParentModule()->subscribe("MonitoringData", this);
+    setPointsSignal = registerSignal("SetPoints");
+    
+    //periodically send Report to DSO
     interval = par("intervalReport");
     reportMsg = new cMessage("SendReport");
     reportMsg->setKind(SEND);
     scheduleAt(simTime()+interval, reportMsg);
     
+    //timer to establish the TCP connection
     startTime = par("startTime");
     timeoutMsg = new cMessage("timer");
     timeoutMsg->setKind(CONNECT);
     scheduleAt(simTime()+startTime, timeoutMsg);
     
+    ied = getParentModule()->par("IEDs");
 }
 
-void RTUApp::handleMessage(cMessage *msg) {
+void RTUApp::handleMessage(cMessage *msg) 
+{
     if (msg->isSelfMessage()) {
         switch (msg->getKind()) {
             case CONNECT: 
@@ -46,55 +73,47 @@ void RTUApp::handleMessage(cMessage *msg) {
             case SEND:
                 sendReportToDSO();
                 break;
-            default: throw cRuntimeError("Invalid kind %d in self message", (int)msg->getKind());
-        }
-    } else {
-        if (dynamic_cast<MeasurementData *>(msg) != NULL) {
-            MeasurementData *data = (MeasurementData *) msg;
-            emit(rcvdPkSignal, msg);
-            numReceived++;
-            report->updateRecord(data->getEnergyConsumption());
+            default: 
+                throw cRuntimeError("Invalid kind %d in self message", (int)msg->getKind());	   
         }
     }
-   
+    else
+        process(msg); 
+     
     displayGUI();
     delete msg;
 }
 
-void RTUApp::sendReportToDSO() {
-    MeasurementData *data = new MeasurementData("MeasurementData");
-    data->setEnergyConsumption(report->getAvg());
-    report->resetData();
-    data->setByteLength(1);
-    data->setTimestamp(simTime());
-    data->setKind(TCP_C_SEND);
-                
-    emit(sentPkSignal, data);
-    numSent++;
+void RTUApp::process(cMessage *msg) 
+{
+    if (dynamic_cast<SetPoints *>(msg) != NULL) {
+        cout << this->getParentModule()->getFullPath() << ": SetPoints received: Configuration change.\n";        
+        SetPoints *setPoints = (SetPoints *) msg;
         
-    socket.send(data); 
-    
-    cMessage *report = new cMessage("SendReport");
-    report->setKind(SEND);
-    scheduleAt(simTime()+interval, report);
+        setPoints->setEnergyGenLimit((int)setPoints->getEnergyGenLimit()/ied);
+
+        //notify IEDs:send signal with the new threshold
+        emit(setPointsSignal, setPoints);     
+            
+        numReceived++;
+        emit(rcvdPkSignal, setPoints);
+    }
 }
 
-void RTUApp::startListening() {
+void RTUApp::bind() 
+{
     const char *localAddress = par("localAddress");
-    int localPort = par("localPort");
-    
+    int localPort = par("localPort");       
     socket.setOutputGate(gate("tcpOut"));
     socket.setDataTransferMode(TCP_TRANSFER_OBJECT);
-    socket.bind(localAddress[0] ? IPvXAddress(localAddress) : IPvXAddress(), localPort);
-    socket.listen();
+    socket.bind(*localAddress ? IPvXAddressResolver().resolve(localAddress) : IPvXAddress(), localPort);
 }
 
-void RTUApp::connect() {
+void RTUApp::connect() 
+{
     socket.renewSocket();
-
     const char *connectAddress = par("connectAddress");
     int connectPort = par("connectPort");
-
     IPvXAddress destination;
     IPvXAddressResolver().tryResolve(connectAddress, destination);
     if (destination.isUnspecified())
@@ -103,7 +122,62 @@ void RTUApp::connect() {
         socket.connect(destination, connectPort);
 }
 
-void RTUApp::displayGUI() {
+
+/*
+ * Signal sent by the IEDs. Information icludes the measurements from the field: energy generation and power quality
+ */
+void RTUApp::receiveSignal(cComponent *src, simsignal_t id, cObject *obj) 
+{ 
+    // Notification from IEDs
+    Enter_Method_Silent();
+    string signalName(getSignalName(id));
+    if (signalName == "MonitoringData") { 
+        if (dynamic_cast<MonitoringData *>(obj) != NULL) {
+            MonitoringData *data = (MonitoringData *) obj;
+            // updates the aggregated data
+            record->updateRecord(data->getEnergyGeneration());
+            delete data;
+        }
+    }
+}
+
+
+void RTUApp::sendReportToDSO() 
+{
+    MonitoringData *data = new MonitoringData("MonitoringData");
+    
+    string name = this->getParentModule()->getName();
+/*    if (name.find("RTU1") != std::string::npos) {
+        data->setEnergyGeneration(20.0);
+        data->setPowerQuality(20);
+    }
+    else { */
+        data->setAvgEnergyGen(record->getAvgEnergy());
+        data->setSumEnergyGen(record->getSumEnergy());
+  //  }
+       
+
+    
+    data->setByteLength(1);
+    data->setTimestamp(simTime());
+    data->setKind(TCP_C_SEND);
+    data->setSender(this->getParentModule()->getName());
+    
+//    emit(genEnergySignal,report->getAvgEnergyGeneration());
+    emit(sentPkSignal, data);
+    numSent++;
+    
+    record->reset();    
+    socket.send(data); 
+    
+    //set timer
+    cMessage *report = new cMessage("SendReport");
+    report->setKind(SEND);
+    scheduleAt(simTime()+interval, report);
+}
+
+void RTUApp::displayGUI() 
+{
     if (ev.isGUI()) {
         char buf[40];
         sprintf(buf, "rcvd: %d pks\nsent: %d pks", numReceived, numSent);
@@ -111,4 +185,6 @@ void RTUApp::displayGUI() {
     }
 }
 
-void RTUApp::finish() { }
+void RTUApp::finish() 
+{
+}
