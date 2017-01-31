@@ -21,7 +21,7 @@ packet MonitoringData {
 	double energyGeneration; // value of one reading
 	double avgEnergyGen; // avg value of many readings
 	double sumEnergyGen; // sum of many readings
-    //int powerQuality;
+    double threshold;
     string sender;
 };
 

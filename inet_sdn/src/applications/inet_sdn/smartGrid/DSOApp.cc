@@ -41,6 +41,7 @@ DSOApp::DSOApp()
 
 DSOApp::~DSOApp() 
 {
+    delete record;
 }
 
 void DSOApp::initialize(int stage) 
@@ -58,10 +59,11 @@ void DSOApp::initialize(int stage)
     
     // limits
     threshold = par("maxEnergyGen");
+    thr_per_domain = threshold;
     
     fileName = "LogDSO.dat";
     file.open(fileName.c_str(), ios::out|ios::trunc);
-    file << "msgRcvd\t\t msgSent\t\t sender\t\t avgEnergy\t\t sumEnergy \t\t threshold \n";
+    file << "msgRcvd\t\t msgSent\t\t sender\t\t avgEnergy\t\t sumEnergy \t\t thresholdPerDomain \n";
     file.close();
 }
 
@@ -97,18 +99,17 @@ void DSOApp::handleMessage(cMessage *msg)
         double recordedSumEnergy = data->getSumEnergyGen();
         simtime_t timestamp = data->getTimestamp();
         const string rtu = data->getSender();
-        
+        double cur_thr = data->getThreshold();
         //update data structure
         info[rtu].push_back(data);
         
-        //write output to a file
+        //write output to a file:view per RTU
         updateFile(data); 
         
         //compute avg and sum energy consumption for the system
         record->updateRecord(recordedAvgEnergy, recordedSumEnergy, rtu);
         
-        if (record->getSendersNum() == socketMap.size() ) {
-            // exoun apantisei oloi
+        if (record->getSenders() == socketMap.size() ) {
             
             //record the values of avg and sum
             double sumEnergy = record->getSumEnergy();
@@ -135,9 +136,7 @@ void DSOApp::handleMessage(cMessage *msg)
             set_points->setTimestamp(simTime());
             set_points->setKind(TCP_C_SEND);
             
-            set_points->setEnergyGenLimit(threshold+1);
-
-            threshold += 1;
+            set_points->setEnergyGenLimit(cur_thr-1);
           
             emit(sentPkSignal, set_points);
             numSent++;
@@ -159,7 +158,7 @@ void DSOApp::updateFile(MonitoringData *msg)
     
     data.assign(simTime().str());
     data.append("\t\t" + msg->getTimestamp().str() + "\t\t" + msg->getSender() + "\t\t");
-    data.append(to_string(msg->getAvgEnergyGen()) + "\t\t" + to_string(msg->getSumEnergyGen()) + "\t\t" + to_string(threshold));
+    data.append(to_string(msg->getAvgEnergyGen()) + "\t\t" + to_string(msg->getSumEnergyGen()) + "\t\t" + to_string(msg->getThreshold()));
     
     file.open(fileName.c_str(), ios::out|ios::app);
     if (file.is_open()) {
@@ -178,8 +177,8 @@ void DSOApp::defineSetPoints(cMessage *msg) {
     set_points->setKind(TCP_C_SEND);
     
     int num_rtus = getRTUs();
-    
-    set_points->setEnergyGenLimit((int)threshold/num_rtus);
+    thr_per_domain = threshold/num_rtus;
+    set_points->setEnergyGenLimit((int)thr_per_domain);
            
     emit(sentPkSignal, set_points);
     numSent++;
@@ -203,7 +202,7 @@ void DSOApp::finish()
 
 bool DSOApp::withinLimits(double energy) 
 {
-    if (energy < threshold)
+    if (energy <= (thr_per_domain+1))
         return true;
     else 
         return false;

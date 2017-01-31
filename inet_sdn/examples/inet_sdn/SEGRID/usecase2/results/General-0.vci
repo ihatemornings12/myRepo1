@@ -1,69 +1,69 @@
-file 317836 1485443922                                          
+file 1155212 1485851871                                         
 version 2
-run General-0-20170126-16:18:37-24075
+run General-0-20170131-09:37:14-4835
 attr configname General
-attr datetime 20170126-16:18:37
+attr datetime 20170131-09:37:14
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network Topo
-attr processid 24075
+attr processid 4835
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 
-vector 659  Topo.s1.tcp  tcpRcvQueueBytes  ETV
-vector 646  Topo.s1.tcp  "advertised window"  ETV
-vector 645  Topo.s1.tcp  "receive window"  ETV
-vector 648  Topo.s1.tcp  "sent ack"  ETV
-vector 683  Topo.s2.tcp  tcpRcvQueueBytes  ETV
-vector 670  Topo.s2.tcp  "advertised window"  ETV
-vector 669  Topo.s2.tcp  "receive window"  ETV
-vector 672  Topo.s2.tcp  "sent ack"  ETV
-vector 707  Topo.s3.tcp  tcpRcvQueueBytes  ETV
-vector 694  Topo.s3.tcp  "advertised window"  ETV
-vector 693  Topo.s3.tcp  "receive window"  ETV
-vector 696  Topo.s3.tcp  "sent ack"  ETV
-vector 731  Topo.s4.tcp  tcpRcvQueueBytes  ETV
-vector 718  Topo.s4.tcp  "advertised window"  ETV
-vector 717  Topo.s4.tcp  "receive window"  ETV
-vector 720  Topo.s4.tcp  "sent ack"  ETV
-vector 755  Topo.s5.tcp  tcpRcvQueueBytes  ETV
-vector 742  Topo.s5.tcp  "advertised window"  ETV
-vector 741  Topo.s5.tcp  "receive window"  ETV
-vector 744  Topo.s5.tcp  "sent ack"  ETV
-vector 779  Topo.s6.tcp  tcpRcvQueueBytes  ETV
-vector 766  Topo.s6.tcp  "advertised window"  ETV
-vector 765  Topo.s6.tcp  "receive window"  ETV
-vector 768  Topo.s6.tcp  "sent ack"  ETV
-vector 803  Topo.s7.tcp  tcpRcvQueueBytes  ETV
-vector 790  Topo.s7.tcp  "advertised window"  ETV
-vector 789  Topo.s7.tcp  "receive window"  ETV
-vector 792  Topo.s7.tcp  "sent ack"  ETV
-vector 827  Topo.s8.tcp  tcpRcvQueueBytes  ETV
-vector 814  Topo.s8.tcp  "advertised window"  ETV
-vector 813  Topo.s8.tcp  "receive window"  ETV
-vector 816  Topo.s8.tcp  "sent ack"  ETV
-vector 851  Topo.RTU1.tcp  tcpRcvQueueBytes  ETV
-vector 838  Topo.RTU1.tcp  "advertised window"  ETV
-vector 837  Topo.RTU1.tcp  "receive window"  ETV
-vector 840  Topo.RTU1.tcp  "sent ack"  ETV
-vector 875  Topo.RTU2.tcp  tcpRcvQueueBytes  ETV
-vector 862  Topo.RTU2.tcp  "advertised window"  ETV
-vector 861  Topo.RTU2.tcp  "receive window"  ETV
-vector 864  Topo.RTU2.tcp  "sent ack"  ETV
-vector 899  Topo.RTU3.tcp  tcpRcvQueueBytes  ETV
-vector 886  Topo.RTU3.tcp  "advertised window"  ETV
-vector 885  Topo.RTU3.tcp  "receive window"  ETV
-vector 888  Topo.RTU3.tcp  "sent ack"  ETV
-vector 923  Topo.RTU4.tcp  tcpRcvQueueBytes  ETV
-vector 910  Topo.RTU4.tcp  "advertised window"  ETV
-vector 909  Topo.RTU4.tcp  "receive window"  ETV
-vector 912  Topo.RTU4.tcp  "sent ack"  ETV
+vector 663  Topo.s1.tcp  tcpRcvQueueBytes  ETV
+vector 650  Topo.s1.tcp  "advertised window"  ETV
+vector 649  Topo.s1.tcp  "receive window"  ETV
+vector 652  Topo.s1.tcp  "sent ack"  ETV
+vector 687  Topo.s2.tcp  tcpRcvQueueBytes  ETV
+vector 674  Topo.s2.tcp  "advertised window"  ETV
+vector 673  Topo.s2.tcp  "receive window"  ETV
+vector 676  Topo.s2.tcp  "sent ack"  ETV
+vector 711  Topo.s3.tcp  tcpRcvQueueBytes  ETV
+vector 698  Topo.s3.tcp  "advertised window"  ETV
+vector 697  Topo.s3.tcp  "receive window"  ETV
+vector 700  Topo.s3.tcp  "sent ack"  ETV
+vector 735  Topo.s4.tcp  tcpRcvQueueBytes  ETV
+vector 722  Topo.s4.tcp  "advertised window"  ETV
+vector 721  Topo.s4.tcp  "receive window"  ETV
+vector 724  Topo.s4.tcp  "sent ack"  ETV
+vector 759  Topo.s5.tcp  tcpRcvQueueBytes  ETV
+vector 746  Topo.s5.tcp  "advertised window"  ETV
+vector 745  Topo.s5.tcp  "receive window"  ETV
+vector 748  Topo.s5.tcp  "sent ack"  ETV
+vector 783  Topo.s6.tcp  tcpRcvQueueBytes  ETV
+vector 770  Topo.s6.tcp  "advertised window"  ETV
+vector 769  Topo.s6.tcp  "receive window"  ETV
+vector 772  Topo.s6.tcp  "sent ack"  ETV
+vector 807  Topo.s7.tcp  tcpRcvQueueBytes  ETV
+vector 794  Topo.s7.tcp  "advertised window"  ETV
+vector 793  Topo.s7.tcp  "receive window"  ETV
+vector 796  Topo.s7.tcp  "sent ack"  ETV
+vector 831  Topo.s8.tcp  tcpRcvQueueBytes  ETV
+vector 818  Topo.s8.tcp  "advertised window"  ETV
+vector 817  Topo.s8.tcp  "receive window"  ETV
+vector 820  Topo.s8.tcp  "sent ack"  ETV
+vector 855  Topo.RTU1.tcp  tcpRcvQueueBytes  ETV
+vector 842  Topo.RTU1.tcp  "advertised window"  ETV
+vector 841  Topo.RTU1.tcp  "receive window"  ETV
+vector 844  Topo.RTU1.tcp  "sent ack"  ETV
+vector 879  Topo.RTU2.tcp  tcpRcvQueueBytes  ETV
+vector 866  Topo.RTU2.tcp  "advertised window"  ETV
+vector 865  Topo.RTU2.tcp  "receive window"  ETV
+vector 868  Topo.RTU2.tcp  "sent ack"  ETV
+vector 903  Topo.RTU3.tcp  tcpRcvQueueBytes  ETV
+vector 890  Topo.RTU3.tcp  "advertised window"  ETV
+vector 889  Topo.RTU3.tcp  "receive window"  ETV
+vector 892  Topo.RTU3.tcp  "sent ack"  ETV
+vector 927  Topo.RTU4.tcp  tcpRcvQueueBytes  ETV
+vector 914  Topo.RTU4.tcp  "advertised window"  ETV
+vector 913  Topo.RTU4.tcp  "receive window"  ETV
+vector 916  Topo.RTU4.tcp  "sent ack"  ETV
 vector 33  Topo.s1.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
 vector 80  Topo.s2.networkLayer.arp  sentReq:vector  ETV
@@ -80,13 +80,13 @@ vector 337  Topo.s7.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
 vector 373  Topo.s8.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
-vector 516  Topo.RTU1.networkLayer.arp  sentReq:vector  ETV
+vector 517  Topo.RTU1.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
-vector 537  Topo.RTU2.networkLayer.arp  sentReq:vector  ETV
+vector 539  Topo.RTU2.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
-vector 558  Topo.RTU3.networkLayer.arp  sentReq:vector  ETV
+vector 561  Topo.RTU3.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
-vector 579  Topo.RTU4.networkLayer.arp  sentReq:vector  ETV
+vector 583  Topo.RTU4.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
 vector 44  Topo.s1.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
@@ -120,19 +120,19 @@ vector 384  Topo.s8.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, vector(packetBytes)"
-vector 530  Topo.RTU1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+vector 531  Topo.RTU1.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, vector(packetBytes)"
-vector 551  Topo.RTU2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+vector 553  Topo.RTU2.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, vector(packetBytes)"
-vector 572  Topo.RTU3.eth[0].encap  encapPk:vector(packetBytes)  ETV
+vector 575  Topo.RTU3.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, vector(packetBytes)"
-vector 593  Topo.RTU4.eth[0].encap  encapPk:vector(packetBytes)  ETV
+vector 597  Topo.RTU4.eth[0].encap  encapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  encapPk
 attr title  "packets encapsulated, vector(packetBytes)"
@@ -168,19 +168,19 @@ vector 380  Topo.s8.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
-vector 526  Topo.RTU1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+vector 527  Topo.RTU1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
-vector 547  Topo.RTU2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+vector 549  Topo.RTU2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
-vector 568  Topo.RTU3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+vector 571  Topo.RTU3.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
-vector 589  Topo.RTU4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+vector 593  Topo.RTU4.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
@@ -216,19 +216,19 @@ vector 375  Topo.s8.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 521  Topo.RTU1.eth[0].mac  txPk:vector(packetBytes)  ETV
+vector 522  Topo.RTU1.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 542  Topo.RTU2.eth[0].mac  txPk:vector(packetBytes)  ETV
+vector 544  Topo.RTU2.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 563  Topo.RTU3.eth[0].mac  txPk:vector(packetBytes)  ETV
+vector 566  Topo.RTU3.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 584  Topo.RTU4.eth[0].mac  txPk:vector(packetBytes)  ETV
+vector 588  Topo.RTU4.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
@@ -554,214 +554,214 @@ vector 385  Topo.s8.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
-vector 601  Topo.controller.tcp  "rcvd seq"  ETV
-vector 602  Topo.controller.tcp  "rcvd ack"  ETV
-vector 598  Topo.controller.tcp  "advertised window"  ETV
-vector 596  Topo.controller.tcp  "send window"  ETV
-vector 611  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 597  Topo.controller.tcp  "receive window"  ETV
-vector 600  Topo.controller.tcp  "sent ack"  ETV
-vector 937  Topo.controller.tcp  "rcvd seq"  ETV
-vector 938  Topo.controller.tcp  "rcvd ack"  ETV
-vector 934  Topo.controller.tcp  "advertised window"  ETV
-vector 932  Topo.controller.tcp  "send window"  ETV
-vector 947  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 933  Topo.controller.tcp  "receive window"  ETV
-vector 936  Topo.controller.tcp  "sent ack"  ETV
-vector 961  Topo.controller.tcp  "rcvd seq"  ETV
-vector 962  Topo.controller.tcp  "rcvd ack"  ETV
-vector 958  Topo.controller.tcp  "advertised window"  ETV
-vector 956  Topo.controller.tcp  "send window"  ETV
-vector 971  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 957  Topo.controller.tcp  "receive window"  ETV
-vector 960  Topo.controller.tcp  "sent ack"  ETV
-vector 985  Topo.controller.tcp  "rcvd seq"  ETV
-vector 986  Topo.controller.tcp  "rcvd ack"  ETV
-vector 982  Topo.controller.tcp  "advertised window"  ETV
-vector 980  Topo.controller.tcp  "send window"  ETV
-vector 995  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 981  Topo.controller.tcp  "receive window"  ETV
-vector 984  Topo.controller.tcp  "sent ack"  ETV
-vector 1009  Topo.controller.tcp  "rcvd seq"  ETV
-vector 1010  Topo.controller.tcp  "rcvd ack"  ETV
-vector 1006  Topo.controller.tcp  "advertised window"  ETV
-vector 1004  Topo.controller.tcp  "send window"  ETV
-vector 1019  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 1005  Topo.controller.tcp  "receive window"  ETV
-vector 1008  Topo.controller.tcp  "sent ack"  ETV
-vector 1033  Topo.controller.tcp  "rcvd seq"  ETV
-vector 1034  Topo.controller.tcp  "rcvd ack"  ETV
-vector 1030  Topo.controller.tcp  "advertised window"  ETV
-vector 1028  Topo.controller.tcp  "send window"  ETV
-vector 1043  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 1029  Topo.controller.tcp  "receive window"  ETV
-vector 1032  Topo.controller.tcp  "sent ack"  ETV
-vector 1057  Topo.controller.tcp  "rcvd seq"  ETV
-vector 1058  Topo.controller.tcp  "rcvd ack"  ETV
-vector 1054  Topo.controller.tcp  "advertised window"  ETV
-vector 1052  Topo.controller.tcp  "send window"  ETV
-vector 1067  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 1053  Topo.controller.tcp  "receive window"  ETV
-vector 1056  Topo.controller.tcp  "sent ack"  ETV
-vector 1081  Topo.controller.tcp  "rcvd seq"  ETV
-vector 1082  Topo.controller.tcp  "rcvd ack"  ETV
-vector 1078  Topo.controller.tcp  "advertised window"  ETV
-vector 1076  Topo.controller.tcp  "send window"  ETV
-vector 1091  Topo.controller.tcp  tcpRcvQueueBytes  ETV
-vector 1077  Topo.controller.tcp  "receive window"  ETV
-vector 1080  Topo.controller.tcp  "sent ack"  ETV
-vector 649  Topo.s1.tcp  "rcvd seq"  ETV
-vector 650  Topo.s1.tcp  "rcvd ack"  ETV
-vector 644  Topo.s1.tcp  "send window"  ETV
-vector 673  Topo.s2.tcp  "rcvd seq"  ETV
-vector 674  Topo.s2.tcp  "rcvd ack"  ETV
-vector 668  Topo.s2.tcp  "send window"  ETV
-vector 697  Topo.s3.tcp  "rcvd seq"  ETV
-vector 698  Topo.s3.tcp  "rcvd ack"  ETV
-vector 692  Topo.s3.tcp  "send window"  ETV
-vector 721  Topo.s4.tcp  "rcvd seq"  ETV
-vector 722  Topo.s4.tcp  "rcvd ack"  ETV
-vector 716  Topo.s4.tcp  "send window"  ETV
-vector 745  Topo.s5.tcp  "rcvd seq"  ETV
-vector 746  Topo.s5.tcp  "rcvd ack"  ETV
-vector 740  Topo.s5.tcp  "send window"  ETV
-vector 769  Topo.s6.tcp  "rcvd seq"  ETV
-vector 770  Topo.s6.tcp  "rcvd ack"  ETV
-vector 764  Topo.s6.tcp  "send window"  ETV
-vector 767  Topo.s6.tcp  "sent seq"  ETV
-vector 771  Topo.s6.tcp  "unacked bytes"  ETV
-vector 793  Topo.s7.tcp  "rcvd seq"  ETV
-vector 794  Topo.s7.tcp  "rcvd ack"  ETV
-vector 788  Topo.s7.tcp  "send window"  ETV
-vector 791  Topo.s7.tcp  "sent seq"  ETV
-vector 795  Topo.s7.tcp  "unacked bytes"  ETV
-vector 817  Topo.s8.tcp  "rcvd seq"  ETV
-vector 818  Topo.s8.tcp  "rcvd ack"  ETV
-vector 812  Topo.s8.tcp  "send window"  ETV
-vector 603  Topo.controller.tcp  "unacked bytes"  ETV
-vector 939  Topo.controller.tcp  "unacked bytes"  ETV
-vector 963  Topo.controller.tcp  "unacked bytes"  ETV
-vector 987  Topo.controller.tcp  "unacked bytes"  ETV
-vector 1011  Topo.controller.tcp  "unacked bytes"  ETV
-vector 1083  Topo.controller.tcp  "unacked bytes"  ETV
-vector 599  Topo.controller.tcp  "sent seq"  ETV
-vector 935  Topo.controller.tcp  "sent seq"  ETV
-vector 959  Topo.controller.tcp  "sent seq"  ETV
-vector 983  Topo.controller.tcp  "sent seq"  ETV
-vector 1007  Topo.controller.tcp  "sent seq"  ETV
-vector 1079  Topo.controller.tcp  "sent seq"  ETV
-vector 1035  Topo.controller.tcp  "unacked bytes"  ETV
-vector 1045  Topo.controller.tcp  cwnd  ETV
-vector 1036  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 1059  Topo.controller.tcp  "unacked bytes"  ETV
-vector 1069  Topo.controller.tcp  cwnd  ETV
-vector 1060  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 1031  Topo.controller.tcp  "sent seq"  ETV
-vector 1055  Topo.controller.tcp  "sent seq"  ETV
-vector 652  Topo.s1.tcp  "rcvd dupAcks"  ETV
-vector 676  Topo.s2.tcp  "rcvd dupAcks"  ETV
-vector 700  Topo.s3.tcp  "rcvd dupAcks"  ETV
-vector 724  Topo.s4.tcp  "rcvd dupAcks"  ETV
-vector 748  Topo.s5.tcp  "rcvd dupAcks"  ETV
-vector 820  Topo.s8.tcp  "rcvd dupAcks"  ETV
-vector 647  Topo.s1.tcp  "sent seq"  ETV
-vector 651  Topo.s1.tcp  "unacked bytes"  ETV
-vector 671  Topo.s2.tcp  "sent seq"  ETV
-vector 675  Topo.s2.tcp  "unacked bytes"  ETV
-vector 695  Topo.s3.tcp  "sent seq"  ETV
-vector 699  Topo.s3.tcp  "unacked bytes"  ETV
-vector 719  Topo.s4.tcp  "sent seq"  ETV
-vector 723  Topo.s4.tcp  "unacked bytes"  ETV
-vector 743  Topo.s5.tcp  "sent seq"  ETV
-vector 747  Topo.s5.tcp  "unacked bytes"  ETV
-vector 815  Topo.s8.tcp  "sent seq"  ETV
-vector 819  Topo.s8.tcp  "unacked bytes"  ETV
-vector 783  Topo.s6.tcp  "measured RTT"  ETV
-vector 784  Topo.s6.tcp  "smoothed RTT"  ETV
-vector 785  Topo.s6.tcp  RTTVAR  ETV
-vector 786  Topo.s6.tcp  RTO  ETV
-vector 781  Topo.s6.tcp  cwnd  ETV
-vector 772  Topo.s6.tcp  "rcvd dupAcks"  ETV
-vector 807  Topo.s7.tcp  "measured RTT"  ETV
-vector 808  Topo.s7.tcp  "smoothed RTT"  ETV
-vector 809  Topo.s7.tcp  RTTVAR  ETV
-vector 810  Topo.s7.tcp  RTO  ETV
-vector 805  Topo.s7.tcp  cwnd  ETV
-vector 796  Topo.s7.tcp  "rcvd dupAcks"  ETV
-vector 615  Topo.controller.tcp  "measured RTT"  ETV
-vector 616  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 617  Topo.controller.tcp  RTTVAR  ETV
-vector 618  Topo.controller.tcp  RTO  ETV
-vector 613  Topo.controller.tcp  cwnd  ETV
-vector 604  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 951  Topo.controller.tcp  "measured RTT"  ETV
-vector 952  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 953  Topo.controller.tcp  RTTVAR  ETV
-vector 954  Topo.controller.tcp  RTO  ETV
-vector 949  Topo.controller.tcp  cwnd  ETV
-vector 940  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 975  Topo.controller.tcp  "measured RTT"  ETV
-vector 976  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 977  Topo.controller.tcp  RTTVAR  ETV
-vector 978  Topo.controller.tcp  RTO  ETV
-vector 973  Topo.controller.tcp  cwnd  ETV
-vector 964  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 999  Topo.controller.tcp  "measured RTT"  ETV
-vector 1000  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 1001  Topo.controller.tcp  RTTVAR  ETV
-vector 1002  Topo.controller.tcp  RTO  ETV
-vector 997  Topo.controller.tcp  cwnd  ETV
-vector 988  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 1023  Topo.controller.tcp  "measured RTT"  ETV
-vector 1024  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 1025  Topo.controller.tcp  RTTVAR  ETV
-vector 1026  Topo.controller.tcp  RTO  ETV
-vector 1021  Topo.controller.tcp  cwnd  ETV
-vector 1012  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 1095  Topo.controller.tcp  "measured RTT"  ETV
-vector 1096  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 1097  Topo.controller.tcp  RTTVAR  ETV
-vector 1098  Topo.controller.tcp  RTO  ETV
-vector 1093  Topo.controller.tcp  cwnd  ETV
-vector 1084  Topo.controller.tcp  "rcvd dupAcks"  ETV
-vector 1047  Topo.controller.tcp  "measured RTT"  ETV
-vector 1048  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 1049  Topo.controller.tcp  RTTVAR  ETV
-vector 1050  Topo.controller.tcp  RTO  ETV
-vector 1071  Topo.controller.tcp  "measured RTT"  ETV
-vector 1072  Topo.controller.tcp  "smoothed RTT"  ETV
-vector 1073  Topo.controller.tcp  RTTVAR  ETV
-vector 1074  Topo.controller.tcp  RTO  ETV
-vector 663  Topo.s1.tcp  "measured RTT"  ETV
-vector 664  Topo.s1.tcp  "smoothed RTT"  ETV
-vector 665  Topo.s1.tcp  RTTVAR  ETV
-vector 666  Topo.s1.tcp  RTO  ETV
-vector 661  Topo.s1.tcp  cwnd  ETV
-vector 687  Topo.s2.tcp  "measured RTT"  ETV
-vector 688  Topo.s2.tcp  "smoothed RTT"  ETV
-vector 689  Topo.s2.tcp  RTTVAR  ETV
-vector 690  Topo.s2.tcp  RTO  ETV
-vector 685  Topo.s2.tcp  cwnd  ETV
-vector 711  Topo.s3.tcp  "measured RTT"  ETV
-vector 712  Topo.s3.tcp  "smoothed RTT"  ETV
-vector 713  Topo.s3.tcp  RTTVAR  ETV
-vector 714  Topo.s3.tcp  RTO  ETV
-vector 709  Topo.s3.tcp  cwnd  ETV
-vector 735  Topo.s4.tcp  "measured RTT"  ETV
-vector 736  Topo.s4.tcp  "smoothed RTT"  ETV
-vector 737  Topo.s4.tcp  RTTVAR  ETV
-vector 738  Topo.s4.tcp  RTO  ETV
-vector 733  Topo.s4.tcp  cwnd  ETV
-vector 759  Topo.s5.tcp  "measured RTT"  ETV
-vector 760  Topo.s5.tcp  "smoothed RTT"  ETV
-vector 761  Topo.s5.tcp  RTTVAR  ETV
-vector 762  Topo.s5.tcp  RTO  ETV
-vector 757  Topo.s5.tcp  cwnd  ETV
-vector 831  Topo.s8.tcp  "measured RTT"  ETV
-vector 832  Topo.s8.tcp  "smoothed RTT"  ETV
-vector 833  Topo.s8.tcp  RTTVAR  ETV
-vector 834  Topo.s8.tcp  RTO  ETV
-vector 829  Topo.s8.tcp  cwnd  ETV
+vector 605  Topo.controller.tcp  "rcvd seq"  ETV
+vector 606  Topo.controller.tcp  "rcvd ack"  ETV
+vector 602  Topo.controller.tcp  "advertised window"  ETV
+vector 600  Topo.controller.tcp  "send window"  ETV
+vector 615  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 601  Topo.controller.tcp  "receive window"  ETV
+vector 604  Topo.controller.tcp  "sent ack"  ETV
+vector 941  Topo.controller.tcp  "rcvd seq"  ETV
+vector 942  Topo.controller.tcp  "rcvd ack"  ETV
+vector 938  Topo.controller.tcp  "advertised window"  ETV
+vector 936  Topo.controller.tcp  "send window"  ETV
+vector 951  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 937  Topo.controller.tcp  "receive window"  ETV
+vector 940  Topo.controller.tcp  "sent ack"  ETV
+vector 965  Topo.controller.tcp  "rcvd seq"  ETV
+vector 966  Topo.controller.tcp  "rcvd ack"  ETV
+vector 962  Topo.controller.tcp  "advertised window"  ETV
+vector 960  Topo.controller.tcp  "send window"  ETV
+vector 975  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 961  Topo.controller.tcp  "receive window"  ETV
+vector 964  Topo.controller.tcp  "sent ack"  ETV
+vector 989  Topo.controller.tcp  "rcvd seq"  ETV
+vector 990  Topo.controller.tcp  "rcvd ack"  ETV
+vector 986  Topo.controller.tcp  "advertised window"  ETV
+vector 984  Topo.controller.tcp  "send window"  ETV
+vector 999  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 985  Topo.controller.tcp  "receive window"  ETV
+vector 988  Topo.controller.tcp  "sent ack"  ETV
+vector 1013  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1014  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1010  Topo.controller.tcp  "advertised window"  ETV
+vector 1008  Topo.controller.tcp  "send window"  ETV
+vector 1023  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1009  Topo.controller.tcp  "receive window"  ETV
+vector 1012  Topo.controller.tcp  "sent ack"  ETV
+vector 1037  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1038  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1034  Topo.controller.tcp  "advertised window"  ETV
+vector 1032  Topo.controller.tcp  "send window"  ETV
+vector 1047  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1033  Topo.controller.tcp  "receive window"  ETV
+vector 1036  Topo.controller.tcp  "sent ack"  ETV
+vector 1061  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1062  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1058  Topo.controller.tcp  "advertised window"  ETV
+vector 1056  Topo.controller.tcp  "send window"  ETV
+vector 1071  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1057  Topo.controller.tcp  "receive window"  ETV
+vector 1060  Topo.controller.tcp  "sent ack"  ETV
+vector 1085  Topo.controller.tcp  "rcvd seq"  ETV
+vector 1086  Topo.controller.tcp  "rcvd ack"  ETV
+vector 1082  Topo.controller.tcp  "advertised window"  ETV
+vector 1080  Topo.controller.tcp  "send window"  ETV
+vector 1095  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 1081  Topo.controller.tcp  "receive window"  ETV
+vector 1084  Topo.controller.tcp  "sent ack"  ETV
+vector 653  Topo.s1.tcp  "rcvd seq"  ETV
+vector 654  Topo.s1.tcp  "rcvd ack"  ETV
+vector 648  Topo.s1.tcp  "send window"  ETV
+vector 677  Topo.s2.tcp  "rcvd seq"  ETV
+vector 678  Topo.s2.tcp  "rcvd ack"  ETV
+vector 672  Topo.s2.tcp  "send window"  ETV
+vector 701  Topo.s3.tcp  "rcvd seq"  ETV
+vector 702  Topo.s3.tcp  "rcvd ack"  ETV
+vector 696  Topo.s3.tcp  "send window"  ETV
+vector 725  Topo.s4.tcp  "rcvd seq"  ETV
+vector 726  Topo.s4.tcp  "rcvd ack"  ETV
+vector 720  Topo.s4.tcp  "send window"  ETV
+vector 749  Topo.s5.tcp  "rcvd seq"  ETV
+vector 750  Topo.s5.tcp  "rcvd ack"  ETV
+vector 744  Topo.s5.tcp  "send window"  ETV
+vector 773  Topo.s6.tcp  "rcvd seq"  ETV
+vector 774  Topo.s6.tcp  "rcvd ack"  ETV
+vector 768  Topo.s6.tcp  "send window"  ETV
+vector 771  Topo.s6.tcp  "sent seq"  ETV
+vector 775  Topo.s6.tcp  "unacked bytes"  ETV
+vector 797  Topo.s7.tcp  "rcvd seq"  ETV
+vector 798  Topo.s7.tcp  "rcvd ack"  ETV
+vector 792  Topo.s7.tcp  "send window"  ETV
+vector 795  Topo.s7.tcp  "sent seq"  ETV
+vector 799  Topo.s7.tcp  "unacked bytes"  ETV
+vector 821  Topo.s8.tcp  "rcvd seq"  ETV
+vector 822  Topo.s8.tcp  "rcvd ack"  ETV
+vector 816  Topo.s8.tcp  "send window"  ETV
+vector 607  Topo.controller.tcp  "unacked bytes"  ETV
+vector 943  Topo.controller.tcp  "unacked bytes"  ETV
+vector 967  Topo.controller.tcp  "unacked bytes"  ETV
+vector 991  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1015  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1087  Topo.controller.tcp  "unacked bytes"  ETV
+vector 603  Topo.controller.tcp  "sent seq"  ETV
+vector 939  Topo.controller.tcp  "sent seq"  ETV
+vector 963  Topo.controller.tcp  "sent seq"  ETV
+vector 987  Topo.controller.tcp  "sent seq"  ETV
+vector 1011  Topo.controller.tcp  "sent seq"  ETV
+vector 1083  Topo.controller.tcp  "sent seq"  ETV
+vector 1039  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1049  Topo.controller.tcp  cwnd  ETV
+vector 1040  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1063  Topo.controller.tcp  "unacked bytes"  ETV
+vector 1073  Topo.controller.tcp  cwnd  ETV
+vector 1064  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1035  Topo.controller.tcp  "sent seq"  ETV
+vector 1059  Topo.controller.tcp  "sent seq"  ETV
+vector 656  Topo.s1.tcp  "rcvd dupAcks"  ETV
+vector 680  Topo.s2.tcp  "rcvd dupAcks"  ETV
+vector 704  Topo.s3.tcp  "rcvd dupAcks"  ETV
+vector 728  Topo.s4.tcp  "rcvd dupAcks"  ETV
+vector 752  Topo.s5.tcp  "rcvd dupAcks"  ETV
+vector 824  Topo.s8.tcp  "rcvd dupAcks"  ETV
+vector 651  Topo.s1.tcp  "sent seq"  ETV
+vector 655  Topo.s1.tcp  "unacked bytes"  ETV
+vector 675  Topo.s2.tcp  "sent seq"  ETV
+vector 679  Topo.s2.tcp  "unacked bytes"  ETV
+vector 699  Topo.s3.tcp  "sent seq"  ETV
+vector 703  Topo.s3.tcp  "unacked bytes"  ETV
+vector 723  Topo.s4.tcp  "sent seq"  ETV
+vector 727  Topo.s4.tcp  "unacked bytes"  ETV
+vector 747  Topo.s5.tcp  "sent seq"  ETV
+vector 751  Topo.s5.tcp  "unacked bytes"  ETV
+vector 819  Topo.s8.tcp  "sent seq"  ETV
+vector 823  Topo.s8.tcp  "unacked bytes"  ETV
+vector 787  Topo.s6.tcp  "measured RTT"  ETV
+vector 788  Topo.s6.tcp  "smoothed RTT"  ETV
+vector 789  Topo.s6.tcp  RTTVAR  ETV
+vector 790  Topo.s6.tcp  RTO  ETV
+vector 785  Topo.s6.tcp  cwnd  ETV
+vector 776  Topo.s6.tcp  "rcvd dupAcks"  ETV
+vector 811  Topo.s7.tcp  "measured RTT"  ETV
+vector 812  Topo.s7.tcp  "smoothed RTT"  ETV
+vector 813  Topo.s7.tcp  RTTVAR  ETV
+vector 814  Topo.s7.tcp  RTO  ETV
+vector 809  Topo.s7.tcp  cwnd  ETV
+vector 800  Topo.s7.tcp  "rcvd dupAcks"  ETV
+vector 619  Topo.controller.tcp  "measured RTT"  ETV
+vector 620  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 621  Topo.controller.tcp  RTTVAR  ETV
+vector 622  Topo.controller.tcp  RTO  ETV
+vector 617  Topo.controller.tcp  cwnd  ETV
+vector 608  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 955  Topo.controller.tcp  "measured RTT"  ETV
+vector 956  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 957  Topo.controller.tcp  RTTVAR  ETV
+vector 958  Topo.controller.tcp  RTO  ETV
+vector 953  Topo.controller.tcp  cwnd  ETV
+vector 944  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 979  Topo.controller.tcp  "measured RTT"  ETV
+vector 980  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 981  Topo.controller.tcp  RTTVAR  ETV
+vector 982  Topo.controller.tcp  RTO  ETV
+vector 977  Topo.controller.tcp  cwnd  ETV
+vector 968  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1003  Topo.controller.tcp  "measured RTT"  ETV
+vector 1004  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1005  Topo.controller.tcp  RTTVAR  ETV
+vector 1006  Topo.controller.tcp  RTO  ETV
+vector 1001  Topo.controller.tcp  cwnd  ETV
+vector 992  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1027  Topo.controller.tcp  "measured RTT"  ETV
+vector 1028  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1029  Topo.controller.tcp  RTTVAR  ETV
+vector 1030  Topo.controller.tcp  RTO  ETV
+vector 1025  Topo.controller.tcp  cwnd  ETV
+vector 1016  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1099  Topo.controller.tcp  "measured RTT"  ETV
+vector 1100  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1101  Topo.controller.tcp  RTTVAR  ETV
+vector 1102  Topo.controller.tcp  RTO  ETV
+vector 1097  Topo.controller.tcp  cwnd  ETV
+vector 1088  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 1051  Topo.controller.tcp  "measured RTT"  ETV
+vector 1052  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1053  Topo.controller.tcp  RTTVAR  ETV
+vector 1054  Topo.controller.tcp  RTO  ETV
+vector 1075  Topo.controller.tcp  "measured RTT"  ETV
+vector 1076  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 1077  Topo.controller.tcp  RTTVAR  ETV
+vector 1078  Topo.controller.tcp  RTO  ETV
+vector 667  Topo.s1.tcp  "measured RTT"  ETV
+vector 668  Topo.s1.tcp  "smoothed RTT"  ETV
+vector 669  Topo.s1.tcp  RTTVAR  ETV
+vector 670  Topo.s1.tcp  RTO  ETV
+vector 665  Topo.s1.tcp  cwnd  ETV
+vector 691  Topo.s2.tcp  "measured RTT"  ETV
+vector 692  Topo.s2.tcp  "smoothed RTT"  ETV
+vector 693  Topo.s2.tcp  RTTVAR  ETV
+vector 694  Topo.s2.tcp  RTO  ETV
+vector 689  Topo.s2.tcp  cwnd  ETV
+vector 715  Topo.s3.tcp  "measured RTT"  ETV
+vector 716  Topo.s3.tcp  "smoothed RTT"  ETV
+vector 717  Topo.s3.tcp  RTTVAR  ETV
+vector 718  Topo.s3.tcp  RTO  ETV
+vector 713  Topo.s3.tcp  cwnd  ETV
+vector 739  Topo.s4.tcp  "measured RTT"  ETV
+vector 740  Topo.s4.tcp  "smoothed RTT"  ETV
+vector 741  Topo.s4.tcp  RTTVAR  ETV
+vector 742  Topo.s4.tcp  RTO  ETV
+vector 737  Topo.s4.tcp  cwnd  ETV
+vector 763  Topo.s5.tcp  "measured RTT"  ETV
+vector 764  Topo.s5.tcp  "smoothed RTT"  ETV
+vector 765  Topo.s5.tcp  RTTVAR  ETV
+vector 766  Topo.s5.tcp  RTO  ETV
+vector 761  Topo.s5.tcp  cwnd  ETV
+vector 835  Topo.s8.tcp  "measured RTT"  ETV
+vector 836  Topo.s8.tcp  "smoothed RTT"  ETV
+vector 837  Topo.s8.tcp  RTTVAR  ETV
+vector 838  Topo.s8.tcp  RTO  ETV
+vector 833  Topo.s8.tcp  cwnd  ETV
 vector 240  Topo.s6.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
@@ -794,51 +794,51 @@ vector 304  Topo.s7.etherMAC[1]  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 522  Topo.RTU1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+vector 523  Topo.RTU1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 523  Topo.RTU1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+vector 524  Topo.RTU1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 543  Topo.RTU2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+vector 545  Topo.RTU2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 544  Topo.RTU2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+vector 546  Topo.RTU2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 564  Topo.RTU3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+vector 567  Topo.RTU3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 565  Topo.RTU3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+vector 568  Topo.RTU3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 585  Topo.RTU4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+vector 589  Topo.RTU4.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 586  Topo.RTU4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+vector 590  Topo.RTU4.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 531  Topo.RTU1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+vector 532  Topo.RTU1.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
-vector 552  Topo.RTU2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+vector 554  Topo.RTU2.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
-vector 573  Topo.RTU3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+vector 576  Topo.RTU3.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
-vector 594  Topo.RTU4.eth[0].encap  decapPk:vector(packetBytes)  ETV
+vector 598  Topo.RTU4.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
@@ -958,13 +958,13 @@ vector 510  Topo.DSO.eth[0].encap  decapPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  decapPk
 attr title  "packets decapsulated, vector(packetBytes)"
-vector 625  Topo.DSO.tcp  "rcvd seq"  ETV
-vector 626  Topo.DSO.tcp  "rcvd ack"  ETV
-vector 622  Topo.DSO.tcp  "advertised window"  ETV
-vector 620  Topo.DSO.tcp  "send window"  ETV
-vector 635  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
-vector 621  Topo.DSO.tcp  "receive window"  ETV
-vector 624  Topo.DSO.tcp  "sent ack"  ETV
+vector 629  Topo.DSO.tcp  "rcvd seq"  ETV
+vector 630  Topo.DSO.tcp  "rcvd ack"  ETV
+vector 626  Topo.DSO.tcp  "advertised window"  ETV
+vector 624  Topo.DSO.tcp  "send window"  ETV
+vector 639  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
+vector 625  Topo.DSO.tcp  "receive window"  ETV
+vector 628  Topo.DSO.tcp  "sent ack"  ETV
 vector 495  Topo.DSO.networkLayer.arp  sentReq:vector  ETV
 attr title  "ARP request sent, vector"
 vector 509  Topo.DSO.eth[0].encap  encapPk:vector(packetBytes)  ETV
@@ -979,20 +979,20 @@ vector 500  Topo.DSO.eth[0].mac  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
 attr title  "packets transmitted, vector(packetBytes)"
-vector 1129  Topo.DSO.tcp  "rcvd seq"  ETV
-vector 1130  Topo.DSO.tcp  "rcvd ack"  ETV
-vector 1126  Topo.DSO.tcp  "advertised window"  ETV
-vector 1124  Topo.DSO.tcp  "send window"  ETV
-vector 1139  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
-vector 1125  Topo.DSO.tcp  "receive window"  ETV
-vector 1128  Topo.DSO.tcp  "sent ack"  ETV
-vector 1153  Topo.DSO.tcp  "rcvd seq"  ETV
-vector 1154  Topo.DSO.tcp  "rcvd ack"  ETV
-vector 1150  Topo.DSO.tcp  "advertised window"  ETV
-vector 1148  Topo.DSO.tcp  "send window"  ETV
-vector 1163  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
-vector 1149  Topo.DSO.tcp  "receive window"  ETV
-vector 1152  Topo.DSO.tcp  "sent ack"  ETV
+vector 1133  Topo.DSO.tcp  "rcvd seq"  ETV
+vector 1134  Topo.DSO.tcp  "rcvd ack"  ETV
+vector 1130  Topo.DSO.tcp  "advertised window"  ETV
+vector 1128  Topo.DSO.tcp  "send window"  ETV
+vector 1143  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
+vector 1129  Topo.DSO.tcp  "receive window"  ETV
+vector 1132  Topo.DSO.tcp  "sent ack"  ETV
+vector 1157  Topo.DSO.tcp  "rcvd seq"  ETV
+vector 1158  Topo.DSO.tcp  "rcvd ack"  ETV
+vector 1154  Topo.DSO.tcp  "advertised window"  ETV
+vector 1152  Topo.DSO.tcp  "send window"  ETV
+vector 1167  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
+vector 1153  Topo.DSO.tcp  "receive window"  ETV
+vector 1156  Topo.DSO.tcp  "sent ack"  ETV
 vector 1  Topo.s1.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
@@ -1001,13 +1001,13 @@ vector 2  Topo.s1.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 1177  Topo.DSO.tcp  "rcvd seq"  ETV
-vector 1178  Topo.DSO.tcp  "rcvd ack"  ETV
-vector 1174  Topo.DSO.tcp  "advertised window"  ETV
-vector 1172  Topo.DSO.tcp  "send window"  ETV
-vector 1187  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
-vector 1173  Topo.DSO.tcp  "receive window"  ETV
-vector 1176  Topo.DSO.tcp  "sent ack"  ETV
+vector 1181  Topo.DSO.tcp  "rcvd seq"  ETV
+vector 1182  Topo.DSO.tcp  "rcvd ack"  ETV
+vector 1178  Topo.DSO.tcp  "advertised window"  ETV
+vector 1176  Topo.DSO.tcp  "send window"  ETV
+vector 1191  Topo.DSO.tcp  tcpRcvQueueBytes  ETV
+vector 1177  Topo.DSO.tcp  "receive window"  ETV
+vector 1180  Topo.DSO.tcp  "sent ack"  ETV
 vector 16  Topo.s1.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
@@ -1076,9 +1076,9 @@ vector 121  Topo.s3.etherMAC[2]  rxPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkFromHL
 attr title  "packet bytes from higher layer, vector(packetBytes)"
-vector 841  Topo.RTU1.tcp  "rcvd seq"  ETV
-vector 842  Topo.RTU1.tcp  "rcvd ack"  ETV
-vector 836  Topo.RTU1.tcp  "send window"  ETV
+vector 845  Topo.RTU1.tcp  "rcvd seq"  ETV
+vector 846  Topo.RTU1.tcp  "rcvd ack"  ETV
+vector 840  Topo.RTU1.tcp  "send window"  ETV
 vector 116  Topo.s3.etherMAC[2]  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  txPk
@@ -1107,24 +1107,24 @@ vector 317  Topo.s7.etherMAC[2]  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 889  Topo.RTU3.tcp  "rcvd seq"  ETV
-vector 890  Topo.RTU3.tcp  "rcvd ack"  ETV
-vector 884  Topo.RTU3.tcp  "send window"  ETV
-vector 627  Topo.DSO.tcp  "unacked bytes"  ETV
+vector 893  Topo.RTU3.tcp  "rcvd seq"  ETV
+vector 894  Topo.RTU3.tcp  "rcvd ack"  ETV
+vector 888  Topo.RTU3.tcp  "send window"  ETV
+vector 631  Topo.DSO.tcp  "unacked bytes"  ETV
 vector 489  Topo.DSO.dso  sentPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, vector(packetBytes)"
-vector 623  Topo.DSO.tcp  "sent seq"  ETV
-vector 865  Topo.RTU2.tcp  "rcvd seq"  ETV
-vector 866  Topo.RTU2.tcp  "rcvd ack"  ETV
-vector 860  Topo.RTU2.tcp  "send window"  ETV
-vector 913  Topo.RTU4.tcp  "rcvd seq"  ETV
-vector 914  Topo.RTU4.tcp  "rcvd ack"  ETV
-vector 908  Topo.RTU4.tcp  "send window"  ETV
-vector 1131  Topo.DSO.tcp  "unacked bytes"  ETV
-vector 1127  Topo.DSO.tcp  "sent seq"  ETV
-vector 844  Topo.RTU1.tcp  "rcvd dupAcks"  ETV
+vector 627  Topo.DSO.tcp  "sent seq"  ETV
+vector 869  Topo.RTU2.tcp  "rcvd seq"  ETV
+vector 870  Topo.RTU2.tcp  "rcvd ack"  ETV
+vector 864  Topo.RTU2.tcp  "send window"  ETV
+vector 917  Topo.RTU4.tcp  "rcvd seq"  ETV
+vector 918  Topo.RTU4.tcp  "rcvd ack"  ETV
+vector 912  Topo.RTU4.tcp  "send window"  ETV
+vector 1135  Topo.DSO.tcp  "unacked bytes"  ETV
+vector 1131  Topo.DSO.tcp  "sent seq"  ETV
+vector 848  Topo.RTU1.tcp  "rcvd dupAcks"  ETV
 vector 512  Topo.RTU1.rtu  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rcvdPk
@@ -1134,88 +1134,120 @@ attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "end-to-end delay, vector"
 attr unit  s
-vector 1155  Topo.DSO.tcp  "unacked bytes"  ETV
-vector 1151  Topo.DSO.tcp  "sent seq"  ETV
-vector 1179  Topo.DSO.tcp  "unacked bytes"  ETV
-vector 1175  Topo.DSO.tcp  "sent seq"  ETV
-vector 892  Topo.RTU3.tcp  "rcvd dupAcks"  ETV
-vector 554  Topo.RTU3.rtu  rcvdPk:vector(packetBytes)  ETV
+vector 1159  Topo.DSO.tcp  "unacked bytes"  ETV
+vector 1155  Topo.DSO.tcp  "sent seq"  ETV
+vector 1183  Topo.DSO.tcp  "unacked bytes"  ETV
+vector 1179  Topo.DSO.tcp  "sent seq"  ETV
+vector 896  Topo.RTU3.tcp  "rcvd dupAcks"  ETV
+vector 556  Topo.RTU3.rtu  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, vector(packetBytes)"
-vector 556  Topo.RTU3.rtu  endToEndDelay:vector  ETV
+vector 558  Topo.RTU3.rtu  endToEndDelay:vector  ETV
 attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "end-to-end delay, vector"
 attr unit  s
-vector 639  Topo.DSO.tcp  "measured RTT"  ETV
-vector 640  Topo.DSO.tcp  "smoothed RTT"  ETV
-vector 641  Topo.DSO.tcp  RTTVAR  ETV
-vector 642  Topo.DSO.tcp  RTO  ETV
-vector 637  Topo.DSO.tcp  cwnd  ETV
-vector 628  Topo.DSO.tcp  "rcvd dupAcks"  ETV
-vector 868  Topo.RTU2.tcp  "rcvd dupAcks"  ETV
-vector 533  Topo.RTU2.rtu  rcvdPk:vector(packetBytes)  ETV
+vector 643  Topo.DSO.tcp  "measured RTT"  ETV
+vector 644  Topo.DSO.tcp  "smoothed RTT"  ETV
+vector 645  Topo.DSO.tcp  RTTVAR  ETV
+vector 646  Topo.DSO.tcp  RTO  ETV
+vector 641  Topo.DSO.tcp  cwnd  ETV
+vector 632  Topo.DSO.tcp  "rcvd dupAcks"  ETV
+vector 872  Topo.RTU2.tcp  "rcvd dupAcks"  ETV
+vector 534  Topo.RTU2.rtu  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, vector(packetBytes)"
-vector 535  Topo.RTU2.rtu  endToEndDelay:vector  ETV
+vector 536  Topo.RTU2.rtu  endToEndDelay:vector  ETV
 attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "end-to-end delay, vector"
 attr unit  s
-vector 916  Topo.RTU4.tcp  "rcvd dupAcks"  ETV
-vector 575  Topo.RTU4.rtu  rcvdPk:vector(packetBytes)  ETV
+vector 920  Topo.RTU4.tcp  "rcvd dupAcks"  ETV
+vector 578  Topo.RTU4.rtu  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rcvdPk
 attr title  "packets received, vector(packetBytes)"
-vector 577  Topo.RTU4.rtu  endToEndDelay:vector  ETV
+vector 580  Topo.RTU4.rtu  endToEndDelay:vector  ETV
 attr interpolationmode  none
 attr source  messageAge(rcvdPk)
 attr title  "end-to-end delay, vector"
 attr unit  s
-vector 1143  Topo.DSO.tcp  "measured RTT"  ETV
-vector 1144  Topo.DSO.tcp  "smoothed RTT"  ETV
-vector 1145  Topo.DSO.tcp  RTTVAR  ETV
-vector 1146  Topo.DSO.tcp  RTO  ETV
-vector 1141  Topo.DSO.tcp  cwnd  ETV
-vector 1132  Topo.DSO.tcp  "rcvd dupAcks"  ETV
-vector 1167  Topo.DSO.tcp  "measured RTT"  ETV
-vector 1168  Topo.DSO.tcp  "smoothed RTT"  ETV
-vector 1169  Topo.DSO.tcp  RTTVAR  ETV
-vector 1170  Topo.DSO.tcp  RTO  ETV
-vector 1165  Topo.DSO.tcp  cwnd  ETV
-vector 1156  Topo.DSO.tcp  "rcvd dupAcks"  ETV
-vector 1191  Topo.DSO.tcp  "measured RTT"  ETV
-vector 1192  Topo.DSO.tcp  "smoothed RTT"  ETV
-vector 1193  Topo.DSO.tcp  RTTVAR  ETV
-vector 1194  Topo.DSO.tcp  RTO  ETV
-vector 1189  Topo.DSO.tcp  cwnd  ETV
-vector 1180  Topo.DSO.tcp  "rcvd dupAcks"  ETV
+vector 1147  Topo.DSO.tcp  "measured RTT"  ETV
+vector 1148  Topo.DSO.tcp  "smoothed RTT"  ETV
+vector 1149  Topo.DSO.tcp  RTTVAR  ETV
+vector 1150  Topo.DSO.tcp  RTO  ETV
+vector 1145  Topo.DSO.tcp  cwnd  ETV
+vector 1136  Topo.DSO.tcp  "rcvd dupAcks"  ETV
+vector 1171  Topo.DSO.tcp  "measured RTT"  ETV
+vector 1172  Topo.DSO.tcp  "smoothed RTT"  ETV
+vector 1173  Topo.DSO.tcp  RTTVAR  ETV
+vector 1174  Topo.DSO.tcp  RTO  ETV
+vector 1169  Topo.DSO.tcp  cwnd  ETV
+vector 1160  Topo.DSO.tcp  "rcvd dupAcks"  ETV
+vector 1195  Topo.DSO.tcp  "measured RTT"  ETV
+vector 1196  Topo.DSO.tcp  "smoothed RTT"  ETV
+vector 1197  Topo.DSO.tcp  RTTVAR  ETV
+vector 1198  Topo.DSO.tcp  RTO  ETV
+vector 1193  Topo.DSO.tcp  cwnd  ETV
+vector 1184  Topo.DSO.tcp  "rcvd dupAcks"  ETV
 vector 513  Topo.RTU1.rtu  sentPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, vector(packetBytes)"
-vector 534  Topo.RTU2.rtu  sentPk:vector(packetBytes)  ETV
+vector 515  Topo.RTU1.rtu  sum_energy:vector  ETV
+attr interpolationmode  none
+attr source  sum_energy
+attr title  "sum_energy, vector"
+vector 516  Topo.RTU1.rtu  avg_energy:vector  ETV
+attr interpolationmode  none
+attr source  avg_energy
+attr title  "avg_energy, vector"
+vector 535  Topo.RTU2.rtu  sentPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, vector(packetBytes)"
-vector 555  Topo.RTU3.rtu  sentPk:vector(packetBytes)  ETV
+vector 537  Topo.RTU2.rtu  sum_energy:vector  ETV
+attr interpolationmode  none
+attr source  sum_energy
+attr title  "sum_energy, vector"
+vector 538  Topo.RTU2.rtu  avg_energy:vector  ETV
+attr interpolationmode  none
+attr source  avg_energy
+attr title  "avg_energy, vector"
+vector 557  Topo.RTU3.rtu  sentPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, vector(packetBytes)"
-vector 576  Topo.RTU4.rtu  sentPk:vector(packetBytes)  ETV
+vector 559  Topo.RTU3.rtu  sum_energy:vector  ETV
+attr interpolationmode  none
+attr source  sum_energy
+attr title  "sum_energy, vector"
+vector 560  Topo.RTU3.rtu  avg_energy:vector  ETV
+attr interpolationmode  none
+attr source  avg_energy
+attr title  "avg_energy, vector"
+vector 579  Topo.RTU4.rtu  sentPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  sentPk
 attr title  "packets sent, vector(packetBytes)"
-vector 839  Topo.RTU1.tcp  "sent seq"  ETV
-vector 843  Topo.RTU1.tcp  "unacked bytes"  ETV
-vector 863  Topo.RTU2.tcp  "sent seq"  ETV
-vector 867  Topo.RTU2.tcp  "unacked bytes"  ETV
-vector 887  Topo.RTU3.tcp  "sent seq"  ETV
-vector 891  Topo.RTU3.tcp  "unacked bytes"  ETV
-vector 911  Topo.RTU4.tcp  "sent seq"  ETV
-vector 915  Topo.RTU4.tcp  "unacked bytes"  ETV
+vector 581  Topo.RTU4.rtu  sum_energy:vector  ETV
+attr interpolationmode  none
+attr source  sum_energy
+attr title  "sum_energy, vector"
+vector 582  Topo.RTU4.rtu  avg_energy:vector  ETV
+attr interpolationmode  none
+attr source  avg_energy
+attr title  "avg_energy, vector"
+vector 843  Topo.RTU1.tcp  "sent seq"  ETV
+vector 847  Topo.RTU1.tcp  "unacked bytes"  ETV
+vector 867  Topo.RTU2.tcp  "sent seq"  ETV
+vector 871  Topo.RTU2.tcp  "unacked bytes"  ETV
+vector 891  Topo.RTU3.tcp  "sent seq"  ETV
+vector 895  Topo.RTU3.tcp  "unacked bytes"  ETV
+vector 915  Topo.RTU4.tcp  "sent seq"  ETV
+vector 919  Topo.RTU4.tcp  "unacked bytes"  ETV
 vector 488  Topo.DSO.dso  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rcvdPk
@@ -1241,610 +1273,624 @@ vector 494  Topo.DSO.dso  avg_of_avg:vector  ETV
 attr interpolationmode  none
 attr source  avg_of_avg
 attr title  "avg_of_avg, vector"
-vector 855  Topo.RTU1.tcp  "measured RTT"  ETV
-vector 856  Topo.RTU1.tcp  "smoothed RTT"  ETV
-vector 857  Topo.RTU1.tcp  RTTVAR  ETV
-vector 858  Topo.RTU1.tcp  RTO  ETV
-vector 853  Topo.RTU1.tcp  cwnd  ETV
-vector 903  Topo.RTU3.tcp  "measured RTT"  ETV
-vector 904  Topo.RTU3.tcp  "smoothed RTT"  ETV
-vector 905  Topo.RTU3.tcp  RTTVAR  ETV
-vector 906  Topo.RTU3.tcp  RTO  ETV
-vector 901  Topo.RTU3.tcp  cwnd  ETV
-vector 879  Topo.RTU2.tcp  "measured RTT"  ETV
-vector 880  Topo.RTU2.tcp  "smoothed RTT"  ETV
-vector 881  Topo.RTU2.tcp  RTTVAR  ETV
-vector 882  Topo.RTU2.tcp  RTO  ETV
-vector 877  Topo.RTU2.tcp  cwnd  ETV
-vector 927  Topo.RTU4.tcp  "measured RTT"  ETV
-vector 928  Topo.RTU4.tcp  "smoothed RTT"  ETV
-vector 929  Topo.RTU4.tcp  RTTVAR  ETV
-vector 930  Topo.RTU4.tcp  RTO  ETV
-vector 925  Topo.RTU4.tcp  cwnd  ETV
-0	56094 2753 2071 15746 0.00003264 78.000008896 120 64 64 7680 491520
-1	58847 2640 2134 15818 0.000035216 78.000011472 116 64 64 7424 475136
-2	61487 2640 2134 15818 0.000035216 78.000011472 116 64 64 7424 475136
-5	64127 2784 2064 15710 0.000032064 78.000006976 120 64 64 7680 491520
-11	66911 1360 2547 15817 0.000049896 78.000011376 56 64 64 3584 229376
-12	68271 1406 2055 15698 0.000032064 78.000006976 58 64 64 3712 237568
-13	69677 1406 2055 15698 0.000032064 78.000006976 58 64 64 3712 237568
-16	71083 1306 2535 15806 0.00004932 78.0000108 56 64 64 3584 229376
-22	72389 1360 2740 15837 0.000054192 78.000012048 56 64 64 3584 229376
-23	73749 1406 2056 15699 0.000032064 78.000006976 58 64 64 3712 237568
-24	75155 1406 2056 15699 0.000032064 78.000006976 58 64 64 3712 237568
-27	76561 1359 2710 15824 0.000053616 78.000011472 56 64 64 3584 229376
-33	77920 11 109 109 0 0 1 1 1 1 1
-35	77931 409 169 3057 0.000000576 0.000058864 18 64 253 1642 197988
-36	78340 389 313 3019 0.000003152 0.000058288 17 64 253 1582 195142
-37	78729 389 313 3019 0.000003152 0.000058288 17 64 253 1582 195142
-40	79118 400 157 3041 0 0.000058288 18 64 253 1642 197988
-44	79518 400 145 3040 0 0.000058288 18 28 235 1233 137601
-45	79918 389 321 3020 0.000003152 0.000058288 17 28 235 1201 137433
-47	80307 1406 2031 15677 0.000031064 78.000005976 58 64 64 3712 237568
-48	81713 1335 2599 15809 0.000050896 78.000011032 55 64 64 3520 225280
-49	83048 1335 2599 15809 0.000050896 78.000011032 55 64 64 3520 225280
-52	84383 1351 2025 15671 0.000030488 78.0000054 58 64 64 3712 237568
-69	85734 1332 2610 15826 0.000051472 78.000011608 55 64 64 3520 225280
-70	87066 1351 2015 15659 0.000030488 78.0000054 58 64 64 3712 237568
-71	88417 1351 2015 15659 0.000030488 78.0000054 58 64 64 3712 237568
-74	89768 1335 2604 15814 0.000050896 78.000011032 55 64 64 3520 225280
-80	91103 11 110 110 0 0 1 1 1 1 1
-82	91114 200 170 2958 0.000000576 0.000057184 9 64 64 576 36864
-83	91314 179 314 2867 0.000003152 0.000056608 8 64 64 512 32768
-84	91493 179 314 2867 0.000003152 0.000056608 8 64 64 512 32768
-87	91672 191 158 2944 0 0.000056608 9 64 64 576 36864
-91	91863 191 146 2938 0 0.000056608 9 28 44 353 14001
-92	92054 179 322 2874 0.000003152 0.000056608 8 28 44 317 12725
-94	92233 1406 2032 15678 0.000031064 78.000005976 58 64 64 3712 237568
-95	93639 1335 2814 15827 0.000055192 78.000011704 55 64 64 3520 225280
-96	94974 1335 2814 15827 0.000055192 78.000011704 55 64 64 3520 225280
-99	96309 1352 2026 15672 0.000030488 78.0000054 58 64 64 3712 237568
-116	97661 1363 2859 15839 0.000055768 78.00001228 55 64 64 3520 225280
-117	99024 1410 2016 15660 0.000030488 78.0000054 58 64 64 3712 237568
-118	100434 1410 2016 15660 0.000030488 78.0000054 58 64 64 3712 237568
-121	101844 1390 2819 15833 0.000055192 78.000011704 55 64 64 3520 225280
-127	103234 12 111 111 0 0 1 1 1 1 1
-129	103246 208 171 2961 0.000000576 0.000057184 9 64 64 576 36864
-130	103454 187 315 2870 0.000003152 0.000056608 8 64 64 512 32768
-131	103641 187 315 2870 0.000003152 0.000056608 8 64 64 512 32768
-134	103828 200 159 2947 0 0.000056608 9 64 64 576 36864
-138	104028 200 147 2941 0 0.000056608 9 28 44 353 14001
-139	104228 187 323 2877 0.000003152 0.000056608 8 28 44 317 12725
-141	104415 1409 1985 15637 0.000029488 78.0000044 58 64 64 3712 237568
-142	105824 1361 2678 15415 0.000052472 75.000013952 54 64 64 3456 221184
-143	107185 1361 2678 15415 0.000052472 75.000013952 54 64 64 3456 221184
-146	108546 1463 1977 15631 0.000028912 78.000003824 58 64 64 3712 237568
-152	110009 1364 2690 15432 0.000053048 75.000014528 54 64 64 3456 221184
-153	111373 1463 1957 15619 0.000028912 78.000003824 58 64 64 3712 237568
-154	112836 1463 1957 15619 0.000028912 78.000003824 58 64 64 3712 237568
-157	114299 1361 2683 15421 0.000052472 75.000013952 54 64 64 3456 221184
-174	115660 12 112 112 0 0 1 1 1 1 1
-176	115672 209 172 2957 0.000000576 0.000057184 9 64 64 576 36864
-177	115881 187 316 2866 0.000003152 0.000056608 8 64 64 512 32768
-178	116068 187 316 2866 0.000003152 0.000056608 8 64 64 512 32768
-181	116255 200 160 2943 0 0.000056608 9 64 64 576 36864
-185	116455 200 148 2937 0 0.000056608 9 28 44 353 14001
-186	116655 187 324 2873 0.000003152 0.000056608 8 28 44 317 12725
-188	116842 1410 1986 15638 0.000029488 78.0000044 58 64 64 3712 237568
-189	118252 1338 2949 15433 0.000056768 75.000014624 54 64 64 3456 221184
-190	119590 1338 2949 15433 0.000056768 75.000014624 54 64 64 3456 221184
-193	120928 1463 1978 15632 0.000028912 78.000003824 58 64 64 3712 237568
-199	122391 1314 2976 15451 0.000057344 75.0000152 54 64 64 3456 221184
-200	123705 1463 1958 15620 0.000028912 78.000003824 58 64 64 3712 237568
-201	125168 1463 1958 15620 0.000028912 78.000003824 58 64 64 3712 237568
-204	126631 1338 2954 15439 0.000056768 75.000014624 54 64 64 3456 221184
-221	127969 12 113 113 0 0 1 1 1 1 1
-223	127981 208 173 2960 0.000000576 0.000057184 9 64 64 576 36864
-224	128189 187 317 2869 0.000003152 0.000056608 8 64 64 512 32768
-225	128376 187 317 2869 0.000003152 0.000056608 8 64 64 512 32768
-228	128563 200 161 2946 0 0.000056608 9 64 64 576 36864
-232	128763 200 149 2940 0 0.000056608 9 28 44 353 14001
-233	128963 187 325 2876 0.000003152 0.000056608 8 28 44 317 12725
-235	129150 680 1263 15441 0.00001584 75.00001476 28 64 64 1792 114688
-236	129830 751 205 15563 0.000001576 78.000001576 30 64 64 1920 122880
-237	130581 751 205 15563 0.000001576 78.000001576 30 64 64 1920 122880
-240	131332 706 1255 15429 0.000015264 75.000014184 28 64 64 1792 114688
-246	132038 705 1264 15469 0.00001584 75.000016104 28 64 64 1792 114688
-247	132743 754 206 15564 0.000001576 78.000001576 30 64 64 1920 122880
-248	133497 754 206 15564 0.000001576 78.000001576 30 64 64 1920 122880
-251	134251 706 1256 15460 0.000015264 75.000015528 28 64 64 1792 114688
-257	134957 1462 1926 15597 0.000027912 78.000002824 58 64 64 3712 237568
-258	136419 1364 2732 15454 0.000054048 75.000015528 54 64 64 3456 221184
-259	137783 1364 2732 15454 0.000054048 75.000015528 54 64 64 3456 221184
-262	139147 1459 1916 15585 0.000027336 78.000001576 58 64 64 3712 237568
-279	140606 12 114 114 0 0 1 1 1 1 1
-281	140618 286 174 2956 0.000000576 0.000057184 12 64 188 1010 102466
-282	140904 284 318 2865 0.000003152 0.000056608 12 64 189 1017 112025
-283	141188 284 318 2865 0.000003152 0.000056608 12 64 189 1017 112025
-286	141472 275 162 2942 0 0.000056608 12 64 188 1010 102466
-290	141747 275 150 2936 0 0.000056608 12 28 170 733 64951
-291	142022 284 326 2872 0.000003152 0.000056608 12 28 171 737 73985
-293	142306 703 1265 15453 0.00001584 75.000015432 28 64 64 1792 114688
-294	143009 754 207 15565 0.000001576 78.000001576 30 64 64 1920 122880
-295	143763 754 207 15565 0.000001576 78.000001576 30 64 64 1920 122880
-298	144517 706 1258 15448 0.000015264 75.000014856 28 64 64 1792 114688
-304	145223 705 1266 15484 0.00001584 75.000016776 28 64 64 1792 114688
-305	145928 752 208 15566 0.000001576 78.000001576 30 64 64 1920 122880
-306	146680 752 208 15566 0.000001576 78.000001576 30 64 64 1920 122880
-309	147432 656 1259 15476 0.000015264 75.0000162 28 64 64 1792 114688
-315	148088 1462 1927 15598 0.000027912 78.000002824 58 64 64 3712 237568
-316	149550 1314 3042 15470 0.000058344 75.0000162 54 64 64 3456 221184
-317	150864 1314 3042 15470 0.000058344 75.0000162 54 64 64 3456 221184
-320	152178 1460 1919 15586 0.000027336 78.000001576 58 64 64 3712 237568
-337	153638 12 115 115 0 0 1 1 1 1 1
-339	153650 285 175 2959 0.000000576 0.000057184 12 64 188 1010 102466
-340	153935 284 319 2868 0.000003152 0.000056608 12 64 189 1017 112025
-341	154219 284 319 2868 0.000003152 0.000056608 12 64 189 1017 112025
-344	154503 275 163 2945 0 0.000056608 12 64 188 1010 102466
-348	154778 275 151 2939 0 0.000056608 12 28 170 733 64951
-349	155053 284 327 2875 0.000003152 0.000056608 12 28 171 737 73985
-373	155337 12 116 116 0 0 1 1 1 1 1
-375	155349 114 176 944 0.000000576 0.000010704 5 64 64 320 20480
-376	155463 92 320 1158 0.000003152 0.00001328 4 64 64 256 16384
-377	155555 92 320 1158 0.000003152 0.00001328 4 64 64 256 16384
-380	155647 105 164 908 0 0.000009456 5 64 64 320 20480
-384	155752 105 152 902 0 0.000009456 5 28 44 193 7601
-385	155857 92 328 1164 0.000003152 0.00001328 4 28 44 153 6001
-388	155949 176 243 250 0.000001576 0.000001576 8 1 1 8 8
-392	156125 406 297 2974 0.000002152 0.000057288 17 64 253 1582 195142
-393	156531 428 197 3069 0.000001576 0.000059864 18 64 253 1642 197988
-394	156959 428 197 3069 0.000001576 0.000059864 18 64 253 1642 197988
-397	157387 406 285 2858 0.000001576 0.000055704 17 64 253 1582 195142
-401	157793 406 277 2857 0.000001576 0.000055704 17 28 235 1201 137433
-402	158199 428 209 3072 0.000001576 0.000059864 18 28 235 1233 137601
-404	158627 187 298 2824 0.000002152 0.000055608 8 64 64 512 32768
-405	158814 210 198 2984 0.000001576 0.000058184 9 64 64 576 36864
-406	159024 210 198 2984 0.000001576 0.000058184 9 64 64 576 36864
-409	159234 188 286 2807 0.000001576 0.000055032 8 64 64 512 32768
-413	159422 188 278 2801 0.000001576 0.000055032 8 28 44 317 12725
-414	159610 210 210 2990 0.000001576 0.000058184 9 28 44 353 14001
-416	159820 187 299 2827 0.000002152 0.000055608 8 64 64 512 32768
-417	160007 209 199 2987 0.000001576 0.000058184 9 64 64 576 36864
-418	160216 209 199 2987 0.000001576 0.000058184 9 64 64 576 36864
-421	160425 188 287 2813 0.000001576 0.000055032 8 64 64 512 32768
-425	160613 188 279 2810 0.000001576 0.000055032 8 28 44 317 12725
-426	160801 209 211 2993 0.000001576 0.000058184 9 28 44 353 14001
-428	161010 187 300 2823 0.000002152 0.000055608 8 64 64 512 32768
-429	161197 210 200 2983 0.000001576 0.000058184 9 64 64 576 36864
-430	161407 210 200 2983 0.000001576 0.000058184 9 64 64 576 36864
-433	161617 188 288 2806 0.000001576 0.000055032 8 64 64 512 32768
-437	161805 188 280 2800 0.000001576 0.000055032 8 28 44 317 12725
-438	161993 210 212 2989 0.000001576 0.000058184 9 28 44 353 14001
-440	162203 187 301 2826 0.000002152 0.000055608 8 64 64 512 32768
-441	162390 209 201 2986 0.000001576 0.000058184 9 64 64 576 36864
-442	162599 209 201 2986 0.000001576 0.000058184 9 64 64 576 36864
-445	162808 188 289 2812 0.000001576 0.000055032 8 64 64 512 32768
-449	162996 188 281 2809 0.000001576 0.000055032 8 28 44 317 12725
-450	163184 209 213 2992 0.000001576 0.000058184 9 28 44 353 14001
-452	163393 284 302 2822 0.000002152 0.000055608 12 64 189 1017 112025
-453	163677 286 202 2982 0.000001576 0.000058184 12 64 188 1010 102466
-454	163963 286 202 2982 0.000001576 0.000058184 12 64 188 1010 102466
-457	164249 285 290 2805 0.000001576 0.000055032 12 64 189 1017 112025
-461	164534 285 282 2799 0.000001576 0.000055032 12 28 171 737 73985
-462	164819 286 214 2988 0.000001576 0.000058184 12 28 170 733 64951
-464	165105 284 303 2825 0.000002152 0.000055608 12 64 189 1017 112025
-465	165389 285 203 2985 0.000001576 0.000058184 12 64 188 1010 102466
-466	165674 285 203 2985 0.000001576 0.000058184 12 64 188 1010 102466
-469	165959 285 291 2811 0.000001576 0.000055032 12 64 189 1017 112025
-473	166244 285 283 2808 0.000001576 0.000055032 12 28 171 737 73985
-474	166529 285 215 2991 0.000001576 0.000058184 12 28 170 733 64951
-476	166814 92 304 1120 0.000002152 0.00001228 4 64 64 256 16384
-477	166906 115 204 1034 0.000001576 0.000011704 5 64 64 320 20480
-478	167021 115 204 1034 0.000001576 0.000011704 5 64 64 320 20480
-481	167136 92 292 1109 0.000001576 0.000011704 4 64 64 256 16384
-485	167228 92 284 1102 0.000001576 0.000011704 4 28 44 153 6001
-486	167320 115 216 1040 0.000001576 0.000011704 5 28 44 193 7601
-488	167435 2510 4012 15781 3.00000788 78.000009896 104 1 1 104 104
-489	169945 90 3187 3465 0.000063504 0.000073144 4 1 1 4 4
-490	170035 3316 4012 15781 3.00000788 78.000009896 104 7.88e-06 9.896e-06 0.000924352 8.274346496e-09
-491	173351 995 4070 15781 3.000009896 78.000009896 26 25.88209487091 41.707937675712 941.33900687652 34491.857667851
-492	174346 997 4070 15781 3.000009896 78.000009896 26 6.4705237177276 10.426984418928 235.33475171913 2155.7411042407
-493	175343 995 4070 15781 3.000009896 78.000009896 26 6.317858997669 156.53363210629 2105.8706394386 223061.62573871
-494	176338 997 4070 15781 3.000009896 78.000009896 26 1.5794647494172 39.133408026572 526.46765985966 13941.351608669
-495	177335 91 2096 2156 0.00003364 0.000035656 4 1 1 4 4
-500	177426 2872 2103 15797 0.000034216 78.000010472 116 64 64 7424 475136
-501	180298 2993 2089 15772 0.00003364 78.000009896 120 64 64 7680 491520
-502	183291 2993 2089 15772 0.00003364 78.000009896 120 64 64 7680 491520
-505	186284 2898 2100 15785 0.00003364 78.000009896 116 64 64 7424 475136
-509	189182 2898 2099 15784 0.00003364 78.000009896 116 28 44 4612 184004
-510	192080 2993 2090 15774 0.00003364 78.000009896 120 28 44 4872 198504
-512	195073 23 3411 3411 0.000071384 0.000071384 1 1 1 1 1
-513	195096 373 3801 15512 3 78 26 1 1 26 26
-514	195469 30 3411 3411 0.000071384 0.000071384 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
-516	195499 12 117 117 0 0 1 1 1 1 1
-521	195511 751 177 15551 0.000000576 78.000000576 30 64 64 1920 122880
-522	196262 680 1287 15463 0.00001684 75.00001576 28 64 64 1792 114688
-523	196942 680 1287 15463 0.00001684 75.00001576 28 64 64 1792 114688
-526	197622 483 165 15547 0 78 30 64 64 1920 122880
-530	198105 483 153 15543 0 78 30 28 44 1218 49626
-531	198588 680 1293 15464 0.00001684 75.00001576 28 28 44 1113 44401
-533	199268 23 3647 3647 0.000080352 0.000080352 1 1 1 1 1
-534	199291 373 3802 15513 3 78 26 1 1 26 26
-535	199664 30 3647 3647 0.000080352 0.000080352 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
-537	199694 12 118 118 0 0 1 1 1 1 1
-542	199706 754 178 15552 0.000000576 78.000000576 30 64 64 1920 122880
-543	200460 705 1288 15486 0.00001684 75.000017104 28 64 64 1792 114688
-544	201165 705 1288 15486 0.00001684 75.000017104 28 64 64 1792 114688
-547	201870 483 166 15548 0 78 30 64 64 1920 122880
-551	202353 483 154 15544 0 78 30 28 44 1218 49626
-552	202836 705 1294 15487 0.00001684 75.000017104 28 28 44 1113 44401
-554	203541 22 3534 3534 0.00007568 0.00007568 1 1 1 1 1
-555	203563 373 3805 15514 3 78 26 1 1 26 26
-556	203936 29 3534 3534 0.00007568 0.00007568 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
-558	203965 12 119 119 0 0 1 1 1 1 1
-563	203977 754 179 15553 0.000000576 78.000000576 30 64 64 1920 122880
-564	204731 703 1289 15478 0.00001684 75.000016432 28 64 64 1792 114688
-565	205434 703 1289 15478 0.00001684 75.000016432 28 64 64 1792 114688
-568	206137 481 167 15549 0 78 30 64 64 1920 122880
-572	206618 481 155 15545 0 78 30 28 44 1218 49626
-573	207099 703 1295 15479 0.00001684 75.000016432 28 28 44 1113 44401
-575	207802 23 3670 3670 0.000081024 0.000081024 1 1 1 1 1
-576	207825 373 3808 15515 3 78 26 1 1 26 26
-577	208198 30 3670 3670 0.000081024 0.000081024 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
-579	208228 12 120 120 0 0 1 1 1 1 1
-584	208240 752 180 15554 0.000000576 78.000000576 30 64 64 1920 122880
-585	208992 705 1290 15492 0.00001684 75.000017776 28 64 64 1792 114688
-586	209697 705 1290 15492 0.00001684 75.000017776 28 64 64 1792 114688
-589	210402 483 168 15550 0 78 30 64 64 1920 122880
-593	210885 483 156 15546 0 78 30 28 44 1218 49626
-594	211368 705 1296 15493 0.00001684 75.000017776 28 28 44 1113 44401
-596	212073 278 433 3084 0.000004728 0.000059864 11 7504 7504 82544 619410176
-597	212351 410 433 2853 0.000004728 0.000055704 16 7504 7504 120064 900960256
-598	212761 435 433 2853 0.000004728 0.000055704 17 7505 8026 130719 1005772919
-599	213196 209 666 2853 0.00000788 0.000055704 9 2 399 1092 346666
-600	213405 380 433 2853 0.000004728 0.000055704 16 1 522 3150 1212438
-601	213785 400 433 3084 0.000004728 0.000059864 17 0 522 3084 1207950
-602	214185 397 433 3084 0.000004728 0.000059864 17 0 531 2312 816096
-603	214582 432 645 3084 0.00000788 0.000059864 19 0 195 529 68393
-604	215014 340 981 3084 0.000011032 0.000059864 15 0 0 0 0
-611	215354 500 433 2853 0.000004728 0.000055704 22 0 0 0 0
-613	215854 229 981 3084 0.000011032 0.000059864 9 1072 5360 28944 110321664
-615	216083 273 981 3084 0.000011032 0.000059864 9 3.152e-06 5.336e-06 3.5208e-05 1.4290016e-10
-616	216356 293 981 3084 0.000011032 0.000059864 9 3.94e-07 2.834952e-06 1.5363316e-05 3.239236432935e-11
-617	216649 313 981 3084 0.000011032 0.000059864 9 0.225495007575 0.656250394 3.671557626631 1.6714069016298
-618	216962 301 981 3084 0.000011032 0.000059864 9 1 2.62500197 14.784263004588 26.928979262102
-620	217263 77 2094 3624 0.00003364 0.000079264 3 7504 7504 22512 168930048
-621	217340 737 2094 15720 0.00003364 78.00000788 28 7504 7504 210112 1576680448
-622	218077 762 2094 15720 0.00003364 78.00000788 29 7505 7531 217996 1638700436
-623	218839 23 3189 3189 0.000063504 0.000063504 1 9 9 9 81
-624	218862 671 2094 15720 0.00003364 78.00000788 28 1 27 379 6931
-625	219533 693 2094 15720 0.00003364 78.00000788 29 0 26 353 6203
-626	220226 703 2094 15720 0.00003364 78.00000788 29 0 10 279 2781
-627	220929 69 3185 3624 0.000063504 0.000079264 3 0 1 1 1
-628	220998 631 3624 15720 0.000079264 78.00000788 27 0 0 0 0
-635	221629 1261 2094 15720 0.00003364 78.00000788 54 0 0 0 0
-637	222890 26 3624 3624 0.000079264 0.000079264 1 1072 1072 1072 1149184
-639	222916 31 3624 3624 0.000079264 0.000079264 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
-640	222947 30 3624 3624 0.000079264 0.000079264 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
-641	222977 32 3624 3624 0.000079264 0.000079264 1 0.65625197 0.65625197 0.65625197 0.43066664812888
-642	223009 32 3624 3624 0.000079264 0.000079264 1 2.62500985 2.62500985 2.62500985 6.890676712597
-644	223041 179 537 2899 0.000006304 0.000056608 7 7504 7504 52528 394170112
-645	223220 423 85 3024 0 0.000058288 17 7504 7504 127568 957270272
-646	223643 448 85 3024 0 0.000058288 18 7504 8035 137386 1049124900
-647	224091 142 861 2648 0.000009456 0.000052464 6 1 392 1051 333731
-648	224233 386 85 3024 0 0.000058288 17 0 531 2312 816096
-649	224619 376 537 3024 0.000006304 0.000058288 16 1 399 2174 693288
-650	224995 380 537 3024 0.000006304 0.000058288 16 1 522 3150 1212438
-651	225375 278 861 2899 0.000009456 0.000056608 12 0 195 521 67601
-652	225653 340 819 3024 0.000009456 0.000058288 15 0 0 0 0
-659	225993 576 85 3024 0 0.000058288 26 0 0 0 0
-661	226569 154 1183 2899 0.00001328 0.000056608 6 1072 3752 14472 39934144
-663	226723 184 1183 2899 0.00001328 0.000056608 6 3.624e-06 4.664e-06 2.3504e-05 9.2948736e-11
-664	226907 196 1183 2899 0.00001328 0.000056608 6 4.78e-07 2.162477e-06 8.366648e-06 1.3663441292712e-11
-665	227103 209 1183 2899 0.00001328 0.000056608 6 0.336598001471 0.656250478 2.893831289555 1.4674018351785
-666	227312 209 1183 2899 0.00001328 0.000056608 6 1.346394168361 2.62500239 11.575333524868 23.478458622713
-668	227521 50 538 1184 0.000006304 0.00001328 2 7504 7504 15008 112620032
-669	227571 192 86 2902 0 0.000056608 8 7504 7504 60032 450480128
-670	227763 217 86 2902 0 0.000056608 9 7504 7511 67568 507270552
-671	227980 22 863 863 0.000009456 0.000009456 1 1 1 1 1
-672	228002 168 86 2902 0 0.000056608 8 0 7 30 148
-673	228170 157 538 2902 0.000006304 0.000056608 7 1 6 24 100
-674	228327 157 538 2902 0.000006304 0.000056608 7 1 2 12 22
-675	228484 44 863 1184 0.000009456 0.00001328 2 0 1 1 1
-676	228528 135 820 2902 0.000009456 0.000056608 6 0 0 0 0
-683	228663 281 86 2902 0 0.000056608 13 0 0 0 0
-685	228944 25 1184 1184 0.00001328 0.00001328 1 1072 1072 1072 1149184
-687	228969 30 1184 1184 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
-688	228999 29 1184 1184 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
-689	229028 32 1184 1184 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
-690	229060 31 1184 1184 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
-692	229091 50 539 1185 0.000006304 0.00001328 2 7504 7504 15008 112620032
-693	229141 192 87 2905 0 0.000056608 8 7504 7504 60032 450480128
-694	229333 217 87 2905 0 0.000056608 9 7504 7511 67568 507270552
-695	229550 22 865 865 0.000009456 0.000009456 1 1 1 1 1
-696	229572 168 87 2905 0 0.000056608 8 0 7 30 148
-697	229740 157 539 2905 0.000006304 0.000056608 7 1 6 24 100
-698	229897 157 539 2905 0.000006304 0.000056608 7 1 2 12 22
-699	230054 44 865 1185 0.000009456 0.00001328 2 0 1 1 1
-700	230098 135 821 2905 0.000009456 0.000056608 6 0 0 0 0
-707	230233 281 87 2905 0 0.000056608 13 0 0 0 0
-709	230514 25 1185 1185 0.00001328 0.00001328 1 1072 1072 1072 1149184
-711	230539 30 1185 1185 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
-712	230569 29 1185 1185 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
-713	230598 32 1185 1185 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
-714	230630 31 1185 1185 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
-716	230661 50 540 1186 0.000006304 0.00001328 2 7504 7504 15008 112620032
-717	230711 192 88 2901 0 0.000056608 8 7504 7504 60032 450480128
-718	230903 217 88 2901 0 0.000056608 9 7504 7511 67568 507270552
-719	231120 22 867 867 0.000009456 0.000009456 1 1 1 1 1
-720	231142 168 88 2901 0 0.000056608 8 0 7 30 148
-721	231310 157 540 2901 0.000006304 0.000056608 7 1 6 24 100
-722	231467 157 540 2901 0.000006304 0.000056608 7 1 2 12 22
-723	231624 44 867 1186 0.000009456 0.00001328 2 0 1 1 1
-724	231668 135 822 2901 0.000009456 0.000056608 6 0 0 0 0
-731	231803 281 88 2901 0 0.000056608 13 0 0 0 0
-733	232084 25 1186 1186 0.00001328 0.00001328 1 1072 1072 1072 1149184
-735	232109 30 1186 1186 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
-736	232139 29 1186 1186 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
-737	232168 32 1186 1186 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
-738	232200 31 1186 1186 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
-740	232231 50 541 1187 0.000006304 0.00001328 2 7504 7504 15008 112620032
-741	232281 192 89 2904 0 0.000056608 8 7504 7504 60032 450480128
-742	232473 217 89 2904 0 0.000056608 9 7504 7511 67568 507270552
-743	232690 22 869 869 0.000009456 0.000009456 1 1 1 1 1
-744	232712 168 89 2904 0 0.000056608 8 0 7 30 148
-745	232880 157 541 2904 0.000006304 0.000056608 7 1 6 24 100
-746	233037 157 541 2904 0.000006304 0.000056608 7 1 2 12 22
-747	233194 44 869 1187 0.000009456 0.00001328 2 0 1 1 1
-748	233238 135 823 2904 0.000009456 0.000056608 6 0 0 0 0
-755	233373 281 89 2904 0 0.000056608 13 0 0 0 0
-757	233654 25 1187 1187 0.00001328 0.00001328 1 1072 1072 1072 1149184
-759	233679 30 1187 1187 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
-760	233709 29 1187 1187 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
-761	233738 32 1187 1187 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
-762	233770 31 1187 1187 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
-764	233801 127 542 1799 0.000006304 0.000025664 5 7504 7504 37520 281550080
-765	233928 269 90 2900 0 0.000056608 11 7504 7504 82544 619410176
-766	234197 294 90 2900 0 0.000056608 12 7504 7771 91389 696129239
-767	234491 95 542 1521 0.000006304 0.00002204 4 1 197 461 73395
-768	234586 250 90 2900 0 0.000056608 11 0 267 1339 283315
-769	234836 262 542 2900 0.000006304 0.000056608 11 1 266 1206 229978
-770	235098 268 542 2900 0.000006304 0.000056608 11 1 262 1968 421102
-771	235366 183 542 1799 0.000006304 0.000025664 8 0 130 261 25351
-772	235549 226 937 2900 0.000010448 0.000056608 10 0 0 0 0
-779	235775 372 90 2900 0 0.000056608 17 0 0 0 0
-781	236147 102 937 1799 0.000010448 0.000025664 4 1072 2680 7504 15513984
-783	236249 122 937 1799 0.000010448 0.000025664 4 3.624e-06 4.816e-06 1.6208e-05 6.6633344e-11
-784	236371 127 937 1799 0.000010448 0.000025664 4 5.18e-07 1.6573e-06 4.606893e-06 6.022839906149e-12
-785	236498 137 937 1799 0.000010448 0.000025664 4 0.439637550736 0.656250518 2.172550403268 1.2061227890699
-786	236635 137 937 1799 0.000010448 0.000025664 4 1.758551860244 2.62500259 8.690206219965 19.297983553347
-788	236772 127 543 1800 0.000006304 0.000025664 5 7504 7504 37520 281550080
-789	236899 269 91 2903 0 0.000056608 11 7504 7504 82544 619410176
-790	237168 294 91 2903 0 0.000056608 12 7504 7771 91389 696129239
-791	237462 95 543 1522 0.000006304 0.00002204 4 1 197 461 73395
-792	237557 250 91 2903 0 0.000056608 11 0 267 1339 283315
-793	237807 262 543 2903 0.000006304 0.000056608 11 1 266 1206 229978
-794	238069 268 543 2903 0.000006304 0.000056608 11 1 262 1968 421102
-795	238337 183 543 1800 0.000006304 0.000025664 8 0 130 261 25351
-796	238520 226 938 2903 0.000010448 0.000056608 10 0 0 0 0
-803	238746 372 91 2903 0 0.000056608 17 0 0 0 0
-805	239118 102 938 1800 0.000010448 0.000025664 4 1072 2680 7504 15513984
-807	239220 122 938 1800 0.000010448 0.000025664 4 3.624e-06 4.816e-06 1.6208e-05 6.6633344e-11
-808	239342 127 938 1800 0.000010448 0.000025664 4 5.18e-07 1.6573e-06 4.606893e-06 6.022839906149e-12
-809	239469 137 938 1800 0.000010448 0.000025664 4 0.439637550736 0.656250518 2.172550403268 1.2061227890699
-810	239606 137 938 1800 0.000010448 0.000025664 4 1.758551860244 2.62500259 8.690206219965 19.297983553347
-812	239743 50 544 1188 0.000006304 0.00001328 2 7504 7504 15008 112620032
-813	239793 89 92 871 0 0.000009456 4 7504 7504 30016 225240064
-814	239882 114 92 871 0 0.000009456 5 7504 7507 37530 281700186
-815	239996 22 871 871 0.000009456 0.000009456 1 1 1 1 1
-816	240018 77 92 871 0 0.000009456 4 0 3 8 22
-817	240095 66 544 1188 0.000006304 0.00001328 3 1 3 6 14
-818	240161 66 544 1188 0.000006304 0.00001328 3 1 2 4 6
-819	240227 44 871 1188 0.000009456 0.00001328 2 0 1 1 1
-820	240271 44 824 1188 0.000009456 0.00001328 2 0 0 0 0
-827	240315 99 92 871 0 0.000009456 5 0 0 0 0
-829	240414 25 1188 1188 0.00001328 0.00001328 1 1072 1072 1072 1149184
-831	240439 30 1188 1188 0.00001328 0.00001328 1 3.824e-06 3.824e-06 3.824e-06 1.4622976e-11
-832	240469 29 1188 1188 0.00001328 0.00001328 1 4.78e-07 4.78e-07 4.78e-07 2.28484e-13
-833	240498 32 1188 1188 0.00001328 0.00001328 1 0.656250478 0.656250478 0.656250478 0.43066468987523
-834	240530 31 1188 1188 0.00001328 0.00001328 1 2.62500239 2.62500239 2.62500239 6.8906375475057
-836	240561 685 2833 15468 0.000055624 75.00001576 26 7504 7504 195104 1464060416
-837	241246 517 93 15527 0 78 29 7504 7504 217616 1632990464
-838	241763 543 93 15527 0 78 30 7504 7514 225408 1693625646
-839	242306 390 3816 15527 3 78 26 1 26 351 6201
-840	242696 457 93 15527 0 78 29 0 10 279 2781
-841	243153 655 2833 15468 0.000055624 75.00001576 27 8 10 267 2645
-842	243808 647 2833 15468 0.000055624 75.00001576 27 1 26 352 6202
-843	244455 957 3816 15527 3 78 51 0 1 26 26
-844	245412 607 3408 15468 0.000071384 75.00001576 26 0 0 0 0
-851	246019 453 93 15527 0 78 30 0 0 0 0
-853	246472 659 4222 15468 3.00001576 75.00001576 25 1072 1072 26800 28729600
-855	247131 784 4222 15468 3.00001576 75.00001576 25 1.576e-05 1.576e-05 0.000394 6.20944e-09
-856	247915 870 4222 15468 3.00001576 75.00001576 25 1.97e-06 1.5200552e-05 0.000287596065 3.6659326500049e-09
-857	248785 902 4222 15468 3.00001576 75.00001576 25 0.026625341119 0.65625197 5.063744216728 1.8352312423872
-858	249687 683 4222 15468 3.00001576 75.00001576 25 1 2.62500985 30.784424177345 42.929487178012
-860	250370 710 3215 15491 0.000064592 75.000017104 26 7504 7504 195104 1464060416
-861	251080 517 94 15528 0 78 29 7504 7504 217616 1632990464
-862	251597 543 94 15528 0 78 30 7504 7514 225408 1693625646
-863	252140 390 3817 15528 3 78 26 1 26 351 6201
-864	252530 457 94 15528 0 78 29 0 10 279 2781
-865	252987 680 3215 15491 0.000064592 75.000017104 27 8 10 267 2645
-866	253667 672 3215 15491 0.000064592 75.000017104 27 1 26 352 6202
-867	254339 982 3817 15528 3 78 51 0 1 26 26
-868	255321 632 3644 15491 0.000080352 75.000017104 26 0 0 0 0
-875	255953 453 94 15528 0 78 30 0 0 0 0
-877	256406 684 4245 15491 3.000017104 75.000017104 25 1072 1072 26800 28729600
-879	257090 834 4245 15491 3.000017104 75.000017104 25 1.7104e-05 1.7104e-05 0.0004276 7.3136704e-09
-880	257924 897 4245 15491 3.000017104 75.000017104 25 2.138e-06 1.6496841e-05 0.00031212202 4.3178486366414e-09
-881	258821 924 4245 15491 3.000017104 75.000017104 25 0.02662551151 0.656252138 5.063753394338 1.8352352218628
-882	259745 707 4245 15491 3.000017104 75.000017104 25 1 2.62501069 30.784442206148 42.929543423292
-884	260452 709 3092 15483 0.00005992 75.000016432 26 7504 7504 195104 1464060416
-885	261161 515 95 15529 0 78 29 7504 7504 217616 1632990464
-886	261676 540 95 15529 0 78 30 7504 7514 225408 1693625646
-887	262216 390 3818 15529 3 78 26 1 26 351 6201
-888	262606 455 95 15529 0 78 29 0 10 279 2781
-889	263061 678 3092 15483 0.00005992 75.000016432 27 8 10 267 2645
-890	263739 670 3092 15483 0.00005992 75.000016432 27 1 26 352 6202
-891	264409 982 3818 15529 3 78 51 0 1 26 26
-892	265391 631 3531 15483 0.00007568 75.000016432 26 0 0 0 0
-899	266022 450 95 15529 0 78 30 0 0 0 0
-901	266472 684 4237 15483 3.000016432 75.000016432 25 1072 1072 26800 28729600
-903	267156 834 4237 15483 3.000016432 75.000016432 25 1.6432e-05 1.6432e-05 0.0004108 6.7502656e-09
-904	267990 896 4237 15483 3.000016432 75.000016432 25 2.054e-06 1.5848697e-05 0.000299859039 3.9852254479775e-09
-905	268886 927 4237 15483 3.000016432 75.000016432 25 0.026625426314 0.656252054 5.06374880554 1.8352332321267
-906	269813 706 4237 15483 3.000016432 75.000016432 25 1 2.62501027 30.784433191751 42.929515300654
-908	270519 710 3216 15497 0.000064592 75.000017776 26 7504 7504 195104 1464060416
-909	271229 517 96 15530 0 78 29 7504 7504 217616 1632990464
-910	271746 543 96 15530 0 78 30 7504 7514 225408 1693625646
-911	272289 390 3819 15530 3 78 26 1 26 351 6201
-912	272679 457 96 15530 0 78 29 0 10 279 2781
-913	273136 680 3216 15497 0.000064592 75.000017776 27 8 10 267 2645
-914	273816 672 3216 15497 0.000064592 75.000017776 27 1 26 352 6202
-915	274488 982 3819 15530 3 78 51 0 1 26 26
-916	275470 632 3667 15497 0.000081024 75.000017776 26 0 0 0 0
-923	276102 453 96 15530 0 78 30 0 0 0 0
-925	276555 684 4251 15497 3.000017776 75.000017776 25 1072 1072 26800 28729600
-927	277239 834 4251 15497 3.000017776 75.000017776 25 1.7776e-05 1.7776e-05 0.0004444 7.8996544e-09
-928	278073 898 4251 15497 3.000017776 75.000017776 25 2.222e-06 1.7144989e-05 0.000324385009 4.6638026277798e-09
-929	278971 924 4251 15497 3.000017776 75.000017776 25 0.026625596704 0.656252222 5.063757983149 1.8352372116099
-930	279895 707 4251 15497 3.000017776 75.000017776 25 1 2.62501111 30.784451220569 42.92957154602
-932	280602 177 434 3014 0.000004728 0.000058184 7 7504 7504 52528 394170112
-933	280779 179 434 2770 0.000004728 0.000055032 7 7504 7504 52528 394170112
-934	280958 204 434 2770 0.000004728 0.000055032 8 7505 7506 60045 450675255
-935	281162 113 670 2770 0.00000788 0.000055032 5 2 6 20 90
-936	281275 158 434 2770 0.000004728 0.000055032 7 1 2 12 22
-937	281433 179 434 3014 0.000004728 0.000058184 8 0 2 11 19
-938	281612 179 434 3014 0.000004728 0.000058184 8 0 7 30 148
-939	281791 247 646 3014 0.00000788 0.000058184 11 0 1 5 5
-940	282038 136 982 3014 0.000011032 0.000058184 6 0 0 0 0
-947	282174 181 434 2770 0.000004728 0.000055032 8 0 0 0 0
-949	282355 128 982 3014 0.000011032 0.000058184 5 1072 3216 10720 25856640
-951	282483 153 982 3014 0.000011032 0.000058184 5 3.152e-06 3.152e-06 1.576e-05 4.967552e-11
-952	282636 161 982 3014 0.000011032 0.000058184 5 3.94e-07 1.53531e-06 5.012821e-06 5.841950969461e-12
-953	282797 173 982 3014 0.000011032 0.000058184 5 0.384682856439 0.656250394 2.557232287424 1.3541026639413
-954	282970 173 982 3014 0.000011032 0.000058184 5 1.538732961066 2.62500197 10.228934162517 21.665661579562
-956	283143 176 435 3017 0.000004728 0.000058184 7 7504 7504 52528 394170112
-957	283319 179 435 2784 0.000004728 0.000055032 7 7504 7504 52528 394170112
-958	283498 204 435 2784 0.000004728 0.000055032 8 7505 7506 60045 450675255
-959	283702 113 675 2784 0.00000788 0.000055032 5 2 6 20 90
-960	283815 158 435 2784 0.000004728 0.000055032 7 1 2 12 22
-961	283973 178 435 3017 0.000004728 0.000058184 8 0 2 11 19
-962	284151 178 435 3017 0.000004728 0.000058184 8 0 7 30 148
-963	284329 246 647 3017 0.00000788 0.000058184 11 0 1 5 5
-964	284575 135 983 3017 0.000011032 0.000058184 6 0 0 0 0
-971	284710 181 435 2784 0.000004728 0.000055032 8 0 0 0 0
-973	284891 127 983 3017 0.000011032 0.000058184 5 1072 3216 10720 25856640
-975	285018 152 983 3017 0.000011032 0.000058184 5 3.152e-06 3.152e-06 1.576e-05 4.967552e-11
-976	285170 160 983 3017 0.000011032 0.000058184 5 3.94e-07 1.53531e-06 5.012821e-06 5.841950969461e-12
-977	285330 172 983 3017 0.000011032 0.000058184 5 0.384682856439 0.656250394 2.557232287424 1.3541026639413
-978	285502 172 983 3017 0.000011032 0.000058184 5 1.538732961066 2.62500197 10.228934162517 21.665661579562
-980	285674 177 436 3013 0.000004728 0.000058184 7 7504 7504 52528 394170112
-981	285851 179 436 2769 0.000004728 0.000055032 7 7504 7504 52528 394170112
-982	286030 204 436 2769 0.000004728 0.000055032 8 7505 7506 60045 450675255
-983	286234 113 681 2769 0.00000788 0.000055032 5 2 6 20 90
-984	286347 158 436 2769 0.000004728 0.000055032 7 1 2 12 22
-985	286505 179 436 3013 0.000004728 0.000058184 8 0 2 11 19
-986	286684 179 436 3013 0.000004728 0.000058184 8 0 7 30 148
-987	286863 247 648 3013 0.00000788 0.000058184 11 0 1 5 5
-988	287110 136 984 3013 0.000011032 0.000058184 6 0 0 0 0
-995	287246 181 436 2769 0.000004728 0.000055032 8 0 0 0 0
-997	287427 128 984 3013 0.000011032 0.000058184 5 1072 3216 10720 25856640
-999	287555 153 984 3013 0.000011032 0.000058184 5 3.152e-06 3.152e-06 1.576e-05 4.967552e-11
-1000	287708 166 984 3013 0.000011032 0.000058184 5 3.94e-07 1.53531e-06 5.012821e-06 5.841950969461e-12
-1001	287874 178 984 3013 0.000011032 0.000058184 5 0.384682856439 0.656250394 2.557232287424 1.3541026639413
-1002	288052 178 984 3013 0.000011032 0.000058184 5 1.538732961066 2.62500197 10.228934162517 21.665661579562
-1004	288230 183 437 3016 0.000004728 0.000058184 7 7504 7504 52528 394170112
-1005	288413 186 437 2783 0.000004728 0.000055032 7 7504 7504 52528 394170112
-1006	288599 212 437 2783 0.000004728 0.000055032 8 7505 7506 60045 450675255
-1007	288811 118 688 2783 0.00000788 0.000055032 5 2 6 20 90
-1008	288929 165 437 2783 0.000004728 0.000055032 7 1 2 12 22
-1009	289094 186 437 3016 0.000004728 0.000058184 8 0 2 11 19
-1010	289280 186 437 3016 0.000004728 0.000058184 8 0 7 30 148
-1011	289466 257 649 3016 0.00000788 0.000058184 11 0 1 5 5
-1012	289723 141 985 3016 0.000011032 0.000058184 6 0 0 0 0
-1019	289864 189 437 2783 0.000004728 0.000055032 8 0 0 0 0
-1021	290053 132 985 3016 0.000011032 0.000058184 5 1072 3216 10720 25856640
-1023	290185 157 985 3016 0.000011032 0.000058184 5 3.152e-06 3.152e-06 1.576e-05 4.967552e-11
-1024	290342 165 985 3016 0.000011032 0.000058184 5 3.94e-07 1.53531e-06 5.012821e-06 5.841950969461e-12
-1025	290507 177 985 3016 0.000011032 0.000058184 5 0.384682856439 0.656250394 2.557232287424 1.3541026639413
-1026	290684 177 985 3016 0.000011032 0.000058184 5 1.538732961066 2.62500197 10.228934162517 21.665661579562
-1028	290861 212 438 3012 0.000004728 0.000058184 8 7504 7504 60032 450480128
-1029	291073 293 438 2768 0.000004728 0.000055032 11 7504 7504 82544 619410176
-1030	291366 319 438 2768 0.000004728 0.000055032 12 7505 7766 92017 705692047
-1031	291685 150 760 2768 0.000008872 0.000055032 6 2 266 803 176639
-1032	291835 280 438 2768 0.000004728 0.000055032 11 1 262 1968 421102
-1033	292115 278 438 3012 0.000004728 0.000058184 11 0 262 1772 382556
-1034	292393 274 438 3012 0.000004728 0.000058184 11 0 267 1339 283315
-1035	292667 311 735 3012 0.000008872 0.000058184 13 0 131 265 34065
-1036	292978 237 735 3012 0.000008872 0.000058184 10 0 0 0 0
-1043	293215 355 438 2768 0.000004728 0.000055032 15 0 0 0 0
-1045	293570 186 735 3012 0.000008872 0.000058184 7 1072 4288 18760 58321088
-1047	293756 190 1141 3012 0.000012696 0.000058184 6 3.152e-06 4.296e-06 2.272e-05 8.736064e-11
-1048	293946 201 1141 3012 0.000012696 0.000058184 6 4.78e-07 2.044668e-06 8.407304e-06 1.3593220176832e-11
-1049	294147 215 1141 3012 0.000012696 0.000058184 6 0.336597868034 0.656250478 2.893831281141 1.4674018741942
-1050	294362 215 1141 3012 0.000012696 0.000058184 6 1.346393516804 2.62500239 11.575333531868 23.478459559403
-1052	294577 211 439 3015 0.000004728 0.000058184 8 7504 7504 60032 450480128
-1053	294788 293 439 2782 0.000004728 0.000055032 11 7504 7504 82544 619410176
-1054	295081 319 439 2782 0.000004728 0.000055032 12 7505 7766 92017 705692047
-1055	295400 150 774 2782 0.000008872 0.000055032 6 2 266 803 176639
-1056	295550 280 439 2782 0.000004728 0.000055032 11 1 262 1968 421102
-1057	295830 277 439 3015 0.000004728 0.000058184 11 0 262 1772 382556
-1058	296107 273 439 3015 0.000004728 0.000058184 11 0 267 1339 283315
-1059	296380 310 736 3015 0.000008872 0.000058184 13 0 131 265 34065
-1060	296690 236 736 3015 0.000008872 0.000058184 10 0 0 0 0
-1067	296926 355 439 2782 0.000004728 0.000055032 15 0 0 0 0
-1069	297281 185 736 3015 0.000008872 0.000058184 7 1072 4288 18760 58321088
-1071	297466 189 1142 3015 0.000012696 0.000058184 6 3.152e-06 4.296e-06 2.272e-05 8.736064e-11
-1072	297655 200 1142 3015 0.000012696 0.000058184 6 4.78e-07 2.044668e-06 8.407304e-06 1.3593220176832e-11
-1073	297855 214 1142 3015 0.000012696 0.000058184 6 0.336597868034 0.656250478 2.893831281141 1.4674018741942
-1074	298069 214 1142 3015 0.000012696 0.000058184 6 1.346393516804 2.62500239 11.575333531868 23.478459559403
-1076	298283 77 440 986 0.000004728 0.000011032 3 7504 7504 22512 168930048
-1077	298360 78 440 1064 0.000004728 0.000011704 3 7504 7504 22512 168930048
-1078	298438 104 440 1064 0.000004728 0.000011704 4 7505 7506 30021 225315111
-1079	298542 22 695 695 0.00000788 0.00000788 1 2 2 2 4
-1080	298564 69 440 1064 0.000004728 0.000011704 3 1 2 4 6
-1081	298633 92 440 1064 0.000004728 0.000011704 4 0 1 3 3
-1082	298725 92 440 1064 0.000004728 0.000011704 4 0 3 8 22
-1083	298817 67 650 986 0.00000788 0.000011032 3 0 1 1 1
-1084	298884 47 986 1064 0.000011032 0.000011704 2 0 0 0 0
-1091	298931 93 440 1064 0.000004728 0.000011704 4 0 0 0 0
-1093	299024 26 986 986 0.000011032 0.000011032 1 1072 1072 1072 1149184
-1095	299050 31 986 986 0.000011032 0.000011032 1 3.152e-06 3.152e-06 3.152e-06 9.935104e-12
-1096	299081 30 986 986 0.000011032 0.000011032 1 3.94e-07 3.94e-07 3.94e-07 1.55236e-13
-1097	299111 33 986 986 0.000011032 0.000011032 1 0.656250394 0.656250394 0.656250394 0.43066457962516
-1098	299144 32 986 986 0.000011032 0.000011032 1 2.62500197 2.62500197 2.62500197 6.8906353425039
-1124	299176 78 2110 3720 0.000034312 0.00008356 3 7504 7504 22512 168930048
-1125	299254 790 2110 15737 0.000034312 78.000008552 28 7504 7504 210112 1576680448
-1126	300044 817 2110 15737 0.000034312 78.000008552 29 7505 7531 217996 1638700436
-1127	300861 22 3317 3317 0.0000678 0.0000678 1 9 9 9 81
-1128	300883 724 2110 15737 0.000034312 78.000008552 28 1 27 379 6931
-1129	301607 746 2110 15737 0.000034312 78.000008552 29 0 26 353 6203
-1130	302353 756 2110 15737 0.000034312 78.000008552 29 0 10 279 2781
-1131	303109 67 3313 3720 0.0000678 0.00008356 3 0 1 1 1
-1132	303176 683 3720 15737 0.00008356 78.000008552 27 0 0 0 0
-1139	303859 1366 2110 15737 0.000034312 78.000008552 54 0 0 0 0
-1141	305225 26 3720 3720 0.00008356 0.00008356 1 1072 1072 1072 1149184
-1143	305251 31 3720 3720 0.00008356 0.00008356 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
-1144	305282 30 3720 3720 0.00008356 0.00008356 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
-1145	305312 32 3720 3720 0.00008356 0.00008356 1 0.65625197 0.65625197 0.65625197 0.43066664812888
-1146	305344 32 3720 3720 0.00008356 0.00008356 1 2.62500985 2.62500985 2.62500985 6.890676712597
-1148	305376 81 2127 3779 0.000034984 0.000088232 3 7504 7504 22512 168930048
-1149	305457 792 2127 15755 0.000034984 78.000009224 28 7504 7504 210112 1576680448
-1150	306249 819 2127 15755 0.000034984 78.000009224 29 7505 7531 217996 1638700436
-1151	307068 24 3435 3435 0.000072472 0.000072472 1 9 9 9 81
-1152	307092 726 2127 15755 0.000034984 78.000009224 28 1 27 379 6931
-1153	307818 749 2127 15755 0.000034984 78.000009224 29 0 26 353 6203
-1154	308567 759 2127 15755 0.000034984 78.000009224 29 0 10 279 2781
-1155	309326 72 3431 3779 0.000072472 0.000088232 3 0 1 1 1
-1156	309398 684 3779 15755 0.000088232 78.000009224 27 0 0 0 0
-1163	310082 1368 2127 15755 0.000034984 78.000009224 54 0 0 0 0
-1165	311450 27 3779 3779 0.000088232 0.000088232 1 1072 1072 1072 1149184
-1167	311477 32 3779 3779 0.000088232 0.000088232 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
-1168	311509 31 3779 3779 0.000088232 0.000088232 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
-1169	311540 33 3779 3779 0.000088232 0.000088232 1 0.65625197 0.65625197 0.65625197 0.43066664812888
-1170	311573 33 3779 3779 0.000088232 0.000088232 1 2.62500985 2.62500985 2.62500985 6.890676712597
-1172	311606 81 2154 3785 0.000035656 0.000088904 3 7504 7504 22512 168930048
-1173	311687 792 2154 15778 0.000035656 78.000009896 28 7504 7504 210112 1576680448
-1174	312479 819 2154 15778 0.000035656 78.000009896 29 7505 7531 217996 1638700436
-1175	313298 24 3467 3467 0.000073144 0.000073144 1 9 9 9 81
-1176	313322 726 2154 15778 0.000035656 78.000009896 28 1 27 379 6931
-1177	314048 749 2154 15778 0.000035656 78.000009896 29 0 26 353 6203
-1178	314797 759 2154 15778 0.000035656 78.000009896 29 0 10 279 2781
-1179	315556 72 3463 3785 0.000073144 0.000088904 3 0 1 1 1
-1180	315628 684 3785 15778 0.000088904 78.000009896 27 0 0 0 0
-1187	316312 1368 2154 15778 0.000035656 78.000009896 54 0 0 0 0
-1189	317680 27 3785 3785 0.000088904 0.000088904 1 1072 1072 1072 1149184
-1191	317707 32 3785 3785 0.000088904 0.000088904 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
-1192	317739 31 3785 3785 0.000088904 0.000088904 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
-1193	317770 33 3785 3785 0.000088904 0.000088904 1 0.65625197 0.65625197 0.65625197 0.43066664812888
-1194	317803 33 3785 3785 0.000088904 0.000088904 1 2.62500985 2.62500985 2.62500985 6.890676712597
+vector 859  Topo.RTU1.tcp  "measured RTT"  ETV
+vector 860  Topo.RTU1.tcp  "smoothed RTT"  ETV
+vector 861  Topo.RTU1.tcp  RTTVAR  ETV
+vector 862  Topo.RTU1.tcp  RTO  ETV
+vector 857  Topo.RTU1.tcp  cwnd  ETV
+vector 907  Topo.RTU3.tcp  "measured RTT"  ETV
+vector 908  Topo.RTU3.tcp  "smoothed RTT"  ETV
+vector 909  Topo.RTU3.tcp  RTTVAR  ETV
+vector 910  Topo.RTU3.tcp  RTO  ETV
+vector 905  Topo.RTU3.tcp  cwnd  ETV
+vector 883  Topo.RTU2.tcp  "measured RTT"  ETV
+vector 884  Topo.RTU2.tcp  "smoothed RTT"  ETV
+vector 885  Topo.RTU2.tcp  RTTVAR  ETV
+vector 886  Topo.RTU2.tcp  RTO  ETV
+vector 881  Topo.RTU2.tcp  cwnd  ETV
+vector 931  Topo.RTU4.tcp  "measured RTT"  ETV
+vector 932  Topo.RTU4.tcp  "smoothed RTT"  ETV
+vector 933  Topo.RTU4.tcp  RTTVAR  ETV
+vector 934  Topo.RTU4.tcp  RTO  ETV
+vector 929  Topo.RTU4.tcp  cwnd  ETV
+vector 387  Topo.controller.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 374  Topo.s8.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+0	57386 10291 2071 58653 0.00003264 300.000008896 426 64 64 27264 1744896
+1	67677 10112 2134 58725 0.000035216 300.000011472 422 64 64 27008 1728512
+2	77789 10112 2134 58725 0.000035216 300.000011472 422 64 64 27008 1728512
+5	87901 10404 2064 58617 0.000032064 300.000006976 426 64 64 27264 1744896
+11	98305 5243 2547 58724 0.000049896 300.000011376 206 64 64 13184 843776
+12	103548 5290 2055 58605 0.000032064 300.000006976 208 64 64 13312 851968
+13	108838 5290 2055 58605 0.000032064 300.000006976 208 64 64 13312 851968
+16	114128 5046 2535 58713 0.00004932 300.0000108 206 64 64 13184 843776
+22	119174 5190 2740 58744 0.000054192 300.000012048 204 64 64 13056 835584
+23	124364 5240 2056 58606 0.000032064 300.000006976 206 64 64 13184 843776
+24	129604 5240 2056 58606 0.000032064 300.000006976 206 64 64 13184 843776
+27	134844 5191 2710 58731 0.000053616 300.000011472 204 64 64 13056 835584
+33	140035 60 109 46448 0 243.000016744 3 1 1 3 3
+35	140095 1971 169 53656 0.000000576 270.000005976 78 64 253 6556 660706
+36	142066 1948 313 53949 0.000003152 270.000008552 77 64 253 6508 660828
+37	144014 1948 313 53949 0.000003152 270.000008552 77 64 253 6508 660828
+40	145962 1958 157 53642 0 270.0000054 78 64 253 6556 660706
+44	147920 1958 145 53634 0 270.0000054 78 28 235 4805 420647
+45	149878 1948 321 53959 0.000003152 270.000008552 77 28 235 4767 421535
+47	151826 5288 2031 58584 0.000031064 300.000005976 208 64 64 13312 851968
+48	157114 5243 2599 58747 0.000050896 300.000012376 206 64 64 13184 843776
+49	162357 5243 2599 58747 0.000050896 300.000012376 206 64 64 13184 843776
+52	167600 5088 2025 58578 0.000030488 300.0000054 208 64 64 13312 851968
+69	172688 5240 2610 58764 0.000051472 300.000012952 206 64 64 13184 843776
+70	177928 5088 2015 58566 0.000030488 300.0000054 208 64 64 13312 851968
+71	183016 5088 2015 58566 0.000030488 300.0000054 208 64 64 13312 851968
+74	188104 5243 2604 58753 0.000050896 300.000012376 206 64 64 13184 843776
+80	193347 60 110 46449 0 243.000016744 3 1 1 3 3
+82	193407 891 170 53657 0.000000576 270.000005976 36 64 64 2304 147456
+83	194298 868 314 53950 0.000003152 270.000008552 35 64 64 2240 143360
+84	195166 868 314 53950 0.000003152 270.000008552 35 64 64 2240 143360
+87	196034 882 158 53643 0 270.0000054 36 64 64 2304 147456
+91	196916 882 146 53635 0 270.0000054 36 28 44 1427 57041
+92	197798 868 322 53960 0.000003152 270.000008552 35 28 44 1385 55265
+94	198666 5238 2032 58585 0.000031064 300.000005976 206 64 64 13184 843776
+95	203904 5190 2814 58765 0.000055192 300.000013048 204 64 64 13056 835584
+96	209094 5190 2814 58765 0.000055192 300.000013048 204 64 64 13056 835584
+99	214284 5040 2026 58579 0.000030488 300.0000054 206 64 64 13184 843776
+116	219324 5300 2859 58784 0.000055768 300.000013624 204 64 64 13056 835584
+117	224624 5246 2016 58567 0.000030488 300.0000054 206 64 64 13184 843776
+118	229870 5246 2016 58567 0.000030488 300.0000054 206 64 64 13184 843776
+121	235116 5394 2819 58771 0.000055192 300.000013048 204 64 64 13056 835584
+127	240510 63 111 46451 0 243.000016744 3 1 1 3 3
+129	240573 928 171 53658 0.000000576 270.000005976 36 64 64 2304 147456
+130	241501 905 315 53951 0.000003152 270.000008552 35 64 64 2240 143360
+131	242406 905 315 53951 0.000003152 270.000008552 35 64 64 2240 143360
+134	243311 918 159 53644 0 270.0000054 36 64 64 2304 147456
+138	244229 918 147 53636 0 270.0000054 36 28 44 1427 57041
+139	245147 905 323 53961 0.000003152 270.000008552 35 28 44 1385 55265
+141	246052 5296 1985 58544 0.000029488 300.0000044 208 64 64 13312 851968
+142	251348 5446 2678 58787 0.000052472 300.000013952 206 64 64 13184 843776
+143	256794 5446 2678 58787 0.000052472 300.000013952 206 64 64 13184 843776
+146	262240 5494 1977 58538 0.000028912 300.000003824 208 64 64 13312 851968
+152	267734 5448 2690 58804 0.000053048 300.000014528 206 64 64 13184 843776
+153	273182 5494 1957 58526 0.000028912 300.000003824 208 64 64 13312 851968
+154	278676 5494 1957 58526 0.000028912 300.000003824 208 64 64 13312 851968
+157	284170 5446 2683 58793 0.000052472 300.000013952 206 64 64 13184 843776
+174	289616 63 112 46450 0 243.000016744 3 1 1 3 3
+176	289679 927 172 53659 0.000000576 270.000005976 36 64 64 2304 147456
+177	290606 903 316 53952 0.000003152 270.000008552 35 64 64 2240 143360
+178	291509 903 316 53952 0.000003152 270.000008552 35 64 64 2240 143360
+181	292412 918 160 53645 0 270.0000054 36 64 64 2304 147456
+185	293330 918 148 53637 0 270.0000054 36 28 44 1427 57041
+186	294248 903 324 53962 0.000003152 270.000008552 35 28 44 1385 55265
+188	295151 5246 1986 58545 0.000029488 300.0000044 206 64 64 13184 843776
+189	300397 5300 2949 58805 0.000056768 300.000014624 204 64 64 13056 835584
+190	305697 5300 2949 58805 0.000056768 300.000014624 204 64 64 13056 835584
+193	310997 5444 1978 58539 0.000028912 300.000003824 206 64 64 13184 843776
+199	316441 5202 2976 58823 0.000057344 300.0000152 204 64 64 13056 835584
+200	321643 5444 1958 58527 0.000028912 300.000003824 206 64 64 13184 843776
+201	327087 5444 1958 58527 0.000028912 300.000003824 206 64 64 13184 843776
+204	332531 5300 2954 58811 0.000056768 300.000014624 204 64 64 13056 835584
+221	337831 63 113 46452 0 243.000016744 3 1 1 3 3
+223	337894 928 173 53660 0.000000576 270.000005976 36 64 64 2304 147456
+224	338822 905 317 53953 0.000003152 270.000008552 35 64 64 2240 143360
+225	339727 905 317 53953 0.000003152 270.000008552 35 64 64 2240 143360
+228	340632 918 161 53646 0 270.0000054 36 64 64 2304 147456
+232	341550 918 149 53638 0 270.0000054 36 28 44 1427 57041
+233	342468 905 325 53963 0.000003152 270.000008552 35 28 44 1385 55265
+235	343373 2700 1263 58813 0.00001584 300.00001476 106 64 64 6784 434176
+236	346073 2822 205 58470 0.000001576 300.000001576 107 64 64 6848 438272
+237	348895 2822 205 58470 0.000001576 300.000001576 107 64 64 6848 438272
+240	351717 2803 1255 58801 0.000015264 300.000014184 106 64 64 6784 434176
+246	354520 2802 1264 58841 0.00001584 300.000016104 106 64 64 6784 434176
+247	357322 2823 206 58471 0.000001576 300.000001576 107 64 64 6848 438272
+248	360145 2823 206 58471 0.000001576 300.000001576 107 64 64 6848 438272
+251	362968 2801 1256 58832 0.000015264 300.000015528 106 64 64 6784 434176
+257	365769 5494 1926 58504 0.000027912 300.000002824 208 64 64 13312 851968
+258	371263 5448 2732 58826 0.000054048 300.000015528 206 64 64 13184 843776
+259	376711 5448 2732 58826 0.000054048 300.000015528 206 64 64 13184 843776
+262	382159 5491 1916 58492 0.000027336 300.000001576 208 64 64 13312 851968
+279	387650 64 114 46499 0 243.000017416 3 1 1 3 3
+281	387714 1335 174 53661 0.000000576 270.000005976 51 64 188 3860 328408
+282	389049 1323 318 53954 0.000003152 270.000008552 51 64 189 3867 337967
+283	390372 1323 318 53954 0.000003152 270.000008552 51 64 189 3867 337967
+286	391695 1316 162 53647 0 270.0000054 51 64 188 3860 328408
+290	393011 1316 150 53639 0 270.0000054 51 28 170 2677 183741
+291	394327 1323 326 53964 0.000003152 270.000008552 51 28 171 2675 192275
+293	395650 2772 1265 58825 0.00001584 300.000015432 105 64 64 6720 430080
+294	398422 2799 207 58472 0.000001576 300.000001576 106 64 64 6784 434176
+295	401221 2799 207 58472 0.000001576 300.000001576 106 64 64 6784 434176
+298	404020 2777 1258 58820 0.000015264 300.000014856 105 64 64 6720 430080
+304	406797 2775 1266 58856 0.00001584 300.000016776 105 64 64 6720 430080
+305	409572 2795 208 58473 0.000001576 300.000001576 106 64 64 6784 434176
+306	412367 2795 208 58473 0.000001576 300.000001576 106 64 64 6784 434176
+309	415162 2581 1259 58848 0.000015264 300.0000162 105 64 64 6720 430080
+315	417743 5444 1927 58505 0.000027912 300.000002824 206 64 64 13184 843776
+316	423187 5202 3042 58842 0.000058344 300.0000162 204 64 64 13056 835584
+317	428389 5202 3042 58842 0.000058344 300.0000162 204 64 64 13056 835584
+320	433591 5440 1919 58493 0.000027336 300.000001576 206 64 64 13184 843776
+337	439031 64 115 46500 0 243.000017416 3 1 1 3 3
+339	439095 1336 175 53662 0.000000576 270.000005976 51 64 188 3860 328408
+340	440431 1325 319 53955 0.000003152 270.000008552 51 64 189 3867 337967
+341	441756 1325 319 53955 0.000003152 270.000008552 51 64 189 3867 337967
+344	443081 1316 163 53648 0 270.0000054 51 64 188 3860 328408
+348	444397 1316 151 53640 0 270.0000054 51 28 170 2677 183741
+349	445713 1325 327 53965 0.000003152 270.000008552 51 28 171 2675 192275
+373	447038 12 116 116 0 0 1 1 1 1 1
+374	447050 26 35360 35360 180.000001576 180.000001576 1 1 1 1 1
+375	447076 461 176 53663 0.000000576 270.000005976 18 64 64 1152 73728
+376	447537 434 320 53956 0.000003152 270.000008552 17 64 64 1088 69632
+377	447971 434 320 53956 0.000003152 270.000008552 17 64 64 1088 69632
+380	448405 447 164 53649 0 270.0000054 18 64 64 1152 73728
+384	448852 447 152 53641 0 270.0000054 18 28 44 712 28490
+385	449299 434 328 53966 0.000003152 270.000008552 17 28 44 667 26471
+387	449733 16 35237 35237 180 180 1 1 1 1 1
+388	449749 535 243 46583 0.000001576 243.000018992 22 1 1 22 22
+392	450284 2025 297 53915 0.000002152 270.000007552 77 64 253 6508 660828
+393	452309 2050 197 53739 0.000001576 270.000006976 78 64 253 6556 660706
+394	454359 2050 197 53739 0.000001576 270.000006976 78 64 253 6556 660706
+397	456409 1998 285 53883 0.000001576 270.000006976 77 64 253 6508 660828
+401	458407 1998 277 53874 0.000001576 270.000006976 77 28 235 4767 421535
+402	460405 2050 209 53750 0.000001576 270.000006976 78 28 235 4805 420647
+404	462455 903 298 53916 0.000002152 270.000007552 35 64 64 2240 143360
+405	463358 928 198 53740 0.000001576 270.000006976 36 64 64 2304 147456
+406	464286 928 198 53740 0.000001576 270.000006976 36 64 64 2304 147456
+409	465214 880 286 53884 0.000001576 270.000006976 35 64 64 2240 143360
+413	466094 880 278 53875 0.000001576 270.000006976 35 28 44 1385 55265
+414	466974 928 210 53751 0.000001576 270.000006976 36 28 44 1427 57041
+416	467902 905 299 53917 0.000002152 270.000007552 35 64 64 2240 143360
+417	468807 929 199 53741 0.000001576 270.000006976 36 64 64 2304 147456
+418	469736 929 199 53741 0.000001576 270.000006976 36 64 64 2304 147456
+421	470665 880 287 53885 0.000001576 270.000006976 35 64 64 2240 143360
+425	471545 880 279 53876 0.000001576 270.000006976 35 28 44 1385 55265
+426	472425 929 211 53752 0.000001576 270.000006976 36 28 44 1427 57041
+428	473354 903 300 53918 0.000002152 270.000007552 35 64 64 2240 143360
+429	474257 928 200 53742 0.000001576 270.000006976 36 64 64 2304 147456
+430	475185 928 200 53742 0.000001576 270.000006976 36 64 64 2304 147456
+433	476113 880 288 53886 0.000001576 270.000006976 35 64 64 2240 143360
+437	476993 880 280 53877 0.000001576 270.000006976 35 28 44 1385 55265
+438	477873 928 212 53753 0.000001576 270.000006976 36 28 44 1427 57041
+440	478801 905 301 53919 0.000002152 270.000007552 35 64 64 2240 143360
+441	479706 929 201 53743 0.000001576 270.000006976 36 64 64 2304 147456
+442	480635 929 201 53743 0.000001576 270.000006976 36 64 64 2304 147456
+445	481564 880 289 53887 0.000001576 270.000006976 35 64 64 2240 143360
+449	482444 880 281 53878 0.000001576 270.000006976 35 28 44 1385 55265
+450	483324 929 213 53754 0.000001576 270.000006976 36 28 44 1427 57041
+452	484253 1323 302 53920 0.000002152 270.000007552 51 64 189 3867 337967
+453	485576 1335 202 53744 0.000001576 270.000006976 51 64 188 3860 328408
+454	486911 1335 202 53744 0.000001576 270.000006976 51 64 188 3860 328408
+457	488246 1306 290 53888 0.000001576 270.000006976 51 64 189 3867 337967
+461	489552 1306 282 53879 0.000001576 270.000006976 51 28 171 2675 192275
+462	490858 1335 214 53755 0.000001576 270.000006976 51 28 170 2677 183741
+464	492193 1325 303 53921 0.000002152 270.000007552 51 64 189 3867 337967
+465	493518 1336 203 53745 0.000001576 270.000006976 51 64 188 3860 328408
+466	494854 1336 203 53745 0.000001576 270.000006976 51 64 188 3860 328408
+469	496190 1306 291 53889 0.000001576 270.000006976 51 64 189 3867 337967
+473	497496 1306 283 53880 0.000001576 270.000006976 51 28 171 2675 192275
+474	498802 1336 215 53756 0.000001576 270.000006976 51 28 170 2677 183741
+476	500138 434 304 53922 0.000002152 270.000007552 17 64 64 1088 69632
+477	500572 462 204 53746 0.000001576 270.000006976 18 64 64 1152 73728
+478	501034 462 204 53746 0.000001576 270.000006976 18 64 64 1152 73728
+481	501496 409 292 53890 0.000001576 270.000006976 17 64 64 1088 69632
+485	501905 409 284 53881 0.000001576 270.000006976 17 28 44 667 26471
+486	502314 462 216 53757 0.000001576 270.000006976 18 28 44 712 28490
+488	502776 10100 4010 58688 3.00000788 300.000009896 400 1 1 400 400
+489	512876 139 3187 12868 0.000063504 60.000009224 6 1 1 6 6
+490	513015 13204 4010 58688 3.00000788 300.000009896 400 7.88e-06 2.8016e-05 0.003670336 3.5716865792e-08
+491	526219 3945 4068 58688 3.000009896 300.000009896 100 26.446939350223 129.31297763769 3312.4384288068 120956.42278054
+492	530164 3942 4068 58688 3.000009896 300.000009896 100 6.6117348375558 32.328244409424 828.10960720171 7559.7764237836
+493	534106 3944 4068 58688 3.000009896 300.000009896 100 5.2893878700447 25.862595527539 662.48768576137 4838.2569112215
+494	538050 3940 4068 58688 3.000009896 300.000009896 100 1.3223469675112 6.4656488818847 165.62192144034 302.39105695134
+495	541990 293 2096 48516 0.00003364 246.000028016 12 1 1 12 12
+500	542283 10956 2103 58704 0.000034216 300.000010472 422 64 64 27008 1728512
+501	553239 11143 2089 58679 0.00003364 300.000009896 426 64 64 27264 1744896
+502	564382 11143 2089 58679 0.00003364 300.000009896 426 64 64 27264 1744896
+505	575525 11047 2100 58692 0.00003364 300.000009896 422 64 64 27008 1728512
+509	586572 11047 2099 58691 0.00003364 300.000009896 422 28 44 16758 667238
+510	597619 11143 2090 58681 0.00003364 300.000009896 426 28 44 17312 705552
+512	608762 48 3411 13131 0.000071384 60.000016432 2 1 1 2 2
+513	608810 1550 3791 58411 3 300 100 1 1 100 100
+514	610360 63 3411 13131 0.000071384 60.000016432 2 7.88e-06 8.552e-06 1.6432e-05 1.35231104e-10
+515	610423 2938 3791 58411 3 300 100 5.9052947820709 58.162189057987 855.14147536478 9957.8285446688
+516	613361 2940 3791 58411 3 300 100 1.1810589564142 11.632437811597 171.02829507296 398.31314178675
+517	616301 44 117 47406 0 246 3 1 1 3 3
+522	616345 2822 177 58458 0.000000576 300.000000576 107 64 64 6848 438272
+523	619167 2700 1287 58835 0.00001684 300.00001576 106 64 64 6784 434176
+524	621867 2700 1287 58835 0.00001684 300.00001576 106 64 64 6784 434176
+527	624567 1812 165 58454 0 300 107 64 64 6848 438272
+531	626379 1812 153 58450 0 300 107 28 44 4348 177188
+532	628191 2700 1293 58836 0.00001684 300.00001576 106 28 44 4210 167650
+534	630891 48 3647 13189 0.000080352 60.000018448 2 1 1 2 2
+535	630939 1550 3797 58417 3 300 100 1 1 100 100
+536	632489 63 3647 13189 0.000080352 60.000018448 2 7.88e-06 9.224e-06 1.7104e-05 1.47176576e-10
+537	632552 2936 3797 58417 3 300 100 5.7212082985466 53.698000260072 843.31139142158 9349.4938256715
+538	635488 2938 3797 58417 3 300 100 1.1442416597093 10.739600052014 168.66227828432 373.97975302686
+539	638426 44 118 47407 0 246 3 1 1 3 3
+544	638470 2823 178 58459 0.000000576 300.000000576 107 64 64 6848 438272
+545	641293 2802 1288 58858 0.00001684 300.000017104 106 64 64 6784 434176
+546	644095 2802 1288 58858 0.00001684 300.000017104 106 64 64 6784 434176
+549	646897 1814 166 58455 0 300 107 64 64 6848 438272
+553	648711 1814 154 58451 0 300 107 28 44 4348 177188
+554	650525 2802 1294 58859 0.00001684 300.000017104 106 28 44 4210 167650
+556	653327 22 3534 3534 0.00007568 0.00007568 1 1 1 1 1
+557	653349 1550 3803 58423 3 300 100 1 1 100 100
+558	654899 29 3534 3534 0.00007568 0.00007568 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
+559	654928 2941 3803 58423 3 300 100 6.160677505829 11.462648681342 803.45048423926 6585.7520922128
+560	657869 2939 3803 58423 3 300 100 1.2321355011658 2.2925297362684 160.69009684785 263.43008368851
+561	660808 44 119 47408 0 246 3 1 1 3 3
+566	660852 2799 179 58460 0.000000576 300.000000576 106 64 64 6784 434176
+567	663651 2772 1289 58850 0.00001684 300.000016432 105 64 64 6720 430080
+568	666423 2772 1289 58850 0.00001684 300.000016432 105 64 64 6720 430080
+571	669195 1784 167 58456 0 300 106 64 64 6784 434176
+575	670979 1784 155 58452 0 300 106 28 44 4308 175588
+576	672763 2772 1295 58851 0.00001684 300.000016432 105 28 44 4169 165969
+578	675535 23 3670 3670 0.000081024 0.000081024 1 1 1 1 1
+579	675558 1550 3809 58429 3 300 100 1 1 100 100
+580	677108 30 3670 3670 0.000081024 0.000081024 1 7.88e-06 7.88e-06 7.88e-06 6.20944e-11
+581	677138 2942 3809 58429 3 300 100 6.0269432967058 13.354112205324 810.53507778121 6790.7965089167
+582	680080 2942 3809 58429 3 300 100 1.2053886593412 2.6708224410648 162.10701555624 271.63186035667
+583	683022 44 120 47409 0 246 3 1 1 3 3
+588	683066 2795 180 58461 0.000000576 300.000000576 106 64 64 6784 434176
+589	685861 2775 1290 58864 0.00001684 300.000017776 105 64 64 6720 430080
+590	688636 2775 1290 58864 0.00001684 300.000017776 105 64 64 6720 430080
+593	691411 1788 168 58457 0 300 106 64 64 6784 434176
+597	693199 1788 156 58453 0 300 106 28 44 4308 175588
+598	694987 2775 1296 58865 0.00001684 300.000017776 105 28 44 4169 165969
+600	697762 966 433 53723 0.000004728 270.000006304 35 7504 7504 262640 1970850560
+601	698728 2049 433 53789 0.000004728 270.000006976 74 7504 7504 555296 4166941184
+602	700777 2074 433 53789 0.000004728 270.000006976 75 7505 9222 627974 5277943872
+603	702851 857 666 53156 0.00000788 270.000003152 33 2 1720 26873 31682007
+604	703708 1996 433 53789 0.000004728 270.000006976 74 1 1718 65173 76561279
+605	705704 2046 433 53789 0.000004728 270.000006976 75 0 1715 65084 76513452
+606	707750 2041 433 53789 0.000004728 270.000006976 75 0 1721 62318 71651588
+607	709791 1652 645 53723 0.00000788 270.000006304 67 0 195 1719 162927
+608	711443 1835 981 53789 0.000011032 270.000006976 73 0 0 0 0
+615	713278 2844 433 53789 0.000004728 270.000006976 114 0 0 0 0
+617	716122 917 981 53723 0.000011032 270.000006304 33 1072 5360 94872 342169536
+619	717039 1079 981 53723 0.000011032 270.000006304 33 3.152e-06 5.336e-06 0.00012324 4.70426048e-10
+620	718118 1168 981 53723 0.000011032 270.000006304 33 3.94e-07 3.780297e-06 9.7994941e-05 3.1862264136616e-10
+621	719286 1235 981 53723 0.000011032 270.000006304 33 0.0091484951 0.656250394 5.185994402546 1.8372377664349
+622	720521 917 981 53723 0.000011032 270.000006304 33 1 2.62500197 38.784263004588 50.928979262102
+624	721438 105 2094 13270 0.00003364 60.000024312 4 7504 7504 30016 225240064
+625	721543 2827 2094 58627 0.00003364 300.00000788 103 7504 7504 772912 5799931648
+626	724370 2852 2094 58627 0.00003364 300.00000788 104 7505 7605 785590 5934242050
+627	727222 48 3189 12830 0.000063504 60.00000788 2 9 10 19 181
+628	727270 2613 2094 58627 0.00003364 300.00000788 103 1 101 5173 348993
+629	729883 2635 2094 58627 0.00003364 300.00000788 104 0 100 5073 338793
+630	732518 2644 2094 58627 0.00003364 300.00000788 104 0 11 1110 11982
+631	735162 118 3185 13270 0.000063504 60.000024312 5 0 1 2 2
+632	735280 2497 3624 58627 0.000079264 300.00000788 102 0 0 0 0
+639	737777 4967 2094 58627 0.00003364 300.00000788 203 0 0 0 0
+641	742744 54 3624 13270 0.000079264 60.000024312 2 1072 1072 2144 2298368
+643	742798 65 3624 13270 0.000079264 60.000024312 2 1.576e-05 1.6432e-05 3.2192e-05 5.18388224e-10
+644	742863 65 3624 13270 0.000079264 60.000024312 2 1.97e-06 3.77775e-06 5.74775e-06 1.81522950625e-11
+645	742928 68 3624 13270 0.000079264 60.000024312 2 0.5742222815 0.65625197 1.2304742515 0.76039787669995
+646	742996 69 3624 13270 0.000079264 60.000024312 2 2.29689290375 2.62500985 4.92190275375 12.166393723894
+648	743065 1152 537 53995 0.000006304 270.000008552 41 7504 7504 307664 2308710656
+649	744217 2087 85 53600 0 270.0000054 75 7504 7504 562800 4223251200
+650	746304 2112 85 53600 0 270.0000054 76 7504 9225 632624 5286511368
+651	748416 1099 861 53600 0.000009456 270.0000054 40 1 1715 35012 39215154
+652	749515 2025 85 53600 0 270.0000054 75 0 1721 62318 71651588
+653	751540 2016 537 53995 0.000006304 270.000008552 74 1 1721 62045 71155331
+654	753556 2022 537 53995 0.000006304 270.000008552 74 1 1718 65173 76561279
+655	755578 2037 861 53995 0.000009456 270.000008552 80 0 195 1717 160599
+656	757615 1831 819 53995 0.000009456 270.000008552 73 0 0 0 0
+663	759446 2686 85 53600 0 270.0000054 108 0 0 0 0
+665	762132 1127 1183 53995 0.00001328 270.000008552 40 1072 4824 98624 294191104
+667	763259 1327 1183 53995 0.00001328 270.000008552 40 3.152e-06 6.304e-06 0.000147584 5.63667584e-10
+668	764586 1440 1183 53995 0.00001328 270.000008552 40 4.78e-07 3.822879e-06 0.000122477964 4.0046123897158e-10
+669	766026 1519 1183 53995 0.00001328 270.000008552 40 0.003592705867 0.656250478 5.224886696715 1.8374693949843
+670	767545 1106 1183 53995 0.00001328 270.000008552 40 1 2.62500239 45.784264696183 57.928990019043
+672	768651 416 538 53996 0.000006304 270.000008552 15 7504 7504 112560 844650240
+673	769067 906 86 53601 0 270.0000054 33 7504 7504 247632 1858230528
+674	769973 931 86 53601 0 270.0000054 34 7504 7523 255489 1919842957
+675	770904 357 863 53601 0.000009456 270.0000054 14 1 17 126 1504
+676	771261 824 86 53601 0 270.0000054 33 0 19 351 4585
+677	772085 810 538 53996 0.000006304 270.000008552 32 1 19 336 4306
+678	772895 806 538 53996 0.000006304 270.000008552 32 1 20 284 3614
+679	773701 700 863 53996 0.000009456 270.000008552 28 0 3 19 33
+680	774401 772 820 53996 0.000009456 270.000008552 31 0 0 0 0
+687	775173 1230 86 53601 0 270.0000054 50 0 0 0 0
+689	776403 391 1184 53996 0.00001328 270.000008552 14 1072 2680 21440 36199296
+691	776794 461 1184 53996 0.00001328 270.000008552 14 3.152e-06 6.304e-06 5.312e-05 2.17453568e-10
+692	777255 494 1184 53996 0.00001328 270.000008552 14 4.78e-07 3.143457e-06 3.1115763e-05 7.9078645704623e-11
+693	777749 523 1184 53996 0.00001328 270.000008552 14 0.115658624947 0.656250478 4.440414773103 1.7938132410818
+694	778272 448 1184 53996 0.00001328 270.000008552 14 1 2.62500239 19.784264584723 31.92899010403
+696	778720 418 539 53997 0.000006304 270.000008552 15 7504 7504 112560 844650240
+697	779138 906 87 53602 0 270.0000054 33 7504 7504 247632 1858230528
+698	780044 931 87 53602 0 270.0000054 34 7504 7523 255489 1919842957
+699	780975 357 865 53602 0.000009456 270.0000054 14 1 17 126 1504
+700	781332 824 87 53602 0 270.0000054 33 0 19 351 4585
+701	782156 812 539 53997 0.000006304 270.000008552 32 1 19 336 4306
+702	782968 808 539 53997 0.000006304 270.000008552 32 1 20 284 3614
+703	783776 702 865 53997 0.000009456 270.000008552 28 0 3 19 33
+704	784478 774 821 53997 0.000009456 270.000008552 31 0 0 0 0
+711	785252 1230 87 53602 0 270.0000054 50 0 0 0 0
+713	786482 393 1185 53997 0.00001328 270.000008552 14 1072 2680 21440 36199296
+715	786875 463 1185 53997 0.00001328 270.000008552 14 3.152e-06 6.304e-06 5.312e-05 2.17453568e-10
+716	787338 496 1185 53997 0.00001328 270.000008552 14 4.78e-07 3.143457e-06 3.1115763e-05 7.9078645704623e-11
+717	787834 525 1185 53997 0.00001328 270.000008552 14 0.115658624947 0.656250478 4.440414773103 1.7938132410818
+718	788359 450 1185 53997 0.00001328 270.000008552 14 1 2.62500239 19.784264584723 31.92899010403
+720	788809 416 540 53998 0.000006304 270.000008552 15 7504 7504 112560 844650240
+721	789225 906 88 53603 0 270.0000054 33 7504 7504 247632 1858230528
+722	790131 931 88 53603 0 270.0000054 34 7504 7523 255489 1919842957
+723	791062 357 867 53603 0.000009456 270.0000054 14 1 17 126 1504
+724	791419 824 88 53603 0 270.0000054 33 0 19 351 4585
+725	792243 810 540 53998 0.000006304 270.000008552 32 1 19 336 4306
+726	793053 806 540 53998 0.000006304 270.000008552 32 1 20 284 3614
+727	793859 700 867 53998 0.000009456 270.000008552 28 0 3 19 33
+728	794559 772 822 53998 0.000009456 270.000008552 31 0 0 0 0
+735	795331 1230 88 53603 0 270.0000054 50 0 0 0 0
+737	796561 391 1186 53998 0.00001328 270.000008552 14 1072 2680 21440 36199296
+739	796952 461 1186 53998 0.00001328 270.000008552 14 3.152e-06 6.304e-06 5.312e-05 2.17453568e-10
+740	797413 494 1186 53998 0.00001328 270.000008552 14 4.78e-07 3.143457e-06 3.1115763e-05 7.9078645704623e-11
+741	797907 523 1186 53998 0.00001328 270.000008552 14 0.115658624947 0.656250478 4.440414773103 1.7938132410818
+742	798430 448 1186 53998 0.00001328 270.000008552 14 1 2.62500239 19.784264584723 31.92899010403
+744	798878 418 541 53999 0.000006304 270.000008552 15 7504 7504 112560 844650240
+745	799296 906 89 53604 0 270.0000054 33 7504 7504 247632 1858230528
+746	800202 931 89 53604 0 270.0000054 34 7504 7523 255489 1919842957
+747	801133 357 869 53604 0.000009456 270.0000054 14 1 17 126 1504
+748	801490 824 89 53604 0 270.0000054 33 0 19 351 4585
+749	802314 812 541 53999 0.000006304 270.000008552 32 1 19 336 4306
+750	803126 808 541 53999 0.000006304 270.000008552 32 1 20 284 3614
+751	803934 702 869 53999 0.000009456 270.000008552 28 0 3 19 33
+752	804636 774 823 53999 0.000009456 270.000008552 31 0 0 0 0
+759	805410 1230 89 53604 0 270.0000054 50 0 0 0 0
+761	806640 393 1187 53999 0.00001328 270.000008552 14 1072 2680 21440 36199296
+763	807033 463 1187 53999 0.00001328 270.000008552 14 3.152e-06 6.304e-06 5.312e-05 2.17453568e-10
+764	807496 496 1187 53999 0.00001328 270.000008552 14 4.78e-07 3.143457e-06 3.1115763e-05 7.9078645704623e-11
+765	807992 525 1187 53999 0.00001328 270.000008552 14 0.115658624947 0.656250478 4.440414773103 1.7938132410818
+766	808517 450 1187 53999 0.00001328 270.000008552 14 1 2.62500239 19.784264584723 31.92899010403
+768	808967 662 542 54000 0.000006304 270.000008552 24 7504 7504 180096 1351440384
+769	809629 1324 90 53605 0 270.0000054 48 7504 7504 360192 2702880768
+770	810953 1349 90 53605 0 270.0000054 49 7504 8173 385878 3040772296
+771	812302 613 542 53605 0.000006304 270.0000054 23 1 667 8331 3688609
+772	812915 1268 90 53605 0 270.0000054 48 0 669 18180 8706052
+773	814183 1278 542 54000 0.000006304 270.000008552 48 1 669 17778 8383644
+774	815461 1284 542 54000 0.000006304 270.000008552 48 1 670 19420 9426226
+775	816745 1147 542 54000 0.000006304 270.000008552 46 0 130 669 50733
+776	817892 1168 937 54000 0.000010448 270.000008552 47 0 0 0 0
+783	819060 1780 90 53605 0 270.0000054 72 0 0 0 0
+785	820840 637 937 54000 0.000010448 270.000008552 23 1072 2680 37520 67227264
+787	821477 752 937 54000 0.000010448 270.000008552 23 3.152e-06 6.304e-06 8.7248e-05 3.48264192e-10
+788	822229 814 937 54000 0.000010448 270.000008552 23 5.18e-07 3.551578e-06 6.2736519e-05 1.8829140898534e-10
+789	823043 862 937 54000 0.000010448 270.000008552 23 0.034773992357 0.656250518 5.006612377827 1.8335616818011
+790	823905 667 937 54000 0.000010448 270.000008552 23 1 2.62500259 28.784267466924 40.928998906195
+792	824572 664 543 54001 0.000006304 270.000008552 24 7504 7504 180096 1351440384
+793	825236 1324 91 53606 0 270.0000054 48 7504 7504 360192 2702880768
+794	826560 1349 91 53606 0 270.0000054 49 7504 8173 385878 3040772296
+795	827909 613 543 53606 0.000006304 270.0000054 23 1 667 8331 3688609
+796	828522 1268 91 53606 0 270.0000054 48 0 669 18180 8706052
+797	829790 1280 543 54001 0.000006304 270.000008552 48 1 669 17778 8383644
+798	831070 1286 543 54001 0.000006304 270.000008552 48 1 670 19420 9426226
+799	832356 1149 543 54001 0.000006304 270.000008552 46 0 130 669 50733
+800	833505 1170 938 54001 0.000010448 270.000008552 47 0 0 0 0
+807	834675 1780 91 53606 0 270.0000054 72 0 0 0 0
+809	836455 639 938 54001 0.000010448 270.000008552 23 1072 2680 37520 67227264
+811	837094 754 938 54001 0.000010448 270.000008552 23 3.152e-06 6.304e-06 8.7248e-05 3.48264192e-10
+812	837848 816 938 54001 0.000010448 270.000008552 23 5.18e-07 3.551578e-06 6.2736519e-05 1.8829140898534e-10
+813	838664 864 938 54001 0.000010448 270.000008552 23 0.034773992357 0.656250518 5.006612377827 1.8335616818011
+814	839528 669 938 54001 0.000010448 270.000008552 23 1 2.62500259 28.784267466924 40.928998906195
+816	840197 218 544 54002 0.000006304 270.000008552 8 7504 7504 60032 450480128
+817	840415 428 92 53607 0 270.0000054 16 7504 7504 120064 900960256
+818	840843 453 92 53607 0 270.0000054 17 7504 7513 127656 958591544
+819	841296 173 871 53607 0.000009456 270.0000054 7 1 10 36 256
+820	841469 380 92 53607 0 270.0000054 16 0 9 86 564
+821	841849 369 544 54002 0.000006304 270.000008552 15 1 9 81 523
+822	842218 371 544 54002 0.000006304 270.000008552 15 1 13 82 646
+823	842589 344 871 54002 0.000009456 270.000008552 14 0 3 12 26
+824	842933 347 824 54002 0.000009456 270.000008552 14 0 0 0 0
+831	843280 555 92 53607 0 270.0000054 23 0 0 0 0
+833	843835 193 1188 54002 0.00001328 270.000008552 7 1072 1608 9112 12353728
+835	844028 228 1188 54002 0.00001328 270.000008552 7 3.152e-06 3.824e-06 2.4752e-05 8.8297216e-11
+836	844256 242 1188 54002 0.00001328 270.000008552 7 4.78e-07 2.124777e-06 9.878538e-06 1.6063029497998e-11
+837	844498 258 1188 54002 0.00001328 270.000008552 7 0.294523278466 0.656250478 3.188354049005 1.5541453686157
+838	844756 258 1188 54002 0.00001328 270.000008552 7 1.178095238641 2.62500239 12.753426074558 24.866358176051
+840	845014 2777 2833 58840 0.000055624 300.00001576 101 7504 7504 757904 5687311616
+841	847791 1944 93 58434 0 300 104 7504 7504 780416 5856241664
+842	849735 1970 93 58434 0 300 105 7504 7515 789039 5929357695
+843	851705 1642 3814 58434 3 300 100 1 100 5050 338350
+844	853347 1734 93 58434 0 300 104 0 11 1110 11982
+845	855081 2623 2833 58840 0.000055624 300.00001576 103 8 11 1107 11925
+846	857704 2617 2833 58840 0.000055624 300.00001576 103 1 101 5173 348993
+847	860321 4001 3814 58840 3 300.00001576 200 0 1 100 100
+848	864322 2499 3408 58840 0.000071384 300.00001576 102 0 0 0 0
+855	866821 1680 93 58434 0 300 106 0 0 0 0
+857	868501 2751 4220 58840 3.00001576 300.00001576 100 1072 1072 107200 114918400
+859	871252 3251 4220 58840 3.00001576 300.00001576 100 1.576e-05 3.824e-05 0.00162096 2.72656e-08
+860	874503 3633 4220 58840 3.00001576 300.00001576 100 1.97e-06 1.8581502e-05 0.001508854691 2.3598566537063e-08
+861	878136 3688 4220 58840 3.00001576 300.00001576 100 2.107738e-06 0.65625197 5.250198122889 1.8375471799379
+862	881824 2550 4220 58840 3.00001576 300.00001576 100 1 2.62500985 105.78442417735 117.92948717801
+864	884374 2877 3215 58863 0.000064592 300.000017104 101 7504 7504 757904 5687311616
+865	887251 1944 94 58435 0 300 104 7504 7504 780416 5856241664
+866	889195 1970 94 58435 0 300 105 7504 7515 789039 5929357695
+867	891165 1642 3815 58435 3 300 100 1 100 5050 338350
+868	892807 1734 94 58435 0 300 104 0 11 1110 11982
+869	894541 2723 3215 58863 0.000064592 300.000017104 103 8 11 1107 11925
+870	897264 2717 3215 58863 0.000064592 300.000017104 103 1 101 5173 348993
+871	899981 4101 3815 58863 3 300.000017104 200 0 1 100 100
+872	904082 2599 3644 58863 0.000080352 300.000017104 102 0 0 0 0
+879	906681 1680 94 58435 0 300 106 0 0 0 0
+881	908361 2851 4243 58863 3.000017104 300.000017104 100 1072 1072 107200 114918400
+883	911212 3451 4243 58863 3.000017104 300.000017104 100 1.7104e-05 5.0824e-05 0.001778512 3.385918528e-08
+884	914663 3734 4243 58863 3.000017104 300.000017104 100 2.138e-06 2.1336388e-05 0.001656105912 2.8501581300935e-08
+885	918397 3791 4243 58863 3.000017104 300.000017104 100 2.566201e-06 0.656252138 5.250249583158 1.8375512696557
+886	922188 2649 4243 58863 3.000017104 300.000017104 100 1 2.62501069 105.78444220615 117.92954342329
+888	924837 2876 3092 58855 0.00005992 300.000016432 101 7504 7504 757904 5687311616
+889	927713 1914 95 58436 0 300 103 7504 7504 772912 5799931648
+890	929627 1939 95 58436 0 300 104 7504 7514 781444 5871680150
+891	931566 1642 3816 58436 3 300 100 1 100 5050 338350
+892	933208 1706 95 58436 0 300 103 0 10 1019 10181
+893	934914 2695 3092 58855 0.00005992 300.000016432 102 8 10 1017 10145
+894	937609 2689 3092 58855 0.00005992 300.000016432 102 1 101 5152 348552
+895	940298 4101 3816 58855 3 300.000016432 200 0 1 100 100
+896	944399 2573 3531 58855 0.00007568 300.000016432 101 0 0 0 0
+903	946972 1627 95 58436 0 300 104 0 0 0 0
+905	948599 2851 4235 58855 3.000016432 300.000016432 100 1072 1072 107200 114918400
+907	951450 3451 4235 58855 3.000016432 300.000016432 100 1.6432e-05 4.6528e-05 0.001704064 3.0813286912e-08
+908	954901 3727 4235 58855 3.000016432 300.000016432 100 2.054e-06 2.0209502e-05 0.001586649768 2.6142684098755e-08
+909	958628 3791 4235 58855 3.000016432 300.000016432 100 2.41839e-06 0.656252054 5.25023112418 1.8375492446681
+910	962419 2648 4235 58855 3.000016432 300.000016432 100 1 2.62501027 105.78443319175 117.92951530065
+912	965067 2876 3216 58869 0.000064592 300.000017776 101 7504 7504 757904 5687311616
+913	967943 1916 96 58437 0 300 103 7504 7504 772912 5799931648
+914	969859 1942 96 58437 0 300 104 7504 7514 781444 5871680150
+915	971801 1642 3817 58437 3 300 100 1 100 5050 338350
+916	973443 1708 96 58437 0 300 103 0 10 1019 10181
+917	975151 2696 3216 58869 0.000064592 300.000017776 102 8 10 1017 10145
+918	977847 2690 3216 58869 0.000064592 300.000017776 102 1 101 5152 348552
+919	980537 4100 3817 58869 3 300.000017776 200 0 1 100 100
+920	984637 2573 3667 58869 0.000081024 300.000017776 101 0 0 0 0
+927	987210 1630 96 58437 0 300 104 0 0 0 0
+929	988840 2850 4249 58869 3.000017776 300.000017776 100 1072 1072 107200 114918400
+931	991690 3449 4249 58869 3.000017776 300.000017776 100 1.7776e-05 5.4456e-05 0.001852304 3.6947145344e-08
+932	995139 3732 4249 58869 3.000017776 300.000017776 100 2.222e-06 2.237995e-05 0.001724958813 3.0934745246183e-08
+933	998871 3784 4249 58869 3.000017776 300.000017776 100 2.686945e-06 0.656252222 5.250265718009 1.837553311339
+934	1002655 2648 4249 58869 3.000017776 300.000017776 100 1 2.62501111 105.78445122057 117.92957154602
+936	1005303 519 434 53724 0.000004728 270.000006304 19 7504 7504 142576 1069890304
+937	1005822 868 434 53790 0.000004728 270.000006976 32 7504 7504 240128 1801920512
+938	1006690 893 434 53790 0.000004728 270.000006976 33 7505 7524 247917 1862511423
+939	1007583 402 670 53157 0.00000788 270.000003152 17 2 18 170 2108
+940	1007985 784 434 53790 0.000004728 270.000006976 32 1 20 284 3614
+941	1008769 831 434 53790 0.000004728 270.000006976 33 0 17 268 3272
+942	1009600 836 434 53790 0.000004728 270.000006976 33 0 19 351 4585
+943	1010436 833 646 53724 0.00000788 270.000006304 35 0 1 17 17
+944	1011269 776 982 53790 0.000011032 270.000006976 31 0 0 0 0
+951	1012045 1129 434 53790 0.000004728 270.000006976 46 0 0 0 0
+953	1013174 470 982 53724 0.000011032 270.000006304 17 1072 3216 28408 53724352
+955	1013644 555 982 53724 0.000011032 270.000006304 17 3.152e-06 3.152e-06 5.3584e-05 1.68896768e-10
+956	1014199 598 982 53724 0.000011032 270.000006304 17 3.94e-07 2.826368e-06 3.3799377e-05 7.6282837886875e-11
+957	1014797 632 982 53724 0.000011032 270.000006304 17 0.077482316676 0.656250394 4.707646394308 1.8178978495042
+958	1015429 517 982 53724 0.000011032 270.000006304 17 1 2.62500197 22.784255049949 34.928959547923
+960	1015946 520 435 53725 0.000004728 270.000006304 19 7504 7504 142576 1069890304
+961	1016466 868 435 53791 0.000004728 270.000006976 32 7504 7504 240128 1801920512
+962	1017334 893 435 53791 0.000004728 270.000006976 33 7505 7524 247917 1862511423
+963	1018227 402 675 53158 0.00000788 270.000003152 17 2 18 170 2108
+964	1018629 784 435 53791 0.000004728 270.000006976 32 1 20 284 3614
+965	1019413 832 435 53791 0.000004728 270.000006976 33 0 17 268 3272
+966	1020245 837 435 53791 0.000004728 270.000006976 33 0 19 351 4585
+967	1021082 834 647 53725 0.00000788 270.000006304 35 0 1 17 17
+968	1021916 777 983 53791 0.000011032 270.000006976 31 0 0 0 0
+975	1022693 1129 435 53791 0.000004728 270.000006976 46 0 0 0 0
+977	1023822 471 983 53725 0.000011032 270.000006304 17 1072 3216 28408 53724352
+979	1024293 556 983 53725 0.000011032 270.000006304 17 3.152e-06 3.152e-06 5.3584e-05 1.68896768e-10
+980	1024849 599 983 53725 0.000011032 270.000006304 17 3.94e-07 2.826368e-06 3.3799377e-05 7.6282837886875e-11
+981	1025448 633 983 53725 0.000011032 270.000006304 17 0.077482316676 0.656250394 4.707646394308 1.8178978495042
+982	1026081 518 983 53725 0.000011032 270.000006304 17 1 2.62500197 22.784255049949 34.928959547923
+984	1026599 519 436 53726 0.000004728 270.000006304 19 7504 7504 142576 1069890304
+985	1027118 868 436 53792 0.000004728 270.000006976 32 7504 7504 240128 1801920512
+986	1027986 893 436 53792 0.000004728 270.000006976 33 7505 7524 247917 1862511423
+987	1028879 402 681 53159 0.00000788 270.000003152 17 2 18 170 2108
+988	1029281 784 436 53792 0.000004728 270.000006976 32 1 20 284 3614
+989	1030065 831 436 53792 0.000004728 270.000006976 33 0 17 268 3272
+990	1030896 836 436 53792 0.000004728 270.000006976 33 0 19 351 4585
+991	1031732 833 648 53726 0.00000788 270.000006304 35 0 1 17 17
+992	1032565 776 984 53792 0.000011032 270.000006976 31 0 0 0 0
+999	1033341 1129 436 53792 0.000004728 270.000006976 46 0 0 0 0
+1001	1034470 487 984 53726 0.000011032 270.000006304 17 1072 3216 28408 53724352
+1003	1034957 572 984 53726 0.000011032 270.000006304 17 3.152e-06 3.152e-06 5.3584e-05 1.68896768e-10
+1004	1035529 615 984 53726 0.000011032 270.000006304 17 3.94e-07 2.826368e-06 3.3799377e-05 7.6282837886875e-11
+1005	1036144 649 984 53726 0.000011032 270.000006304 17 0.077482316676 0.656250394 4.707646394308 1.8178978495042
+1006	1036793 534 984 53726 0.000011032 270.000006304 17 1 2.62500197 22.784255049949 34.928959547923
+1008	1037327 539 437 53727 0.000004728 270.000006304 19 7504 7504 142576 1069890304
+1009	1037866 900 437 53793 0.000004728 270.000006976 32 7504 7504 240128 1801920512
+1010	1038766 926 437 53793 0.000004728 270.000006976 33 7505 7524 247917 1862511423
+1011	1039692 419 688 53160 0.00000788 270.000003152 17 2 18 170 2108
+1012	1040111 816 437 53793 0.000004728 270.000006976 32 1 20 284 3614
+1013	1040927 865 437 53793 0.000004728 270.000006976 33 0 17 268 3272
+1014	1041792 870 437 53793 0.000004728 270.000006976 33 0 19 351 4585
+1015	1042662 869 649 53727 0.00000788 270.000006304 35 0 1 17 17
+1016	1043531 808 985 53793 0.000011032 270.000006976 31 0 0 0 0
+1023	1044339 1175 437 53793 0.000004728 270.000006976 46 0 0 0 0
+1025	1045514 488 985 53727 0.000011032 270.000006304 17 1072 3216 28408 53724352
+1027	1046002 573 985 53727 0.000011032 270.000006304 17 3.152e-06 3.152e-06 5.3584e-05 1.68896768e-10
+1028	1046575 616 985 53727 0.000011032 270.000006304 17 3.94e-07 2.826368e-06 3.3799377e-05 7.6282837886875e-11
+1029	1047191 650 985 53727 0.000011032 270.000006304 17 0.077482316676 0.656250394 4.707646394308 1.8178978495042
+1030	1047841 535 985 53727 0.000011032 270.000006304 17 1 2.62500197 22.784255049949 34.928959547923
+1032	1048376 746 438 53728 0.000004728 270.000006304 26 7504 7504 195104 1464060416
+1033	1049122 1365 438 53794 0.000004728 270.000006976 48 7504 7504 360192 2702880768
+1034	1050487 1391 438 53794 0.000004728 270.000006976 49 7505 8174 387117 3060087379
+1035	1051878 638 760 53161 0.000008872 270.000003152 24 2 668 9474 4694176
+1036	1052516 1315 438 53794 0.000004728 270.000006976 48 1 670 19420 9426226
+1037	1053831 1341 438 53794 0.000004728 270.000006976 48 0 667 18949 9131761
+1038	1055172 1337 438 53794 0.000004728 270.000006976 48 0 669 18180 8706052
+1039	1056509 1249 735 53728 0.000008872 270.000006304 49 0 131 667 59427
+1040	1057758 1226 735 53794 0.000008872 270.000006976 47 0 0 0 0
+1047	1058984 1825 438 53794 0.000004728 270.000006976 71 0 0 0 0
+1049	1060809 720 735 53728 0.000008872 270.000006304 25 1072 4288 55744 149393920
+1051	1061529 814 1141 53728 0.000012696 270.000006304 24 3.152e-06 4.296e-06 8.4976e-05 3.05402368e-10
+1052	1062343 878 1141 53728 0.000012696 270.000006304 24 4.78e-07 3.348673e-06 6.2104931e-05 1.7591904636144e-10
+1053	1063221 929 1141 53728 0.000012696 270.000006304 24 0.030427170226 0.656250478 5.037037249058 1.8344867234897
+1054	1064150 721 1141 53728 0.000012696 270.000006304 24 1 2.62500239 29.784263050714 41.928987274628
+1056	1064871 747 439 53729 0.000004728 270.000006304 26 7504 7504 195104 1464060416
+1057	1065618 1365 439 53795 0.000004728 270.000006976 48 7504 7504 360192 2702880768
+1058	1066983 1391 439 53795 0.000004728 270.000006976 49 7505 8174 387117 3060087379
+1059	1068374 638 774 53162 0.000008872 270.000003152 24 2 668 9474 4694176
+1060	1069012 1315 439 53795 0.000004728 270.000006976 48 1 670 19420 9426226
+1061	1070327 1342 439 53795 0.000004728 270.000006976 48 0 667 18949 9131761
+1062	1071669 1338 439 53795 0.000004728 270.000006976 48 0 669 18180 8706052
+1063	1073007 1250 736 53729 0.000008872 270.000006304 49 0 131 667 59427
+1064	1074257 1227 736 53795 0.000008872 270.000006976 47 0 0 0 0
+1071	1075484 1825 439 53795 0.000004728 270.000006976 71 0 0 0 0
+1073	1077309 721 736 53729 0.000008872 270.000006304 25 1072 4288 55744 149393920
+1075	1078030 815 1142 53729 0.000012696 270.000006304 24 3.152e-06 4.296e-06 8.4976e-05 3.05402368e-10
+1076	1078845 879 1142 53729 0.000012696 270.000006304 24 4.78e-07 3.348673e-06 6.2104931e-05 1.7591904636144e-10
+1077	1079724 930 1142 53729 0.000012696 270.000006304 24 0.030427170226 0.656250478 5.037037249058 1.8344867234897
+1078	1080654 722 1142 53729 0.000012696 270.000006304 24 1 2.62500239 29.784263050714 41.928987274628
+1080	1081376 255 440 53730 0.000004728 270.000006304 9 7504 7504 67536 506790144
+1081	1081631 404 440 53796 0.000004728 270.000006976 15 7504 7504 112560 844650240
+1082	1082035 430 440 53796 0.000004728 270.000006976 16 7505 7517 120147 902206567
+1083	1082465 152 695 53163 0.00000788 270.000003152 7 2 8 35 203
+1084	1082617 361 440 53796 0.000004728 270.000006976 15 1 13 82 646
+1085	1082978 414 440 53796 0.000004728 270.000006976 16 0 10 73 513
+1086	1083392 412 440 53796 0.000004728 270.000006976 16 0 9 86 564
+1087	1083804 357 650 53730 0.00000788 270.000006304 15 0 1 7 7
+1088	1084161 367 986 53796 0.000011032 270.000006976 14 0 0 0 0
+1095	1084528 543 440 53796 0.000004728 270.000006976 22 0 0 0 0
+1097	1085071 204 986 53730 0.000011032 270.000006304 7 1072 1608 9112 12353728
+1099	1085275 239 986 53730 0.000011032 270.000006304 7 3.152e-06 6.304e-06 2.5216e-05 9.935104e-11
+1100	1085514 252 986 53730 0.000011032 270.000006304 7 3.94e-07 2.17817e-06 9.968793e-06 1.7104625124565e-11
+1101	1085766 268 986 53730 0.000011032 270.000006304 7 0.294523316441 0.656250394 3.188354210305 1.5541453793391
+1102	1086034 269 986 53730 0.000011032 270.000006304 7 1.178095443934 2.62500197 12.753426810013 24.866358095539
+1128	1086303 78 2110 3720 0.000034312 0.00008356 3 7504 7504 22512 168930048
+1129	1086381 3001 2110 58644 0.000034312 300.000008552 102 7504 7504 765408 5743621632
+1130	1089382 3028 2110 58644 0.000034312 300.000008552 103 7505 7605 778065 5877616425
+1131	1092410 22 3317 3317 0.0000678 0.0000678 1 9 9 9 81
+1132	1092432 2789 2110 58644 0.000034312 300.000008552 102 1 101 5152 348552
+1133	1095221 2810 2110 58644 0.000034312 300.000008552 103 0 100 5052 338352
+1134	1098031 2819 2110 58644 0.000034312 300.000008552 103 0 10 1019 10181
+1135	1100850 67 3313 3720 0.0000678 0.00008356 3 0 1 1 1
+1136	1100917 2672 3720 58644 0.00008356 300.000008552 101 0 0 0 0
+1143	1103589 5344 2110 58644 0.000034312 300.000008552 202 0 0 0 0
+1145	1108933 26 3720 3720 0.00008356 0.00008356 1 1072 1072 1072 1149184
+1147	1108959 31 3720 3720 0.00008356 0.00008356 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
+1148	1108990 30 3720 3720 0.00008356 0.00008356 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
+1149	1109020 32 3720 3720 0.00008356 0.00008356 1 0.65625197 0.65625197 0.65625197 0.43066664812888
+1150	1109052 32 3720 3720 0.00008356 0.00008356 1 2.62500985 2.62500985 2.62500985 6.890676712597
+1152	1109084 110 2127 13285 0.000034984 60.000026328 4 7504 7504 30016 225240064
+1153	1109194 3034 2127 58662 0.000034984 300.000009224 103 7504 7504 772912 5799931648
+1154	1112228 3061 2127 58662 0.000034984 300.000009224 104 7505 7605 785590 5934242050
+1155	1115289 51 3435 12872 0.000072472 60.000009224 2 9 10 19 181
+1156	1115340 2820 2127 58662 0.000034984 300.000009224 103 1 101 5173 348993
+1157	1118160 2842 2127 58662 0.000034984 300.000009224 104 0 100 5073 338793
+1158	1121002 2851 2127 58662 0.000034984 300.000009224 104 0 11 1110 11982
+1159	1123853 124 3431 13285 0.000072472 60.000026328 5 0 1 2 2
+1160	1123977 2701 3779 58662 0.000088232 300.000009224 102 0 0 0 0
+1167	1126678 5376 2127 58662 0.000034984 300.000009224 203 0 0 0 0
+1169	1132054 56 3779 13285 0.000088232 60.000026328 2 1072 1072 2144 2298368
+1171	1132110 67 3779 13285 0.000088232 60.000026328 2 1.576e-05 1.7104e-05 3.2864e-05 5.40924416e-10
+1172	1132177 67 3779 13285 0.000088232 60.000026328 2 1.97e-06 3.86175e-06 5.83175e-06 1.87940130625e-11
+1173	1132244 70 3779 13285 0.000088232 60.000026328 2 0.5742223655 0.65625197 1.2304743355 0.7603979731693
+1174	1132314 71 3779 13285 0.000088232 60.000026328 2 2.29689332375 2.62500985 4.92190317375 12.166395653284
+1176	1132385 81 2154 3785 0.000035656 0.000088904 3 7504 7504 22512 168930048
+1177	1132466 3005 2154 58685 0.000035656 300.000009896 102 7504 7504 765408 5743621632
+1178	1135471 3032 2154 58685 0.000035656 300.000009896 103 7505 7605 778065 5877616425
+1179	1138503 24 3467 3467 0.000073144 0.000073144 1 9 9 9 81
+1180	1138527 2793 2154 58685 0.000035656 300.000009896 102 1 101 5152 348552
+1181	1141320 2815 2154 58685 0.000035656 300.000009896 103 0 100 5052 338352
+1182	1144135 2824 2154 58685 0.000035656 300.000009896 103 0 10 1019 10181
+1183	1146959 72 3463 3785 0.000073144 0.000088904 3 0 1 1 1
+1184	1147031 2675 3785 58685 0.000088904 300.000009896 101 0 0 0 0
+1191	1149706 5350 2154 58685 0.000035656 300.000009896 202 0 0 0 0
+1193	1155056 27 3785 3785 0.000088904 0.000088904 1 1072 1072 1072 1149184
+1195	1155083 32 3785 3785 0.000088904 0.000088904 1 1.576e-05 1.576e-05 1.576e-05 2.483776e-10
+1196	1155115 31 3785 3785 0.000088904 0.000088904 1 1.97e-06 1.97e-06 1.97e-06 3.8809e-12
+1197	1155146 33 3785 3785 0.000088904 0.000088904 1 0.65625197 0.65625197 0.65625197 0.43066664812888
+1198	1155179 33 3785 3785 0.000088904 0.000088904 1 2.62500985 2.62500985 2.62500985 6.890676712597

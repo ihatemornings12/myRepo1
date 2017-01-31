@@ -41,7 +41,7 @@ class DSOApp : public cSimpleModule, public cListener
     int numSent;
                 
     // limits
-    double threshold;
+    double threshold, thr_per_domain;
 
                 
     // signals

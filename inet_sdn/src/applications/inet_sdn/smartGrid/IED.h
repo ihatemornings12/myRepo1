@@ -27,6 +27,7 @@ class IED : public cSimpleModule, public cListener
     private:       
         simsignal_t monitoringDataSignal;
         double threshold;
+        bool problem;
 	private:
 		void sendMeasurementData();
 		void nextReading();

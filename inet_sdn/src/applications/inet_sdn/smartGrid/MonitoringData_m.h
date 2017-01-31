@@ -38,7 +38,7 @@
  *     double energyGeneration; // value of one reading
  *     double avgEnergyGen; // avg value of many readings
  *     double sumEnergyGen; // sum of many readings
- *     //int powerQuality;
+ *     double threshold;
  *     string sender;
  * }
  * </pre>
@@ -49,6 +49,7 @@ class INET_API MonitoringData : public ::cPacket
     double energyGeneration_var;
     double avgEnergyGen_var;
     double sumEnergyGen_var;
+    double threshold_var;
     opp_string sender_var;
 
   private:
@@ -74,6 +75,8 @@ class INET_API MonitoringData : public ::cPacket
     virtual void setAvgEnergyGen(double avgEnergyGen);
     virtual double getSumEnergyGen() const;
     virtual void setSumEnergyGen(double sumEnergyGen);
+    virtual double getThreshold() const;
+    virtual void setThreshold(double threshold);
     virtual const char * getSender() const;
     virtual void setSender(const char * sender);
 };

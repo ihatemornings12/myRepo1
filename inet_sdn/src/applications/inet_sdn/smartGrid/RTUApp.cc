@@ -22,7 +22,9 @@ Define_Module(RTUApp);
 
 simsignal_t RTUApp::rcvdPkSignal = registerSignal("rcvdPk");
 simsignal_t RTUApp::sentPkSignal = registerSignal("sentPk");
-simsignal_t RTUApp::genEnergySignal = registerSignal("genEnergy");
+
+simsignal_t RTUApp::sum_energySignal = registerSignal("sum_energy");
+simsignal_t RTUApp::avg_energySignal = registerSignal("avg_energy");
 
 RTUApp::RTUApp() 
 {
@@ -31,6 +33,7 @@ RTUApp::RTUApp()
 
 RTUApp::~RTUApp() 
 {
+    delete record;
 }
 
 void RTUApp::initialize(int stage) 
@@ -45,6 +48,7 @@ void RTUApp::initialize(int stage)
     
     bind();
     
+    threshold = 0.0;
     getParentModule()->subscribe("MonitoringData", this);
     setPointsSignal = registerSignal("SetPoints");
     
@@ -87,11 +91,16 @@ void RTUApp::handleMessage(cMessage *msg)
 void RTUApp::process(cMessage *msg) 
 {
     if (dynamic_cast<SetPoints *>(msg) != NULL) {
-        cout << this->getParentModule()->getFullPath() << ": SetPoints received: Configuration change.\n";        
         SetPoints *setPoints = (SetPoints *) msg;
         
-        setPoints->setEnergyGenLimit((int)setPoints->getEnergyGenLimit()/ied);
-
+        cout << "[" << simTime() << "]" << this->getParentModule()->getFullPath();
+        cout << ": SetPoints received: Configuration change. (avg)Threshold per domain: " << setPoints->getEnergyGenLimit();        
+       
+        threshold = setPoints->getEnergyGenLimit();
+        setPoints->setEnergyGenLimit((int)threshold/ied);
+       
+        cout << " " << this->getParentModule()->getFullPath() << ": " << setPoints->getEnergyGenLimit() << endl;
+       
         //notify IEDs:send signal with the new threshold
         emit(setPointsSignal, setPoints);     
             
@@ -130,6 +139,7 @@ void RTUApp::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
 { 
     // Notification from IEDs
     Enter_Method_Silent();
+
     string signalName(getSignalName(id));
     if (signalName == "MonitoringData") { 
         if (dynamic_cast<MonitoringData *>(obj) != NULL) {
@@ -147,25 +157,20 @@ void RTUApp::sendReportToDSO()
     MonitoringData *data = new MonitoringData("MonitoringData");
     
     string name = this->getParentModule()->getName();
-/*    if (name.find("RTU1") != std::string::npos) {
-        data->setEnergyGeneration(20.0);
-        data->setPowerQuality(20);
-    }
-    else { */
-        data->setAvgEnergyGen(record->getAvgEnergy());
-        data->setSumEnergyGen(record->getSumEnergy());
-  //  }
-       
-
-    
+    data->setAvgEnergyGen(record->getAvgEnergy());
+    data->setSumEnergyGen(record->getSumEnergy());
     data->setByteLength(1);
     data->setTimestamp(simTime());
     data->setKind(TCP_C_SEND);
     data->setSender(this->getParentModule()->getName());
+    data->setThreshold(threshold);
     
-//    emit(genEnergySignal,report->getAvgEnergyGeneration());
     emit(sentPkSignal, data);
     numSent++;
+    
+    //record the values sent to DSO
+    emit(sum_energySignal, record->getSumEnergy());
+    emit(avg_energySignal, record->getAvgEnergy());
     
     record->reset();    
     socket.send(data); 

@@ -24,9 +24,9 @@ class Record
 {
     protected:
         double energy;
-        double avgEnergy;
-        double sumEnergy;
-        int counter;
+        double avg;
+        double sum;
+        int cnt;
         set<string> senders;
     public:
         Record();
@@ -38,7 +38,7 @@ class Record
         double getAvgEnergy();
         int getCounter();
         void reset();
-        int getSendersNum();
+        int getSenders();
 };
 
 class RecordDSO: public Record
@@ -49,9 +49,10 @@ class RecordDSO: public Record
     public:
         RecordDSO();
         ~RecordDSO();
-        void updateRecord(double avg, double sum, const string id);
+        void updateRecord(double avgE, double sumE, const string id);
         double getAvgAvgEnergy();
         double getSumAvgEnergy();
+        void reset();
 
 };
 #endif

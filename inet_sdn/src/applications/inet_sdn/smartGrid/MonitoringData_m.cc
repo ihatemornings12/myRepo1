@@ -60,6 +60,7 @@ MonitoringData::MonitoringData(const char *name, int kind) : ::cPacket(name,kind
     this->energyGeneration_var = 0;
     this->avgEnergyGen_var = 0;
     this->sumEnergyGen_var = 0;
+    this->threshold_var = 0;
     this->sender_var = 0;
 }
 
@@ -85,6 +86,7 @@ void MonitoringData::copy(const MonitoringData& other)
     this->energyGeneration_var = other.energyGeneration_var;
     this->avgEnergyGen_var = other.avgEnergyGen_var;
     this->sumEnergyGen_var = other.sumEnergyGen_var;
+    this->threshold_var = other.threshold_var;
     this->sender_var = other.sender_var;
 }
 
@@ -94,6 +96,7 @@ void MonitoringData::parsimPack(cCommBuffer *b)
     doPacking(b,this->energyGeneration_var);
     doPacking(b,this->avgEnergyGen_var);
     doPacking(b,this->sumEnergyGen_var);
+    doPacking(b,this->threshold_var);
     doPacking(b,this->sender_var);
 }
 
@@ -103,6 +106,7 @@ void MonitoringData::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->energyGeneration_var);
     doUnpacking(b,this->avgEnergyGen_var);
     doUnpacking(b,this->sumEnergyGen_var);
+    doUnpacking(b,this->threshold_var);
     doUnpacking(b,this->sender_var);
 }
 
@@ -134,6 +138,16 @@ double MonitoringData::getSumEnergyGen() const
 void MonitoringData::setSumEnergyGen(double sumEnergyGen)
 {
     this->sumEnergyGen_var = sumEnergyGen;
+}
+
+double MonitoringData::getThreshold() const
+{
+    return threshold_var;
+}
+
+void MonitoringData::setThreshold(double threshold)
+{
+    this->threshold_var = threshold;
 }
 
 const char * MonitoringData::getSender() const
@@ -193,7 +207,7 @@ const char *MonitoringDataDescriptor::getProperty(const char *propertyname) cons
 int MonitoringDataDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 4+basedesc->getFieldCount(object) : 4;
+    return basedesc ? 5+basedesc->getFieldCount(object) : 5;
 }
 
 unsigned int MonitoringDataDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -209,8 +223,9 @@ unsigned int MonitoringDataDescriptor::getFieldTypeFlags(void *object, int field
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<4) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<5) ? fieldTypeFlags[field] : 0;
 }
 
 const char *MonitoringDataDescriptor::getFieldName(void *object, int field) const
@@ -225,9 +240,10 @@ const char *MonitoringDataDescriptor::getFieldName(void *object, int field) cons
         "energyGeneration",
         "avgEnergyGen",
         "sumEnergyGen",
+        "threshold",
         "sender",
     };
-    return (field>=0 && field<4) ? fieldNames[field] : NULL;
+    return (field>=0 && field<5) ? fieldNames[field] : NULL;
 }
 
 int MonitoringDataDescriptor::findField(void *object, const char *fieldName) const
@@ -237,7 +253,8 @@ int MonitoringDataDescriptor::findField(void *object, const char *fieldName) con
     if (fieldName[0]=='e' && strcmp(fieldName, "energyGeneration")==0) return base+0;
     if (fieldName[0]=='a' && strcmp(fieldName, "avgEnergyGen")==0) return base+1;
     if (fieldName[0]=='s' && strcmp(fieldName, "sumEnergyGen")==0) return base+2;
-    if (fieldName[0]=='s' && strcmp(fieldName, "sender")==0) return base+3;
+    if (fieldName[0]=='t' && strcmp(fieldName, "threshold")==0) return base+3;
+    if (fieldName[0]=='s' && strcmp(fieldName, "sender")==0) return base+4;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -253,9 +270,10 @@ const char *MonitoringDataDescriptor::getFieldTypeString(void *object, int field
         "double",
         "double",
         "double",
+        "double",
         "string",
     };
-    return (field>=0 && field<4) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<5) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *MonitoringDataDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -298,7 +316,8 @@ std::string MonitoringDataDescriptor::getFieldAsString(void *object, int field, 
         case 0: return double2string(pp->getEnergyGeneration());
         case 1: return double2string(pp->getAvgEnergyGen());
         case 2: return double2string(pp->getSumEnergyGen());
-        case 3: return oppstring2string(pp->getSender());
+        case 3: return double2string(pp->getThreshold());
+        case 4: return oppstring2string(pp->getSender());
         default: return "";
     }
 }
@@ -316,7 +335,8 @@ bool MonitoringDataDescriptor::setFieldAsString(void *object, int field, int i, 
         case 0: pp->setEnergyGeneration(string2double(value)); return true;
         case 1: pp->setAvgEnergyGen(string2double(value)); return true;
         case 2: pp->setSumEnergyGen(string2double(value)); return true;
-        case 3: pp->setSender((value)); return true;
+        case 3: pp->setThreshold(string2double(value)); return true;
+        case 4: pp->setSender((value)); return true;
         default: return false;
     }
 }

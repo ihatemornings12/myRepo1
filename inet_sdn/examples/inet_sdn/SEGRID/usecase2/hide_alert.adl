@@ -1,7 +1,8 @@
-list comprList = {15} #rtu1
+list comprList = {15, 16, 17} #rtu1, rtu2
 
-from 20 nodes in comprList do {
-    filter ("APP.energyGeneration" > 5.0)
-		change(original, "APP.energyGeneration", 2.0)
+from 60 nodes in comprList do {
+    filter ("APP.avgEnergyGen" > 5.0)
+		change(original, "APP.sumEnergyGen", 10.323833)
+		change(original,"APP.avgEnergyGen", 1.938385370688)
 }
 

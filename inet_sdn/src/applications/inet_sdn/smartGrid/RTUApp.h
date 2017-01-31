@@ -40,10 +40,11 @@ class RTUApp : public cSimpleModule, public cListener
         int numSent;
         int numReceived;
         int ied;
+        double threshold;
         
         static simsignal_t rcvdPkSignal;
         static simsignal_t sentPkSignal;
-        static simsignal_t genEnergySignal;
+        static simsignal_t sum_energySignal, avg_energySignal;
         simsignal_t setPointsSignal;
 
     private:

@@ -19,7 +19,7 @@ simple DSOApp {
     parameters:
         @display("i=block/app");
         
-        double maxEnergyGen = default(101.0);
+        double maxEnergyGen = default(100.0);
         int maxPowerQ = default(4);
         int minPowerQ = default(1);
         

@@ -75,7 +75,11 @@ int getPacketLayer(cPacket* packet)
 	}
 	
 	// <A.S>
-	if (packetClassName == "MeasurementData") {
+	if (packetClassName == "MonitoringData") {
+	    return 5;
+	}
+	
+	if (packetClassName == "SetPoints") {
 	    return 5;
 	}
 	
@@ -124,6 +128,8 @@ int getPacketLayer(cPacket* packet)
 	if (packetClassName == "EthernetIIFrame") {
 		return 2;
 	}
+	
+	cout<<"packetClass name = " << packetClassName << endl;
 	
     opp_error("[int getPacketLayer(cPacket*)] Error, packetClassName not recognized");
 	
@@ -371,7 +377,7 @@ double generateRandomDblValue(double a)
     random_device rand_dev; //uniformly-distributed integer random number generator that produces non-deterministic random numbers
 	mt19937 generator(rand_dev()); //random number engine based on Mersenne Twister algorithm. It satisfies the UniformRandomBitGenerator.
 								   //It produces high quality unsigned integer random numbers of type UIntType on the interval [0, 2w-1]
-	uniform_real_distribution<double> distr(1, a);
+	uniform_real_distribution<double> distr(1, a-2);
     return distr(generator);
 }
 // <A.S>

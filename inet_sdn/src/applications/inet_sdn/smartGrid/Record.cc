@@ -18,9 +18,9 @@
 Record::Record() 
 {
     energy = 0.0;
-    avgEnergy = 0.0;
-    sumEnergy = 0.0;
-    counter = 0;
+    avg = 0.0;
+    sum = 0.0;
+    cnt = 0;
 }
 
 Record::~Record()
@@ -29,36 +29,36 @@ Record::~Record()
 
 void Record::updateRecord (double energy) 
 {
-    sumEnergy += energy; //(sum) per domain
-    counter++;
-    avgEnergy = sumEnergy/counter; //(avg) per domain
+    sum += energy; //(sum) per domain
+    ++cnt;
+    avg = sum/cnt; //(avg) per domain
 }
 
 double Record::getSumEnergy()
 {
-    return sumEnergy;
+    return sum;
 }
 
 double Record::getAvgEnergy()
 {
-    return avgEnergy;
+    return avg;
 }
 
 void Record::reset() 
 {   
     energy = 0.0;
-    avgEnergy = 0.0;
-    sumEnergy = 0.0;
-    counter = 0;
+    avg = 0.0;
+    sum = 0.0;
+    cnt = 0;
     senders.clear();
 }
 
 int Record::getCounter() 
 {
-    return counter;
+    return cnt;
 }
 
-int Record::getSendersNum() 
+int Record::getSenders() 
 {
     return senders.size();
 }
@@ -77,18 +77,26 @@ RecordDSO::~RecordDSO()
 {
 }
 
-void RecordDSO::updateRecord(double avg, double sum, const string id) 
+void RecordDSO::reset() 
+{
+    Record::reset();
+    avgAvg = 0.0;
+    sumAvg = 0.0;
+}
+
+
+void RecordDSO::updateRecord(double avgE, double sumE, const string id) 
 {   
     if (senders.find(id) == senders.end()) {
         senders.insert(id);
-        counter++;
+        ++cnt;
         
         //records for system's overview
-        sumEnergy += sum; //sum(sum) 
-        avgEnergy = sumEnergy/counter; //(avg(sum)) 
+        sum += sumE; //sum(sum) 
+        avg = sum/cnt; //(avg(sum)) 
         
-        sumAvg += avg; //(sum(avg) 
-        avgAvg = sumAvg/counter; //avg(avg) 
+        sumAvg += avgE; //(sum(avg) 
+        avgAvg = sumAvg/cnt; //avg(avg) 
     }
     else 
         cout<< "Sender " << id << " sends double data\n"; 

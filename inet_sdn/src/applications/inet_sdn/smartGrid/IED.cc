@@ -23,6 +23,7 @@ Define_Module(IED);
 void IED::initialize() 
 {
     threshold = 0.0;
+    problem = false;
     
 	monitoringDataSignal = registerSignal("MonitoringData");
     getParentModule()->getParentModule()->subscribe("SetPoints", this);
@@ -39,11 +40,26 @@ void IED::handleMessage(cMessage *msg)
     if (msg->isSelfMessage()) {      
         MonitoringData *data = new MonitoringData();
         data->setByteLength(1);
-        data->setEnergyGeneration(generateRandomDblValue(threshold));
-        //data->setPowerQuality(2);
+        
+        string name = this->getFullPath().c_str();
+        if ( (simTime() == 60) && ( (name.find("RTU1.ied[0]") != std::string::npos) || (name.find("RTU1.ied[1]") != std::string::npos) //|| (name.find("RTU1.ied[2]") != std::string::npos) \
+                //|| (name.find("RTU2.ied[0]") != std::string::npos) || (name.find("RTU2.ied[1]") != std::string::npos)  || (name.find("RTU2.ied[2]") != std::string::npos) \
+                // || (name.find("RTU3.ied[0]") != std::string::npos) || (name.find("RTU3.ied[1]") != std::string::npos)  || (name.find("RTU3.ied[2]") != std::string::npos) 
+                ) ) {
+            problem = true;
+        }  
+          
+        if (problem) {
+            cout <<"mpika!\n";
+            //data->setEnergyGeneration(generateRandomIntValue(15,20));
+            data->setEnergyGeneration(12.0);
+        }
+        else {
+            data->setEnergyGeneration(generateRandomDblValue(threshold));
+        }
+        
         data->setTimestamp(simTime());
         data->setSender(this->getFullPath().c_str());
-        
         emit(monitoringDataSignal, data);     
         
         delete msg;
@@ -54,7 +70,8 @@ void IED::handleMessage(cMessage *msg)
 void IED::nextReading() 
 {
     cMessage *reading = new cMessage("ReadingData");
-    int randomInterval = generateRandomIntValue(1,3);
+    //int randomInterval = generateRandomIntValue(1,3);
+    int randomInterval = 3;
     scheduleAt(simTime() + randomInterval, reading);
 }
 
@@ -68,6 +85,7 @@ void IED::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
             SetPoints *data = (SetPoints *) obj;
             // set the new threshold
             threshold = data->getEnergyGenLimit();
+            problem = false;
         }
     }
 }

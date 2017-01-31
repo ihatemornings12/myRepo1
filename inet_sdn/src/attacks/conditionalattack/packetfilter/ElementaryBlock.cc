@@ -71,7 +71,6 @@ bool ElementaryBlock::solveFilterBlock(cMessage* msg) const
 	else {
 	  	int msgLayer = getPacketLayer((cPacket*)msg);
 		cMessage* encapsulatedMsg = msg;
-		std::cout<<"elementary block. msgLayer = " << msgLayer << " block layer = " << blockLayer <<endl;
 		while (msgLayer < blockLayer) {
 			encapsulatedMsg = (cMessage*)(((cPacket*)encapsulatedMsg)->getEncapsulatedPacket());
 			if (encapsulatedMsg == nullptr) {

@@ -34,9 +34,11 @@ simple RTUApp {
         @statistic[rcvdPk](title="packets received"; source=rcvdPk; record=count,"sum(packetBytes)","vector(packetBytes)"; interpolationmode=none);
         @statistic[sentPk](title="packets sent"; source=sentPk; record=count,"sum(packetBytes)","vector(packetBytes)"; interpolationmode=none);
         @statistic[endToEndDelay](title="end-to-end delay"; source="messageAge(rcvdPk)"; unit=s; record=histogram,vector; interpolationmode=none);
-        
-        @signal[genEnergy](type=double);
-        @statistic[genEnergy](title="recorded energy"; source=genEnergy; record=vector; interpolationmode=none);
+               
+        @signal[sum_energy](type=double);
+        @statistic[sum_energy](title="sum_energy"; source=sum_energy; record=vector; interpolationmode=none);
+        @signal[avg_energy](type=double);
+        @statistic[avg_energy](title="avg_energy"; source=avg_energy; record=vector; interpolationmode=none);
     gates:
         input tcpIn @labels(TCPCommand/up);
         output tcpOut @labels(TCPCommand/down);
