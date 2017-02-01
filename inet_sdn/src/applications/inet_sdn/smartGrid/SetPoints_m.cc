@@ -58,7 +58,6 @@ Register_Class(SetPoints);
 SetPoints::SetPoints(const char *name, int kind) : ::cPacket(name,kind)
 {
     this->energyGenLimit_var = 0;
-    this->powerQualityLimit_var = 0;
 }
 
 SetPoints::SetPoints(const SetPoints& other) : ::cPacket(other)
@@ -81,21 +80,18 @@ SetPoints& SetPoints::operator=(const SetPoints& other)
 void SetPoints::copy(const SetPoints& other)
 {
     this->energyGenLimit_var = other.energyGenLimit_var;
-    this->powerQualityLimit_var = other.powerQualityLimit_var;
 }
 
 void SetPoints::parsimPack(cCommBuffer *b)
 {
     ::cPacket::parsimPack(b);
     doPacking(b,this->energyGenLimit_var);
-    doPacking(b,this->powerQualityLimit_var);
 }
 
 void SetPoints::parsimUnpack(cCommBuffer *b)
 {
     ::cPacket::parsimUnpack(b);
     doUnpacking(b,this->energyGenLimit_var);
-    doUnpacking(b,this->powerQualityLimit_var);
 }
 
 double SetPoints::getEnergyGenLimit() const
@@ -106,16 +102,6 @@ double SetPoints::getEnergyGenLimit() const
 void SetPoints::setEnergyGenLimit(double energyGenLimit)
 {
     this->energyGenLimit_var = energyGenLimit;
-}
-
-int SetPoints::getPowerQualityLimit() const
-{
-    return powerQualityLimit_var;
-}
-
-void SetPoints::setPowerQualityLimit(int powerQualityLimit)
-{
-    this->powerQualityLimit_var = powerQualityLimit;
 }
 
 class SetPointsDescriptor : public cClassDescriptor
@@ -165,7 +151,7 @@ const char *SetPointsDescriptor::getProperty(const char *propertyname) const
 int SetPointsDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 2+basedesc->getFieldCount(object) : 2;
+    return basedesc ? 1+basedesc->getFieldCount(object) : 1;
 }
 
 unsigned int SetPointsDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -178,9 +164,8 @@ unsigned int SetPointsDescriptor::getFieldTypeFlags(void *object, int field) con
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,
-        FD_ISEDITABLE,
     };
-    return (field>=0 && field<2) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<1) ? fieldTypeFlags[field] : 0;
 }
 
 const char *SetPointsDescriptor::getFieldName(void *object, int field) const
@@ -193,9 +178,8 @@ const char *SetPointsDescriptor::getFieldName(void *object, int field) const
     }
     static const char *fieldNames[] = {
         "energyGenLimit",
-        "powerQualityLimit",
     };
-    return (field>=0 && field<2) ? fieldNames[field] : NULL;
+    return (field>=0 && field<1) ? fieldNames[field] : NULL;
 }
 
 int SetPointsDescriptor::findField(void *object, const char *fieldName) const
@@ -203,7 +187,6 @@ int SetPointsDescriptor::findField(void *object, const char *fieldName) const
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount(object) : 0;
     if (fieldName[0]=='e' && strcmp(fieldName, "energyGenLimit")==0) return base+0;
-    if (fieldName[0]=='p' && strcmp(fieldName, "powerQualityLimit")==0) return base+1;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -217,9 +200,8 @@ const char *SetPointsDescriptor::getFieldTypeString(void *object, int field) con
     }
     static const char *fieldTypeStrings[] = {
         "double",
-        "int",
     };
-    return (field>=0 && field<2) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<1) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *SetPointsDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -260,7 +242,6 @@ std::string SetPointsDescriptor::getFieldAsString(void *object, int field, int i
     SetPoints *pp = (SetPoints *)object; (void)pp;
     switch (field) {
         case 0: return double2string(pp->getEnergyGenLimit());
-        case 1: return long2string(pp->getPowerQualityLimit());
         default: return "";
     }
 }
@@ -276,7 +257,6 @@ bool SetPointsDescriptor::setFieldAsString(void *object, int field, int i, const
     SetPoints *pp = (SetPoints *)object; (void)pp;
     switch (field) {
         case 0: pp->setEnergyGenLimit(string2double(value)); return true;
-        case 1: pp->setPowerQualityLimit(string2long(value)); return true;
         default: return false;
     }
 }

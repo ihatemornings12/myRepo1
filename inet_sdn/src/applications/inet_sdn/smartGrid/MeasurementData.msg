@@ -17,8 +17,8 @@ cplusplus {{
     #include "INETDefs.h"
 }}
 
-packet MeasurementData {
-	double energyConsumption; //kwh
+message MeasurementData {
+	double energyProduction; 
     string name;
 };
 

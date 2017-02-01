@@ -36,7 +36,6 @@
  * packet SetPoints
  * {
  *     double energyGenLimit;
- *     int powerQualityLimit;
  * }
  * </pre>
  */
@@ -44,7 +43,6 @@ class INET_API SetPoints : public ::cPacket
 {
   protected:
     double energyGenLimit_var;
-    int powerQualityLimit_var;
 
   private:
     void copy(const SetPoints& other);
@@ -65,8 +63,6 @@ class INET_API SetPoints : public ::cPacket
     // field getter/setter methods
     virtual double getEnergyGenLimit() const;
     virtual void setEnergyGenLimit(double energyGenLimit);
-    virtual int getPowerQualityLimit() const;
-    virtual void setPowerQualityLimit(int powerQualityLimit);
 };
 
 inline void doPacking(cCommBuffer *b, SetPoints& obj) {obj.parsimPack(b);}

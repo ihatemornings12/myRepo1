@@ -33,17 +33,17 @@
 /**
  * Class generated from <tt>applications/inet_sdn/smartGrid/MeasurementData.msg:20</tt> by nedtool.
  * <pre>
- * packet MeasurementData
+ * message MeasurementData
  * {
- *     double energyConsumption; //kwh
+ *     double energyProduction;
  *     string name;
  * }
  * </pre>
  */
-class INET_API MeasurementData : public ::cPacket
+class INET_API MeasurementData : public ::cMessage
 {
   protected:
-    double energyConsumption_var;
+    double energyProduction_var;
     opp_string name_var;
 
   private:
@@ -63,8 +63,8 @@ class INET_API MeasurementData : public ::cPacket
     virtual void parsimUnpack(cCommBuffer *b);
 
     // field getter/setter methods
-    virtual double getEnergyConsumption() const;
-    virtual void setEnergyConsumption(double energyConsumption);
+    virtual double getEnergyProduction() const;
+    virtual void setEnergyProduction(double energyProduction);
     virtual const char * getName() const;
     virtual void setName(const char * name);
 };

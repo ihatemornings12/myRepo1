@@ -136,7 +136,7 @@ void DSOApp::handleMessage(cMessage *msg)
             set_points->setTimestamp(simTime());
             set_points->setKind(TCP_C_SEND);
             
-            set_points->setEnergyGenLimit(cur_thr-1);
+            set_points->setEnergyGenLimit(-1);
           
             emit(sentPkSignal, set_points);
             numSent++;

@@ -25,7 +25,7 @@
 //A.S
 #include "ApplicationPacket_m.h"
 #include "SendApplicationPacket_m.h"
-#include "MeasurementData_m.h"
+#include "MonitoringData_m.h"
 
 CreateInfo::CreateInfo()
 { 
@@ -72,8 +72,8 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					break;
 				}
 				
-				case type_t::MEASUREMENT_DATA: {
-				    *packet = (cPacket*) (new MeasurementData());  
+				case type_t::MONITORING_DATA: {
+				    *packet = (cPacket*) (new MonitoringData());  
 				    break;
 				}
 				
@@ -223,7 +223,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 				}
 				
 				// <A.S>
-				case type_t::MEASUREMENT_DATA: {
+				case type_t::MONITORING_DATA: {
 				    (*packet)->setKind(TCP_C_SEND);
 				    controlInfo = new TCPSendCommand();
 				    (*packet)->setControlInfo(controlInfo);
@@ -461,7 +461,7 @@ type_t Create::getType (int layer, string typeCode)
 				return type_t::SEND_APPLICATION_PACKET;
 			}
 			if (typeCode == "1002") {
-			    return type_t::MEASUREMENT_DATA;
+			    return type_t::MONITORING_DATA;
 			}
 
 		}

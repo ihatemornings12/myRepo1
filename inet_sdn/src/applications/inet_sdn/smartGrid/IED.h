@@ -25,9 +25,10 @@ using namespace std;
 class IED : public cSimpleModule, public cListener
 {
     private:       
-        simsignal_t monitoringDataSignal;
+        simsignal_t measurementSignal;
         double threshold;
         bool problem;
+        string name;
 	private:
 		void sendMeasurementData();
 		void nextReading();

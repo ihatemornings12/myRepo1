@@ -15,6 +15,10 @@
 
 #include "Record.h"
 
+/* The class is used by the RTU application to record 
+ * and compute the average and sum values for the domain. 
+ */
+ 
 Record::Record() 
 {
     energy = 0.0;
@@ -26,6 +30,16 @@ Record::Record()
 Record::~Record()
 {
 }
+
+void Record::reset() 
+{   
+    energy = 0.0;
+    avg = 0.0;
+    sum = 0.0;
+    cnt = 0;
+    senders.clear();
+}
+
 
 void Record::updateRecord (double energy) 
 {
@@ -44,14 +58,6 @@ double Record::getAvgEnergy()
     return avg;
 }
 
-void Record::reset() 
-{   
-    energy = 0.0;
-    avg = 0.0;
-    sum = 0.0;
-    cnt = 0;
-    senders.clear();
-}
 
 int Record::getCounter() 
 {
@@ -62,6 +68,8 @@ int Record::getSenders()
 {
     return senders.size();
 }
+
+
 
 /*
  * RecordDSO inherits Record. The class is used by the DSO application to record
@@ -84,6 +92,15 @@ void RecordDSO::reset()
     sumAvg = 0.0;
 }
 
+double RecordDSO::getAvgAvgEnergy()
+{
+    return avgAvg;
+}
+
+double RecordDSO::getSumAvgEnergy()
+{
+    return sumAvg;
+}
 
 void RecordDSO::updateRecord(double avgE, double sumE, const string id) 
 {   
@@ -103,14 +120,5 @@ void RecordDSO::updateRecord(double avgE, double sumE, const string id)
 
 }
 
-double RecordDSO::getAvgAvgEnergy()
-{
-    return avgAvg;
-}
-
-double RecordDSO::getSumAvgEnergy()
-{
-    return sumAvg;
-}
 
 

@@ -21,6 +21,7 @@
 #include "TCPSocket.h"
 
 #include "Record.h"
+#include "Measurement_m.h"
 
 using namespace std;
 
@@ -31,8 +32,9 @@ class RTUApp : public cSimpleModule, public cListener
         cMessage *timeoutMsg;       
         cMessage *reportMsg; 
         TCPSocket socket;
-        //Report *report;
+
         Record *record;
+        map<string, int> faulty_ied; //ieds and their threshold
         
         int interval;
         double startTime;
@@ -45,7 +47,7 @@ class RTUApp : public cSimpleModule, public cListener
         static simsignal_t rcvdPkSignal;
         static simsignal_t sentPkSignal;
         static simsignal_t sum_energySignal, avg_energySignal;
-        simsignal_t setPointsSignal;
+        simsignal_t commandSignal;
 
     private:
         void connect();
@@ -54,7 +56,7 @@ class RTUApp : public cSimpleModule, public cListener
         void displayGUI();    
         
         void sendReportToDSO();
-        
+        void checkMeasurement(Measurement *data);
         void process (cMessage *msg);
     protected:
 	    void receiveSignal(cComponent *src, simsignal_t id, cObject *obj);   

@@ -19,6 +19,5 @@ cplusplus {{
 
 packet SetPoints {
 	double energyGenLimit; 
-	int powerQualityLimit;
 };
 

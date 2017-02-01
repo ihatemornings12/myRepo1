@@ -14,19 +14,21 @@
 //
 
 #include "IED.h"
-#include "MonitoringData_m.h"
+#include "Measurement_m.h"
 #include "SetPoints_m.h"
+#include "Command_m.h"
 #include "seapputils.h"
 
 Define_Module(IED);
 
 void IED::initialize() 
 {
+    name = this->getFullPath().c_str();
     threshold = 0.0;
     problem = false;
     
-	monitoringDataSignal = registerSignal("MonitoringData");
-    getParentModule()->getParentModule()->subscribe("SetPoints", this);
+	measurementSignal = registerSignal("Measurement");
+    getParentModule()->subscribe("ConfigCommand", this);
     
 	nextReading();
 }
@@ -38,10 +40,8 @@ void IED::finish()
 void IED::handleMessage(cMessage *msg) 
 {
     if (msg->isSelfMessage()) {      
-        MonitoringData *data = new MonitoringData();
-        data->setByteLength(1);
-        
-        string name = this->getFullPath().c_str();
+        Measurement *data = new Measurement();
+
         if ( (simTime() == 60) && ( (name.find("RTU1.ied[0]") != std::string::npos) || (name.find("RTU1.ied[1]") != std::string::npos) //|| (name.find("RTU1.ied[2]") != std::string::npos) \
                 //|| (name.find("RTU2.ied[0]") != std::string::npos) || (name.find("RTU2.ied[1]") != std::string::npos)  || (name.find("RTU2.ied[2]") != std::string::npos) \
                 // || (name.find("RTU3.ied[0]") != std::string::npos) || (name.find("RTU3.ied[1]") != std::string::npos)  || (name.find("RTU3.ied[2]") != std::string::npos) 
@@ -52,15 +52,16 @@ void IED::handleMessage(cMessage *msg)
         if (problem) {
             cout <<"mpika!\n";
             //data->setEnergyGeneration(generateRandomIntValue(15,20));
-            data->setEnergyGeneration(12.0);
+            data->setEnergyProduction(12.0);
         }
         else {
-            data->setEnergyGeneration(generateRandomDblValue(threshold));
+            data->setEnergyProduction(generateRandomDblValue(threshold));
         }
         
         data->setTimestamp(simTime());
-        data->setSender(this->getFullPath().c_str());
-        emit(monitoringDataSignal, data);     
+        data->setName(this->getFullPath().c_str());
+        data->setLimit(threshold);
+        emit(measurementSignal, data);     
         
         delete msg;
         nextReading();
@@ -80,12 +81,17 @@ void IED::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
     // Notification from IEDs
     Enter_Method_Silent();
     string signalName(getSignalName(id));
-    if (signalName == "SetPoints") { 
-        if (dynamic_cast<SetPoints *>(obj) != NULL) {
-            SetPoints *data = (SetPoints *) obj;
-            // set the new threshold
-            threshold = data->getEnergyGenLimit();
-            problem = false;
+    if (signalName == "ConfigCommand") { 
+        if (dynamic_cast<Command *>(obj) != NULL) {
+            Command *data = (Command *) obj;
+            //check if you are final destination
+            string dst = data->getName();
+            if ( (name.find(dst) != std::string::npos) || (dst == "config") ) {
+                // set the new threshold
+                threshold = data->getLimit();
+                problem = false;
+                cout <<"eimai "<< name << " k pira set points gt = " << dst <<  " apo ton sender -> " << src->getFullPath() <<endl;
+            } 
         }
     }
 }

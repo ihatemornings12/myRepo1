@@ -14,9 +14,12 @@
 //
 
 #include "RTUApp.h"
+#include "IPvXAddressResolver.h"1
+#include "seapputils.h"
 #include "MonitoringData_m.h"
 #include "SetPoints_m.h"
-#include "IPvXAddressResolver.h"
+#include "Command_m.h"
+
 
 Define_Module(RTUApp);
 
@@ -36,6 +39,10 @@ RTUApp::~RTUApp()
     delete record;
 }
 
+void RTUApp::finish() 
+{
+}
+
 void RTUApp::initialize(int stage) 
 {
     cSimpleModule::initialize(stage);
@@ -49,8 +56,8 @@ void RTUApp::initialize(int stage)
     bind();
     
     threshold = 0.0;
-    getParentModule()->subscribe("MonitoringData", this);
-    setPointsSignal = registerSignal("SetPoints");
+    getParentModule()->subscribe("Measurement", this);
+    commandSignal = registerSignal("ConfigCommand");
     
     //periodically send Report to DSO
     interval = par("intervalReport");
@@ -92,20 +99,39 @@ void RTUApp::process(cMessage *msg)
 {
     if (dynamic_cast<SetPoints *>(msg) != NULL) {
         SetPoints *setPoints = (SetPoints *) msg;
-        
-        cout << "[" << simTime() << "]" << this->getParentModule()->getFullPath();
-        cout << ": SetPoints received: Configuration change. (avg)Threshold per domain: " << setPoints->getEnergyGenLimit();        
-       
-        threshold = setPoints->getEnergyGenLimit();
-        setPoints->setEnergyGenLimit((int)threshold/ied);
-       
-        cout << " " << this->getParentModule()->getFullPath() << ": " << setPoints->getEnergyGenLimit() << endl;
-       
-        //notify IEDs:send signal with the new threshold
-        emit(setPointsSignal, setPoints);     
-            
+
+        //update stats
         numReceived++;
         emit(rcvdPkSignal, setPoints);
+            
+        Command *cmd = new Command();
+
+        if (faulty_ied.empty() ) {
+            //new configuration message
+            cout << "[" << simTime() << "]" << this->getParentModule()->getFullPath();
+            cout << ": SetPoints received: Configuration change. (avg)Threshold per domain: " << setPoints->getEnergyGenLimit();        
+           
+            threshold = setPoints->getEnergyGenLimit();
+            cmd->setLimit((int)threshold/ied);
+            cmd->setName("config");
+            cout << " " << this->getParentModule()->getFullPath() << ": " << setPoints->getEnergyGenLimit() << endl;
+           
+            //notify IEDs:send signal with the new threshold
+            emit(commandSignal, cmd);     
+        }
+        else {
+            //reduce energy production to faulty ieds
+            map<string, int>::iterator i = faulty_ied.begin();
+            while (i != faulty_ied.end()) {
+                cmd->setLimit(i->second - 1);
+                cmd->setName(i->first.c_str());
+                cout<<"==================================================tha steilw new set points ston " << i->first <<endl;
+                i++;
+                emit(commandSignal, cmd);    
+            }
+            faulty_ied.clear();
+        }
+        delete cmd;
     }
 }
 
@@ -141,17 +167,30 @@ void RTUApp::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
     Enter_Method_Silent();
 
     string signalName(getSignalName(id));
-    if (signalName == "MonitoringData") { 
-        if (dynamic_cast<MonitoringData *>(obj) != NULL) {
-            MonitoringData *data = (MonitoringData *) obj;
+    if (signalName == "Measurement") {
+        if (dynamic_cast<Measurement *>(obj) != NULL) {
+            Measurement *data = (Measurement *) obj;
+            //check if the value is higher than the threshold
+            checkMeasurement(data);
             // updates the aggregated data
-            record->updateRecord(data->getEnergyGeneration());
+            record->updateRecord(data->getEnergyProduction());           
+            
             delete data;
         }
     }
 }
 
-
+void RTUApp::checkMeasurement(Measurement *data) 
+{
+     //string sender = tokenize(data->getName(), '.')[2];
+     string sender = data->getName();
+     double energy = data->getEnergyProduction();
+     int limit = data->getLimit();
+     
+     if (energy > limit) 
+        faulty_ied.insert(pair<string, int>(sender, limit));
+     
+}
 void RTUApp::sendReportToDSO() 
 {
     MonitoringData *data = new MonitoringData("MonitoringData");
@@ -172,7 +211,7 @@ void RTUApp::sendReportToDSO()
     emit(sum_energySignal, record->getSumEnergy());
     emit(avg_energySignal, record->getAvgEnergy());
     
-    record->reset();    
+    record->reset(); 
     socket.send(data); 
     
     //set timer
@@ -190,6 +229,4 @@ void RTUApp::displayGUI()
     }
 }
 
-void RTUApp::finish() 
-{
-}
+
