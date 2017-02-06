@@ -156,10 +156,11 @@ t_COMMA = r'\,'
 t_STRING = r'\"([^\\"]|(\\.))*\"'
 t_EQUAL = r'=='
 t_DIFFERENT = r'!='
-t_GRTHAN = r'>'
-t_GREQTHAN = r'>='
 t_LESSTHAN = r'<'
 t_LEQTHAN = r'<='
+t_GRTHAN = r'>'
+t_GREQTHAN = r'>='
+
 
 
 # An identifier has been found (it can be a reserved keyword)

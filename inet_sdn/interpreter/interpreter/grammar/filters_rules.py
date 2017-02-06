@@ -84,14 +84,15 @@ def p_filter_elem_compound_reverse_internal_reverse(p):
 # Handle simple condition direct form
 def p_filter_elem_simple_direct(p):
     "filter_elem : full_path comp_operator generic_operand"
-    
+    if p[2] == '<':
+        p[2] = '&lt;'
     p[0] = "[" + ":" + str(p[1]) + ":" + str(p[2]) + ":" + str(p[3]) + ":" + "]"
 
 
 # Handle simple condition reverse form
 def p_filter_elem_simple_reverse(p):
     "filter_elem : generic_operand comp_operator full_path"
-    
+        
     p[0] = "[" + ":" + str(p[3]) + ":" + str(p[2]) + ":" + str(p[1]) + ":" + "]"
 
 
