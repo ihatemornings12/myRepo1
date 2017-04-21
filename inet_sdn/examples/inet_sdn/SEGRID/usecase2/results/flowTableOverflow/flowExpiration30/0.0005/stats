@@ -1,0 +1,72 @@
+statistic Topo.s1.ofa_switch 	myRtt:stats
+field count 485658
+field mean 0.00025824703525133
+field stddev 6.6967540074571e-06
+field sum 125.41973864609
+field sqrsum 0.032411055690913
+field min 2.7679999e-05
+field max 0.000412079982
+--
+statistic Topo.s2.ofa_switch 	myRtt:stats
+field count 484881
+field mean 0.00025822104193179
+field stddev 5.7723236695634e-06
+field sum 125.20647703293
+field sqrsum 0.032347103022149
+field min 3.0480012e-05
+field max 0.000307359988
+--
+statistic Topo.s3.ofa_switch 	myRtt:stats
+field count 28
+field mean 0.00010657927317857
+field stddev 5.4610525773789e-05
+field sum 0.002984219649
+field sqrsum 3.9857831837845e-07
+field min 3.2959999e-05
+field max 0.000221759997
+--
+statistic Topo.s4.ofa_switch 	myRtt:stats
+field count 484695
+field mean 0.00025824514125269
+field stddev 5.5492064084238e-06
+field sum 125.17012873947
+field sqrsum 0.032339503094578
+field min 3.016006e-05
+field max 0.000371839982
+--
+statistic Topo.s5.ofa_switch 	myRtt:stats
+field count 15
+field mean 0.00010756355853333
+field stddev 4.3122242174612e-05
+field sum 0.001613453378
+field sqrsum 1.9958217564763e-07
+field min 4.0433671e-05
+field max 0.000143199995
+--
+statistic Topo.s6.ofa_switch 	myRtt:stats
+field count 39
+field mean 0.00012019486838462
+field stddev 4.1074496918941e-05
+field sum 0.004687599867
+field sqrsum 6.2753579234528e-07
+field min 2.7679999e-05
+field max 0.000191759997
+--
+statistic Topo.s7.ofa_switch 	myRtt:stats
+field count 36
+field mean 0.00012037777525
+field stddev 4.2912305575806e-05
+field sum 0.004333599909
+field sqrsum 5.8612042481312e-07
+field min 2.7679999e-05
+field max 0.000191839997
+--
+statistic Topo.s8.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+

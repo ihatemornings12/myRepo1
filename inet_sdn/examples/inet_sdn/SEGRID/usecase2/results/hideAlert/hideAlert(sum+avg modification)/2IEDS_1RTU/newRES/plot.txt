@@ -1,0 +1,14 @@
+set xlabel "simTime (sec)"
+set ylabel "energy generation"
+set key outside
+set xr [0:300]
+set yr [0:80]
+
+plot 'rtu.txt' using 1:4 title 'threshold' with linespoints, \
+'rtu.txt' using 1:3 title 'dso\_overview' with linespoints, \
+'rtu.txt' using 1:2 title 'real\_status\_1RTU\_2IED' with linespoints, \
+'rtu.txt' using 1:5 title 'attackFree' with linespoints
+ 
+set terminal postscript eps enhanced colour dashed lw 1 "Helvetica" 10
+set output 'test.eps'
+replot

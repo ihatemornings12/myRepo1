@@ -1,16 +1,16 @@
-file 971 1431766976                                             
+file 1724929 1486114846                                         
 version 2
-run seapp-attacks-0-20150516-11:02:32-5033
+run seapp-attacks-0-20170203-10:39:20-15615
 attr ber 0
 attr configname seapp-attacks
-attr datetime 20150516-11:02:32
+attr datetime 20170203-10:39:20
 attr experiment seapp-attacks
 attr inifile omnetpp.ini
 attr iterationvars $ber=0
 attr iterationvars2 "$ber=0, $repetition=0"
 attr measurement $ber=0
 attr network scenario
-attr processid 5033
+attr processid 15615
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -29,7 +29,131 @@ attr title  "queue length, vector"
 vector 30  scenario.server.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-11	935 9 0 0 0 0 1 0 0 0 0
-12	944 9 0 0 0 0 1 0 0 0 0
-29	953 9 0 0 0 0 1 0 0 0 0
-30	962 9 0 0 0 0 1 0 0 0 0
+vector 78  scenario.client.tcp  tcpRcvQueueBytes  ETV
+vector 65  scenario.client.tcp  "advertised window"  ETV
+vector 64  scenario.client.tcp  "receive window"  ETV
+vector 67  scenario.client.tcp  "sent ack"  ETV
+vector 8  scenario.client.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 10  scenario.client.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 17  scenario.client.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 13  scenario.client.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 32  scenario.server.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 36  scenario.server.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 44  scenario.server.tcp  "rcvd seq"  ETV
+vector 45  scenario.server.tcp  "rcvd ack"  ETV
+vector 41  scenario.server.tcp  "advertised window"  ETV
+vector 39  scenario.server.tcp  "send window"  ETV
+vector 54  scenario.server.tcp  tcpRcvQueueBytes  ETV
+vector 40  scenario.server.tcp  "receive window"  ETV
+vector 43  scenario.server.tcp  "sent ack"  ETV
+vector 26  scenario.server.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 28  scenario.server.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 35  scenario.server.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 31  scenario.server.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 14  scenario.client.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 18  scenario.client.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 68  scenario.client.tcp  "rcvd seq"  ETV
+vector 69  scenario.client.tcp  "rcvd ack"  ETV
+vector 63  scenario.client.tcp  "send window"  ETV
+vector 1  scenario.client.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 66  scenario.client.tcp  "sent seq"  ETV
+vector 70  scenario.client.tcp  "unacked bytes"  ETV
+vector 46  scenario.server.tcp  "unacked bytes"  ETV
+vector 47  scenario.server.tcp  "rcvd dupAcks"  ETV
+vector 19  scenario.server.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 20  scenario.server.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 82  scenario.client.tcp  "measured RTT"  ETV
+vector 83  scenario.client.tcp  "smoothed RTT"  ETV
+vector 84  scenario.client.tcp  RTTVAR  ETV
+vector 85  scenario.client.tcp  RTO  ETV
+vector 80  scenario.client.tcp  cwnd  ETV
+vector 71  scenario.client.tcp  "rcvd dupAcks"  ETV
+vector 37  scenario.server.ppp[0].outputHook[0]  "thruput (bit/sec)"  ETV
+vector 38  scenario.server.ppp[0].outputHook[0]  packet/sec  ETV
+1	4914 30 42 42 0.000082729998 0.000082729998 1 104857600 104857600 104857600 1.099511627776e+16
+8	4944 43126 17 38038 0 1.813388189994 1559 40 1492 2323128 3465985184
+10	48070 58626 17 38039 0 1.814548659996 1516 0 0.052726070002 77.453007773022 4.0430639233314
+11	106696 81916 0 38039 0 1.814548659996 3070 0 44 130599 5640619
+12	188612 77930 0 38040 0 1.814548659996 3032 0 1 1516 1516
+13	266542 43512 18 38040 0 1.814548659996 1516 47 1499 2269584 3401964324
+14	310054 40425 32 38030 0.000082729998 1.813388189994 1513 47 51 71115 3342609
+17	350479 43512 18 38040 0 1.814548659996 1516 40 1492 2258972 3370264432
+18	393991 40425 32 38030 0.000082729998 1.813388189994 1513 40 44 60524 2421136
+19	434416 43424 71 38023 0.001320094997 1.813350024995 1512 1452 1452 2195424 3187755648
+20	477840 38888 71 38023 0.001320094997 1.813350024995 1512 0 0 0 0
+26	516728 40425 29 38027 0.000041364999 1.813350024995 1513 40 44 60524 2421136
+28	557153 38912 29 38027 0.000041364999 1.813350024995 1513 0 0 0 0
+29	596065 9 0 0 0 0 1 0 0 0 0
+30	596074 77833 0 38029 0 1.813387624995 3027 0 1 1513 1513
+31	673907 40425 30 38028 0.000041364999 1.813350024995 1513 47 51 71115 3342609
+32	714332 43499 20 38041 0.000041364999 1.814549224995 1515 47 1499 2268085 3399717323
+35	757831 40425 30 38028 0.000041364999 1.813350024995 1513 40 44 60524 2421136
+36	798256 43499 20 38041 0.000041364999 1.814549224995 1515 40 1492 2257480 3368038368
+37	841755 1180 1476 37726 0 1.738999624995 30 266668.33003921 266844.56304203 8005160.658258 2136086602173.5
+38	842935 1179 1476 37726 0 1.738999624995 30 831.6751810105 833.88925950634 25014.463706694 20857451.22319
+39	844114 54 24 60 0.000041364999 0.000120894997 2 65535 65535 131070 8589672450
+40	844168 44991 24 38045 0.000041364999 1.814549224995 1514 65535 65535 99219990 6502382044650
+41	889159 47378 24 38045 0.000041364999 1.814549224995 1515 65536 2262412 1762322172 2.6609437710439e+15
+43	936537 47251 24 38045 0.000041364999 1.814549224995 1514 1 2196877 1663036646 2.4364628808408e+15
+44	983788 47268 24 38045 0.000041364999 1.814549224995 1515 0 2195425 1660839770 2.4316366122876e+15
+45	1031056 40472 24 38045 0.000041364999 1.814549224995 1515 0 11 16654 183194
+46	1071528 23 60 60 0.000120894997 0.000120894997 1 0 0 0 0
+47	1071551 38912 68 38045 0.001320094997 1.814549224995 1513 0 0 0 0
+54	1110463 77847 24 38045 0.000041364999 1.814549224995 3027 0 0 0 0
+63	1188310 44964 36 38034 0.000082729998 1.813388189994 1513 65535 65535 99154455 6498087208425
+64	1233274 46248 13 38034 0 1.813388189994 1559 65535 65535 102169065 6695649674775
+65	1279522 46275 13 38034 0 1.813388189994 1560 65535 65546 102251749 6702192419069
+66	1325797 48553 47 38034 0.000082729998 1.813388189994 1557 1 2259313 1758875949 2.6500854931816e+15
+67	1374350 41570 13 38034 0 1.813388189994 1559 0 11 17138 188518
+68	1415920 40425 36 38034 0.000082729998 1.813388189994 1513 10 11 16642 183052
+69	1456345 47222 36 38034 0.000082729998 1.813388189994 1513 1 2195425 1660839769 2.4316366122876e+15
+70	1503567 89885 47 38034 0.000082729998 1.813388189994 3025 0 65340 192583116 12383285883408
+71	1593452 38889 82 38034 0.001358259996 1.813388189994 1512 0 0 0 0
+78	1632341 40012 13 38034 0 1.813388189994 1559 0 0 0 0
+80	1672353 47202 82 38034 0.001358259996 1.813388189994 1512 2904 2196876 1663033680 2.4364595526607e+15
+82	1719555 1283 82 37834 0.001358259996 1.803794589994 39 0.001237929998 0.053964 1.803711859996 0.095152326912416
+83	1720838 1496 82 37834 0.001358259996 1.803794589994 39 0.000159441249 0.053330823109 1.43039609811 0.066185648197456
+84	1722334 1498 82 37834 0.001358259996 1.803794589994 39 0.007105902276 0.65640944125 5.626905269202 1.9216359506896
+85	1723832 1097 82 37834 0.001358259996 1.803794589994 39 1 2.625797206249 44.925619984537 57.278452108181

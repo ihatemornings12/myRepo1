@@ -1,0 +1,19 @@
+list comprList1 = {10} #s6
+#list comprList2 = {9} #s5
+#list comprList3 = {6,12} #s2, s8
+
+from 29 nodes in comprList1 do {
+    filter ( ("APP.command" == 0) and ("APP.match.OFB_IPV4_DST" == "192.168.0.10")) #Flow mod : OFP_ADD
+        #drop(original, 1)
+        change(original, "APP.actions.port", 3) #actios.port
+}
+
+#from 29 nodes in comprList2 do {
+#    filter ( ("APP.command" == 0) and ("APP.match.OFB_IPV4_DST" == "192.168.0.10")) #Flow mod : OFP_ADD
+#        change(original, "APP.actions.port", 2) #actios.port
+#}
+
+#from 29 nodes in comprList3 do {
+#    filter ( "APP.command" == 0)  #Flow mod : OFP_ADD
+#        drop(original, 1)
+#}

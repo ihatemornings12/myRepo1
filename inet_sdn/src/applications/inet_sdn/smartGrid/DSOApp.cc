@@ -29,10 +29,15 @@ Define_Module(DSOApp);
 simsignal_t DSOApp::rcvdPkSignal = registerSignal("rcvdPk");
 simsignal_t DSOApp::sentPkSignal = registerSignal("sentPk");
 
+simsignal_t DSOApp::pktsSecSignal = registerSignal("pktsSec");
+
 simsignal_t DSOApp::sum_of_sumSignal = registerSignal("sum_of_sum");
 simsignal_t DSOApp::avg_of_sumSignal = registerSignal("avg_of_sum");
 simsignal_t DSOApp::sum_of_avgSignal = registerSignal("sum_of_avg");
 simsignal_t DSOApp::avg_of_avgSignal = registerSignal("avg_of_avg");
+
+simsignal_t DSOApp::msgDelaySignal = registerSignal("dso_msg_delay");
+
 
 DSOApp::DSOApp() 
 {
@@ -44,14 +49,20 @@ DSOApp::~DSOApp()
     delete record;
 }
 
+void DSOApp::finish()
+{
+    cout <<"DSO: total number of received messages = " << numReceived << endl;
+}
 void DSOApp::initialize(int stage) 
 {
     cSimpleModule::initialize(stage);
     if (stage == 0) {
         numSent = 0;
         numReceived = 0;
+        packetsPerSec =0;
         WATCH(numSent);
         WATCH(numReceived);
+        WATCH(packetsPerSec);
     }
     
     //bind the socket and wait for connections
@@ -65,6 +76,9 @@ void DSOApp::initialize(int stage)
     file.open(fileName.c_str(), ios::out|ios::trunc);
     file << "msgRcvd\t\t msgSent\t\t sender\t\t avgEnergy\t\t sumEnergy \t\t thresholdPerDomain \n";
     file.close();
+    
+    time = simTime();
+
 }
 
 void DSOApp::listen() 
@@ -92,12 +106,27 @@ void DSOApp::handleMessage(cMessage *msg)
     }
     else if (dynamic_cast<MonitoringData *>(msg) != NULL) {
              
-        MonitoringData *data = (MonitoringData *) msg;   
+        MonitoringData *data = (MonitoringData *) msg;
+        numReceived++;
+        emit(rcvdPkSignal, data);  
+         
+        packetsPerSec++;
+        if (simTime() - time >= 1) {
+            emit(pktsSecSignal, packetsPerSec); 
+            packetsPerSec = 0;
+            time = simTime();
+        }
         
         // extract info
-        double recordedAvgEnergy = data->getAvgEnergyGen();
-        double recordedSumEnergy = data->getSumEnergyGen();
+        double recordedAvgEnergy = data->getAvgEnergy();
+        double recordedSumEnergy = data->getSumEnergy();
         simtime_t timestamp = data->getTimestamp();
+       
+        
+        //reception delay
+        simtime_t msgDelay = simTime()-timestamp;
+        emit(msgDelaySignal, msgDelay);
+        
         const string rtu = data->getSender();
         double cur_thr = data->getThreshold();
         //update data structure
@@ -126,9 +155,6 @@ void DSOApp::handleMessage(cMessage *msg)
             
         }
                
-        numReceived++;
-        emit(rcvdPkSignal, data);
-        
         if (!withinLimits(recordedSumEnergy)) {
             //send new configuration points
             SetPoints *set_points = new SetPoints("SetPoints");
@@ -136,8 +162,16 @@ void DSOApp::handleMessage(cMessage *msg)
             set_points->setTimestamp(simTime());
             set_points->setKind(TCP_C_SEND);
             
-            set_points->setEnergyGenLimit(-1);
-          
+            /*gradually decrease the threshold*/
+            
+            //set_points->setEnergyGenLimit(cur_thr-1);
+            //if (cur_thr == 0)
+                //set_points->setEnergyGenLimit(0.0);
+                
+            /*shut down operation*/
+            
+            set_points->setEnergyGenLimit(0.0); 
+             
             emit(sentPkSignal, set_points);
             numSent++;
             
@@ -158,7 +192,7 @@ void DSOApp::updateFile(MonitoringData *msg)
     
     data.assign(simTime().str());
     data.append("\t\t" + msg->getTimestamp().str() + "\t\t" + msg->getSender() + "\t\t");
-    data.append(to_string(msg->getAvgEnergyGen()) + "\t\t" + to_string(msg->getSumEnergyGen()) + "\t\t" + to_string(msg->getThreshold()));
+    data.append(to_string(msg->getAvgEnergy()) + "\t\t" + to_string(msg->getSumEnergy()) + "\t\t" + to_string(msg->getThreshold()));
     
     file.open(fileName.c_str(), ios::out|ios::app);
     if (file.is_open()) {
@@ -196,9 +230,6 @@ void DSOApp::displayGUI()
     }
 }
 
-void DSOApp::finish() 
-{ 
-}
 
 bool DSOApp::withinLimits(double energy) 
 {

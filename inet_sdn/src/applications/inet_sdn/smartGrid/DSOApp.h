@@ -42,12 +42,13 @@ class DSOApp : public cSimpleModule, public cListener
                 
     // limits
     double threshold, thr_per_domain;
-
+    simtime_t time;
+    int packetsPerSec;
                 
     // signals
     static simsignal_t rcvdPkSignal;
     static simsignal_t sentPkSignal;
-    static simsignal_t sum_of_sumSignal, avg_of_sumSignal, sum_of_avgSignal, avg_of_avgSignal;
+    static simsignal_t sum_of_sumSignal, avg_of_sumSignal, sum_of_avgSignal, avg_of_avgSignal, msgDelaySignal, pktsSecSignal;
                 
     void listen();
     void displayGUI();
@@ -60,7 +61,7 @@ class DSOApp : public cSimpleModule, public cListener
         
   	public:
     DSOApp();
-    ~DSOApp();
+    virtual ~DSOApp();
   	    
     virtual void initialize(int stage);
     virtual void handleMessage(cMessage *msg);

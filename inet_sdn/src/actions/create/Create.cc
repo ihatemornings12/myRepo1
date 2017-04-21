@@ -62,7 +62,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 					*packet = (cPacket*) (new TrafficLightCmd());
 					break;
 				}
-				//A.S
+				// <A.S>
 				case type_t::APPLICATION_PACKET: {
 					*packet = (cPacket*) (new ApplicationPacket());
 					break;
@@ -73,7 +73,11 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 				}
 				
 				case type_t::MONITORING_DATA: {
-				    *packet = (cPacket*) (new MonitoringData());  
+				    *packet = (cPacket*) (new MonitoringData("myPacket"));  
+				    break;
+				}
+				case type_t::MONITORING_DATA_rcv: {
+				    *packet = (cPacket*) (new MonitoringData("myPacket2"));  
 				    break;
 				}
 				
@@ -85,6 +89,7 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 			}		
             // <A.S>
             (*packet)->setByteLength(1);	
+            (*packet)->setTimestamp(simTime());
             	
 			(*packet)->addPar("isFiltered");
 			(*packet)->par("isFiltered").setBoolValue(true);
@@ -226,6 +231,12 @@ void Create::buildNewPacket(cPacket** packet, int layer, type_t type) const
 				case type_t::MONITORING_DATA: {
 				    (*packet)->setKind(TCP_C_SEND);
 				    controlInfo = new TCPSendCommand();
+				    (*packet)->setControlInfo(controlInfo);
+				    break;
+				}
+				// <A.S>
+				case type_t::MONITORING_DATA_rcv: {
+				    controlInfo = new TCPConnectInfo();
 				    (*packet)->setControlInfo(controlInfo);
 				    break;
 				}
@@ -463,6 +474,9 @@ type_t Create::getType (int layer, string typeCode)
 			if (typeCode == "1002") {
 			    return type_t::MONITORING_DATA;
 			}
+			if (typeCode == "1003") {
+			    return type_t::MONITORING_DATA_rcv;
+			}
 
 		}
 		
@@ -593,8 +607,9 @@ void Create::execute(cPacket **packet)
 	setParameterRecursively(*packet, "isFiltered", true);
 	
 	// <A.S>
-	if (strcmp((*packet)->getOwner()->getName(), "globalFilter") == 0)
+	if (strcmp((*packet)->getOwner()->getName(), "globalFilter") == 0) {
 		setParameterRecursively(*packet, "fromGlobalFilter", true);
+    } 
 }
 
 

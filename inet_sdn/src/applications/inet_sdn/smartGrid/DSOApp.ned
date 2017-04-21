@@ -20,6 +20,7 @@ simple DSOApp {
         @display("i=block/app");
         
         double maxEnergyGen = default(100.0);
+        string operation = default("shut down");
         int maxPowerQ = default(4);
         int minPowerQ = default(1);
         
@@ -42,6 +43,13 @@ simple DSOApp {
         @statistic[sum_of_avg](title="sum_of_avg"; source=sum_of_avg; record=vector; interpolationmode=none);
         @signal[avg_of_avg](type=double);
         @statistic[avg_of_avg](title="avg_of_avg"; source=avg_of_avg; record=vector; interpolationmode=none);
+        
+        @signal[dso_msg_delay] (type = s);
+        @statistic[dso_msg_delay](title="dso_msg_delay"; source = dso_msg_delay; record=vector; interpolationmode=none);
+        
+        @signal[pktsSec](type=cPacket);
+        @statistic[pktsSec](title="packets received per sec"; source=pktsSec; record=vector; interpolationmode=none);
+        
     gates:
         input tcpIn @labels(TCPCommand/up);
         output tcpOut @labels(TCPCommand/down);

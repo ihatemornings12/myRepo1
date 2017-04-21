@@ -2,6 +2,21 @@
 
 <configuration>
 
+	<Conditional>
+
+		<Attack>
+			<start_time>21</start_time>
+			<node>7</node>
+			<filter>[:attackInfo.fromGlobalFilter:==:1:]</filter>
+
+			<action>
+				<name>Drop</name>
+				<parameters>packetName:original:threshold:0</parameters>
+			</action>
+		</Attack>
+
+	</Conditional>
+
 	<Unconditional>
 
 		<Attack>

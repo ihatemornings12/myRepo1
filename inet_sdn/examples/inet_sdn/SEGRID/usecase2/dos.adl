@@ -1,0 +1,28 @@
+list dstList = {15} #RTU1
+
+# example of TX/RX application packet
+from 59 every 0.000105263 do {
+
+    # declare a packet
+	packet fakePacket
+    
+	# create a new packet
+	create(fakePacket, "APP.type", "1002") #"1002" app type Monitoring Data
+
+	# fill the new packet properly
+	change(fakePacket, "controlInfo.packetSize", 1250)
+	change(fakePacket, "APP.name", "myPacket")
+	
+	change(fakePacket, "APP.avgEnergy", 1.958897)
+	change(fakePacket, "APP.sumEnergy", 10.974428)
+	change(fakePacket, "APP.threshold", 25)
+	change(fakePacket, "APP.sender", "hahah")
+	#tcp related control info
+    change(fakePacket, "controlInfo.connId", 22)
+	change(fakePacket, "controlInfo.userId", 0)
+	#instructions for the LF
+	change(fakePacket, "sending.outputGate", "app_tcp_inf$o[0]")
+	
+	put(fakePacket, dstList, TX, FALSE, 0)
+}
+

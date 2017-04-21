@@ -24,20 +24,22 @@ using namespace std;
 
 class IED : public cSimpleModule, public cListener
 {
-    private:       
-        simsignal_t measurementSignal;
-        double threshold;
-        bool problem;
-        string name;
+  private:       
+    simsignal_t measurementSignal;
+    double threshold;
+    bool problem;
+    string name;
 	private:
 		void sendMeasurementData();
 		void nextReading();
-    protected:
-        void receiveSignal(cComponent *src, simsignal_t id, cObject *obj);   
-  	public:
-    	virtual void initialize();
-    	virtual void handleMessage(cMessage *msg);
-    	virtual void finish();
+  protected:
+    void receiveSignal(cComponent *src, simsignal_t id, cObject *obj);   
+  public:
+    IED(); 
+    virtual ~IED();
+    virtual void initialize();
+    virtual void handleMessage(cMessage *msg);
+    virtual void finish();
  
 };
 

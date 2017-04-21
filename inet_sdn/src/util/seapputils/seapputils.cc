@@ -5,6 +5,7 @@
  
  
 #include "seapputils.h"
+#include "TCPSegment.h"
 #include <sstream>
 #include <map>
 #include <random>
@@ -323,12 +324,20 @@ bool isControlInfo(const string layer)
 bool hasPayload(cMessage* msg) 
 {
 	bool isPacket = msg->isPacket();
-	if (isPacket) { 
-		cPacket *packet = dynamic_cast<cPacket*>(msg);
-		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
-		if (encapsulatedPacket != nullptr) 
-			return true;
-		return false;
+	if (isPacket) {
+	    string className = msg->getClassName();
+	    //TCP Segments do not encapsulate the app data as payload
+	    if (className.find("TCPSegment") != string::npos) { 
+            if ((check_and_cast<TCPSegment*>(msg))->getPayloadArraySize() > 0 )
+                return true;
+        }
+	    else {
+		    cPacket *packet = dynamic_cast<cPacket*>(msg);
+		    cPacket* encapsulatedPacket = packet->getEncapsulatedPacket();
+		    if (encapsulatedPacket != nullptr) 
+			    return true;
+		    return false;
+		}
 	}
 	return false;
 }
@@ -337,19 +346,37 @@ bool hasPayload(cMessage* msg)
 bool getParamFromEncapsulatedPacket(cMessage* msg, const string parameterName) 
 {
 	bool isPacket = msg->isPacket();
-	if (isPacket) { 
-		cPacket *packet = dynamic_cast<cPacket*>(msg);
-		cPacket* encapsulatedPacket = packet->getEncapsulatedMsg();
-		if (encapsulatedPacket != nullptr) {
-			if (encapsulatedPacket->hasPar(parameterName.c_str())) 
-				return encapsulatedPacket->par(parameterName.c_str()).boolValue();
+	if (isPacket) {
+	    string className = msg->getClassName();
+	    //TCP Segments do not encapsulate app data as payload. They are added in a list.
+	    //If the payload list includes at least one app data injected by the GF, the segment is marked as "bad"
+	    if (className.find("TCPSegment") != string::npos) { 
+            TCPSegment *packet = dynamic_cast<TCPSegment*>(msg);
+            for (int i=0; i<packet->getPayloadArraySize(); i++) {
+                TCPPayloadMessage payload = packet->getPayload(i);
+                if ((payload.msg->hasPar(parameterName.c_str())) && (payload.msg->par(parameterName.c_str()).boolValue())) {
+                    return payload.msg->par(parameterName.c_str()).boolValue();
+                }
+            }
+            return false;
+        }
+        else { 
+		    cPacket *packet = dynamic_cast<cPacket*>(msg);
+		    cPacket* encapsulatedPacket = packet->getEncapsulatedPacket();
+		    if (encapsulatedPacket != nullptr) {
+			    if (encapsulatedPacket->hasPar(parameterName.c_str())) 
+			    	return encapsulatedPacket->par(parameterName.c_str()).boolValue();
+		    }
+		    else {
+                string errorMsg;
+			    errorMsg.append("[bool getParamFromEncapsulatedPacket(cMessage* msg, sting parameterName)] Error, there is no '");
+			    errorMsg.append("' encapsulated packet");
+                opp_error(errorMsg.c_str());
+		    }
 		}
-		else {
-			string errorMsg;
-			errorMsg.append("[bool getParamFromEncapsulatedPacket(cMessage* msg, sting parameterName)] Error, there is no '");
-			errorMsg.append("' encapsulated packet");
-            opp_error(errorMsg.c_str());	
-		}
+		
+	
+		
 	}	
 }
 

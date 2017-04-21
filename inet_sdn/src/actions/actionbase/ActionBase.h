@@ -73,7 +73,7 @@ class ActionBase {
 		/** 
 		 * @brief	Destructor
 		 */
-		~ActionBase();
+		virtual ~ActionBase();
 
 		/**
 		 * @brief	Setter and getter methods

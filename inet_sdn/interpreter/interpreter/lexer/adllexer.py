@@ -69,6 +69,9 @@ tokens = (
     'DO',
     # Conditional statements
     'FILTER',
+    # <A.S>
+    # Finite attacks
+    #'UNTIL',
     #'IF',
     #'THEN',
     #'ELSE',
@@ -105,6 +108,8 @@ reserved = {
     'var'  : 'VAR',
     'packet' : 'PACKET',
     'from' : 'FROM',
+    # <A.S>
+    #'until': 'UNTIL',
     'do' : 'DO',
     'in' : 'IN',
     'every' : 'EVERY',

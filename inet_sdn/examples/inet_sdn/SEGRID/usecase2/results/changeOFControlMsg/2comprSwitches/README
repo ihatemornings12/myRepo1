@@ -1,0 +1,2 @@
+s6 redirects packets towards DSO to s7
+s5 redirects packets towards DSO to s8

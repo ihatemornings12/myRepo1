@@ -56,7 +56,7 @@ class AttackBase {
 		// table of variables
 		map<string, Variable*> variableTable;
         // stack for operations
-		stack<Variable> variableStack;
+		stack<Variable*> variableStack;
 		
 		// <A.S>
 		NetworkParameters networkParameters;

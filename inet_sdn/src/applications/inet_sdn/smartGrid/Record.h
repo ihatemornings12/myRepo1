@@ -30,7 +30,7 @@ class Record
         set<string> senders;
     public:
         Record();
-        ~Record();
+        virtual ~Record();
         
         virtual void updateRecord(double energy);
         //void updateRecord(double avg, double sum, const string id);
@@ -48,7 +48,7 @@ class RecordDSO: public Record
         double sumAvg;
     public:
         RecordDSO();
-        ~RecordDSO();
+        virtual ~RecordDSO();
         void updateRecord(double avgE, double sumE, const string id);
         double getAvgAvgEnergy();
         double getSumAvgEnergy();

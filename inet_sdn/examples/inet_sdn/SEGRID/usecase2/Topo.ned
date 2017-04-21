@@ -30,8 +30,9 @@ network Topo
 	@display("bgb=2000,1000");
 	types:
         channel ethernetline extends ThruputMeteringChannel {
-            delay = 1us;
-            datarate = 1Gbps;
+            //delay = 1us;
+            //datarate = 1Gbps;
+            datarate = 100Mbps;
         }
 	submodules:
 		globalFilter: GlobalFilter {

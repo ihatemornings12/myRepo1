@@ -1,0 +1,68 @@
+list dstList = {8} #s4
+
+from 59 every 0.0002 do {
+    # declare a packet
+	packet fakePacket
+    
+	# create a new packet
+	create(fakePacket, "APP.type", "1003") #"1002" app type Monitoring Data
+
+	# fill the new packet properly
+	change(fakePacket, "controlInfo.packetSize", 1250)
+	change(fakePacket, "APP.name", "myPacket")
+	
+	change(fakePacket, "APP.avgEnergy", 1.958897)
+	change(fakePacket, "APP.sumEnergy", 10.974428)
+	change(fakePacket, "APP.threshold", 25)
+	change(fakePacket, "APP.sender", "hahah")
+	
+    #TcpConnectInfo
+    change(fakePacket, "controlInfo.connId", RANDOM_INT)
+	change(fakePacket, "controlInfo.userId", 0)
+	change(fakePacket, "controlInfo.localAddr", "192.168.0.10")
+	change(fakePacket, "controlInfo.remoteAddr", "192.168.0.11")
+	change(fakePacket, "controlInfo.localPort", 1025)
+	change(fakePacket, "controlInfo.remotePort", 1025)  
+   
+    #########################################
+    packet traPacket
+    
+	create(traPacket, "TRA.type", "0010") #TCPSegment
+    change(traPacket, "TRA.srcPort", 1025)
+    change(traPacket, "TRA.destPort", 1025)
+    
+    ############ SET THE PAYLOAD ############
+    change(traPacket, "TRA.payload", fakePacket)
+    #########################################
+   
+    packet ipPacket
+    
+    # create a new NET-layer packet
+    create(ipPacket, "NET.type", "0000") #"0000" no controlInfo
+    change(ipPacket, "NET.srcAddress", RANDOM_IP)
+    change(ipPacket, "NET.destAddress", "192.168.0.10")
+    change(ipPacket, "NET.transportProtocol", 6)
+    change(ipPacket, "NET.timeToLive", 30)
+    #change(ipPacket, "NET.typeOfService", "a")
+    
+    ############ SET THE PAYLOAD ############
+    change(ipPacket, "NET.payload", traPacket)
+    #########################################
+    
+    packet macPacket  
+    
+	# create a new MAC-layer packet
+	create(macPacket, "MAC.type", "0010")
+	change(macPacket, "MAC.src", RANDOM_MAC)
+    change(macPacket, "MAC.dest", "0A-AA-00-00-00-2A" )
+	change(macPacket, "MAC.etherType","ETHERTYPE_IPv4")
+	
+	
+	############ SET THE PAYLOAD ############
+	change (macPacket, "MAC.payload", ipPacket)
+	#########################################
+	
+	change(macPacket, "sending.outputGate", "net_eth_sup$o[0]") 
+	
+	put(macPacket, dstList, RX, FALSE, 0)
+}

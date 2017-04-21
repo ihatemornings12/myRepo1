@@ -7,8 +7,11 @@
 		<Attack>
 			<start_time>20</start_time>
 			<frequency>0.4</frequency>
+			<var><name>a</name><value>1</value><type>NUMBER</type></var>
 			<var><name>"ETHERTYPE_IPv4"</name><value>ETHERTYPE_IPv4</value><type>STRING</type></var>
+			<var><name>b</name><value>2</value><type>NUMBER</type></var>
 			<var><name>17</name><value>17</value><type>NUMBER</type></var>
+			<var><name>sum</name><value></value><type>NONE</type></var>
 			<var><name>1</name><value>1</value><type>NUMBER</type></var>
 			<var><name>123</name><value>123</value><type>NUMBER</type></var>
 			<var><name>"0A-AA-00-00-00-06"</name><value>0A-AA-00-00-00-06</value><type>STRING</type></var>
@@ -17,6 +20,15 @@
 			<var><name>"192.168.0.21"</name><value>192.168.0.21</value><type>STRING</type></var>
 			<var><name>foo</name><value></value><type>NONE</type></var>
 			<var><name>"net_eth_sup$o[5]"</name><value>net_eth_sup$o[5]</value><type>STRING</type></var>
+
+			<action>
+				<name>Expression</name>
+				<item>a</item>
+				<item>b</item>
+				<item>+</item>
+				<item>=</item>
+				<item>sum</item>
+			</action>
 
 			<action>
 				<name>Create</name>

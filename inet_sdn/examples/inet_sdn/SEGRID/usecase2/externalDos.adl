@@ -1,0 +1,56 @@
+list dstList = {14} #DSO
+
+# example of TX/RX application packet
+from 59 every 0.0000001 do {
+
+    # declare a packet
+	packet fakePacket
+    
+	# create a new packet
+	create(fakePacket, "APP.type", "1003") #"1002" app type Monitoring Data
+
+	# fill the new packet properly
+	change(fakePacket, "controlInfo.packetSize", 1250)
+	change(fakePacket, "APP.name", "myPacket")
+	
+	change(fakePacket, "APP.avgEnergy", 1.958897)
+	change(fakePacket, "APP.sumEnergy", 10.974428)
+	change(fakePacket, "APP.threshold", 25)
+	change(fakePacket, "APP.sender", "hahah")
+	
+    #TcpConnectInfo
+    #change(fakePacket, "controlInfo.connId", 22)
+	#change(fakePacket, "controlInfo.userId", 0)
+	#change(fakePacket, "controlInfo.localAddr", "192.168.0.10")
+	#change(fakePacket, "controlInfo.remoteAddr", "192.168.0.11")
+	#change(fakePacket, "controlInfo.localPort", 1000)
+	#change(fakePacket, "controlInfo.remotePort", 1025)
+	
+	
+	#instructions for the LF
+	#change(fakePacket, "sending.outputGate", "app_tcp_sup$o[0]")
+	
+	packet traPacket
+	create(traPacket, "TRA.type", "0010") 
+    change(traPacket, "TRA.srcPort", 1000)
+    change(traPacket, "TRA.destPort", 1025)
+    change(traPacket, "TRA.payload", fakePacket)
+    
+    packet ipPacket
+    create(ipPacket, "NET.type", "0000") #"0000" no controlInfo
+    change(ipPacket, "NET.srcAddress", "192.168.0.11")
+    change(ipPacket, "NET.destAddress", "192.168.0.10")
+    change(ipPacket, "NET.transportProtocol", 6)
+    #change(ipPacket, "NET.timeToLive", 5)
+    #change(ipPacket, "NET.typeOfService", "a")
+    
+    ############ SET THE PAYLOAD ############
+    change(ipPacket, "NET.payload", traPacket)
+    #########################################
+    
+	
+	change(ipPacket, "sending.outputGate", "net_eth_sup$o[0]") 
+	
+	put(ipPacket, dstList, RX, FALSE, 0)
+}
+

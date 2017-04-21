@@ -1,0 +1,11 @@
+set xlabel "simTime (sec)"
+set ylabel "DSO packet reception delay"
+set key outside
+set xr [0:300]
+
+
+plot 'dsoDelay' using ($3):($4) title 'DSO packet reception delay 0.00015 injection rate(s)' with linespoints
+ 
+set terminal postscript eps enhanced colour dashed lw 1 "Helvetica" 10
+set output 'DSOdelay.eps'
+replot

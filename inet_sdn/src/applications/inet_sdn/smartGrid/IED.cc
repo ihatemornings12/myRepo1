@@ -14,12 +14,21 @@
 //
 
 #include "IED.h"
+
 #include "Measurement_m.h"
 #include "SetPoints_m.h"
 #include "Command_m.h"
 #include "seapputils.h"
 
 Define_Module(IED);
+
+IED::IED() 
+{
+}
+
+IED::~IED() 
+{
+}
 
 void IED::initialize() 
 {
@@ -42,20 +51,23 @@ void IED::handleMessage(cMessage *msg)
     if (msg->isSelfMessage()) {      
         Measurement *data = new Measurement();
 
-        if ( (simTime() == 60) && ( (name.find("RTU1.ied[0]") != std::string::npos) || (name.find("RTU1.ied[1]") != std::string::npos) //|| (name.find("RTU1.ied[2]") != std::string::npos) \
-                //|| (name.find("RTU2.ied[0]") != std::string::npos) || (name.find("RTU2.ied[1]") != std::string::npos)  || (name.find("RTU2.ied[2]") != std::string::npos) \
-                // || (name.find("RTU3.ied[0]") != std::string::npos) || (name.find("RTU3.ied[1]") != std::string::npos)  || (name.find("RTU3.ied[2]") != std::string::npos) 
-                ) ) {
-            problem = true;
+        /*scenarion of faulty IEDs, mupltiply of 3*/
+        if ( (simTime() == 60) && ( (name.find("RTU1.ied[0]") != std::string::npos) || (name.find("RTU1.ied[1]") != std::string::npos) // || (name.find("RTU1.ied[2]") != std::string::npos) \
+               // || (name.find("RTU2.ied[0]") != std::string::npos) || (name.find("RTU2.ied[1]") != std::string::npos)  || (name.find("RTU2.ied[2]") != std::string::npos) \
+               //  || (name.find("RTU3.ied[0]") != std::string::npos) || (name.find("RTU3.ied[1]") != std::string::npos)  || (name.find("RTU3.ied[2]") != std::string::npos) 
+              ) ) {
+          problem = true;
         }  
           
         if (problem) {
-            cout <<"mpika!\n";
-            //data->setEnergyGeneration(generateRandomIntValue(15,20));
-            data->setEnergyProduction(12.0);
+            cout <<"Faulty IED: " << name << " \n";
+            data->setEnergyProduction(generateRandomIntValue(15,20));
         }
         else {
-            data->setEnergyProduction(generateRandomDblValue(threshold));
+            if (threshold > 1)
+                data->setEnergyProduction(generateRandomDblValue(threshold));
+            else 
+                data->setEnergyProduction(0.0);
         }
         
         data->setTimestamp(simTime());
@@ -90,7 +102,7 @@ void IED::receiveSignal(cComponent *src, simsignal_t id, cObject *obj)
                 // set the new threshold
                 threshold = data->getLimit();
                 problem = false;
-                cout <<"eimai "<< name << " k pira set points gt = " << dst <<  " apo ton sender -> " << src->getFullPath() <<endl;
+                cout <<"--"<< name << " received new configuration settings (" << dst << ")" << endl;
             } 
         }
     }

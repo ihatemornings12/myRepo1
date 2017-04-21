@@ -19,8 +19,8 @@ cplusplus {{
 
 // a message sent by the IEDs to the RTU reporting the current measurement
 message Measurement {
-	double energyProduction; 
-    string name;
-    int limit;
+	double energyProduction; //measurement 
+    string name; 
+    int limit; //current max limit
 };
 

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<Unconditional>
+
+		<Attack>
+			<start_time>59</start_time>
+			<frequency>0.000105263</frequency>
+			<var><name>25</name><value>25</value><type>NUMBER</type></var>
+			<var><name>1250</name><value>1250</value><type>NUMBER</type></var>
+			<var><name>22</name><value>22</value><type>NUMBER</type></var>
+			<var><name>1.958897</name><value>1.958897</value><type>NUMBER</type></var>
+			<var><name>10.974428</name><value>10.974428</value><type>NUMBER</type></var>
+			<var><name>0</name><value>0</value><type>NUMBER</type></var>
+			<var><name>"app_tcp_inf$o[0]"</name><value>app_tcp_inf$o[0]</value><type>STRING</type></var>
+			<var><name>"hahah"</name><value>hahah</value><type>STRING</type></var>
+			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:fakePacket:APP.type:1002</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.packetSize:value:1250</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.name:value:"myPacket"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.avgEnergy:value:1.958897</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.sumEnergy:value:10.974428</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.threshold:value:25</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.sender:value:"hahah"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.connId:value:22</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.userId:value:0</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:sending.outputGate:value:"app_tcp_inf$o[0]"</parameters>
+			</action>
+
+			<action>
+				<name>Put</name>
+				<parameters>packetName:fakePacket:nodes:15:direction:TX:throughWC:false:delay:0</parameters>
+			</action>
+		</Attack>
+
+	</Unconditional>
+
+</configuration>

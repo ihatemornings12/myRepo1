@@ -1,0 +1,92 @@
+statistic Topo.s1.ofa_switch 	myRtt:stats
+field count 116
+field mean 3.9188964336207e-05
+field stddev 4.5169760750905e-06
+field sum 0.004545919863
+field sqrsum 1.804962447656e-07
+field min 2.7679999e-05
+field max 5.2559999e-05
+--
+statistic Topo.s2.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+--
+attr source  myRtt
+attr title  "RTT for packet out direction, stats"
+statistic Topo.s3.networkLayer.ip 	hops:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+--
+statistic Topo.s3.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+--
+attr source  myRtt
+attr title  "RTT for packet out direction, stats"
+statistic Topo.s4.networkLayer.ip 	hops:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+--
+statistic Topo.s4.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+--
+--
+statistic Topo.s5.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+--
+statistic Topo.s6.ofa_switch 	myRtt:stats
+field count 58
+field mean 0.00020498482432759
+field stddev 6.5242253986887e-05
+field sum 0.011889119811
+field sqrsum 2.679712583069e-06
+field min 2.7679999e-05
+field max 0.000249039996
+--
+statistic Topo.s7.ofa_switch 	myRtt:stats
+field count 58
+field mean 0.0002049999967069
+field stddev 6.5200386456577e-05
+field sum 0.011889999809
+field sqrsum 2.679762074153e-06
+field min 2.7679999e-05
+field max 0.000249039996
+--
+statistic Topo.s8.ofa_switch 	myRtt:stats
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+
+

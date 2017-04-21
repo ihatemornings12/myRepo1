@@ -115,8 +115,8 @@ void RecordDSO::updateRecord(double avgE, double sumE, const string id)
         sumAvg += avgE; //(sum(avg) 
         avgAvg = sumAvg/cnt; //avg(avg) 
     }
-    else 
-        cout<< "Sender " << id << " sends double data\n"; 
+    else {}
+        //cout<< "Sender " << id << " sends double data\n"; 
 
 }
 

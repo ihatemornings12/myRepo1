@@ -25,6 +25,7 @@
 #include "OFP_Echo_Request_m.h"
 #include "OFP_Echo_Reply_m.h"
 #include "OFP_Port_Status_m.h"
+#include "OFP_Error_Msg_m.h"
 
 using namespace std;
 
@@ -66,7 +67,7 @@ void OFA_controller::initialize()
     scheduleAt(simTime()+statsInterval, reqFlowStats);
 	
 	// <A.S>
-	echoRequestMsg = new cMessage("EchoRequest");
+    echoRequestMsg = new cMessage("EchoRequest");
     echoRequestMsg->setKind(ECHO_REQUEST);
 	scheduleAt(simTime()+par("echoInterval"), echoRequestMsg);
 	
@@ -208,6 +209,9 @@ void OFA_controller::processQueuedMsg(cMessage *data_msg) {
 		    	break;
 		    case OFPT_PORT_STATUS:
                 handlePortStatus(of_msg);
+		        break;
+		    case OFPT_ERROR:
+		        handleErrorMessage(of_msg);
 		        break;
 		    default:
 		        break;
@@ -493,7 +497,7 @@ void OFA_controller::sendPacket(uint32_t buffer_id, OFP_Packet_In *packet_in_msg
     packetOut->setActions(0, *action_output);
 
     packetOut->setKind(TCP_C_SEND);
-    
+    packetOut->setTimestamp(packet_in_msg->getTimestamp());
     TCPSocket *socket = findSocketFor(packet_in_msg);
     
     
@@ -550,4 +554,28 @@ void OFA_controller::installProtectionRule(oxm_basic_match *match) {
 		i++;
 	}
 }
+
+//Handle error message 
+void OFA_controller::handleErrorMessage(Open_Flow_Message *of_msg)
+{
+    OFP_Error_Msg *error_msg = (OFP_Error_Msg *) of_msg;
+    ofp_error_type type = (ofp_error_type) error_msg->getType();
+    switch(type) {
+        case OFPET_FLOW_MOD_FAILED: {
+            ofp_flow_mod_failed_code reason = (ofp_flow_mod_failed_code) error_msg->getCode(); 
+          
+            TCPCommand *id = dynamic_cast<TCPCommand *>(error_msg->getControlInfo());
+
+            if (!id)
+                opp_error("Switch: no TCPCommand control info in message (not from TCP?)");
+            int connID = id->getConnId();
+            break;
+        }
+        default:
+            break;
+    }
+   
+}
+
+
 

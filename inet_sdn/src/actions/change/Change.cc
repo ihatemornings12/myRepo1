@@ -18,7 +18,7 @@
 #include "EtherFrame_m.h"
 #include "IdealAirFrame_m.h"
 #include "AirFrame_m.h"
-
+#include "openflow.h"
 //#include "InterfaceEntry.h"
 #include "IInterfaceTable.h"
 #include "InterfaceTableAccess.h"
@@ -153,27 +153,46 @@ void Change::executeOnField(cMessage** packetToChange, string value)
 	packetClassName = encapsulatedPacket->getClassName();
 
     if (fieldName == "srcAddress" && packetClassName == "IPv4Datagram") {
-        if (isRandom)
+        if (isRandom) {
 	        (check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(stoull(value)));
+		}
 		else
 		    (check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setSrcAddress(IPv4Address(value.c_str()));
     }
-	else if (fieldName == "destAddress" && packetClassName == "IPv4Datagram")
+	else if (fieldName == "destAddress" && packetClassName == "IPv4Datagram") {
 		(check_and_cast<IPv4Datagram*> (encapsulatedPacket))->setDestAddress(IPv4Address(value.c_str()));
+	}	
 	else if (fieldName == "src" && packetClassName == "EthernetIIFrame") {
-	    if (isRandom)
+	    if (isRandom) {
 	        (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(stoull(value)));
-		else
+	    }
+		else {
 		    (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setSrc(MACAddress(value.c_str()));
+		}
 	}
-	else if (fieldName == "dest" && packetClassName == "EthernetIIFrame")
-	    if (isRandom)
+	else if (fieldName == "dest" && packetClassName == "EthernetIIFrame") {
+	    if (isRandom) {
 	        (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(stoull(value)));
-		else
+	    }
+		else {
 		    (check_and_cast<EthernetIIFrame*> (encapsulatedPacket))->setDest(MACAddress(value.c_str()));
-	else
-		// edit the value of the specified field
-		descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!    
+		}
+	}
+	else {
+	    if (descriptor->getFieldStructPointer(encapsulatedPacket, fieldIndex, 0) != NULL) { //so, it is struct
+	        cObject *pp = (cObject*)descriptor->getFieldStructPointer(encapsulatedPacket, fieldIndex, 0); // find the beginning of the struct
+	        //in this case the struct is not defined in the .msg file but in a different 
+	        string structName = descriptor->getFieldStructName(encapsulatedPacket, fieldIndex);
+	        if (structName.find("ofp_action_output") != string::npos) {
+	            ofp_action_output* pp2 = (ofp_action_output*)pp; // find the beginning of the struct
+                pp2->port = atoi(value.c_str());
+            }
+	    }
+        else {	
+		    // edit the value of the specified field
+		    descriptor->setFieldAsString(encapsulatedPacket, fieldIndex, 0, value.c_str()); //fields of addresses are not handled!    
+	    }
+    }
 
 	// replace the original packet with his modified clone	
 	delete *packetToChange;

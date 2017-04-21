@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<Conditional>
+
+		<Attack>
+			<start_time>60</start_time>
+			<node>15</node>
+			<var><name>10.107589</name><value>10.107589</value><type>NUMBER</type></var>
+			<var><name>50.537944</name><value>50.537944</value><type>NUMBER</type></var>
+			<filter>[:APP.avgEnergy:>:0:]:[:APP.avgEnergy:&lt;:5.0:]:AND</filter>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:original:field_name:APP.sumEnergy:value:50.537944</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:original:field_name:APP.avgEnergy:value:10.107589</parameters>
+			</action>
+		</Attack>
+
+	</Conditional>
+
+</configuration>

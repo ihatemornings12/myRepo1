@@ -17,9 +17,9 @@ cplusplus {{
     #include "INETDefs.h"
 }}
 
-// a message sent by the IEDs to the RTU reporting the current measurement
+// a message sent by the RTUs to the IEDs setting new configuration points
 message Command { 
-    string name; //name: all or ied_id -> to restore a faulty device
+    string name; //name: config or ied_id -> to restore a faulty device
     int limit;
 };
 

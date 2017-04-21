@@ -43,10 +43,11 @@ class RTUApp : public cSimpleModule, public cListener
         int numReceived;
         int ied;
         double threshold;
+        simtime_t timestamp;
         
         static simsignal_t rcvdPkSignal;
         static simsignal_t sentPkSignal;
-        static simsignal_t sum_energySignal, avg_energySignal;
+        static simsignal_t sum_energySignal, avg_energySignal, thresholdSignal, setPointsDelaySignal;
         simsignal_t commandSignal;
 
     private:
@@ -63,7 +64,7 @@ class RTUApp : public cSimpleModule, public cListener
                  
   	public:
   	    RTUApp();
-  	    ~RTUApp();
+  	    virtual ~RTUApp();
     	virtual void initialize(int stage);
     	virtual void handleMessage(cMessage *msg);
     	virtual void finish();

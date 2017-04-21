@@ -1,8 +1,22 @@
-list comprList = {15, 16, 17} #rtu1, rtu2
+list comprList = {15} #rtu1, rtu2
 
 from 60 nodes in comprList do {
-    filter ("APP.avgEnergyGen" > 5.0)
-		change(original, "APP.sumEnergyGen", 10.323833)
-		change(original,"APP.avgEnergyGen", 1.938385370688)
+    filter (("APP.sumEnergy" > 25) and ("APP.avgEnergy" > 5.0))
+        var sum = 0
+        var avg = 0
+        var a = 0    
+
+        retrieve(original, "APP.sumEnergy", sum)
+        retrieve(original,"APP.avgEnergy", avg)
+
+        a = sum - 25
+        sum = a/15 + 7.75
+        avg = sum/5        
+
+        change(original,"APP.sumEnergy", sum)
+        change(original,"APP.avgEnergy", avg)
+        
+		#change(original, "APP.sumEnergy", 10.313802)
+		#change(original,"APP.avgEnergy", 2.06276)
 }
 

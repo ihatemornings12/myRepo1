@@ -18,9 +18,9 @@ cplusplus {{
 }}
 
 packet MonitoringData {
-	double energyGeneration; // value of one reading
-	double avgEnergyGen; // avg value of many readings
-	double sumEnergyGen; // sum of many readings
+    string name;
+	double avgEnergy; // avg value of many readings
+	double sumEnergy; // sum of many readings
     double threshold;
     string sender;
 };

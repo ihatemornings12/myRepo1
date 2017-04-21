@@ -1,4 +1,4 @@
 # Partial OMNeT++/Tkenv config file -- see $HOME/.tkenvrc as well
-config default-configname	{hide_alert}
+config default-configname	{change-openflow-message}
 config default-runnumber	{0}
 

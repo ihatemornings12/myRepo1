@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+	<Unconditional>
+
+		<Attack>
+			<start_time>59</start_time>
+			<frequency>1e-07</frequency>
+			<var><name>1025</name><value>1025</value><type>NUMBER</type></var>
+			<var><name>25</name><value>25</value><type>NUMBER</type></var>
+			<var><name>"hahah"</name><value>hahah</value><type>STRING</type></var>
+			<var><name>"192.168.0.11"</name><value>192.168.0.11</value><type>STRING</type></var>
+			<var><name>1.958897</name><value>1.958897</value><type>NUMBER</type></var>
+			<var><name>"192.168.0.10"</name><value>192.168.0.10</value><type>STRING</type></var>
+			<var><name>10.974428</name><value>10.974428</value><type>NUMBER</type></var>
+			<var><name>1250</name><value>1250</value><type>NUMBER</type></var>
+			<var><name>6</name><value>6</value><type>NUMBER</type></var>
+			<var><name>"myPacket"</name><value>myPacket</value><type>STRING</type></var>
+			<var><name>1000</name><value>1000</value><type>NUMBER</type></var>
+			<var><name>"net_eth_sup$o[0]"</name><value>net_eth_sup$o[0]</value><type>STRING</type></var>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:fakePacket:APP.type:1003</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:controlInfo.packetSize:value:1250</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.name:value:"myPacket"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.avgEnergy:value:1.958897</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.sumEnergy:value:10.974428</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.threshold:value:25</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:fakePacket:field_name:APP.sender:value:"hahah"</parameters>
+			</action>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:traPacket:TRA.type:0010</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:traPacket:field_name:TRA.srcPort:value:1000</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:traPacket:field_name:TRA.destPort:value:1025</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:traPacket:field_name:TRA.payload:value:fakePacket</parameters>
+			</action>
+
+			<action>
+				<name>Create</name>
+				<parameters>packetName:ipPacket:NET.type:0000</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:NET.srcAddress:value:"192.168.0.11"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:NET.destAddress:value:"192.168.0.10"</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:NET.transportProtocol:value:6</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:NET.payload:value:traPacket</parameters>
+			</action>
+
+			<action>
+				<name>Change</name>
+				<parameters>packetName:ipPacket:field_name:sending.outputGate:value:"net_eth_sup$o[0]"</parameters>
+			</action>
+
+			<action>
+				<name>Put</name>
+				<parameters>packetName:ipPacket:nodes:14:direction:RX:throughWC:false:delay:0</parameters>
+			</action>
+		</Attack>
+
+	</Unconditional>
+
+</configuration>

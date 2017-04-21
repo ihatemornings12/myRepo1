@@ -1,0 +1,14 @@
+list comprList = {15}
+
+from 60 nodes in comprList do {
+    filter ( ("APP.avgEnergy" > 0) and ("APP.avgEnergy" < 5.0))
+        change(original, "APP.sumEnergy", 31.2513736439)
+		change(original,"APP.avgEnergy", 6.2502747288)
+}
+
+from 61 nodes in comprList do {
+    filter ("APP.sumEnergy" == 0)
+        change(original, "APP.sumEnergy", 10.704755)
+		change(original,"APP.avgEnergy", 2.140951)
+}
+        

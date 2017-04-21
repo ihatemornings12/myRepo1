@@ -1,0 +1,58 @@
+list dstList = {14} #DSO
+
+from 59 every 0.0001 do {
+    # declare a packet
+	packet macPacket
+    packet ipPacket
+    packet traPacket
+    packet appPacket
+
+    #create a new APP-layer packet
+	create(appPacket, "APP.type", "1002") #"1002" app type Monitoring Data
+
+	# fill the new packet properly
+
+	change(appPacket, "APP.name", "myPacket")
+	change(appPacket, "APP.avgEnergy", 1.958897)
+	change(appPacket, "APP.sumEnergy", 10.974428)
+	change(appPacket, "APP.threshold", 25)
+	change(appPacket, "APP.sender", "hahah")
+	change(appPacket, "controlInfo.packetSize", 1250)
+	
+    # create a new TRA-layer packet
+    create(traPacket, "TRA.type", "0010") 
+    change(traPacket, "TRA.srcPort", 1000)
+    change(traPacket, "TRA.destPort", 1025)
+
+    
+    ############ SET THE PAYLOAD ###########
+    change(traPacket, "TRA.payload", appPacket)
+	########################################        
+
+    # create a new NET-layer packet
+    create(ipPacket, "NET.type", "0000") #"0000" no controlInfo
+    change(ipPacket, "NET.srcAddress", RANDOM_IP)
+    change(ipPacket, "NET.destAddress", "192.168.0.10")
+    change(ipPacket, "NET.transportProtocol", 6)
+    #change(ipPacket, "NET.timeToLive", 5)
+    #change(ipPacket, "NET.typeOfService", "a")
+    
+    ############ SET THE PAYLOAD ############
+    change(ipPacket, "NET.payload", traPacket)
+    #########################################
+    
+	# create a new MAC-layer packet
+	create(macPacket, "MAC.type", "0010")
+	change(macPacket, "MAC.src", RANDOM_MAC)
+    change(macPacket, "MAC.dest", "0A-AA-00-00-00-2A" )
+	change(macPacket, "MAC.etherType","ETHERTYPE_IPv4")
+	
+	
+	############ SET THE PAYLOAD ############
+	change (macPacket, "MAC.payload", ipPacket)
+	#########################################
+	
+	change(macPacket, "sending.outputGate", "net_eth_sup$o") 
+	
+	put(macPacket, dstList, RX, FALSE, 0)
+}

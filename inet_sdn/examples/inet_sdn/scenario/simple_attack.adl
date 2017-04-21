@@ -64,6 +64,12 @@ list dstList2 = {12} #switch
 
 from 20 every 0.4 do {
 
+    var sum
+    var a = 1
+    var b = 2
+    sum = a + b
+
+
     # declare a packet
 	packet macPacket
     packet ipPacket
@@ -72,7 +78,7 @@ from 20 every 0.4 do {
     var foo
     #create a new APP-layer packet
     create(appPacket, "APP.type", "1001")
-    change(appPacket, "APP.info", 1)
+    change(appPacket, "APP.info", sum)
     change(appPacket, "APP.name", "myPacket")
     
     change(appPacket, "controlInfo.packetSize", 1250)

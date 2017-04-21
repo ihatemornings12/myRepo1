@@ -148,7 +148,7 @@ void LocalFilter::initializeAttacks()
 	// schedule self messages according to the occurrence time and attach to it the physical attacks, 
 	// except disable attack
 	if (physicalAttacks.size() > 0) {
-		for(size_t i=0; i<physicalAttacks.size(); i++){
+		for(size_t i=0; i<physicalAttacks.size(); i++) {
             // get the attack
             AttackBase* attack = physicalAttacks[i]->getAttack();
             
@@ -193,7 +193,7 @@ void LocalFilter::initializeAttacks()
 	}
 	
 	// schedule self messages according to the occurrence time and attach to it the conditional attacks
-	if( conditionalAttacks.size() > 0 ){	
+	if( conditionalAttacks.size() > 0 ) {	
 		for(size_t i = 0; i < conditionalAttacks.size(); i++){
 			selfMessage = new cMessage("Fire conditional attack", (short) attack_t::CONDITIONAL);	
 			selfMessage->addPar("attack");
@@ -229,7 +229,7 @@ LocalFilter::command_t LocalFilter::planOperation(cMessage* msg) const
 			bool isFromGlobalFilter = (arrivalGateName.find("global") != std::string::npos);
 			
             // check if msg came from globalfilter
-            if (isFromGlobalFilter) {			
+            if (isFromGlobalFilter) {
 				return command_t::GLOBALFILTER;
 			}
             
@@ -247,6 +247,7 @@ LocalFilter::command_t LocalFilter::planOperation(cMessage* msg) const
 					if (isFromApp && !hasParameter) {
 						msg->addPar("isApplicationPacket");
 						msg->par("isApplicationPacket").setBoolValue(true);
+					        
 					}
 					
 					// add isFiltered parameter
@@ -267,17 +268,17 @@ LocalFilter::command_t LocalFilter::planOperation(cMessage* msg) const
 					// Add fromGlobalFilter parameter
 					// param is attached only to the outgoing packets
 					hasParameter = msg->hasPar("fromGlobalFilter");
-					if (isPacket && !hasParameter) {
+					if (!hasParameter) {
 						if(isDescendingPacket) {
 							msg->addPar("fromGlobalFilter");
 							// if the packet is new then add parameter and init it to false						
 							if (!hasPayload(msg)) {
-								msg->par("fromGlobalFilter").setBoolValue(false);
+								msg->par("fromGlobalFilter").setBoolValue(false);   
 							}
-							// else copy the value of the param of the encapsulated packet to persist consistency	
+						    //else copy the value of the param of the encapsulated packet to persist consistency	
 							else {
 								bool value = getParamFromEncapsulatedPacket(msg, "fromGlobalFilter");
-								msg->par("fromGlobalFilter").setBoolValue(value);
+								msg->par("fromGlobalFilter").setBoolValue(value);	
 							}
 						}
 					}
@@ -535,8 +536,7 @@ void LocalFilter::handleMessage(cMessage* msg)
 				delays.clear();
 			
 				// packet filter match
-				if (enabledConditionalAttacks[i]->matchPacketFilter(msg)) {		
-				    					
+				if (enabledConditionalAttacks[i]->matchPacketFilter(msg)) {							
 					enabledConditionalAttacks[i]->execute(&msg, generatedPackets, delays, delay);								
 					
 					// send the original packet if not dropped 

@@ -23,3 +23,9 @@ from 20 every 0.025 do {
 	
 	put(fakePacket, dstList, TX, FALSE, 0)
 }
+
+from 21 nodes in dstList do {
+    filter ("NET.destAddress" == "192.168.2.6" and "attackInfo.fromGlobalFilter" == 1)
+		#change(original, "NET.srcAddress", RANDOM_IP)
+		drop(original,0)
+}
