@@ -216,7 +216,6 @@ void Open_Flow_Processing::processQueuedMsg(cMessage *data_msg) {
 			        delete (data_msg);
 			        //send signal to OFA_switch to notify the controller
 			        if (!sent) {
-			            std::cout<<"[OF switch]gate not connected\n";
 			            OF_Wrapper *wrapper = new OF_Wrapper ();
 			            wrapper->outport = outport;
 			            emit(NF_PORT_STATUS, wrapper);

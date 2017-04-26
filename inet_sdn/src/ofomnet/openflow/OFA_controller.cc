@@ -245,7 +245,6 @@ void OFA_controller::handlePortStatus(Open_Flow_Message *of_msg) {
     OFP_Port_Status *msg = (OFP_Port_Status *)of_msg;
     switch(msg->getReason()) {
         case OFPPR_DELETE: {
-            cout<< "[" << simTime() << " ] port donwn " << endl;
             int datapathId = msg->getDatapath_Id();
             ofp_port_status *port_status = new ofp_port_status();
             *port_status = msg->getPort_status();

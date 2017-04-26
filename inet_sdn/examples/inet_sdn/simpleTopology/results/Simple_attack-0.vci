@@ -1,0 +1,305 @@
+file 4569448 1493200726                                         
+version 2
+run Simple_attack-0-20170426-11:58:38-29475
+attr configname Simple_attack
+attr datetime 20170426-11:58:38
+attr experiment Simple_attack
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Topo
+attr processid 29475
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 154  Topo.s1.tcp  tcpRcvQueueBytes  ETV
+vector 141  Topo.s1.tcp  "advertised window"  ETV
+vector 140  Topo.s1.tcp  "receive window"  ETV
+vector 143  Topo.s1.tcp  "sent ack"  ETV
+vector 83  Topo.s1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 94  Topo.s1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 90  Topo.s1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 104  Topo.controller.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 105  Topo.controller.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 85  Topo.s1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 113  Topo.controller.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 99  Topo.controller.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 112  Topo.controller.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 108  Topo.controller.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 86  Topo.s1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 87  Topo.s1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 103  Topo.controller.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 95  Topo.s1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 120  Topo.controller.tcp  "rcvd seq"  ETV
+vector 121  Topo.controller.tcp  "rcvd ack"  ETV
+vector 117  Topo.controller.tcp  "advertised window"  ETV
+vector 115  Topo.controller.tcp  "send window"  ETV
+vector 130  Topo.controller.tcp  tcpRcvQueueBytes  ETV
+vector 116  Topo.controller.tcp  "receive window"  ETV
+vector 119  Topo.controller.tcp  "sent ack"  ETV
+vector 144  Topo.s1.tcp  "rcvd seq"  ETV
+vector 145  Topo.s1.tcp  "rcvd ack"  ETV
+vector 139  Topo.s1.tcp  "send window"  ETV
+vector 122  Topo.controller.tcp  "unacked bytes"  ETV
+vector 118  Topo.controller.tcp  "sent seq"  ETV
+vector 147  Topo.s1.tcp  "rcvd dupAcks"  ETV
+vector 142  Topo.s1.tcp  "sent seq"  ETV
+vector 146  Topo.s1.tcp  "unacked bytes"  ETV
+vector 134  Topo.controller.tcp  "measured RTT"  ETV
+vector 135  Topo.controller.tcp  "smoothed RTT"  ETV
+vector 136  Topo.controller.tcp  RTTVAR  ETV
+vector 137  Topo.controller.tcp  RTO  ETV
+vector 132  Topo.controller.tcp  cwnd  ETV
+vector 123  Topo.controller.tcp  "rcvd dupAcks"  ETV
+vector 158  Topo.s1.tcp  "measured RTT"  ETV
+vector 159  Topo.s1.tcp  "smoothed RTT"  ETV
+vector 160  Topo.s1.tcp  RTTVAR  ETV
+vector 161  Topo.s1.tcp  RTO  ETV
+vector 156  Topo.s1.tcp  cwnd  ETV
+vector 1  Topo.client.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 3  Topo.client.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 4  Topo.client.udp  sentPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(count)"
+vector 12  Topo.client.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 26  Topo.client.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 22  Topo.client.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 17  Topo.client.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 59  Topo.s1.etherMAC[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 60  Topo.s1.etherMAC[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 81  Topo.s1.ofa_switch  myRtt:vector  ETV
+attr interpolation  none
+attr source  myRtt
+attr title  "RTT for packet out direction, vector"
+vector 74  Topo.s1.etherMAC[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 47  Topo.server.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 48  Topo.server.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 69  Topo.s1.etherMAC[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 56  Topo.server.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 42  Topo.server.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 55  Topo.server.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 51  Topo.server.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 46  Topo.server.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 70  Topo.s1.etherMAC[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 71  Topo.s1.etherMAC[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 63  Topo.s1.etherMAC[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 18  Topo.client.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 19  Topo.client.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 58  Topo.s1.etherMAC[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 27  Topo.client.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 34  Topo.server.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 39  Topo.server.udp  rcvdPkLifetime:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, vector"
+attr unit  s
+vector 38  Topo.server.udp  delay:vector  ETV
+attr interpolationmode  none
+attr source  delay
+attr title  "delay, vector"
+vector 35  Topo.server.udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 29  Topo.server.udpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 30  Topo.server.udpApp[0]  rcvdPk:vector(count)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(count)"
+vector 31  Topo.server.udpApp[0]  rcvdAppPkt:vector  ETV
+attr interpolationmode  none
+attr source  rcvdAppPkt
+attr title  "packets received during sec, vector"
+1	9603 15276 153 253080 0.2 171 855 1250 1250 1068750 1335937500
+3	24879 199290 157 253157 0.2 171.019999997221 8958 9 1258 1148517 1353748563
+4	224169 222492 157 253157 0.2 171.019999997221 8958 1 8958 40127361 239653975679
+12	446661 32 159 102976 0.2 120.21 2 1 1 2 2
+17	446693 247586 165 253164 0.20000576 171.020005757221 8960 64 1296 1626800 1469269760
+18	694279 55 339 103156 0.200089919998 120.210089919998 2 64 64 128 8192
+19	694334 55 339 103156 0.200089919998 120.210089919998 2 64 64 128 8192
+22	694389 216406 163 253162 0.2 171.019999997221 8960 64 1296 1626800 1469269760
+26	910795 216406 162 253161 0.2 171.019999997221 8960 28 1278 1327733 1403274011
+27	1127201 55 343 103160 0.200089919998 120.210089919998 2 28 28 56 1568
+29	1127256 239458 570 253181 0.200555039992 171.020011517221 8958 1 1250 1076853 1335945603
+30	1366714 262660 570 253181 0.200555039992 171.020011517221 8958 1 8958 40127361 239653975679
+31	1629374 4321 682 253106 1.00020864 171.000011517221 171 5 105 8955 895275
+34	1633695 239458 568 253179 0.200555039992 171.020011517221 8958 9 1258 1148517 1353748563
+35	1873153 262660 568 253179 0.200555039992 171.020011517221 8958 1 8958 40127361 239653975679
+38	2135813 311223 568 253179 0.200555039992 171.020011517221 8958 1.152e-05 0.000555039992 0.31353759474191 4.8792390380178e-05
+39	2447036 311223 568 253179 0.200555039992 171.020011517221 8958 1.152e-05 0.000555039992 0.31353759474191 4.8792390380178e-05
+42	2758259 53 237 103054 0.200039199999 120.210039199999 2 1 1 2 2
+46	2758312 55 247 103064 0.200044959999 120.210044959999 2 64 64 128 8192
+47	2758367 247616 227 253173 0.200039199999 171.020011517221 8960 64 1296 1626800 1469269760
+48	3005983 247616 227 253173 0.200039199999 171.020011517221 8960 64 1296 1626800 1469269760
+51	3253599 55 243 103060 0.200039199999 120.210039199999 2 64 64 128 8192
+55	3253654 55 242 103059 0.200039199999 120.210039199999 2 28 28 56 1568
+56	3253709 247616 231 253175 0.200039199999 171.020011517221 8960 28 1278 1327733 1403274011
+58	3501325 55 340 103157 0.200089919998 120.210089919998 2 64 64 128 8192
+59	3501380 247587 166 253165 0.20000576 171.020005757221 8960 64 1296 1626800 1469269760
+60	3748967 247587 166 253165 0.20000576 171.020005757221 8960 64 1296 1626800 1469269760
+63	3996554 55 335 103152 0.200084159998 120.210084159998 2 64 64 128 8192
+69	3996609 247616 228 253174 0.200039199999 171.020011517221 8960 64 1296 1626800 1469269760
+70	4244225 55 248 103065 0.200044959999 120.210044959999 2 64 64 128 8192
+71	4244280 55 248 103065 0.200044959999 120.210044959999 2 64 64 128 8192
+74	4244335 247616 223 253170 0.200033439999 171.020005757221 8960 64 1296 1626800 1469269760
+81	4491951 514 219 194889 0.200033439999 151.200372318345 13 3.9199999e-05 120.21003344 120.41182479996 14450.492153433
+83	4492465 39 27 102204 0 120.000035439998 2 1 1 2 2
+85	4492504 2154 33 194898 0.00000576 151.200378078345 78 64 594 13079 5037557
+86	4494658 2130 43 194880 0.00001152 151.200372318345 77 64 594 13015 5033461
+87	4496788 2130 43 194880 0.00001152 151.200372318345 77 64 594 13015 5033461
+90	4498918 2104 31 194895 0 151.200372318345 78 64 594 13079 5037557
+94	4501022 2104 30 194894 0 151.200372318345 78 28 576 11348 4564232
+95	4503126 2131 45 194882 0.00001152 151.200372318345 77 28 576 11310 4562794
+99	4505257 48 37 102214 0.00000576 120.000041199998 2 1 1 2 2
+103	4505305 2208 44 194881 0.00001152 151.200372318345 77 64 594 13015 5033461
+104	4507513 2232 32 194897 0.00000576 151.200378078345 78 64 594 13079 5037557
+105	4509745 2232 32 194897 0.00000576 151.200378078345 78 64 594 13079 5037557
+108	4511977 2193 41 194857 0.00000576 151.200304718347 77 64 594 13015 5033461
+112	4514170 2193 40 194856 0.00000576 151.200304718347 77 28 576 11310 4562794
+113	4516363 2232 34 194899 0.00000576 151.200378078345 78 28 576 11348 4564232
+115	4518595 1213 59 194903 0.00001728 151.200378078345 40 7504 7504 300160 2252400640
+116	4519808 2266 59 194852 0.00001728 151.200304718347 75 7504 7504 562800 4223251200
+117	4522074 2346 59 194852 0.00001728 151.200304718347 76 7505 15753 892724 10961508558
+118	4524420 1136 92 194852 0.0000288 151.200304718347 38 5 8030 146821 793189587
+119	4525556 2249 59 194852 0.00001728 151.200304718347 75 1 8249 322419 1843067981
+120	4527805 2284 59 194903 0.00001728 151.200378078345 76 0 8249 314172 1775030164
+121	4530089 2280 59 194903 0.00001728 151.200378078345 76 0 8255 290853 1581970185
+122	4532369 1922 87 194903 0.0000288 151.200378078345 68 0 1298 18993 18218543
+123	4534291 2040 127 194903 0.00004032 151.200378078345 74 0 0 0 0
+130	4536331 3027 59 194852 0.00001728 151.200304718347 111 0 0 0 0
+132	4539358 1168 127 194903 0.00004032 151.200378078345 38 1072 5360 96480 300511616
+134	4540526 997 127 194903 0.00004032 151.200378078345 26 1.152e-05 7.3359998e-05 0.000734559979 3.123132015392e-08
+135	4541523 1021 127 194903 0.00004032 151.200378078345 26 1.44e-06 3.1922174e-05 0.000520394824 1.2249843855951e-08
+136	4542544 1047 127 194903 0.00004032 151.200378078345 26 0.023311607463 0.65625144 5.08725839623 1.8358246830691
+137	4543591 819 127 194903 0.00004032 151.200378078345 26 1 2.6250072 31.784522886152 43.929714315409
+139	4544410 1113 72 194798 0.00002304 151.200238318348 37 7504 7504 277648 2083470592
+140	4545523 2257 25 194886 0 151.200372318345 76 7504 7504 570304 4279561216
+141	4547780 2333 25 194886 0 151.200372318345 77 7504 15759 868666 10283038306
+142	4550113 1042 112 194707 0.00003456 151.20011103835 36 1 8024 145300 795543084
+143	4551155 2230 25 194886 0 151.200372318345 76 0 8255 290853 1581970185
+144	4553385 2254 72 194886 0.00002304 151.200372318345 75 4 8030 282603 1513833241
+145	4555639 2264 72 194886 0.00002304 151.200372318345 75 1 8249 322419 1843067981
+146	4557903 1700 112 194798 0.00003456 151.200238318348 61 0 1297 14475 13655587
+147	4559603 2036 105 194886 0.00003456 151.200372318345 74 0 0 0 0
+154	4561639 3083 25 194886 0 151.200372318345 114 0 0 0 0
+156	4564722 1090 151 194798 0.000052799999 151.200238318348 36 1072 4824 89512 261152064
+158	4565812 891 151 194744 0.000052799999 151.20016495835 25 1.152e-05 7.3359998e-05 0.000664159994 2.70413307704e-08
+159	4566703 972 151 194744 0.000052799999 151.20016495835 25 2.279999e-06 2.7473041e-05 0.000492241788 1.1093718629536e-08
+160	4567675 994 151 194744 0.000052799999 151.20016495835 25 0.026639713342 0.65625228 5.063968203268 1.8352839653864
+161	4568669 779 151 194744 0.000052799999 151.20016495835 25 1 2.625011399999 30.784538027848 42.929802330328
